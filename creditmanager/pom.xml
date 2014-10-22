@@ -189,11 +189,9 @@
 		    <version>1.7.0.1.1</version>
 		    <configuration>
 		        <sourceDirectory>${project.basedir}/src/main/webapp/static/less</sourceDirectory>
-		        <outputDirectory>${project.build.directory}/${project.build.finalName}/static/css</outputDirectory>
+		        <outputDirectory>${project.basedir}/src/main/webapp/static/css</outputDirectory>
+		        <!-- <outputDirectory>${project.build.directory}/${project.build.finalName}/static/css</outputDirectory> -->
 		        <compress>false</compress>
-		        <includes>
-		            <include>test.less</include>
-		        </includes>
 		    </configuration>
 		    <executions>
 		        <execution>
