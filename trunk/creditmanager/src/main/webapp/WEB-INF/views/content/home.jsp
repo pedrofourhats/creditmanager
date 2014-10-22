@@ -7,9 +7,15 @@
 	<title>Insert title here</title>
 	<% String stylePageContext = request.getContextPath(); %>
 	<!-- LESS -->
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/test.css" />
+	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/home.css" />
 </head>
 <body>
 	<h1>Welcome to home!!</h1>
+	<div id="header">
+		header
+	</div>
+	<div id="footer">
+		footer
+	</div>
 </body>
 </html>
