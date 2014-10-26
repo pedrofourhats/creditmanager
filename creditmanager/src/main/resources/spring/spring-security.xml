@@ -11,14 +11,15 @@
 	<mvc:annotation-driven />
 	
 	<http auto-config="false" use-expressions="true">
-		<intercept-url access="hasRole('ROLE_ADMIN')" pattern="/admin**"></intercept-url>
-	    <intercept-url filters="none" pattern="/**"></intercept-url>
-	    <intercept-url access="permitAll" pattern="/register"></intercept-url>
+		<intercept-url access="permitAll" pattern="/singin"></intercept-url>
+		<intercept-url access="hasRole('ROLE_ADMIN')" pattern="/admin/**"></intercept-url>
+		<intercept-url pattern="/**" access="isAuthenticated()" />
+<!-- 	    <intercept-url filters="none" pattern="/**"></intercept-url> -->
 	         
 	    <form-login authentication-success-handler-ref="ajaxAuthenticationSuccessHandler" 
-	    authentication-failure-url="/register?error=true" login-page="/register"></form-login>
-	    <logout invalidate-session="true" logout-success-url="/home"></logout>
-	    <remember-me data-source-ref="dataSource"/>
+	    authentication-failure-url="/singin?error=true" login-page="/singin"></form-login>
+	    <logout invalidate-session="true" logout-success-url="/singin"></logout>
+<!-- 	    <remember-me data-source-ref="dataSource"/> -->
 	</http>
 	
 	<beans:bean id="customUserDetailsService" class="com.creditmanager.service.impl.CustomUserDetailsService"></beans:bean>
