@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+  <mapping wildcard="false">
+    <class-a>com.creditmanager.model.Person</class-a>
+    <class-b>com.creditmanager.service.dto.PersonDTO</class-b>
+      
+      <field>
+        <a>id</a>
+        <b>id</b>
+      </field>
+      <field>
+        <a>name</a>
+        <b>name</b>
+      </field>
+      <field>
+        <a>identityNumber</a>
+        <b>identityNumber</b>
+      </field>
+      <field>
+        <a>birthDate</a>
+        <b>birthDate</b>
+      </field>
+      <field>
+        <a>phone</a>
+        <b>phone</b>
+      </field>
+      <field>
+        <a>workPhone</a>
+        <b>workPhone</b>
+      </field>
+      <field>
+        <a>cellPhone</a>
+        <b>cellPhone</b>
+      </field>
+      <field>
+        <a>email</a>
+        <b>email</b>
+      </field>
+      <field>
+        <a>province</a>
+        <b>province</b>
+      </field>
+      <field>
+        <a>apartment</a>
+        <b>apartment</b>
+      </field>
+      <field>
+        <a>locality</a>
+        <b>locality</b>
+      </field>
+      <field>
+        <a>postCode</a>
+        <b>postCode</b>
+      </field>
+  </mapping>
+</mappings>

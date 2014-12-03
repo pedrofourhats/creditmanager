@@ -92,12 +92,12 @@
         </property>
     </bean>
     
-<!--     <bean id="mapper" class="org.dozer.DozerBeanMapper"> -->
-<!-- 	  <property name="mappingFiles"> -->
-<!-- 	    <list> -->
-<!-- 	    	<value>mappings/product-mapping.xml</value> -->
-<!-- 	    </list> -->
-<!-- 	  </property> -->
-<!-- 	</bean> -->
+    <bean id="mapper" class="org.dozer.DozerBeanMapper">
+	  <property name="mappingFiles">
+	    <list>
+	    	<value>mappings/person-mapping.xml</value>
+	    </list>
+	  </property>
+	</bean>
           
 </beans>

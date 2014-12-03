@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.creditmanager.model.Person;
 import com.creditmanager.service.PersonService;
+import com.creditmanager.service.dto.PersonDTO;
 
 @Controller
 public class PersonController {
@@ -18,8 +18,8 @@ public class PersonController {
 	private PersonService personService;
 	
 	@RequestMapping(value="/persons", method = RequestMethod.GET, headers="Accept=*/*")
-	public @ResponseBody Person getAll(){
-		Person person = personService.getById((long) 1);
-		return person;
+	public @ResponseBody List<PersonDTO> getAll(){
+		List<PersonDTO> persons = personService.getAll();
+		return persons;
 	}
 }
