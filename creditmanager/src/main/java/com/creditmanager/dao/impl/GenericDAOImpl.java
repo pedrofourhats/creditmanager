@@ -3,9 +3,6 @@ package com.creditmanager.dao.impl;
 import java.io.Serializable;
 import java.util.List;
 
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Order;
-import org.hibernate.hql.ast.tree.OrderByClause;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
@@ -43,12 +40,8 @@ public abstract class GenericDAOImpl<T, PK extends Serializable> implements Gene
 		return (T)hibernateTemplate.get(entityName, id);
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "unchecked" })
 	public List<T> getAll(){
-		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
-		criteria.addOrder(Order.asc("id"));
-		List result = hibernateTemplate.findByCriteria(criteria);
-		return result;
-		//return (List<T>)hibernateTemplate.find("from " + entityName);
+		return (List<T>)hibernateTemplate.find("from " + entityName);
 	}
 }
