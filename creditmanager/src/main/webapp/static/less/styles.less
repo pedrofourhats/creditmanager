@@ -1,0 +1,485 @@
+////////////////////////
+///////// INTI ///////// 
+////////////////////////
+
+///////// INDEX //////// 
+////////////////////////
+// IMPORT
+//// VARS
+//// FONTS
+// BASE
+// LAYOUT
+
+//// IMPORT /////
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900);
+
+///// VARS //////
+@orange				:	#c96041;
+@orange-light		:	#dc846b;
+@orange-dark		:	#b74a2a;
+@blue				:	#125490;
+@blue-light			:	#1769b4;
+@blue-dark			:	#0c3860;
+@gray				:	#808181;
+@gray-light			:	#eaeaea; // Main BG
+@gray-dark			:	#4b5155; // Main TXT
+
+@danger				:	#c63f3f;
+@warning			:	#;
+@success			:	#66c3a1;
+
+///// FOTNS /////
+.TitilliumR {font-family: 'Titillium Web', sans-serif; font-weight: 400; font-style: normal;}
+.TitilliumRI {font-family: 'Titillium Web', sans-serif; font-weight: 400; font-style: italic;}
+.TitilliumEL {font-family: 'Titillium Web', sans-serif; font-weight: 200; font-style: normal;}
+.TitilliumELI {font-family: 'Titillium Web', sans-serif; font-weight: 200; font-style: italic;}
+.TitilliumL {font-family: 'Titillium Web', sans-serif; font-weight: 300; font-style: normal;}
+.TitilliumLI {font-family: 'Titillium Web', sans-serif; font-weight: 300; font-style: italic;}
+.TitilliumSB {font-family: 'Titillium Web', sans-serif; font-weight: 600; font-style: normal;}
+.TitilliumSBI {font-family: 'Titillium Web', sans-serif; font-weight: 600; font-style: italic;}
+.TitilliumB {font-family: 'Titillium Web', sans-serif; font-weight: 700; font-style: normal;}
+.TitilliumBI {font-family: 'Titillium Web', sans-serif; font-weight: 700; font-style: italic;}
+.TitilliumUB {font-family: 'Titillium Web', sans-serif; font-weight: 900; font-style: normal;}
+
+
+	// SUBRRALLADO
+	  .subrrallado (@width: 125px, @height: 3px, @top: 50px, @color: white) {
+	    position: relative;
+	    &:after {
+	        content: "";
+	        background: @color;
+	        width: @width;
+	        height: @height;
+	        margin-left: (-@width / 2);
+	        position: absolute;
+	        top: @top;
+	        left: 50%;
+	    }
+	  }        
+	//
+
+
+/////////////////
+///// BASE //////
+/////////////////
+
+// RESET 
+a, .btn, input[type=text], input[type=password], input[type=email], textarea {
+	outline: none;
+	box-shadow: none;
+	text-shadow: none;
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0px;
+}
+
+// TEXT ALING
+.txtR {
+	text-align: right;
+}
+.txtL {
+	text-align: left;
+}
+.txtC {
+	text-align: center;
+}
+.txtJ {
+	text-align: justify;
+}
+
+// HORIZONTAL-LIST
+.horizontal-list {
+	padding: 0;
+
+	>li {
+		display: inline-block;
+
+	}
+}	
+
+// SIZE (alto y ancho)
+.size (@width:auto, @height:auto) {
+	width: @width;
+	height: @height;
+}
+
+// POSITIONING
+.pos-rel {
+	position: relative;
+}
+
+.pos-abs {
+	position: absolute;
+}
+
+.pos-fixed {
+	position: fixed;	
+}
+
+.pos-static {
+	position: static;
+}
+
+// POSICIONAMIENTO ABSOLUTO (mixin)
+.a-pos (@top:0px, @left:0px, @bottom:auto, @right:auto) {
+	position: absolute;
+	top: @top;
+	left:@left;
+	bottom:@bottom;
+	right:@right;
+}
+
+// QUIQCK FLOATS
+.fl {
+	float: left;		
+}
+.fr {
+	float: right;
+}
+.fn {
+	float: none;
+}
+.cl {
+	clear: left;
+}
+.clr {
+	clear: right;
+}
+.clb {
+	clear: both;
+}
+
+// BASIC COLS
+[class^="col-"],
+[class*=" col-"] {
+	float: left;
+	overflow: hidden;
+}
+
+// QUICK 2 COLS
+.col2 {
+	width: 49.9999999999%;
+	float: left;
+}
+
+// QUICK 3 COLS
+.col3 {
+	width: 33.333333333%;
+	float: left;
+}
+
+// QUICK 4 COLS
+.col4 {
+	width: 25%;
+	float: left;
+}
+
+// QUICK 5 COLS
+.col5 {
+	width: 19.999999999%;
+	float: left;
+}
+
+// BOX SIZING
+* {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+
+.box-sizing (@type: border-box) {
+	-webkit-box-sizing: @type;
+	-moz-box-sizing:    @type;
+	box-sizing:         @type;
+}
+
+.bxsg (@type: border-box) {
+	-webkit-box-sizing: @type;
+	-moz-box-sizing:    @type;
+	box-sizing:         @type;
+}
+
+// BLOCK - INLINE
+.di, .disp-inline, .inline {
+	display: inline;
+}
+.db, .disp-block .block {
+	display: block;
+}
+.dib, .disp-inline-block .inline-block{	
+	display: inline-block;
+}
+
+// CLEARFIX
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// BLOCK TEXT CENTERED
+.block-text-centered, .bk-txtctr {
+	display: block;
+	text-align: center;
+
+}
+
+// VERTICAL CENTER
+.vertical-center {		   	
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+	  -ms-transform: translateY(-50%);
+		  transform: translateY(-50%);
+}
+
+// BLOCK CENTER
+.bkctr, .block-centered {
+
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+// VERTICAL ALIGN
+.vat {
+	vertical-align: top;	
+}
+.vam {
+	vertical-align: middle;	
+}
+.vab {
+	vertical-align: bottom;	
+}
+.vabl {
+	vertical-align: baseline;	
+}
+
+/////////////////
+//// LAYOUT /////
+/////////////////	
+
+html, body { height: 100%;}
+
+// FONTS - BASE FONT SETTINGS
+html {
+  font-size: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+// GENERAL
+
+body {
+  font-size: 14px;
+  color: @gray;
+  background-color: @gray-light;
+  .TitilliumR;
+}
+
+// FONT SIZE 
+.fsz (@size: 14px;){
+	font-size: @size;
+}
+
+// COLORES TEXTO
+.txtWhite, .txt-wt {
+  color: white;
+}
+.txtGreyl, .txt-grl {
+  color: #cccccc;
+}
+.txtGreym, .txt-grm {
+  color: #696969;
+}
+.txtGrey, .txt-gr {
+  color: #8b8b8b;
+}
+.txtBlack, .txt-bk {
+  color: black;
+}
+
+// LINKS - Base link settings
+a {
+	color: #000;
+	text-decoration: none!important;
+
+	&:hover,
+	&:focus {
+		color: #000;
+		text-decoration: underline;
+	}
+}
+
+// HEADER
+header {
+	background-color: @blue;
+	
+	.btn-default {
+		margin-top: 95px;
+		font-size: 0.8em;
+	}
+}
+.container-header {
+	min-height: 137px;
+	background: url('../img/pattern.png') right top no-repeat; 
+}
+
+.logo {
+	background: url('../img/logo.png') right top no-repeat; 
+	width: 120px;
+	height: 137px;	
+}
+
+.main-nav {
+	margin: 20px 0 30px;
+	padding: 0;
+	border-bottom: 1px solid #d0d0d0;
+}
+
+.main-nav {
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			list-style: none;
+			.dib;
+			
+			a {
+				.pos-rel;
+				padding: 15px 20px 25px;
+				font-size: 1.21em;
+				text-transform: uppercase;
+				.db;
+				.TitilliumR;
+				
+				&:hover {
+					&:after {
+						content: " ";
+						.pos-abs;
+						background: @gray;
+						left: 0;
+						bottom: 0;
+						width: 100%;
+						height: 5px;						
+					}
+				}				
+			}
+			&.active {
+				a {
+					cursor: default;
+					color: @blue;
+					&:after {
+						content: " ";
+						.pos-abs;
+						background: @blue;
+						left: 0;
+						bottom: 0;
+						width: 100%;
+						height: 5px;						
+					}
+				}
+			}
+		}
+	}
+}
+
+.panel {
+	border-radius: 2px;
+}
+
+.pagination {
+	margin: 0 0 10px;
+	
+	li {
+		a {
+			background-color: @gray-light;
+			color: @gray;
+			border: none;
+		}
+		
+		&:first-child, &:last-child {
+			a {
+				border-radius: 0px;
+				color: @gray-light;
+				background-color: @gray;
+			}
+		}
+	}
+}
+
+label {
+	.TitilliumL;
+}
+
+input[type=text], input[type=password], input[type=email] {
+	border-radius: 2px;
+	background: @gray-light;
+}
+
+.btn {
+	border-radius: 2px;
+	
+	&.btn-default {
+		color: white;
+		background: none;
+		border-color: white;
+		
+		&:hover {
+			color: @blue;
+			background: white;
+		}
+	}
+	
+	&.btn-primary {
+		background-color: @orange;
+		border-color: @orange;
+		
+		&:hover {
+			background-color: @orange-light;
+			border-color: @orange-light;
+		}
+	}
+}
+
+table {
+	thead {
+		background-color: @gray-light;
+	}
+}
+
+// LOGIN
+
+.login {
+	background-color: @blue;
+	width: 320px;
+	min-height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.form-signin {
+	.logo {
+		margin: 50px auto 0;
+	}
+	
+	h3 {
+		margin: 15px -20px;
+		padding: 10px 0;
+		color: white;
+		border-top: 1px solid @gray-light;
+		border-bottom: 1px solid @gray-light;
+	}
+}
+
+.checkbox {
+	margin-left: 20px;
+}
+
+label {
+	color: white;
+}
