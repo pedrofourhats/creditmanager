@@ -14,9 +14,8 @@
 	<script src="<%=stylePageContext %>/static/js/bootstrap.js" type="text/javascript"></script>
 	<!-- STYLESHEET -->
 	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/font-awesome.css" />
-	<!-- LESS -->
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/less/fwk/bootstrap.less" />
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/less/styles.less" />
+	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/fwk/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/styles.css" />
 </head>
 <body>
 	<header>
