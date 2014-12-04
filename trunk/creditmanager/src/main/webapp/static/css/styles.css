@@ -1,0 +1,384 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900);
+.TitilliumR {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.TitilliumRI {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.TitilliumEL {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+.TitilliumELI {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+.TitilliumL {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.TitilliumLI {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+.TitilliumSB {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.TitilliumSBI {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+.TitilliumB {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.TitilliumBI {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.TitilliumUB {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+a,
+.btn,
+input[type=text],
+input[type=password],
+input[type=email],
+textarea {
+  outline: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+a:focus,
+.btn:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0px;
+}
+.txtR {
+  text-align: right;
+}
+.txtL {
+  text-align: left;
+}
+.txtC {
+  text-align: center;
+}
+.txtJ {
+  text-align: justify;
+}
+.horizontal-list {
+  padding: 0;
+}
+.horizontal-list > li {
+  display: inline-block;
+}
+.pos-rel {
+  position: relative;
+}
+.pos-abs {
+  position: absolute;
+}
+.pos-fixed {
+  position: fixed;
+}
+.pos-static {
+  position: static;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.fn {
+  float: none;
+}
+.cl {
+  clear: left;
+}
+.clr {
+  clear: right;
+}
+.clb {
+  clear: both;
+}
+[class^="col-"],
+[class*=" col-"] {
+  float: left;
+  overflow: hidden;
+}
+.col2 {
+  width: 49.9999999999%;
+  float: left;
+}
+.col3 {
+  width: 33.333333333%;
+  float: left;
+}
+.col4 {
+  width: 25%;
+  float: left;
+}
+.col5 {
+  width: 19.999999999%;
+  float: left;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.di,
+.disp-inline,
+.inline {
+  display: inline;
+}
+.db,
+.disp-block .block {
+  display: block;
+}
+.dib,
+.disp-inline-block .inline-block {
+  display: inline-block;
+}
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.block-text-centered,
+.bk-txtctr {
+  display: block;
+  text-align: center;
+}
+.vertical-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.bkctr,
+.block-centered {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.vat {
+  vertical-align: top;
+}
+.vam {
+  vertical-align: middle;
+}
+.vab {
+  vertical-align: bottom;
+}
+.vabl {
+  vertical-align: baseline;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  font-size: 14px;
+  color: #808181;
+  background-color: #eaeaea;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.txtWhite,
+.txt-wt {
+  color: white;
+}
+.txtGreyl,
+.txt-grl {
+  color: #cccccc;
+}
+.txtGreym,
+.txt-grm {
+  color: #696969;
+}
+.txtGrey,
+.txt-gr {
+  color: #8b8b8b;
+}
+.txtBlack,
+.txt-bk {
+  color: black;
+}
+a {
+  color: #000;
+  text-decoration: none!important;
+}
+a:hover,
+a:focus {
+  color: #000;
+  text-decoration: underline;
+}
+header {
+  background-color: #125490;
+}
+header .btn-default {
+  margin-top: 95px;
+  font-size: 0.8em;
+}
+.container-header {
+  min-height: 137px;
+  background: url('../img/pattern.png') right top no-repeat;
+}
+.logo {
+  background: url('../img/logo.png') right top no-repeat;
+  width: 120px;
+  height: 137px;
+}
+.main-nav {
+  margin: 20px 0 30px;
+  padding: 0;
+  border-bottom: 1px solid #d0d0d0;
+}
+.main-nav ul {
+  margin: 0;
+  padding: 0;
+}
+.main-nav ul li {
+  list-style: none;
+  display: inline-block;
+}
+.main-nav ul li a {
+  position: relative;
+  padding: 15px 20px 25px;
+  font-size: 1.21em;
+  text-transform: uppercase;
+  display: block;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.main-nav ul li a:hover:after {
+  content: " ";
+  position: absolute;
+  background: #808181;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+}
+.main-nav ul li.active a {
+  cursor: default;
+  color: #125490;
+}
+.main-nav ul li.active a:after {
+  content: " ";
+  position: absolute;
+  background: #125490;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+}
+.panel {
+  border-radius: 2px;
+}
+.pagination {
+  margin: 0 0 10px;
+}
+.pagination li a {
+  background-color: #eaeaea;
+  color: #808181;
+  border: none;
+}
+.pagination li:first-child a,
+.pagination li:last-child a {
+  border-radius: 0px;
+  color: #eaeaea;
+  background-color: #808181;
+}
+label {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+input[type=text],
+input[type=password],
+input[type=email] {
+  border-radius: 2px;
+  background: #eaeaea;
+}
+.btn {
+  border-radius: 2px;
+}
+.btn.btn-default {
+  color: white;
+  background: none;
+  border-color: white;
+}
+.btn.btn-default:hover {
+  color: #125490;
+  background: white;
+}
+.btn.btn-primary {
+  background-color: #c96041;
+  border-color: #c96041;
+}
+.btn.btn-primary:hover {
+  background-color: #dc846b;
+  border-color: #dc846b;
+}
+table thead {
+  background-color: #eaeaea;
+}
+.login {
+  background-color: #125490;
+  width: 320px;
+  min-height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 20px;
+}
+.form-signin .logo {
+  margin: 50px auto 0;
+}
+.form-signin h3 {
+  margin: 15px -20px;
+  padding: 10px 0;
+  color: white;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+.checkbox {
+  margin-left: 20px;
+}
+label {
+  color: white;
+}
