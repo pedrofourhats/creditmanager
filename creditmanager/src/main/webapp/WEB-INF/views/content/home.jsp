@@ -141,6 +141,7 @@
 							<i class="fa fa-print"></i> Imprimir
 						</button>
 					</div>
+					<!-- esta opcion debe abrir modal -->
 					<div class="form-group">
 						<button type="button" class="btn btn-primary">
 							<i class="fa fa-table"></i> Editar columnas
@@ -203,6 +204,31 @@
 		<footer>
 		
 		</footer>
-				
+		
+		<!-- MODAL -->
+		<div class="modal fade">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title">Editar columnas</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="list-group">
+			      <a href="#" class="list-group-item active">
+			        Títulos <span class="badge"><i class="fa fa-times"></i></span>
+			      </a>
+			      <a href="#" class="list-group-item">Tipo <span class="badge"><i class="fa fa-times"></i></span></a>
+			      <a href="#" class="list-group-item">Rubro <span class="badge"><i class="fa fa-times"></i></span></a>
+			    </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
 	</body>
 </html>
