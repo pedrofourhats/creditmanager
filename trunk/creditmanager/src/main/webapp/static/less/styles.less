@@ -25,8 +25,16 @@
 @gray-dark			:	#4b5155; // Main TXT
 
 @danger				:	#c63f3f;
-@warning			:	#;
+@warning			:	#FFFF0D;
 @success			:	#66c3a1;
+
+// VARS
+@image  :  "../img/";
+
+// BACKGROUND
+.background (@name) {
+ 	background: url('../images/@{name}') no-repeat;
+ }
 
 ///// FOTNS /////
 .TitilliumR {font-family: 'Titillium Web', sans-serif; font-weight: 400; font-style: normal;}
@@ -286,8 +294,14 @@ body {
 }
 
 // COLORES TEXTO
-.txtWhite, .txt-wt {
-  color: white;
+.txtDanger {
+  color: @danger;
+}
+.txtWarning {
+  color: @warning;
+}
+.txtSuccess {
+  color: @success;
 }
 .txtGreyl, .txt-grl {
   color: #cccccc;
@@ -325,11 +339,11 @@ header {
 }
 .container-header {
 	min-height: 137px;
-	background: url('../img/pattern.png') right top no-repeat; 
+	background: url('@{image}pattern.png') right top no-repeat;
 }
 
 .logo {
-	background: url('../img/logo.png') right top no-repeat; 
+	background: url('@{image}logo.png') right top no-repeat;
 	width: 120px;
 	height: 137px;	
 }
@@ -425,12 +439,23 @@ input[type=text], input[type=password], input[type=email] {
 	
 	&.btn-default {
 		color: white;
-		background: none;
-		border-color: white;
+		background: @gray;
+		border-color: @gray;
 		
 		&:hover {
-			color: @blue;
+			color: @gray;
 			background: white;
+			border-color: @gray;
+		}
+		&.btn-exit {
+			color: white;
+			background: none;
+			border-color: white;
+			
+			&:hover {
+				color: @blue;
+				background: white;
+			}
 		}
 	}
 	
@@ -448,6 +473,76 @@ input[type=text], input[type=password], input[type=email] {
 table {
 	thead {
 		background-color: @gray-light;
+	}
+	
+	&.table-product {
+		thead {
+			th {
+				width: 20%;
+				
+				&:first-child {
+					width: 30%;
+				}
+				
+				&:last-child {
+					width: 10%;
+				}
+			}
+		}
+	}
+}
+
+// SELECT
+
+.select-style {
+    position: relative;
+	border: 1px solid @gray;
+    border-radius: 2px;
+    width: 100%;
+    overflow: hidden;
+    background-color: @gray;
+    
+    .fa {
+        float: right;
+        margin: -24px 10px 0 0;
+		font-size: 1.1em;
+        color: @gray-light;
+    }
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 100%;
+    color: @gray-light;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	
+	option {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border: none;
+		color: @gray;
+	}
+	
+	optgroup {
+		color: @gray-dark;
+	}
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+.form-inline {
+	.form-group {
+		margin-bottom: 15px;
+		vertical-align: top;
 	}
 }
 
@@ -481,5 +576,5 @@ table {
 }
 
 label {
-	color: white;
+	color: @gray;
 }

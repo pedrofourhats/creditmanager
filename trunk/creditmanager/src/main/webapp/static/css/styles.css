@@ -217,9 +217,14 @@ body {
   font-weight: 400;
   font-style: normal;
 }
-.txtWhite,
-.txt-wt {
-  color: white;
+.txtDanger {
+  color: #c63f3f;
+}
+.txtWarning {
+  color: #ffff0d;
+}
+.txtSuccess {
+  color: #66c3a1;
 }
 .txtGreyl,
 .txt-grl {
@@ -340,10 +345,20 @@ input[type=email] {
 }
 .btn.btn-default {
   color: white;
+  background: #808181;
+  border-color: #808181;
+}
+.btn.btn-default:hover {
+  color: #808181;
+  background: white;
+  border-color: #808181;
+}
+.btn.btn-default.btn-exit {
+  color: white;
   background: none;
   border-color: white;
 }
-.btn.btn-default:hover {
+.btn.btn-default.btn-exit:hover {
   color: #125490;
   background: white;
 }
@@ -357,6 +372,58 @@ input[type=email] {
 }
 table thead {
   background-color: #eaeaea;
+}
+table.table-product thead th {
+  width: 20%;
+}
+table.table-product thead th:first-child {
+  width: 30%;
+}
+table.table-product thead th:last-child {
+  width: 10%;
+}
+.select-style {
+  position: relative;
+  border: 1px solid #808181;
+  border-radius: 2px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #808181;
+}
+.select-style .fa {
+  float: right;
+  margin: -24px 10px 0 0;
+  font-size: 1.1em;
+  color: #eaeaea;
+}
+.select-style select {
+  padding: 5px 8px;
+  width: 100%;
+  color: #eaeaea;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.select-style select option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  color: #808181;
+}
+.select-style select optgroup {
+  color: #4b5155;
+}
+.select-style select:focus {
+  outline: none;
+}
+.form-inline .form-group {
+  margin-bottom: 15px;
+  vertical-align: top;
 }
 .login {
   background-color: #125490;
@@ -380,5 +447,5 @@ table thead {
   margin-left: 20px;
 }
 label {
-  color: white;
+  color: #808181;
 }
