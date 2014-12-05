@@ -226,21 +226,17 @@ body {
 .txtSuccess {
   color: #66c3a1;
 }
-.txtGreyl,
-.txt-grl {
-  color: #cccccc;
+.txtGreyl {
+  color: #eaeaea;
 }
-.txtGreym,
-.txt-grm {
-  color: #696969;
+.txtGrayd {
+  color: #4b5155;
 }
-.txtGrey,
-.txt-gr {
-  color: #8b8b8b;
+.txtGray {
+  color: #808181;
 }
-.txtBlack,
-.txt-bk {
-  color: black;
+.txtBlue {
+  color: #125490;
 }
 a {
   color: #000;
@@ -382,6 +378,21 @@ table.table-product thead th:first-child {
 table.table-product thead th:last-child {
   width: 10%;
 }
+table.table-persons thead th {
+  width: 12%;
+}
+table.table-persons thead th:first-child {
+  width: 28%;
+}
+table.table-persons thead th:nth-of-type(4) {
+  width: 10%;
+}
+table.table-persons thead th:last-child {
+  width: 10%;
+}
+table.table-my-projects {
+  margin-top: 20px;
+}
 .select-style {
   position: relative;
   border: 1px solid #808181;
@@ -424,6 +435,21 @@ table.table-product thead th:last-child {
 .form-inline .form-group {
   margin-bottom: 15px;
   vertical-align: top;
+}
+.tooltip .tooltip-arrow {
+  border-top-color: #125490 !important;
+}
+.tooltip .tooltip-inner {
+  background-color: #125490;
+}
+.tooltip.active {
+  opacity: 1;
+}
+.date-form {
+  margin: 10px;
+}
+label.control-label span {
+  cursor: pointer;
 }
 .login {
   background-color: #125490;

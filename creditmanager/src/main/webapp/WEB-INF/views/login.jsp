@@ -10,7 +10,6 @@
 	<title>INTI</title>
 	<% String stylePageContext = request.getContextPath(); %>
 	<!-- SCRIPTS -->
-	<script src="<%=stylePageContext %>/static/js/less-1.7.5.min.js" type="text/javascript"></script>
 	<script src="<%=stylePageContext %>/static/js/jquery.min.js" type="text/javascript"></script>		
 	<script src="<%=stylePageContext %>/static/js/bootstrap.js" type="text/javascript"></script>
 	<!-- STYLESHEET -->
@@ -30,10 +29,26 @@
 				</header>
 				<h3 class="txtC">Ingresar al sistema</h3>
 				<div class="form-group">
+					<!-- VALIDACIÓN, agregar active a tooltip -->
+					<div class="tooltip top active" role="tooltip">
+					  <div class="tooltip-arrow"></div>
+					  <div class="tooltip-inner">
+						Email invalido
+					  </div>
+					</div>
+					<!-- end VALIDACIÓN -->
 					<label for="emailInputLogin">Email</label>
 					<input type="email" class="form-control" name='j_username' id="emailInputLogin" placeholder="Email" required autofocus>
 				</div>
 				<div class="form-group">
+					<!-- VALIDACIÓN -->
+					<div class="tooltip top" role="tooltip">
+					  <div class="tooltip-arrow"></div>
+					  <div class="tooltip-inner">
+						Contraseña invalida
+					  </div>
+					</div>
+					<!-- end VALIDACIÓN -->
 					<label for="passwordInputLogin">Contraseña</label>
 					<input type="password" class="form-control" name='j_password' id="passwordInputLogin" placeholder="Password" required>
 				</div>

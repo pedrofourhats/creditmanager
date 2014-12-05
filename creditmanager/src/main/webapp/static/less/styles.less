@@ -303,17 +303,17 @@ body {
 .txtSuccess {
   color: @success;
 }
-.txtGreyl, .txt-grl {
-  color: #cccccc;
+.txtGreyl {
+  color: @gray-light;
 }
-.txtGreym, .txt-grm {
-  color: #696969;
+.txtGrayd {
+  color: @gray-dark;
 }
-.txtGrey, .txt-gr {
-  color: #8b8b8b;
+.txtGray {
+  color: @gray;
 }
-.txtBlack, .txt-bk {
-  color: black;
+.txtBlue {
+  color: @blue;
 }
 
 // LINKS - Base link settings
@@ -490,6 +490,30 @@ table {
 			}
 		}
 	}
+	
+	&.table-persons {
+		thead {
+			th {
+				width: 12%;
+				
+				&:first-child {
+					width: 28%;
+				}
+				
+				&:nth-of-type(4) {
+					width: 10%;
+				}
+				
+				&:last-child {
+					width: 10%;
+				}
+			}
+		}
+	}
+	
+	&.table-my-projects {
+		margin-top: 20px;
+	}
 }
 
 // SELECT
@@ -545,6 +569,27 @@ table {
 		vertical-align: top;
 	}
 }
+
+// TOOLTIP
+
+.tooltip {
+	.tooltip-arrow {
+		border-top-color: @blue!important;
+	}
+	
+	.tooltip-inner {
+		background-color: @blue;
+	}
+	
+	&.active {
+		opacity: 1;
+	}
+}
+
+// DATEPICKER
+
+.date-form { margin: 10px; }
+label.control-label span { cursor: pointer; }
 
 // LOGIN
 
