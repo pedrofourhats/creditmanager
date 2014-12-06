@@ -18,11 +18,11 @@ public class PersonController {
 	@Autowired
 	private PersonService personService;
 	
-	@RequestMapping(value="/persons", method = RequestMethod.GET, headers="Accept=*/*")
-	public @ResponseBody List<PersonDTO> getAll(){
-		List<PersonDTO> persons = personService.getAll();
-		return persons;
-	}
+//	@RequestMapping(value="/persons", method = RequestMethod.GET, headers="Accept=*/*")
+//	public @ResponseBody List<PersonDTO> getAll(){
+//		List<PersonDTO> persons = personService.getAll();
+//		return persons;
+//	}
 	
 	@RequestMapping(value="/person/list")
     public String goToList(Model model) {

@@ -28,4 +28,17 @@ public class PersonServiceImpl implements PersonService {
 	public List<PersonDTO> getAll() {
 		return MapperUtil.map(mapper, personDAO.getAll(), PersonDTO.class);
 	}
+
+	@Override
+	public void addPerson(PersonDTO person) {
+		Person newPerson = new Person(person.getName(),person.getIdentityNumber(), person.getBirthDate(), person.getGender(), person.getPhone(), person.getWorkPhone(),
+				person.getCellPhone(), person.getEmail(), person.getProvince(), person.getApartment(), person.getLocality(), person.getPostCode());
+		personDAO.add(newPerson);
+	}
+
+	@Override
+	public void editPerson(PersonDTO person) {
+		// TODO Auto-generated method stub
+		
+	}
 }

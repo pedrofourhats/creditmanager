@@ -22,7 +22,7 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 	public List<Person> findByName(String name) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
 		criteria.add(Restrictions.ilike("name", name, MatchMode.ANYWHERE));
-		return getHibernateTemplate().findByCriteria(criteria);
+		return (List<Person>) getHibernateTemplate().findByCriteria(criteria);
 	}
 
 }
