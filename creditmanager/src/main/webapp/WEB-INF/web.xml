@@ -5,7 +5,7 @@
 	
   	<display-name>Credit Manager System</display-name>
   	<welcome-file-list>
-		<welcome-file>/index</welcome-file>
+		<welcome-file>/home</welcome-file>
 	</welcome-file-list>
 	<session-config>
 	  <session-timeout>30</session-timeout>

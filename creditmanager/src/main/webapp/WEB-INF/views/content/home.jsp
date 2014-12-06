@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,9 +57,13 @@
 					<h1 class="logo"></h1>
 				</div>
 				<div class="pull-right">
-					<button type="button" class="btn btn-default btn-exit">
+<!-- 					<button type="button" class="btn btn-default btn-exit"> -->
+<!-- 						<i class="fa fa-sign-out"></i> Salir -->
+<!-- 					</button> -->
+					<!-- ACÁ CAMBIEN UN BOTON POR UN ANCHOR PARA EL LOGOUT -->
+					<a class="btn btn-default btn-exit" href='<c:url value="j_spring_security_logout" />'> 
 						<i class="fa fa-sign-out"></i> Salir
-					</button>
+					</a>
 				</div>
 			</div>
 		</header>
