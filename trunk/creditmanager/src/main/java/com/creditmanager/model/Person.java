@@ -57,6 +57,22 @@ public class Person extends com.creditmanager.model.Entity {
 	public Person(){
 	}
 	
+	public Person(String name, String identityNumber, Date birthDate, Gender gender, String phone, String workPhone, String cellPhone, String email, String province,
+			String apartment, String locality, String postCode){
+		this.name = name;
+		this.identityNumber = identityNumber;
+		this.birthDate = birthDate;
+		this.gender = gender;
+		this.phone = phone;
+		this.workPhone = workPhone;
+		this.cellPhone = cellPhone;
+		this.email = email;
+		this.province = province;
+		this.apartment = apartment;
+		this.locality = locality;
+		this.postCode = postCode;
+	}
+	
 	public String getName() {
 		return name;
 	}

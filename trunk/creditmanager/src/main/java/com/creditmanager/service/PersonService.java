@@ -11,6 +11,7 @@ import com.creditmanager.service.dto.PersonDTO;
 public interface PersonService {
 	
 	Person getById(Long id);
-	
 	List<PersonDTO> getAll();
+	void addPerson(PersonDTO person);
+	void editPerson(PersonDTO person);
 }
