@@ -10,8 +10,8 @@
 	<title>INTI</title>
 	<% String stylePageContext = request.getContextPath(); %>
 	<!-- SCRIPTS -->
-	<script src="<%=stylePageContext %>/static/js/jquery.min.js" type="text/javascript"></script>		
-	<script src="<%=stylePageContext %>/static/js/bootstrap.js" type="text/javascript"></script>
+	<script src="<%=stylePageContext %>/static/js/jquery.min.js"></script>		
+	<script src="<%=stylePageContext %>/static/js/bootstrap.js"></script>
 	<!-- STYLESHEET -->
 	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/font-awesome.css" />
 	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/fwk/bootstrap.css" />
@@ -38,7 +38,7 @@
 					</div>
 					<!-- end VALIDACIÓN -->
 					<label for="emailInputLogin">Email</label>
-					<input type="email" class="form-control" name='j_username' id="emailInputLogin" placeholder="Email" required autofocus>
+					<input type="name" class="form-control" name='j_username' id="emailInputLogin" placeholder="Email" required autofocus>
 				</div>
 				<div class="form-group">
 					<!-- VALIDACIÓN -->

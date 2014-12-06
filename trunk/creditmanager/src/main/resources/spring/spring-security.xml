@@ -12,6 +12,7 @@
 	
 	<http auto-config="false" use-expressions="true">
 		<intercept-url access="permitAll" pattern="/singin"></intercept-url>
+		<intercept-url access="permitAll" pattern="/static/**"></intercept-url>
 		<intercept-url access="hasRole('ROLE_ADMIN')" pattern="/admin/**"></intercept-url>
 		<intercept-url pattern="/**" access="isAuthenticated()" />
 <!-- 	    <intercept-url filters="none" pattern="/**"></intercept-url> -->
