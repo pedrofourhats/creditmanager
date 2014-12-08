@@ -65,7 +65,20 @@
 								  </div>
 								</div>
 								<!-- end VALIDACIÓN -->
-								<label for="exampleInputEmail1">Tipo de documento</label>
+								<label>Tipo de documento</label>
+
+								<div class="dropdown">
+								  <a id="" type="button" data-toggle="dropdown">
+								    Elegir tipo
+								    <i class="fa fa-chevron-down"></i>
+								  </a>
+								  <ul class="dropdown-menu">
+								    <li><a href="#">LC</a></li>
+							          <li><a href="#">DNI</a></li>
+								  </ul>
+								</div>	
+
+							    <!-- 
 								<div class="select-style">
 									<select tabindex="3">
 										<option>Elegir tipo</option>
@@ -74,6 +87,7 @@
 									</select>
 									<i class="fa fa-chevron-down"></i>
 								</div>
+								-->
 							</div>
 							<div class="form-group">
 								<!-- VALIDACIÓN -->
@@ -84,7 +98,7 @@
 								  </div>
 								</div>
 								<!-- end VALIDACIÓN -->
-								<label for="exampleInputEmail1">Número de documento</label>
+								<label>Número de documento</label>
 								<input type="text" class="form-control" placeholder="Ingrese número de documento" tabindex="4">
 							</div>
 						</div>
@@ -120,14 +134,17 @@
 								</div>
 								<!-- end VALIDACIÓN -->
 								<label for="exampleInputEmail1">Genero</label>
-								<div class="select-style">
-									<select tabindex="6">
-										<option>Elegir genero</option>
-										<option>Masculino</option>
-										<option>Femenino</option>
-									</select>
-									<i class="fa fa-chevron-down"></i>
-								</div>
+
+								<div class="dropdown">
+								  <a id="" type="button" data-toggle="dropdown">
+								    Elegir genero
+								    <i class="fa fa-chevron-down"></i>
+								  </a>
+								  <ul class="dropdown-menu">
+								    <li><a href="#">Masculino</a></li>
+							          <li><a href="#">Femenino</a></li>
+								  </ul>
+								</div>								
 							</div>								
 						</div>
 						<div class="col-sm-4">
@@ -170,14 +187,18 @@
 								</div>
 								<!-- end VALIDACIÓN -->
 								<label for="exampleInputEmail1">Provincia</label>
-								<div class="select-style">
-									<select tabindex="9">
-										<option>Elegir provincia</option>
-										<option>Ciudad de Buenos Aires</option>
-										<option>Buenos Aires</option>
-									</select>
-									<i class="fa fa-chevron-down"></i>
+
+								<div class="dropdown">
+								  <a id="" type="button" data-toggle="dropdown">
+								    Elegir provincia
+								    <i class="fa fa-chevron-down"></i>
+								  </a>
+								  <ul class="dropdown-menu">
+								    <li><a href="#">Ciudad de Buenos Aires</a></li>
+							          <li><a href="#">Buenos Aires</a></li>
+								  </ul>
 								</div>
+
 							</div>
 							<div class="form-group">
 								<!-- VALIDACIÓN -->
@@ -189,14 +210,18 @@
 								</div>
 								<!-- end VALIDACIÓN -->
 								<label for="exampleInputEmail1">Localidad</label>
-								<div class="select-style">
-									<select tabindex="10">
-										<option>Elegir localidad</option>
-										<option>Mar del Plata</option>
-										<option>Tandil</option>
-									</select>
-									<i class="fa fa-chevron-down"></i>
+
+								<div class="dropdown">
+								  <a id="" type="button" data-toggle="dropdown">
+								    Elegir localidad
+								    <i class="fa fa-chevron-down"></i>
+								  </a>
+								  <ul class="dropdown-menu">
+								    <li><a href="#">Mar del Plata</a></li>
+							          <li><a href="#">Tandil</a></li>
+								  </ul>
 								</div>
+								
 							</div>
 						</div>
 						<div class="col-sm-4">

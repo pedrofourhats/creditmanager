@@ -14,6 +14,52 @@
 <body>
 	<%@ include file="../../include/header.jsp" %>
 
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h3>CARGAR NUEVO PROYECTO</h3>
+				<h4>Complete los siguientes pasos</h4>
+
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+				    <li role="presentation" class="active"><a href="#institutional" aria-controls="institutional" role="tab" data-toggle="tab">Institucional</a></li>
+				    <li role="presentation"><a href="#aspects" aria-controls="aspects" role="tab" data-toggle="tab">Aspectos</a></li>
+				    <li role="presentation"><a href="#forms" aria-controls="forms" role="tab" data-toggle="tab">Formularios</a></li>
+				    <li role="presentation"><a href="#payments" aria-controls="payments" role="tab" data-toggle="tab">Contactos y pagos</a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+				    <div role="tabpanel" class="tab-pane fade active" id="institutional">
+				    	INSTITUCIONAL
+				    </div>
+				    <div role="tabpanel" class="tab-pane fade" id="aspects">
+				    	ASPECTOS
+				    </div>
+				    <div role="tabpanel" class="tab-pane" id="forms">
+				    	FORMULARIOS
+				    </div>
+				    <div role="tabpanel" class="tab-pane" id="payments">
+				    	CONTACTOS Y PAGOS
+				    </div>
+				</div>
+
+				<hr>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="pull-right">
+							<div class="form-group">
+								<button type="button" class="btn btn-primary">
+									<i class="fa fa-plus"></i> Cargar proyecto
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 
 
 	<script>

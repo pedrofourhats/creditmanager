@@ -271,7 +271,7 @@ h1, h2, h3, h4, h5 {
 //// LAYOUT /////
 /////////////////	
 
-html, body { height: 100%;}
+html, body, form { height: 100%;}
 
 // FONTS - BASE FONT SETTINGS
 html {
@@ -405,6 +405,24 @@ header {
 	border-radius: 2px;
 }
 
+.nav-tabs {
+	margin-top: 25px;
+
+	li {
+		a {
+			background-color: @gray-light;
+			color: @gray;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		&.active {
+			a {
+				border-bottom: 1px solid white;
+			}			
+		}
+	}
+}
+
 .pagination {
 	margin: 0 0 10px;
 	
@@ -516,51 +534,39 @@ table {
 	}
 }
 
-// SELECT
+// DROPDOWN
 
-.select-style {
-    position: relative;
+.dropdown {
+	position: relative;
 	border: 1px solid @gray;
     border-radius: 2px;
     width: 100%;
-    overflow: hidden;
     background-color: @gray;
-    
-    .fa {
-        float: right;
-        margin: -24px 10px 0 0;
+
+	a {
+		display: block;
+		padding: 5px 8px;
+	    width: 100%;
+	    color: @gray-light;	
+	}
+
+	.fa {
+		float: right;
+        margin-top: 2px;
 		font-size: 1.1em;
         color: @gray-light;
-    }
-}
-
-.select-style select {
-    padding: 5px 8px;
-    width: 100%;
-    color: @gray-light;
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-    background-image: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-	
-	option {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		border: none;
-		color: @gray;
 	}
-	
-	optgroup {
-		color: @gray-dark;
-	}
-}
 
-.select-style select:focus {
-    outline: none;
+	.dropdown-menu {
+		width: 100%;
+
+		a {
+			display: block;
+			&:hover {
+				background: @gray-light;
+			}
+		}
+	}
 }
 
 .form-inline {
@@ -574,11 +580,11 @@ table {
 
 .tooltip {
 	.tooltip-arrow {
-		border-top-color: @blue!important;
+		border-top-color: @orange!important;
 	}
 	
 	.tooltip-inner {
-		background-color: @blue;
+		background-color: @orange;
 	}
 	
 	&.active {

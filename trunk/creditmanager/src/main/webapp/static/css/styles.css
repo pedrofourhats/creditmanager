@@ -202,7 +202,8 @@ h5 {
   vertical-align: baseline;
 }
 html,
-body {
+body,
+form {
   height: 100%;
 }
 html {
@@ -311,6 +312,17 @@ header .btn-default {
 .panel {
   border-radius: 2px;
 }
+.nav-tabs {
+  margin-top: 25px;
+}
+.nav-tabs li a {
+  background-color: #eaeaea;
+  color: #808181;
+  border-bottom: 1px solid #dddddd;
+}
+.nav-tabs li.active a {
+  border-bottom: 1px solid white;
+}
 .pagination {
   margin: 0 0 10px;
 }
@@ -393,54 +405,43 @@ table.table-persons thead th:last-child {
 table.table-my-projects {
   margin-top: 20px;
 }
-.select-style {
+.dropdown {
   position: relative;
   border: 1px solid #808181;
   border-radius: 2px;
   width: 100%;
-  overflow: hidden;
   background-color: #808181;
 }
-.select-style .fa {
-  float: right;
-  margin: -24px 10px 0 0;
-  font-size: 1.1em;
-  color: #eaeaea;
-}
-.select-style select {
+.dropdown a {
+  display: block;
   padding: 5px 8px;
   width: 100%;
   color: #eaeaea;
-  border: none;
-  box-shadow: none;
-  background-color: transparent;
-  background-image: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
-.select-style select option {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  color: #808181;
+.dropdown .fa {
+  float: right;
+  margin-top: 2px;
+  font-size: 1.1em;
+  color: #eaeaea;
 }
-.select-style select optgroup {
-  color: #4b5155;
+.dropdown .dropdown-menu {
+  width: 100%;
 }
-.select-style select:focus {
-  outline: none;
+.dropdown .dropdown-menu a {
+  display: block;
+}
+.dropdown .dropdown-menu a:hover {
+  background: #eaeaea;
 }
 .form-inline .form-group {
   margin-bottom: 15px;
   vertical-align: top;
 }
 .tooltip .tooltip-arrow {
-  border-top-color: #125490 !important;
+  border-top-color: #c96041 !important;
 }
 .tooltip .tooltip-inner {
-  background-color: #125490;
+  background-color: #c96041;
 }
 .tooltip.active {
   opacity: 1;
@@ -475,4 +476,3 @@ label.control-label span {
 label {
   color: #808181;
 }
-
