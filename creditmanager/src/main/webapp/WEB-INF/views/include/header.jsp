@@ -1,14 +1,12 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <header>
 	<div class="container container-header">
 		<div class="pull-left">
 			<h1 class="logo"></h1>
 		</div>
 		<div class="pull-right">
-<!--	 	<button type="button" class="btn btn-default btn-exit"> -->
-<!-- 			<i class="fa fa-sign-out"></i> Salir -->
-<!--	 	</button> -->
-			<!-- ACÁ CAMBIEN UN BOTON POR UN ANCHOR PARA EL LOGOUT -->
-			<a class="btn btn-default btn-exit" href='<c:url value="j_spring_security_logout" />'> 
+			<a class="btn btn-default btn-exit" href='<c:url value="javascript:redirect(\"j_spring_security_logout\")" />'> 
 				<i class="fa fa-sign-out"></i> Salir
 			</a>
 		</div>
