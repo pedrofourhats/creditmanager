@@ -46,46 +46,11 @@
 		<script src="js/less-1.7.5.min.js" type="text/javascript"></script>
 		<script src="js/jquery.min.js" type="text/javascript"></script>		
 		<script src="js/bootstrap.js" type="text/javascript"></script>
-		
+		<%@ include file="../include/scripts.jsp" %>
 	</head>
 
 	<body>
-
-		<header>
-			<div class="container container-header">
-				<div class="pull-left">
-					<h1 class="logo"></h1>
-				</div>
-				<div class="pull-right">
-<!-- 					<button type="button" class="btn btn-default btn-exit"> -->
-<!-- 						<i class="fa fa-sign-out"></i> Salir -->
-<!-- 					</button> -->
-					<!-- ACÁ CAMBIEN UN BOTON POR UN ANCHOR PARA EL LOGOUT -->
-					<a class="btn btn-default btn-exit" href='<c:url value="j_spring_security_logout" />'> 
-						<i class="fa fa-sign-out"></i> Salir
-					</a>
-				</div>
-			</div>
-		</header>
-		
-		<nav class="main-nav">
-			<div class="container">
-				<ul>
-					<li class="active">
-						<a href="">PROYECTOS</a>
-					</li>
-					<li>
-						<a href="">PERSONAS</a>
-					</li>
-					<li>
-						<a href="">FORMULARIOS</a>
-					</li>
-					<li>
-						<a href="">REPORTES</a>
-					</li>					
-				</ul>
-			</div>
-		</nav>
+		<%@ include file="../include/header.jsp" %>
 		
 		<section>
 			<div class="container">
@@ -222,7 +187,7 @@
 		      <div class="modal-body">
 		        <div class="list-group">
 			      <a href="#" class="list-group-item active">
-			        TÃ­tulos <span class="badge"><i class="fa fa-times"></i></span>
+			        Títulos <span class="badge"><i class="fa fa-times"></i></span>
 			      </a>
 			      <a href="#" class="list-group-item">Tipo <span class="badge"><i class="fa fa-times"></i></span></a>
 			      <a href="#" class="list-group-item">Rubro <span class="badge"><i class="fa fa-times"></i></span></a>
@@ -236,5 +201,8 @@
 		  </div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
 		
+		<script>
+			$("#goToProjectsLink").addClass("active");
+		</script>
 	</body>
 </html>
