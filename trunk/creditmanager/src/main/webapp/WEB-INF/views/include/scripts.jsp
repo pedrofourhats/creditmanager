@@ -2,7 +2,10 @@
 	var ctx = "<%=request.getContextPath()%>";
 </script>
 
-
 <% String scriptPageContext = request.getContextPath(); %>
 
-<script type="text/javascript" src="<%=scriptPageContext%>/static/scripts/master.js"></script>
+<script src="<%=scriptPageContext %>/static/js/less-1.7.5.min.js" type="text/javascript"></script>
+<script src="<%=scriptPageContext %>/static/js/jquery.min.js" type="text/javascript"></script>		
+<script src="<%=scriptPageContext %>/static/js/bootstrap.js" type="text/javascript"></script>
+	
+<script src="<%=scriptPageContext%>/static/scripts/master.js" type="text/javascript"></script>

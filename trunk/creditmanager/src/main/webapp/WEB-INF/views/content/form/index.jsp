@@ -13,10 +13,11 @@
 </head>
 <body>
 	<%@ include file="../../include/header.jsp" %>
-	
-	
+
+
+
 	<script>
-		$("#goToProjectsLink").addClass("active");
+		$("#goToFormsLink").addClass("active");
 	</script>
 </body>
 </html>

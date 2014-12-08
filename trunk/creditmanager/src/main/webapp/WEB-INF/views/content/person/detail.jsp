@@ -7,47 +7,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>INTI</title>
-	<% String stylePageContext = request.getContextPath(); %>
-	<!-- SCRIPTS -->
-	<script src="<%=stylePageContext %>/static/js/jquery.min.js" type="text/javascript"></script>		
-	<script src="<%=stylePageContext %>/static/js/bootstrap.js" type="text/javascript"></script>
-	<!-- STYLESHEET -->
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/font-awesome.css" />
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/fwk/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/styles.css" />
-</head>
-<body>
-	<header>
-		<div class="container container-header">
-			<div class="pull-left">
-				<h1 class="logo"></h1>
-			</div>
-			<div class="pull-right">
-				<button type="button" class="btn btn-default  btn-exit">
-					<i class="fa fa-sign-out"></i> Salir
-				</button>
-			</div>
-		</div>
-	</header>
 	
-	<nav class="main-nav">
-		<div class="container">
-			<ul>
-				<li>
-					<a href="">PROYECTOS</a>
-				</li>
-				<li class="active">
-					<a href="">PERSONAS</a>
-				</li>
-				<li>
-					<a href="">FORMULARIOS</a>
-				</li>
-				<li>
-					<a href="">REPORTES</a>
-				</li>					
-			</ul>
-		</div>
-	</nav>
+	<!-- SCRIPTS -->
+	<%@ include file="../../include/scripts.jsp" %>
+	
+	<!-- STYLESHEET -->
+	<%@ include file="../../include/styles.jsp" %>
+</head>
+
+<body>
+	<%@ include file="../../include/header.jsp" %>
 	
 	<section>
 		<div class="container">
@@ -66,7 +35,7 @@
 						<div class="col-sm-4">
 							Tipo de documento: <span class="txtBlue">Nombre</span>
 							<br>
-							NÃºmero de documento: <span class="txtBlue">22222222</span>
+							Número de documento: <span class="txtBlue">22222222</span>
 						</div>
 						<div class="col-sm-4">
 							Fecha de nacimiento: <span class="txtBlue">22/22/2222</span>
@@ -88,16 +57,16 @@
 						<div class="col-sm-4">
 							DirecciÃ³n: <span class="txtBlue">DDDDDDDD</span>
 							<br>
-							CÃ³digo postal: <span class="txtBlue">CPCPCPCP</span>
+							Código postal: <span class="txtBlue">CPCPCPCP</span>
 						</div>
 						<div class="col-sm-4">
-							TelÃ©fono: <span class="txtBlue">55555555</span>
+							Teléfono: <span class="txtBlue">55555555</span>
 							<br>
-							TelÃ©fono laboral: <span class="txtBlue">44444444</span>
+							Teléfono laboral: <span class="txtBlue">44444444</span>
 						</div>							
 					</div>
 					<hr>
-					<h4>ParticipaciÃ³n en proyectos</h4>
+					<h4>Participación en proyectos</h4>
 					<table class="table table-hover table-condensed table-responsive table-my-projects">
 					  <thead>
 						<tr>
@@ -108,7 +77,7 @@
 					  </thead>
 					  <tbody>
 						<tr>
-						  <td>DiseÃ±o industrial</td>
+						  <td>Diseño industrial</td>
 						  <td>1A-2345</td>
 						  <td>Titular</td>
 						</tr>
@@ -136,5 +105,9 @@
 	<footer>
 	
 	</footer>
+	
+	<script>
+		$("#goToPersonsLink").addClass("active");
+	</script>
 </body>
 </html>

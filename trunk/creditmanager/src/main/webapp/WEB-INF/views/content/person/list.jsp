@@ -7,16 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>INTI</title>
-	<% String stylePageContext = request.getContextPath(); %>
 	<!-- SCRIPTS -->
-	<script src="<%=stylePageContext %>/static/js/jquery.min.js" type="text/javascript"></script>		
-	<script src="<%=stylePageContext %>/static/js/bootstrap.js" type="text/javascript"></script>
+	<%@ include file="../../include/scripts.jsp" %>
 	
 	<!-- STYLESHEET -->
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/font-awesome.css" />
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/fwk/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/styles.css" />
-	<%@ include file="../../include/scripts.jsp" %>
+	<%@ include file="../../include/styles.jsp" %>
 </head>
 
 <body>
@@ -26,7 +21,7 @@
 		<div class="container">
 			<div class="pull-left">
 				<div class="form-group">
-					<button type="button" class="btn btn-primary">
+					<button type="button" class="btn btn-primary" onclick="redirect('person/create');">
 						<i class="fa fa-plus-circle"></i> Nuevo persona
 					</button>
 				</div>
@@ -68,7 +63,7 @@
 						  <td>55555555</td>
 						  <td>1155555555</td>
 						  <td class="txtC">
-							<button type="button" class="btn btn-link"><i class="fa fa-pencil txtSuccess"></i></button>
+							<button type="button" class="btn btn-link" onclick="redirect('person/detail');"><i class="fa fa-pencil txtSuccess"></i></button>
 							<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
 						  </td>
 						</tr>
@@ -80,7 +75,7 @@
 						  <td>55555555</td>
 						  <td>1155555555</td>
 						  <td class="txtC">
-							<button type="button" class="btn btn-link"><i class="fa fa-pencil txtSuccess"></i></button>
+							<button type="button" class="btn btn-link" onclick="redirect('person/detail');"><i class="fa fa-pencil txtSuccess"></i></button>
 							<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
 						  </td>
 						</tr>
