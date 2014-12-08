@@ -11,44 +11,16 @@
 	<!-- SCRIPTS -->
 	<script src="<%=stylePageContext %>/static/js/jquery.min.js" type="text/javascript"></script>		
 	<script src="<%=stylePageContext %>/static/js/bootstrap.js" type="text/javascript"></script>
+	
 	<!-- STYLESHEET -->
 	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/font-awesome.css" />
 	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/fwk/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/styles.css" />
+	<%@ include file="../../include/scripts.jsp" %>
 </head>
 
 <body>
-	<header>
-		<div class="container container-header">
-			<div class="pull-left">
-				<h1 class="logo"></h1>
-			</div>
-			<div class="pull-right">
-				<button type="button" class="btn btn-default  btn-exit">
-					<i class="fa fa-sign-out"></i> Salir
-				</button>
-			</div>
-		</div>
-	</header>
-	
-	<nav class="main-nav">
-		<div class="container">
-			<ul>
-				<li>
-					<a href="">PROYECTOS</a>
-				</li>
-				<li class="active">
-					<a href="">PERSONAS</a>
-				</li>
-				<li>
-					<a href="">FORMULARIOS</a>
-				</li>
-				<li>
-					<a href="">REPORTES</a>
-				</li>					
-			</ul>
-		</div>
-	</nav>
+	<%@ include file="../../include/header.jsp" %>
 	
 	<section>
 		<div class="container">
@@ -115,7 +87,8 @@
 					  </tbody>
 					</table>
 					<nav>
-					  <ul class="pagination pull-right">
+					  <ul class="pagination pul
+					  l-right">
 						<li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
 						<li><a href="#">1</a></li>
 						<li><a href="#">2</a></li>
@@ -131,5 +104,8 @@
 	<footer>
 	
 	</footer>
+	<script>
+		$("#goToPersonsLink").addClass("active");
+	</script>
 </body>
 </html>
