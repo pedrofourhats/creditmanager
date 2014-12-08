@@ -7,54 +7,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>INTI</title>
-	<% String stylePageContext = request.getContextPath(); %>
 	<!-- SCRIPTS -->
-	<script src="<%=stylePageContext %>/static/js/jquery.min.js" type="text/javascript"></script>		
-	<script src="<%=stylePageContext %>/static/js/bootstrap.js" type="text/javascript"></script>
-	<!-- STYLESHEET -->
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/font-awesome.css" />
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/fwk/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/styles.css" />
-</head>
-
-<body>
-	<header>
-		<div class="container container-header">
-			<div class="pull-left">
-				<h1 class="logo"></h1>
-			</div>
-			<div class="pull-right">
-				<button type="button" class="btn btn-default btn-exit">
-					<i class="fa fa-sign-out"></i> Salir
-				</button>
-			</div>
-		</div>
-	</header>
+	<%@ include file="../../include/scripts.jsp" %>
 	
-	<nav class="main-nav">
-		<div class="container">
-			<ul>
-				<li class="active">
-					<a href="">PROYECTOS</a>
-				</li>
-				<li>
-					<a href="">PERSONAS</a>
-				</li>
-				<li>
-					<a href="">FORMULARIOS</a>
-				</li>
-				<li>
-					<a href="">REPORTES</a>
-				</li>					
-			</ul>
-		</div>
-	</nav>
+	<!-- STYLESHEET -->
+	<%@ include file="../../include/styles.jsp" %>
+</head>
+<body>
+	<%@ include file="../../include/header.jsp" %>
 	
 	<section>
 		<div class="container">
 			<div class="pull-left">
 				<div class="form-group">
-					<button type="button" class="btn btn-primary">
+					<button type="button" class="btn btn-primary" onclick="redirect('project/create');">
 						<i class="fa fa-plus-circle"></i> Nuevo proyecto
 					</button>
 				</div>
@@ -86,7 +52,7 @@
 				<div class="form-group">
 					<div class="select-style">
 						<select>
-							<option>TÃ­tulo</option>
+							<option>Título</option>
 							<optgroup label="Tipo">
 								<option value="nuevo">Nuevo</option>
 								<option value="activo">Activo</option>
@@ -126,7 +92,7 @@
 					<table class="table table-hover table-condensed table-responsive table-product">
 					  <thead>
 						<tr>
-						  <th>TÃ­tulo</th>
+						  <th>Título</th>
 						  <th>Tipo</th>
 						  <th>Sector</th>
 						  <th>Rubro</th>
@@ -140,7 +106,7 @@
 						  <td>Otto</td>
 						  <td>@mdo</td>
 						  <td class="txtC">
-							<button type="button" class="btn btn-link"><i class="fa fa-pencil txtSuccess"></i></button>
+							<button type="button" class="btn btn-link" onclick="redirect('project/detail');"><i class="fa fa-pencil txtSuccess"></i></button>
 							<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
 						  </td>
 						</tr>
@@ -150,7 +116,7 @@
 						  <td>Thornton</td>
 						  <td>@fat</td>
 						  <td class="txtC">
-							<button type="button" class="btn btn-link"><i class="fa fa-pencil txtSuccess"></i></button>
+							<button type="button" class="btn btn-link" onclick="redirect('project/detail');"><i class="fa fa-pencil txtSuccess"></i></button>
 							<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
 						  </td>
 						</tr>
@@ -199,5 +165,8 @@
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	
+	<script>
+		$("#goToProjectsLink").addClass("active");
+	</script>
 </body>
 </html>

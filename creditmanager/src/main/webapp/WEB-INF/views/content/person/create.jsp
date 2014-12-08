@@ -7,47 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>INTI</title>
-	<% String stylePageContext = request.getContextPath(); %>
 	<!-- SCRIPTS -->
-	<script src="<%=stylePageContext %>/static/js/jquery.min.js" type="text/javascript"></script>		
-	<script src="<%=stylePageContext %>/static/js/bootstrap.js" type="text/javascript"></script>
+	<%@ include file="../../include/scripts.jsp" %>
+	
 	<!-- STYLESHEET -->
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/font-awesome.css" />
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/fwk/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/styles.css" />
+	<%@ include file="../../include/styles.jsp" %>
 </head>
 <body>
-	<header>
-		<div class="container container-header">
-			<div class="pull-left">
-				<h1 class="logo"></h1>
-			</div>
-			<div class="pull-right">
-				<button type="button" class="btn btn-default  btn-exit">
-					<i class="fa fa-sign-out"></i> Salir
-				</button>
-			</div>
-		</div>
-	</header>
-	
-	<nav class="main-nav">
-		<div class="container">
-			<ul>
-				<li>
-					<a href="">PROYECTOS</a>
-				</li>
-				<li class="active">
-					<a href="">PERSONAS</a>
-				</li>
-				<li>
-					<a href="">FORMULARIOS</a>
-				</li>
-				<li>
-					<a href="">REPORTES</a>
-				</li>					
-			</ul>
-		</div>
-	</nav>
+	<%@ include file="../../include/header.jsp" %>
 	
 	<section>
 		<div class="container">
@@ -305,6 +272,7 @@
 	<footer>
 	
 	</footer>
+	
 	<script type="text">
 		$(".date-picker").datepicker();
 
@@ -313,6 +281,9 @@
 			var val = $("label[for='" + id + "']").text();
 			$("#msg").text(val + " changed");
 		});
+	</script>
+	<script>
+		$("#goToPersonsLink").addClass("active");
 	</script>
 </body>
 </html>

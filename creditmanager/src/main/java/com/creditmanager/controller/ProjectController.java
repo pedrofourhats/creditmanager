@@ -1,9 +1,10 @@
 package com.creditmanager.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+@Controller
 public class ProjectController  {
 	
 	@RequestMapping(value="/project/list")
@@ -17,7 +18,7 @@ public class ProjectController  {
     }
 	
 	@RequestMapping(value="/project/create")
-    public String goToPersonCreation(Model model) {
+    public String goToProjectCreation(Model model) {
 		return "content/project/create";
     }
 }

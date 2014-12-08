@@ -19,7 +19,7 @@
 	<div class="container">
 		<ul>
 			<li id="goToProjectsLink">
-				<a href="javascript:void(0)" onclick="redirect('/');">
+				<a href="javascript:void(0)" onclick="redirect('project/list');">
 	        		<span>PROYECTOS</span>
 	        	</a>
 			</li>
@@ -29,12 +29,12 @@
 	        	</a>
 			</li>
 			<li id="goToFormsLink">
-				<a href="javascript:void(0)" onclick="redirect('forms');">
+				<a href="javascript:void(0)" onclick="redirect('form');">
 	        		<span>FORMULARIOS</span>
 	        	</a>
 			</li>
 			<li id="goToReportsLink">
-				<a href="javascript:void(0)" onclick="redirect('reports');">
+				<a href="javascript:void(0)" onclick="redirect('report');">
 	        		<span>REPORTES</span>
 	        	</a>
 			</li>					

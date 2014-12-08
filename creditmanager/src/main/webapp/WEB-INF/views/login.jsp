@@ -45,11 +45,11 @@
 					<div class="tooltip top" role="tooltip">
 					  <div class="tooltip-arrow"></div>
 					  <div class="tooltip-inner">
-						ContraseÃ±a invalida
+						Contraseña invalida
 					  </div>
 					</div>
-					<!-- end VALIDACIÃ“N -->
-					<label for="passwordInputLogin">ContraseÃ±a</label>
+					<!-- end VALIDACIO“N -->
+					<label for="passwordInputLogin">Contraseña</label>
 					<input type="password" class="form-control" name='j_password' id="passwordInputLogin" placeholder="Password" required>
 				</div>
 				<div class="form-group pos-rel">
