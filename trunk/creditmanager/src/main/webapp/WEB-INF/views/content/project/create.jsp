@@ -30,8 +30,136 @@
 
 				<!-- Tab panes -->
 				<div class="tab-content">
-				    <div role="tabpanel" class="tab-pane fade active" id="institutional">
-				    	INSTITUCIONAL
+				    <div role="tabpanel" class="tab-pane fade in active" id="institutional">
+				    	
+				    	<div class="row">
+							<div class="col-sm-4">
+								<div class="form-group">
+								<!-- VALIDACIÓN -->
+								<div class="tooltip top" role="tooltip">
+								  <div class="tooltip-arrow"></div>
+								  <div class="tooltip-inner">
+									Fecha de ingreso INTI
+								  </div>
+								</div>
+								<!-- end VALIDACIÓN -->
+								<div class="control-group">
+									<label for="date-picker-2" class="control-label">Fecha de ingreso al INTI</label>
+									<div class="controls">
+										<div class="input-group">
+											<input id="date-picker-2" type="text" class="date-picker form-control" tabindex="5" />
+											<label for="date-picker-2" class="input-group-addon btn"><span class="fa fa-calendar"></span>
+
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar un número de proyecto
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Número de proyecto</label>
+									<input type="text" class="form-control" placeholder="Ingrese número de documento" tabindex="2">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar services
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Número de services</label>
+									<input type="text" class="form-control" placeholder="Ingrese número de services" tabindex="3">
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar situación
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Estado de situación</label>
+									<input type="text" class="form-control" placeholder="Ingrese estado de situación">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar evaluador según services
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Evaluador segun services</label>
+									<div class="dropdown">
+									  <a id="" type="button" data-toggle="dropdown">
+									    Elegir evaluador
+									    <i class="fa fa-chevron-down"></i>
+									  </a>
+									  <ul class="dropdown-menu">
+									    <li><a href="#">Evaluador 1</a></li>
+								          <li><a href="#">Evaluador 2</a></li>
+									  </ul>
+									</div>
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar ascesor CAFESG
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Ascesor CAFESG</label>
+									<div class="dropdown">
+									  <a id="" type="button" data-toggle="dropdown">
+									    Elegir evaluador
+									    <i class="fa fa-chevron-down"></i>
+									  </a>
+									  <ul class="dropdown-menu">
+									    <li><a href="#">Evaluador 1</a></li>
+								          <li><a href="#">Evaluador 2</a></li>
+									  </ul>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar destino de la inversión
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Destino de la inversión</label>
+									<textarea class="form-control" placeholder="Ingrese estado de situación"></textarea>
+								</div>
+							</div> 
+						</div>
+					</div>
+					<hr>
+
 				    </div>
 				    <div role="tabpanel" class="tab-pane fade" id="aspects">
 				    	ASPECTOS

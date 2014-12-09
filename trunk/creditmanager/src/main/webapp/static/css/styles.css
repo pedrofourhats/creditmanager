@@ -323,6 +323,9 @@ header .btn-default {
 .nav-tabs li.active a {
   border-bottom: 1px solid white;
 }
+.tab-content {
+  padding-top: 20px;
+}
 .pagination {
   margin: 0 0 10px;
 }
