@@ -204,6 +204,12 @@ h5 {
 .vabl {
   vertical-align: baseline;
 }
+.mt20 {
+  margin-top: 20px;
+}
+.mt30 {
+  margin-top: 30px;
+}
 html,
 body,
 form {
