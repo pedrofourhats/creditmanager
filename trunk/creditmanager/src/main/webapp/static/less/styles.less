@@ -82,6 +82,10 @@ a, .btn, input[type=text], input[type=password], input[type=email], textarea {
 	}
 }
 
+textarea {
+	resize: none;
+}
+
 h1, h2, h3, h4, h5 {
 	margin: 0px;
 }
@@ -535,6 +539,28 @@ table {
 	
 	&.table-my-projects {
 		margin-top: 20px;
+	}
+
+	&.table-small {
+		margin-top: 20px;
+		thead {
+			th {
+				max-width: 75%;
+
+				&:first-child {
+					width: 10%;
+				}
+				&:last-child {
+					width: 15%;
+				}
+			}
+		}
+	}
+}
+
+.head-small {
+	h4 {
+		padding-top: 15px;
 	}
 }
 

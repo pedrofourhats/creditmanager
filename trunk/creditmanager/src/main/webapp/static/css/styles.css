@@ -73,6 +73,9 @@ textarea:focus {
   outline: none;
   box-shadow: none;
 }
+textarea {
+  resize: none;
+}
 h1,
 h2,
 h3,
@@ -407,6 +410,21 @@ table.table-persons thead th:last-child {
 }
 table.table-my-projects {
   margin-top: 20px;
+}
+table.table-small {
+  margin-top: 20px;
+}
+table.table-small thead th {
+  max-width: 75%;
+}
+table.table-small thead th:first-child {
+  width: 10%;
+}
+table.table-small thead th:last-child {
+  width: 15%;
+}
+.head-small h4 {
+  padding-top: 15px;
 }
 .dropdown {
   position: relative;
