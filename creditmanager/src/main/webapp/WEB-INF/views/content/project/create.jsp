@@ -142,7 +142,7 @@
 
 						</div>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-sm-12">
 								<div class="form-group">
 									<!-- VALIDACIÓN -->
 									<div class="tooltip top" role="tooltip">
@@ -157,21 +157,101 @@
 								</div>
 							</div> 
 						</div>
+						<hr>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="row head-small">
+									<div class="col-sm-6">
+										<h4>Titulares</h4>
+									</div>
+									<div class="col-sm-6 txtR">
+										<button type="button" class="btn btn-primary" onclick="">
+											<i class="fa fa-plus-circle"></i> Agregar titular
+										</button>
+									</div>	
+								</div>
+								<table class="table table-hover table-condensed table-responsive table-small">
+								  <thead>
+									<tr>
+									  <th>N°</th>
+									  <th>Nombre</th>
+									  <th class="txtC">Acciones</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td>1</td>
+									  <td>Nombre del titular</td>
+									  <td class="txtC">
+										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
+										<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
+									  </td>
+									</tr>
+									<tr>
+									  <td>2</td>
+									  <td>Nombre del titular</td>
+									  <td class="txtC">
+										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
+										<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+							</div>						
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="row head-small">
+									<div class="col-sm-6">
+										<h4>Garantes</h4>
+									</div>
+									<div class="col-sm-6 txtR">
+										<button type="button" class="btn btn-primary" onclick="">
+											<i class="fa fa-plus-circle"></i> Agregar garante
+										</button>
+									</div>	
+								</div>
+								<table class="table table-hover table-condensed table-responsive table-small">
+								  <thead>
+									<tr>
+									  <th>N°</th>
+									  <th>Nombre</th>
+									  <th class="txtC">Acciones</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td>1</td>
+									  <td>Nombre del garante</td>
+									  <td class="txtC">
+										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
+										<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
+									  </td>
+									</tr>
+									<tr>
+									  <td>2</td>
+									  <td>Nombre del garante</td>
+									  <td class="txtC">
+										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
+										<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+							</div>
+						</div>
 					</div>
-					<hr>
-
-				    </div>
 				    <div role="tabpanel" class="tab-pane fade" id="aspects">
 				    	ASPECTOS
 				    </div>
-				    <div role="tabpanel" class="tab-pane" id="forms">
+				    <div role="tabpanel" class="tab-pane fade" id="forms">
 				    	FORMULARIOS
 				    </div>
-				    <div role="tabpanel" class="tab-pane" id="payments">
+				    <div role="tabpanel" class="tab-pane fade" id="payments">
 				    	CONTACTOS Y PAGOS
 				    </div>
 				</div>
-
 				<hr>
 				<div class="row">
 					<div class="col-sm-12">
