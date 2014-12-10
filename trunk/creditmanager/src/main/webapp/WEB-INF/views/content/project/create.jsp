@@ -243,7 +243,174 @@
 						</div>
 					</div>
 				    <div role="tabpanel" class="tab-pane fade" id="aspects">
-				    	ASPECTOS
+				    	<div class="row">
+				    		<div class="col-sm-12">
+				    			<h4>Aspectos económicos</h4>		
+				    		</div>
+				    	</div>	
+				    	<div class="row mt20">
+				    		<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar titulo
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Titulo del proyecto</label>
+									<input type="text" class="form-control" placeholder="Ingrese titulo del proyecto" tabindex="1" autofocus>
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar tipo de proyecto
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Tipo de proyecto</label>
+									<input type="text" class="form-control" placeholder="Ingrese tipo de proyecto" tabindex="2">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar sector económico
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Sector económico</label>
+									<input type="text" class="form-control" placeholder="Ingrese sector económico" tabindex="3" autofocus>
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar activdad económica
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Actividad económica</label>
+									<input type="text" class="form-control" placeholder="Ingrese activdad económica" tabindex="4">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar rubro
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Rubro</label>
+									<input type="text" class="form-control" placeholder="Ingrese rubro" tabindex="5" autofocus>
+								</div>
+							</div>
+				    	</div>
+				    	<hr>
+				    	<div class="row">
+				    		<div class="col-sm-12">
+				    			<h4>Aspectos financieros</h4>		
+				    		</div>
+				    	</div>	
+				    	<div class="row mt20">
+				    		<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar importe solicitado
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Importe solicitado</label>
+									<input type="text" class="form-control" placeholder="Ingrese importe solicitado" tabindex="6">
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar plazo solicitado
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Plazo solicitado</label>
+									<input type="text" class="form-control" placeholder="Ingrese plazo solicitado" tabindex="7">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar periodo de gracia
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Periodo de gracia solicitado</label>
+									<input type="text" class="form-control" placeholder="Ingrese periodo de gracia solicitado" tabindex="8">
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar fecha de otorgamiento del crédito
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<div class="control-group">
+										<label for="date-picker-2" class="control-label">Fecha de otorgamiento del crédito</label>
+										<div class="controls">
+											<div class="input-group">
+												<input id="date-picker-2" type="text" class="date-picker form-control" tabindex="9" />
+												<label for="date-picker-2" class="input-group-addon btn">
+													<span class="fa fa-calendar"></span>
+												</label>
+											</div>
+										</div>
+									</div>								
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar importe otorgado
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Importe otorgado</label>
+									<input type="text" class="form-control" placeholder="Ingrese importe otorgado" tabindex="10">
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar plazo otorgado
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Plazo otorgado</label>
+									<input type="text" class="form-control" placeholder="Ingrese plazo otorgado" tabindex="11">
+								</div>
+							</div>
+				    	</div>
 				    </div>
 				    <div role="tabpanel" class="tab-pane fade" id="forms">
 				    	FORMULARIOS
