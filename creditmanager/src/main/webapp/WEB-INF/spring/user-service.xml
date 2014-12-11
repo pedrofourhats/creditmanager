@@ -5,4 +5,5 @@
 	
 	<bean name="userService" class="com.creditmanager.service.impl.UserServiceImpl"></bean>
 	<bean name="personService" class="com.creditmanager.service.impl.PersonServiceImpl"></bean>
+	<bean name="projectService" class="com.creditmanager.service.impl.ProjectServiceImpl"></bean>
 </beans>

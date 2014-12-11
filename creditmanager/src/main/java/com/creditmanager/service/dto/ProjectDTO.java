@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class ProjectDTO {
 	
+	private Long id;
+	
 	private String title;
 	
 	private int type;
@@ -23,6 +25,14 @@ public class ProjectDTO {
 	private int state;
 	
 	private String evaluator;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getTitle() {
 		return title;
