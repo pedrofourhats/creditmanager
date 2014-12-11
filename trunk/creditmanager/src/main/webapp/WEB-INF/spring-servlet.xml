@@ -96,6 +96,7 @@
 	  <property name="mappingFiles">
 	    <list>
 	    	<value>mappings/person-mapping.xml</value>
+	    	<value>mappings/project-mapping.xml</value>
 	    </list>
 	  </property>
 	</bean>
