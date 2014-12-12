@@ -31,8 +31,12 @@
 				<!-- Tab panes -->
 				<div class="tab-content">
 				    <div role="tabpanel" class="tab-pane fade in active" id="institutional">
-				    	
 				    	<div class="row">
+				    		<div class="col-sm-12">
+				    			<h4>Información institucionales</h4>
+				    		</div>
+				    	</div>
+				    	<div class="row mt20">
 							<div class="col-sm-4">
 								<div class="form-group">
 								<!-- VALIDACIÓN -->
@@ -413,7 +417,117 @@
 				    	</div>
 				    </div>
 				    <div role="tabpanel" class="tab-pane fade" id="forms">
-				    	FORMULARIOS
+				    	<div class="row">
+				    		<div class="col-sm-12">
+				    			<h4>Documentación a presentar</h4>
+				    		</div>
+				    	</div>
+				    	<div class="row mt20">
+							<div class="col-sm-4">
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="1"> Formulario 1
+									</label>
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="2"> Formulario 2
+									</label>
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="3"> Formulario 3
+									</label>
+								</div>									
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="4"> Formulario 4
+									</label>
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="5"> Formulario 5
+									</label>
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="6"> Formulario 6
+									</label>
+								</div>									
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="7"> Formulario 7
+									</label>
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="8"> Formulario 8
+									</label>
+								</div>								
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="form-group">
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar destino de la inversión
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<label>Destino de la inversión</label>
+									<textarea class="form-control" placeholder="Ingrese estado de situación"></textarea>
+								</div>
+							</div> 
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-sm-12">
+								<table class="table table-hover table-condensed table-responsive table-tiny">
+								  <thead>
+									<tr>
+									  <th>Tipo</th>
+									  <th>Fecha de emisión</th>
+									  <th class="txtC">Acciones</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td>Fianza</td>
+									  <td>5/5/2004</td>
+									  <td class="txtC">
+										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-print txtBlue" ></i></button>
+										<button type="button" class="btn btn-link"><i class="fa fa-pencil txtSuccess"></i></button>
+									  </td>
+									</tr>
+									<tr>
+									  <td>Contrato</td>
+									  <td>5/11/2012</td>
+									  <td class="txtC">
+										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-print txtBlue" ></i></button>
+										<button type="button" class="btn btn-link"><i class="fa fa-pencil txtSuccess"></i></button>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+								<div class="row mt20">
+									<div class="col-sm-12 txtR">
+										<button type="button" class="btn btn-primary" onclick="">
+											<i class="fa fa-file-text-o"></i> Cargar formulario
+										</button>
+										<button type="button" class="btn btn-primary" onclick="">
+											<i class="fa fa-file-text"></i> Cargar formulario extra
+										</button>
+									</div>	
+								</div>
+							</div>						
+						</div>
 				    </div>
 				    <div role="tabpanel" class="tab-pane fade" id="payments">
 				    	CONTACTOS Y PAGOS
