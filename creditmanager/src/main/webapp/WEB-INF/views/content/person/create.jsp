@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="personApp">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,7 +16,7 @@
 <body>
 	<%@ include file="../../include/header.jsp" %>
 	
-	<section>
+	<section ng-controller="addPersonController">
 		<div class="container">
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -306,7 +306,9 @@
 			var val = $("label[for='" + id + "']").text();
 			$("#msg").text(val + " changed");
 		});
+
 	</script>
+	<script src="<%=scriptPageContext %>/static/scripts/viewmodels/persons/addPerson.js" type="text/javascript"></script>	
 	<script>
 		$("#goToPersonsLink").addClass("active");
 	</script>
