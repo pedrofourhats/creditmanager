@@ -15,6 +15,10 @@
 	<%@ include file="../../include/header.jsp" %>
 
 	<div class="container">
+		<ol class="breadcrumb">
+		  <li><a href="#"><i class="fa fa-angel-right"></i> Proyectos</a></li>
+		  <li class="active"><i class="fa fa-angel-right"></i> Crear proyecto</li>
+		</ol>
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3>CARGAR NUEVO PROYECTO</h3>
@@ -39,26 +43,26 @@
 				    	<div class="row mt20">
 							<div class="col-sm-4">
 								<div class="form-group">
-								<!-- VALIDACIÓN -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Fecha de ingreso INTI
-								  </div>
-								</div>
-								<!-- end VALIDACIÓN -->
-								<div class="control-group">
-									<label for="date-picker-2" class="control-label">Fecha de ingreso al INTI</label>
-									<div class="controls">
-										<div class="input-group">
-											<input id="date-picker-2" type="text" class="date-picker form-control" tabindex="5" />
-											<label for="date-picker-2" class="input-group-addon btn"><span class="fa fa-calendar"></span>
+									<!-- VALIDACIÓN -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Fecha de ingreso INTI
+									  </div>
+									</div>
+									<!-- end VALIDACIÓN -->
+									<div class="control-group">
+										<label for="date-picker-2" class="control-label">Fecha de ingreso al INTI</label>
+										<div class="controls">
+											<div class="input-group">
+												<input id="date-picker-2" type="text" class="date-picker form-control" tabindex="5" />
+												<label for="date-picker-2" class="input-group-addon btn"><span class="fa fa-calendar"></span>
 
-											</label>
+												</label>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
 
 								<div class="form-group">
 									<!-- VALIDACIÓN -->
@@ -177,8 +181,18 @@
 								<table class="table table-hover table-condensed table-responsive table-small">
 								  <thead>
 									<tr>
-									  <th>N°</th>
-									  <th>Nombre</th>
+									  <th>
+									  	<a href="javascript:void(0);">
+									  		<!-- cambiar a fa-caret-up -->
+									  		N° <i class="fa fa-caret-down pull-right"></i>
+									  	</a>
+									  </th>
+									  <th>
+									  	<a href="javascript:void(0);">
+									  		<!-- cambiar a fa-caret-up -->
+									  		Nombre <i class="fa fa-caret-down pull-right"></i>
+									  	</a>
+									  </th>
 									  <th class="txtC">Acciones</th>
 									</tr>
 								  </thead>
@@ -219,8 +233,18 @@
 								<table class="table table-hover table-condensed table-responsive table-small">
 								  <thead>
 									<tr>
-									  <th>N°</th>
-									  <th>Nombre</th>
+									  <th>
+									  	<a href="javascript:void(0);">
+									  		<!-- cambiar a fa-caret-up -->
+									  		N° <i class="fa fa-caret-down pull-right"></i>
+									  	</a>
+									  </th>
+									  <th>
+									  	<a href="javascript:void(0);">
+									  		<!-- cambiar a fa-caret-up -->
+									  		Nombre <i class="fa fa-caret-down pull-right"></i>
+									  	</a>
+									  </th>
 									  <th class="txtC">Acciones</th>
 									</tr>
 								  </thead>
@@ -492,8 +516,18 @@
 								<table class="table table-hover table-condensed table-responsive table-tiny">
 								  <thead>
 									<tr>
-									  <th>Tipo</th>
-									  <th>Fecha de emisión</th>
+									  <th>
+									  	<a href="javascript:void(0);">
+									  		<!-- cambiar a fa-caret-up -->
+									  		Tipo <i class="fa fa-caret-down pull-right"></i>
+									  	</a>
+									  </th>
+									  <th>
+									  	<a href="javascript:void(0);">
+									  		<!-- cambiar a fa-caret-up -->
+									  		Fecha de emisión <i class="fa fa-caret-down pull-right"></i>
+									  	</a>
+									  </th>
 									  <th class="txtC">Acciones</th>
 									</tr>
 								  </thead>
@@ -530,7 +564,118 @@
 						</div>
 				    </div>
 				    <div role="tabpanel" class="tab-pane fade" id="payments">
-				    	CONTACTOS Y PAGOS
+				    	<div class="row">
+							<div class="col-sm-12">
+								<div class="row head-small">
+									<div class="col-sm-6">
+										<h4>Últimos pagos</h4>
+									</div>
+									<div class="col-sm-6 txtR">
+										<button type="button" class="btn btn-primary" onclick="">
+											<i class="fa fa-plus-circle"></i> Cargar pago
+										</button>
+										<button type="button" class="btn btn-primary" onclick="">
+											<i class="fa fa-calendar-o"></i> Ver calendario de pagos
+										</button>
+									</div>	
+								</div>
+								<table class="table table-hover table-condensed table-responsive table-payments">
+								  <thead>
+									<tr>
+									  <th>
+									  	<a href="javascript:void(0);">
+									  		<!-- cambiar a fa-caret-up -->
+									  		N° <i class="fa fa-caret-down pull-right"></i>
+									  	</a>
+									  </th>
+									  <th>Vencimientos</th>
+									  <th>Monto cuota</th>
+									  <th>Fecha de pago</th>
+									  <th>Cobro</th>
+									  <th class="txtC">Acciones</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td>1</td>
+									  <th>01/01/2015</th>
+									  <th>$1008,2</th>
+									  <th>15/01/2015</th>
+									  <th>$1010</th>
+									  <td class="txtC">
+										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
+										<button type="button" class="btn btn-link"><i class="fa fa-pencil txtDanger"></i></button>
+									  </td>
+									</tr>
+									<tr>
+									  <td>2</td>
+									  <th>01/01/2015</th>
+									  <th>$1008,2</th>
+									  <th>15/01/2015</th>
+									  <th>$1010</th>
+									  <td class="txtC">
+										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
+										<button type="button" class="btn btn-link"><i class="fa fa-pencil txtDanger"></i></button>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+							</div>						
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="row head-small">
+									<div class="col-sm-6">
+										<h4>Contactos</h4>
+									</div>
+									<div class="col-sm-6 txtR">
+										<button type="button" class="btn btn-primary" onclick="">
+											<i class="fa fa-plus-circle"></i> Cargar contacto
+										</button>
+										<button type="button" class="btn btn-primary" onclick="">
+											<i class="fa fa-eye"></i> Ver todos los ontactos
+										</button>
+									</div>	
+								</div>
+								<table class="table table-hover table-condensed table-responsive table-small">
+								  <thead>
+									<tr>
+									  <th>
+									  	<a href="javascript:void(0);">
+									  		<!-- cambiar a fa-caret-up -->
+									  		Fecha <i class="fa fa-caret-down pull-right"></i>
+									  	</a>
+									  </th>
+									  <th>Observaciones</th>							  
+									  <th class="txtC">Acciones</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <th>01/01/2015</th>
+									  <th>Se solicita informe del INTA, se recibe informe viable de INTA</th>
+									  <td class="txtC">
+										<button type="button" class="btn btn-link"><i class="fa fa-pencil txtDanger"></i></button>
+									  </td>
+									</tr>
+									<tr>
+									  <td>2</td>
+									  <th>01/01/2015</th>
+									  <th>$1008,2</th>
+									  <th>15/01/2015</th>
+									  <th>$1010</th>
+									  <td class="txtC">
+										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
+										<button type="button" class="btn btn-link"><i class="fa fa-pencil txtDanger"></i></button>
+									  </td>
+									</tr>
+								  </tbody>
+								</table>
+							</div>						
+						</div>
+
+
 				    </div>
 				</div>
 				<hr>

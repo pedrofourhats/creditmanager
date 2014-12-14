@@ -18,6 +18,10 @@
 	
 	<section ng-controller="addPersonController">
 		<div class="container">
+			<ol class="breadcrumb">
+			  <li><a href="#"><i class="fa fa-angel-right"></i> Personas</a></li>
+			  <li class="active"><i class="fa fa-angel-right"></i> Crear persona</li>
+			</ol>
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<h3>CARGAR NUEVA PERSONA</h3>
@@ -76,18 +80,7 @@
 								    <li><a href="#">LC</a></li>
 							          <li><a href="#">DNI</a></li>
 								  </ul>
-								</div>	
-
-							    <!-- 
-								<div class="select-style">
-									<select tabindex="3">
-										<option>Elegir tipo</option>
-										<option>DNI</option>
-										<option>LC</option>
-									</select>
-									<i class="fa fa-chevron-down"></i>
 								</div>
-								-->
 							</div>
 							<div class="form-group">
 								<!-- VALIDACIÓN -->

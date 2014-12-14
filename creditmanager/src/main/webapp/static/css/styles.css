@@ -134,23 +134,26 @@ h5 {
 [class^="col-"],
 [class*=" col-"] {
   float: left;
-  overflow: hidden;
 }
 .col2 {
   width: 49.9999999999%;
   float: left;
+  overflow: hidden;
 }
 .col3 {
   width: 33.333333333%;
   float: left;
+  overflow: hidden;
 }
 .col4 {
   width: 25%;
   float: left;
+  overflow: hidden;
 }
 .col5 {
   width: 19.999999999%;
   float: left;
+  overflow: hidden;
 }
 * {
   box-sizing: border-box;
@@ -390,8 +393,19 @@ input[type=email] {
   background-color: #dc846b;
   border-color: #dc846b;
 }
+.breadcrumb {
+  background: none!important;
+  border: 1px solid #eaeaea;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  padding: 8px 15px 8px 0;
+  list-style: none;
+}
 table thead {
   background-color: #eaeaea;
+}
+table thead th a {
+  color: #808181;
 }
 table.table-product thead th {
   width: 20%;
@@ -416,6 +430,18 @@ table.table-persons thead th:last-child {
 }
 table.table-my-projects {
   margin-top: 20px;
+}
+table.table-payments {
+  margin-top: 20px;
+}
+table.table-payments thead th {
+  width: 20%;
+}
+table.table-payments thead th:first-child {
+  width: 10%;
+}
+table.table-payments thead th:last-child {
+  width: 10%;
 }
 table.table-small {
   margin-top: 20px;
@@ -512,4 +538,3 @@ label.control-label span {
 label {
   color: #808181;
 }
-

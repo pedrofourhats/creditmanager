@@ -18,6 +18,10 @@
 	
 	<section>
 		<div class="container">
+			<ol class="breadcrumb">
+			  <li><a href="#"><i class="fa fa-angel-right"></i> Proyectos</a></li>
+			  <li class="active"><i class="fa fa-angel-right"></i> Listado de proyectos</li>
+			</ol>
 			<div class="pull-left">
 				<div class="form-group">
 					<button type="button" class="btn btn-primary" onclick="redirect('project/create');">
@@ -50,18 +54,17 @@
 					<input type="email" class="form-control" placeholder="Buscar por...">
 				</div>
 				<div class="form-group">
-					<div class="select-style">
-						<select>
-							<option>Título</option>
-							<optgroup label="Tipo">
-								<option value="nuevo">Nuevo</option>
-								<option value="activo">Activo</option>
-								<option value="pendiente">Pendiente</option>
-								<option value="cancelado">Cancelado</option>
-							</optgroup>
-							<option>Rubro</option>
-						</select>
-						<i class="fa fa-chevron-down"></i>
+					<div class="dropdown">
+					  <a id="" type="button" data-toggle="dropdown">
+					    Título
+					    <i class="fa fa-chevron-down"></i>
+					  </a>
+					  <ul class="dropdown-menu">
+					    <li><a href="#">Nuevo</a></li>
+				          <li><a href="#">Activo</a></li>
+				          <li><a href="#">Pendiente</a></li>
+				          <li><a href="#">Cancelado</a></li>
+					  </ul>
 					</div>
 				</div>
 				<div class="form-group">
@@ -92,10 +95,30 @@
 					<table class="table table-hover table-condensed table-responsive table-product">
 					  <thead>
 						<tr>
-						  <th>Título</th>
-						  <th>Tipo</th>
-						  <th>Sector</th>
-						  <th>Rubro</th>
+						  <th>
+						  	<a href="javascript:void(0);">
+						  		<!-- cambiar a fa-caret-up -->
+						  		Título <i class="fa fa-caret-down pull-right"></i>
+						  	</a>
+						  </th>
+						  <th>
+						  	<a href="javascript:void(0);">
+						  		<!-- cambiar a fa-caret-up -->
+						  		Tipo <i class="fa fa-caret-down pull-right"></i>
+						  	</a>
+						  </th>
+						  <th>
+						  	<a href="javascript:void(0);">
+						  		<!-- cambiar a fa-caret-up -->
+						  		Sector <i class="fa fa-caret-down pull-right"></i>
+						  	</a>
+						  </th>
+						  <th>
+						  	<a href="javascript:void(0);">
+						  		<!-- cambiar a fa-caret-up -->
+						  		Rubro <i class="fa fa-caret-down pull-right"></i>
+						  	</a>
+						  </th>
 						  <th class="txtC">Acciones</th>
 						</tr>
 					  </thead>

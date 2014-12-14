@@ -20,6 +20,10 @@
 	
 	<section>
 		<div class="container">
+			<ol class="breadcrumb">
+			  <li><a href="#"><i class="fa fa-angel-right"></i> Personas</a></li>
+			  <li class="active"><i class="fa fa-angel-right"></i> Detalle de persona</li>
+			</ol>
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<h3>PERFIL PERSONA</h3>
@@ -70,7 +74,12 @@
 					<table class="table table-hover table-condensed table-responsive table-my-projects">
 					  <thead>
 						<tr>
-						  <th>Proyecto</th>
+						  <th>Proyecto
+						  	<a href="javascript:void(0);">
+						  		<!-- cambiar a fa-caret-up -->
+						  		Proyecto <i class="fa fa-caret-down pull-right"></i>
+						  	</a>
+						  </th>
 						  <th>ID Proyecto</th>
 						  <th>Cargo</th>
 						</tr>

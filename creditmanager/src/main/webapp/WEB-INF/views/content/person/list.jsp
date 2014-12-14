@@ -19,6 +19,10 @@
 	
 	<section>
 		<div class="container">
+			<ol class="breadcrumb">
+			  <li><a href="#"><i class="fa fa-angel-right"></i> Personas</a></li>
+			  <li class="active"><i class="fa fa-angel-right"></i> Listado de personas</li>
+			</ol>
 			<div class="pull-left">
 				<div class="form-group">
 					<button type="button" class="btn btn-primary" onclick="redirect('person/create');">
@@ -45,7 +49,12 @@
 					<table class="table table-hover table-condensed table-responsive table-persons">
 					  <thead>
 						<tr>
-						  <th>Nombre</th>
+						  <th>
+						  	<a href="javascript:void(0);">
+						  		<!-- cambiar a fa-caret-up -->
+						  		Nombre <i class="fa fa-caret-down pull-right"></i>
+						  	</a>
+						  </th>
 						  <th>Documento</th>
 						  <th>Nacimiento</th>
 						  <th>Genero</th>
