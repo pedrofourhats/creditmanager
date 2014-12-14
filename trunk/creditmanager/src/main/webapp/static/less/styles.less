@@ -170,31 +170,34 @@ h1, h2, h3, h4, h5 {
 [class^="col-"],
 [class*=" col-"] {
 	float: left;
-	overflow: hidden;
 }
 
 // QUICK 2 COLS
 .col2 {
 	width: 49.9999999999%;
 	float: left;
+	overflow: hidden
 }
 
 // QUICK 3 COLS
 .col3 {
 	width: 33.333333333%;
 	float: left;
+	overflow: hidden
 }
 
 // QUICK 4 COLS
 .col4 {
 	width: 25%;
 	float: left;
+	overflow: hidden
 }
 
 // QUICK 5 COLS
 .col5 {
 	width: 19.999999999%;
 	float: left;
+	overflow: hidden
 }
 
 // BOX SIZING
@@ -504,9 +507,23 @@ input[type=text], input[type=password], input[type=email] {
 	}
 }
 
+.breadcrumb {
+	background: none!important;
+	border: 1px solid @gray-light;
+	border-radius: 2px;
+	margin-bottom: 10px;
+	padding: 8px 15px 8px 0;	
+	list-style: none;	
+}
+
 table {
 	thead {
 		background-color: @gray-light;
+		th {
+			a {
+				color: @gray;
+			}
+		}
 	}
 	
 	&.table-product {
@@ -547,6 +564,23 @@ table {
 	
 	&.table-my-projects {
 		margin-top: 20px;
+	}
+
+	&.table-payments {
+		margin-top: 20px;
+		thead {
+			th {
+				width: 20%;
+				
+				&:first-child {
+					width: 10%;
+				}
+				
+				&:last-child {
+					width: 10%;
+				}
+			}
+		}	
 	}
 
 	&.table-small {
