@@ -45,10 +45,6 @@
         <b>province</b>
       </field>
       <field>
-        <a>apartment</a>
-        <b>apartment</b>
-      </field>
-      <field>
         <a>locality</a>
         <b>locality</b>
       </field>
