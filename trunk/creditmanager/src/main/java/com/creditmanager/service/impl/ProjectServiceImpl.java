@@ -23,4 +23,21 @@ public class ProjectServiceImpl implements ProjectService {
 	public Page<ProjectDTO> getAll(int pageIndex, int pageSize) {
 		return MapperUtil.map(mapper, projectDao.getAllProjects(pageIndex, pageSize), ProjectDTO.class);
 	}
+
+	@Override
+	public ProjectDTO getById(Long id) {
+		return mapper.map(getById(id), ProjectDTO.class);
+	}
+
+	@Override
+	public void addProject(ProjectDTO project) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void editProject(ProjectDTO project) {
+		// TODO Auto-generated method stub
+		
+	}
 }
