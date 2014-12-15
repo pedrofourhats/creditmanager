@@ -24,283 +24,263 @@
 			</ol>
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<h3>CARGAR NUEVA PERSONA</h3>
-					<h4>Complete el formulario</h4>
-					<hr>
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="form-group">
-								<!-- VALIDACI脫N, agregar active a tooltip -->
-								<div class="tooltip top active" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar un nombre
-								  </div>
+					<form ng-submit="addPerson()">
+						<h3>CARGAR NUEVA PERSONA</h3>
+						<h4>Complete el formulario</h4>
+						<hr>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<!-- VALIDACION, agregar active a tooltip -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar un nombre
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="name">Nombre</label>
+									<input type="text" name="name" class="form-control" maxlength="50" placeholder="Ingrese nombre" tabindex="1" autofocus ng-model="newPerson.name">
 								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">Nombre</label>
-								<input type="text" class="form-control" placeholder="Ingrese nombre" tabindex="1" autofocus>
-							</div>
-						</div>	
-						<div class="col-sm-6">								
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar apellido
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">Apellido</label>
-								<input type="text" class="form-control" placeholder="Ingrese nombre" tabindex="2">
-							</div>								
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar un n煤mero de documento
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label>Tipo de documento</label>
-
-								<div class="dropdown">
-								  <a id="" type="button" data-toggle="dropdown">
-								    Elegir tipo
-								    <i class="fa fa-chevron-down"></i>
-								  </a>
-								  <ul class="dropdown-menu">
-								    <li><a href="#">LC</a></li>
-							          <li><a href="#">DNI</a></li>
-								  </ul>
-								</div>
-							</div>
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar un n煤mero de documento
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label>N煤mero de documento</label>
-								<input type="text" class="form-control" placeholder="Ingrese n煤mero de documento" tabindex="4">
+							</div>	
+							<div class="col-sm-6">								
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar apellido
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="surname">Apellido</label>
+									<input type="text" name="surname" class="form-control" maxlength="50" placeholder="Ingrese nombre" tabindex="2" ng-model="newPerson.surname">
+								</div>								
 							</div>
 						</div>
-						<div class="col-sm-4">
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar fecha de nacimiento
-								  </div>
+						<hr>
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+									  	Debe ingresar el tipo de documento
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label>Tipo de documento</label>
+	
+									<div class="dropdown" tabindex="3" dropdown>
+									  <a type="button" data-toggle="dropdown">
+									    <span ng-show="newPerson.identityTypeName == ''">
+									    	Elegir tipo
+									    </span>
+									    <span ng-show="newPerson.identityTypeName != ''">
+										    {{newPerson.identityTypeName}} 
+									    </span>
+									    <i class="fa fa-chevron-down"></i>
+									  </a>
+									  <ul class="dropdown-menu" role="menu">
+									    <li ng-click="selectIdNumberType({value: 0, name: 'DNI'})"><a href="javascript:void(0);">DNI</a></li>
+								        <li ng-click="selectIdNumberType({value: 1, name: 'LE'})"><a href="javascript:void(0);">LE</a></li>
+								        <li ng-click="selectIdNumberType({value: 2, name: 'LC'})"><a href="javascript:void(0);">LC</a></li>
+									  </ul>
+									</div>
 								</div>
-								<!-- end VALIDACI脫N -->
-								<div class="control-group">
-									<label for="date-picker-2" class="control-label">Fecha de nacimiento</label>
-									<div class="controls">
-										<div class="input-group">
-											<input id="date-picker-2" type="text" class="date-picker form-control" tabindex="5" />
-											<label for="date-picker-2" class="input-group-addon btn"><span class="fa fa-calendar"></span>
-
-											</label>
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar un n鷐ero de documento
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="idNumber">N鷐ero de documento</label>
+									<input type="text" name="idNumber" class="form-control" maxlength="10" placeholder="Ingrese n鷐ero de documento" tabindex="4" ng-model="newPerson.identityNumber">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar fecha de nacimiento
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<div class="control-group">
+										<label for="date-picker-2" class="control-label">Fecha de nacimiento</label>
+										<div class="controls">
+											<div class="input-group">
+												<input ng-click="open($event)" type="text" maxlength="15" class="date-picker form-control" tabindex="5"
+												 	datepicker-popup="dd/MM/yyyy" ng-model="newPerson.birthDate" is-open="opened" datepicker-options="dateOptions" close-text="Close" />
+												<span class="input-group-btn">
+									                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+									            </span>											
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar genero
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">Genero</label>
-
-								<div class="dropdown">
-								  <a id="" type="button" data-toggle="dropdown">
-								    Elegir genero
-								    <i class="fa fa-chevron-down"></i>
-								  </a>
-								  <ul class="dropdown-menu">
-								    <li><a href="#">Masculino</a></li>
-							          <li><a href="#">Femenino</a></li>
-								  </ul>
-								</div>								
-							</div>								
-						</div>
-						<div class="col-sm-4">
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar celular
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">Celular</label>
-								<input type="text" class="form-control" placeholder="Ingrese celular" tabindex="7">
-							</div>
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar email
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">Email</label>
-								<input type="email" class="form-control" placeholder="Ingrese email" tabindex="8">
-							</div>
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar provincia
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">Provincia</label>
-
-								<div class="dropdown">
-								  <a id="" type="button" data-toggle="dropdown">
-								    Elegir provincia
-								    <i class="fa fa-chevron-down"></i>
-								  </a>
-								  <ul class="dropdown-menu">
-								    <li><a href="#">Ciudad de Buenos Aires</a></li>
-							          <li><a href="#">Buenos Aires</a></li>
-								  </ul>
-								</div>
-
-							</div>
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar localidad
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">Localidad</label>
-
-								<div class="dropdown">
-								  <a id="" type="button" data-toggle="dropdown">
-								    Elegir localidad
-								    <i class="fa fa-chevron-down"></i>
-								  </a>
-								  <ul class="dropdown-menu">
-								    <li><a href="#">Mar del Plata</a></li>
-							          <li><a href="#">Tandil</a></li>
-								  </ul>
-								</div>
-								
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar direcci贸n
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">Direcci贸n</label>
-								<input type="text" class="form-control" placeholder="Ingrese direcci贸n" tabindex="11">
-							</div>
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar c贸digo postal
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">C贸digo postal</label>
-								<input type="email" class="form-control" placeholder="Ingrese c贸digo postal" tabindex="12">
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar telefono
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">Tel茅fono</label>
-								<input type="text" class="form-control" placeholder="Ingrese tel茅fono" tabindex="1">
-							</div>
-							<div class="form-group">
-								<!-- VALIDACI脫N -->
-								<div class="tooltip top" role="tooltip">
-								  <div class="tooltip-arrow"></div>
-								  <div class="tooltip-inner">
-									Debe ingresar tel茅fono laboral
-								  </div>
-								</div>
-								<!-- end VALIDACI脫N -->
-								<label for="exampleInputEmail1">Tel茅fono laboral</label>
-								<input type="text" class="form-control" placeholder="Ingrese tel茅fono laboral" tabindex="1">
-							</div>
-						</div>							
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="pull-right">
 								<div class="form-group">
-									<button type="button" class="btn btn-primary">
-										<i class="fa fa-plus"></i> Cargar persona
-									</button>
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar genero
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label>Genero</label>
+	
+									<div class="dropdown" tabindex="6" dropdown is-open="status.isopen">
+									  <a type="button" data-toggle="dropdown">
+									    <span ng-show="newPerson.genderName == ''">
+									    	Elegir genero
+									    </span>
+									    <span ng-show="newPerson.genderName != ''">
+										    {{newPerson.genderName}} 
+									    </span>
+									    <i class="fa fa-chevron-down"></i>
+									  </a>
+									  <ul class="dropdown-menu" role="menu">
+									    <li ng-click="selectGender({value: 0, name: 'MASCULINO'})"><a href="javascript:void(0);">MASCULINO</a></li>
+								        <li ng-click="selectGender({value: 1, name: 'FEMENINO'})"><a href="javascript:void(0);">FEMENINO</a></li>
+									  </ul>
+									</div>								
+								</div>								
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar celular
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="cellPhone">Celular</label>
+									<input type="text" name="cellPhone" class="form-control" maxlength="20" placeholder="Ingrese celular" tabindex="7" ng-model="newPerson.cellPhone">
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar email
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="email">Email</label>
+									<input type="email" name="email" class="form-control" maxlength="45" placeholder="Ingrese email" tabindex="8" ng-model="newPerson.email">
 								</div>
 							</div>
 						</div>
-					</div>
+						<hr>
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar provincia
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="province">Provincia</label>
+									<input type="text" name="province" class="form-control" maxlength="45" placeholder="Ingrese una provincia" tabindex="9" ng-model="newPerson.province">
+	
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar localidad
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="locality">Localidad</label>
+									<input type="text" name="locality" class="form-control" maxlength="45" placeholder="Ingrese una provincia" tabindex="10" ng-model="newPerson.locality">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar direcci髇
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="address">Direcci髇</label>
+									<input type="text" name="address" class="form-control" maxlength="100" placeholder="Ingrese direcci髇" tabindex="11" ng-model="newPerson.address">
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar c骴igo postal
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="postCode">C骴igo postal</label>
+									<input type="text" name="postCode" class="form-control" maxlength="10" placeholder="Ingrese c骴igo postal" tabindex="12" ng-model="newPerson.postCode">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar tel閒ono
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="phone">Tel閒ono</label>
+									<input type="text" name="phone" class="form-control" maxlength="20" placeholder="Ingrese tel閒ono" tabindex="13" ng-model="newPerson.phone">
+								</div>
+								<div class="form-group">
+									<!-- VALIDACIO揘 -->
+									<div class="tooltip top" role="tooltip">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner">
+										Debe ingresar tel骹ono laboral
+									  </div>
+									</div>
+									<!-- end VALIDACIO揘 -->
+									<label for="workphone">Tel閒ono laboral</label>
+									<input type="text" name="workphone" class="form-control" maxlength="20" placeholder="Ingrese tel閒ono laboral" tabindex="14" ng-model="newPerson.workPhone">
+								</div>
+							</div>							
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="pull-right">
+									<div class="form-group">
+										<input type="submit" class="btn btn-primary" tabindex="15" value="Cargar persona"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</section>
 	
 	<footer>
-	
 	</footer>
-	
-	<script type="text">
-		$(".date-picker").datepicker();
 
-		$(".date-picker").on("change", function () {
-			var id = $(this).attr("id");
-			var val = $("label[for='" + id + "']").text();
-			$("#msg").text(val + " changed");
-		});
-
-	</script>
 	<script src="<%=scriptPageContext %>/static/scripts/viewmodels/persons/addPerson.js" type="text/javascript"></script>	
 	<script>
 		$("#goToPersonsLink").addClass("active");

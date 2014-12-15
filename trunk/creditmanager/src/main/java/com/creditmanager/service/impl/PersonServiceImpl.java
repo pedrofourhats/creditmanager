@@ -31,8 +31,8 @@ public class PersonServiceImpl implements PersonService {
 
 	@Override
 	public void addPerson(PersonDTO person) {
-		Person newPerson = new Person(person.getName(),person.getIdentityNumber(), person.getBirthDate(), person.getGender(), person.getPhone(), person.getWorkPhone(),
-				person.getCellPhone(), person.getEmail(), person.getProvince(), person.getApartment(), person.getLocality(), person.getPostCode());
+		Person newPerson = new Person(person.getName(), person.getSurname(), person.getIdentityType(), person.getIdentityNumber(), person.getBirthDate(), person.getGender(), person.getPhone(), person.getWorkPhone(),
+				person.getCellPhone(), person.getEmail(), person.getProvince(), person.getLocality(), person.getAddress(), person.getPostCode());
 		personDAO.add(newPerson);
 	}
 

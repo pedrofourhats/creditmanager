@@ -18,6 +18,9 @@ public class Person extends com.creditmanager.model.Entity {
 	@Column(name="name")
 	private String name;
 	
+	@Column(name="surname")
+	private String surname;
+	
 	@Column(name="identityNumber")
 	private String identityNumber;
 	
@@ -45,11 +48,11 @@ public class Person extends com.creditmanager.model.Entity {
 	@Column(name="province")
 	private String province;
 	
-	@Column(name="apartment")
-	private String apartment;
-	
 	@Column(name="locality")
 	private String locality;
+	
+	@Column(name="address")
+	private String address;
 	
 	@Column(name="postCode")
 	private String postCode;
@@ -57,9 +60,11 @@ public class Person extends com.creditmanager.model.Entity {
 	public Person(){
 	}
 	
-	public Person(String name, String identityNumber, Date birthDate, Gender gender, String phone, String workPhone, String cellPhone, String email, String province,
-			String apartment, String locality, String postCode){
+	public Person(String name, String surname, IdentityType identityType, String identityNumber, Date birthDate, Gender gender, String phone, String workPhone, String cellPhone, String email, String province,
+			String locality, String address, String postCode){
 		this.name = name;
+		this.surname = surname;
+		this.identityType = identityType;
 		this.identityNumber = identityNumber;
 		this.birthDate = birthDate;
 		this.gender = gender;
@@ -68,8 +73,8 @@ public class Person extends com.creditmanager.model.Entity {
 		this.cellPhone = cellPhone;
 		this.email = email;
 		this.province = province;
-		this.apartment = apartment;
 		this.locality = locality;
+		this.address = address;
 		this.postCode = postCode;
 	}
 	
@@ -81,6 +86,14 @@ public class Person extends com.creditmanager.model.Entity {
 		this.name = name;
 	}
 	
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
 	public String getIdentityNumber() {
 		return identityNumber;
 	}
@@ -155,14 +168,6 @@ public class Person extends com.creditmanager.model.Entity {
 		this.province = province;
 	}
 	
-	public String getApartment() {
-		return apartment;
-	}
-	
-	public void setApartment(String apartment) {
-		this.apartment = apartment;
-	}
-	
 	public String getLocality() {
 		return locality;
 	}
@@ -171,6 +176,14 @@ public class Person extends com.creditmanager.model.Entity {
 		this.locality = locality;
 	}
 	
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public String getPostCode() {
 		return postCode;
 	}
