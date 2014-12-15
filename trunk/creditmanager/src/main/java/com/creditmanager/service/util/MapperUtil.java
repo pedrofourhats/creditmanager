@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.dozer.Mapper;
 
+import com.creditmanager.model.Page;
+
 public class MapperUtil {
 	public static <T, U> List<U> map(final Mapper mapper, final List<T> source, final Class<U> destType){
 		final List<U> destination = new ArrayList<U>();
@@ -12,5 +14,10 @@ public class MapperUtil {
 			destination.add(mapper.map(item, destType));
 		}
 		return destination;
+	}
+	
+	public static <T, U> Page<U> map(final Mapper mapper, final Page<T> source, final Class<U> destType){
+		final List<U> elements = map(mapper, source.getElements(), destType);
+		return new Page<U>(elements, source.getPageIndex(), source.getPageSize(), source.getTotalItems());
 	}
 }
