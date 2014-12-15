@@ -11,6 +11,8 @@ public class PersonDTO {
 	
 	private String name;
 	
+	private String surname;
+	
 	private String identityNumber;
 	
 	private IdentityType identityType;
@@ -29,7 +31,7 @@ public class PersonDTO {
 	
 	private String province;
 	
-	private String apartment;
+	private String address;
 	
 	private String locality;
 	
@@ -51,6 +53,14 @@ public class PersonDTO {
 		this.name = name;
 	}
 
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	
 	public String getIdentityNumber() {
 		return identityNumber;
 	}
@@ -123,12 +133,12 @@ public class PersonDTO {
 		this.province = province;
 	}
 
-	public String getApartment() {
-		return apartment;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setApartment(String apartment) {
-		this.apartment = apartment;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getLocality() {
@@ -146,5 +156,4 @@ public class PersonDTO {
 	public void setPostCode(String postCode) {
 		this.postCode = postCode;
 	}
-	
 }

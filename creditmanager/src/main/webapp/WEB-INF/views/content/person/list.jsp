@@ -26,7 +26,7 @@
 			<div class="pull-left">
 				<div class="form-group">
 					<button type="button" class="btn btn-primary" onclick="redirect('person/create');">
-						<i class="fa fa-plus-circle"></i> Nuevo persona
+						<i class="fa fa-plus-circle"></i> Nueva persona
 					</button>
 				</div>
 			</div>
