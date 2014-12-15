@@ -1,16 +1,17 @@
 package com.creditmanager.service.impl;
 
-import java.util.List;
-
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.creditmanager.dao.PersonDAO;
+import com.creditmanager.model.Page;
 import com.creditmanager.model.Person;
 import com.creditmanager.service.PersonService;
 import com.creditmanager.service.dto.PersonDTO;
 import com.creditmanager.service.util.MapperUtil;
 
+@Transactional
 public class PersonServiceImpl implements PersonService {
 
 	@Autowired
@@ -25,8 +26,9 @@ public class PersonServiceImpl implements PersonService {
 	}
 
 	@Override
-	public List<PersonDTO> getAll() {
-		return MapperUtil.map(mapper, personDAO.getAll(), PersonDTO.class);
+	public Page<PersonDTO> getAllPerson(int pageIndex, int pageSize) {
+		Page<Person> personList = personDAO.getAllPerson(pageIndex, pageSize);
+		return MapperUtil.map(mapper, personList, PersonDTO.class);
 	}
 
 	@Override

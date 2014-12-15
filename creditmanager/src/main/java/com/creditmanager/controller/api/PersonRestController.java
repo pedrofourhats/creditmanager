@@ -1,7 +1,5 @@
 package com.creditmanager.controller.api;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.creditmanager.model.Page;
 import com.creditmanager.service.PersonService;
 import com.creditmanager.service.dto.PersonDTO;
 
@@ -19,8 +18,8 @@ public class PersonRestController {
 	private PersonService personService;
 	
 	@RequestMapping(value="/persons/getAll", method = RequestMethod.GET, consumes="*/*")
-	public @ResponseBody List<PersonDTO> getAll(){
-		List<PersonDTO> persons = personService.getAll();
+	public @ResponseBody Page<PersonDTO> getAll(int pageIndex, int pageSize){
+		Page<PersonDTO> persons = personService.getAllPerson(pageIndex, pageSize);
 		return persons;
 	}
 	

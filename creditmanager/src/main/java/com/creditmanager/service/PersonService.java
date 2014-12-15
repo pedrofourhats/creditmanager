@@ -1,9 +1,8 @@
 package com.creditmanager.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
+import com.creditmanager.model.Page;
 import com.creditmanager.model.Person;
 import com.creditmanager.service.dto.PersonDTO;
 
@@ -11,7 +10,7 @@ import com.creditmanager.service.dto.PersonDTO;
 public interface PersonService {
 	
 	Person getById(Long id);
-	List<PersonDTO> getAll();
+	Page<PersonDTO> getAllPerson(int pageIndex, int pageSize);
 	void addPerson(PersonDTO person);
 	void editPerson(PersonDTO person);
 }
