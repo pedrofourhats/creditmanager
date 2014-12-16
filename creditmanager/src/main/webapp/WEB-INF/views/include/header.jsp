@@ -32,7 +32,7 @@
 	        	</a>
 			</li>
 			<li id="goToReportsLink">
-				<a href="javascript:void(0)" onclick="redirect('report');">
+				<a href="javascript:void(0)" onclick="redirect('report/list');">
 	        		<span>REPORTES</span>
 	        	</a>
 			</li>					
