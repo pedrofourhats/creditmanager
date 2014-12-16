@@ -17,7 +17,7 @@ public class PersonRestController {
 	@Autowired
 	private PersonService personService;
 	
-	@RequestMapping(value="/persons/getAll", method = RequestMethod.GET, consumes="*/*")
+	@RequestMapping(value="/persons", method = RequestMethod.GET, consumes="*/*")
 	public @ResponseBody Page<PersonDTO> getAll(int pageIndex, int pageSize){
 		Page<PersonDTO> persons = personService.getAllPerson(pageIndex, pageSize);
 		return persons;

@@ -26,10 +26,14 @@ addPersonApp.controller('addPersonController', function ($scope, $http) {
 	  };
 	
 	$scope.addPerson = function() {
-		$http.post(getCompletePath("persons/createPerson"), JSON.stringify($scope.newPerson))
-		.success(function () {
-			
-	    }).error(function () {
-	    });
+		if ($scope.signup_form.$valid) {
+			$http.post(getCompletePath("persons/createPerson"), JSON.stringify($scope.newPerson))
+			.success(function () {
+				
+		    }).error(function () {
+		    });
+	    } else {
+	      $scope.createPersonForm.submitted = true;
+	    }
 	};
 });

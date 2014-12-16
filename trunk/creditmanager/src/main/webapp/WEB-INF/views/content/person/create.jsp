@@ -24,37 +24,33 @@
 			</ol>
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<form ng-submit="addPerson()">
+					<form ng-submit="addPerson()" name="createPersonForm" novalidate>
 						<h3>CARGAR NUEVA PERSONA</h3>
 						<h4>Complete el formulario</h4>
 						<hr>
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
-									<!-- VALIDACION, agregar active a tooltip -->
-									<div class="tooltip top" role="tooltip">
+									<!-- VALIDACIO“N -->
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.name.$dirty && createPersonForm.name.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar un nombre
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.name.$error.required">Debe ingresar un nombre</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="name">Nombre</label>
-									<input type="text" name="name" class="form-control" maxlength="50" placeholder="Ingrese nombre" tabindex="1" autofocus ng-model="newPerson.name">
+									<input type="text" name="name" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="1" autofocus ng-model="newPerson.name">
 								</div>
 							</div>	
 							<div class="col-sm-6">								
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.surname.$dirty && createPersonForm.surname.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar apellido
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.surname.$error.required">Debe ingresar un apellido</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="surname">Apellido</label>
-									<input type="text" name="surname" class="form-control" maxlength="50" placeholder="Ingrese nombre" tabindex="2" ng-model="newPerson.surname">
+									<input type="text" name="surname" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="2" ng-model="newPerson.surname">
 								</div>								
 							</div>
 						</div>
@@ -99,7 +95,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="idNumber">Número de documento</label>
-									<input type="text" name="idNumber" class="form-control" maxlength="10" placeholder="Ingrese número de documento" tabindex="4" ng-model="newPerson.identityNumber">
+									<input type="number" name="idNumber" class="form-control" required maxlength="10" placeholder="Ingrese número de documento" tabindex="4" ng-model="newPerson.identityNumber">
 								</div>
 							</div>
 							<div class="col-sm-4">
