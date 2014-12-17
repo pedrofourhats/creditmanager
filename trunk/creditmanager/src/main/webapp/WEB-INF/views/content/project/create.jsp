@@ -660,13 +660,9 @@
 									  </td>
 									</tr>
 									<tr>
-									  <td>2</td>
-									  <th>01/01/2015</th>
-									  <th>$1008,2</th>
-									  <th>15/01/2015</th>
-									  <th>$1010</th>
+									  <td>01/01/2015</td>
+									  <td>Se solicita informe del INTA, se recibe informe viable de INTA</td>
 									  <td class="txtC">
-										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
 										<button type="button" class="btn btn-link"><i class="fa fa-pencil txtDanger"></i></button>
 									  </td>
 									</tr>
