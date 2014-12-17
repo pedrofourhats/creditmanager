@@ -455,6 +455,27 @@ table.table-small thead th:first-child {
 table.table-small thead th:last-child {
   width: 15%;
 }
+table.table-report-list {
+  margin-top: 20px;
+}
+table.table-report-list thead th {
+  max-width: 45%;
+}
+table.table-report-list thead th:first-child {
+  width: 45%;
+}
+table.table-report-list thead th:last-child {
+  width: 10%;
+}
+table.table-report-detail {
+  margin-top: 20px;
+}
+table.table-report-detail thead th {
+  max-width: 18%;
+}
+table.table-report-detail thead th:first-child {
+  width: 10%;
+}
 table.table-tiny thead th {
   max-width: 65%;
 }

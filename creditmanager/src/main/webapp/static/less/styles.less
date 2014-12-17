@@ -360,7 +360,7 @@ header {
 .logo {
 	background: url('@{image}logo.png') right top no-repeat;
 	width: 120px;
-	height: 137px;	
+	height: 137px;
 }
 
 .main-nav {
@@ -594,6 +594,35 @@ table {
 				}
 				&:last-child {
 					width: 15%;
+				}
+			}
+		}
+	}
+
+	&.table-report-list {
+		margin-top: 20px;
+		thead {
+			th {
+				max-width: 45%;
+
+				&:first-child {
+					width: 45%;
+				}
+				&:last-child {
+					width: 10%;
+				}
+			}
+		}
+	}
+
+	&.table-report-detail {
+		margin-top: 20px;
+		thead {
+			th {
+				max-width: 18%;
+
+				&:first-child {
+					width: 10%;
 				}
 			}
 		}
