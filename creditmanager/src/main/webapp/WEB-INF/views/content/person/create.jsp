@@ -24,7 +24,7 @@
 			</ol>
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<form ng-submit="addPerson()" name="createPersonForm" novalidate>
+					<form ng-submit="addPerson()" name="createPersonForm" >
 						<h3>CARGAR NUEVA PERSONA</h3>
 						<h4>Complete el formulario</h4>
 						<hr>
@@ -59,11 +59,9 @@
 							<div class="col-sm-4">
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.identityTypeName.$dirty && createPersonForm.identityTypeName.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-									  	Debe ingresar el tipo de documento
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.identityTypeName.$error.required">Debe ingresar el tipo de documento</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label>Tipo de documento</label>
@@ -87,11 +85,9 @@
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.idNumber.$dirty && createPersonForm.idNumber.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar un número de documento
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.idNumber.$error.required">Debe ingresar un documento</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="idNumber">Número de documento</label>
@@ -101,33 +97,22 @@
 							<div class="col-sm-4">
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.birthDate.$dirty && createPersonForm.birthDate.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar fecha de nacimiento
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.birthDate.$error.required">Debe ingresar fecha de nacimiento</div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.birthDate.$error.date">Formato invalido</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<div class="control-group">
-										<label for="date-picker-2" class="control-label">Fecha de nacimiento</label>
-										<div class="controls">
-											<div class="input-group">
-												<input ng-click="open($event)" type="text" maxlength="15" class="date-picker form-control" tabindex="5"
-												 	datepicker-popup="dd/MM/yyyy" ng-model="newPerson.birthDate" is-open="opened" datepicker-options="dateOptions" close-text="Close" />
-												<span class="input-group-btn">
-									                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
-									            </span>											
-											</div>
-										</div>
+										<label for="birthDate" class="control-label">Fecha de nacimiento</label>
+										<input type="date" name="birthDate" ng-model="value" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" required ng-model="newPerson.birthDate"/>	
 									</div>
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.genderName.$dirty && createPersonForm.genderName.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar genero
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.genderName.$error.required">Debe ingresar el genero</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label>Genero</label>
@@ -152,27 +137,24 @@
 							<div class="col-sm-4">
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.cellPhone.$dirty && createPersonForm.cellPhone.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar celular
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.cellPhone.$error.required">Debe ingresar el celular</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="cellPhone">Celular</label>
-									<input type="text" name="cellPhone" class="form-control" maxlength="20" placeholder="Ingrese celular" tabindex="7" ng-model="newPerson.cellPhone">
+									<input type="number" name="cellPhone" class="form-control" required maxlength="20" placeholder="Ingrese celular" tabindex="7" ng-model="newPerson.cellPhone">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.email.$dirty && createPersonForm.email.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar email
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.email.$error.required">Debe ingresar el email</div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.email.$error.email">Formato incorrecto</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="email">Email</label>
-									<input type="email" name="email" class="form-control" maxlength="45" placeholder="Ingrese email" tabindex="8" ng-model="newPerson.email">
+									<input type="email" name="email" class="form-control" required maxlength="45" placeholder="Ingrese email" tabindex="8" ng-model="newPerson.email">
 								</div>
 							</div>
 						</div>
@@ -181,80 +163,68 @@
 							<div class="col-sm-4">
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.province.$dirty && createPersonForm.province.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar provincia
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.province.$error.required">Debe ingresar la provincia</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="province">Provincia</label>
-									<input type="text" name="province" class="form-control" maxlength="45" placeholder="Ingrese una provincia" tabindex="9" ng-model="newPerson.province">
+									<input type="text" name="province" class="form-control" required maxlength="45" placeholder="Ingrese una provincia" tabindex="9" ng-model="newPerson.province">
 	
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.locality.$dirty && createPersonForm.locality.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar localidad
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.locality.$error.required">Debe ingresar la localidad</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="locality">Localidad</label>
-									<input type="text" name="locality" class="form-control" maxlength="45" placeholder="Ingrese una provincia" tabindex="10" ng-model="newPerson.locality">
+									<input type="text" name="locality" class="form-control" required maxlength="45" placeholder="Ingrese una provincia" tabindex="10" ng-model="newPerson.locality">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.address.$dirty && createPersonForm.address.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar dirección
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.address.$error.required">Debe ingresar la dirección</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="address">Dirección</label>
-									<input type="text" name="address" class="form-control" maxlength="100" placeholder="Ingrese dirección" tabindex="11" ng-model="newPerson.address">
+									<input type="text" name="address" class="form-control" required maxlength="100" placeholder="Ingrese dirección" tabindex="11" ng-model="newPerson.address">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.postCode.$dirty && createPersonForm.postCode.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar código postal
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.postCode.$error.required">Debe ingresar el código postal</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="postCode">Código postal</label>
-									<input type="text" name="postCode" class="form-control" maxlength="10" placeholder="Ingrese código postal" tabindex="12" ng-model="newPerson.postCode">
+									<input type="text" name="postCode" class="form-control" required maxlength="10" placeholder="Ingrese código postal" tabindex="12" ng-model="newPerson.postCode">
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.phone.$dirty && createPersonForm.phone.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar teléfono
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.phone.$error.required">Debe ingresar el teléfono</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="phone">Teléfono</label>
-									<input type="text" name="phone" class="form-control" maxlength="20" placeholder="Ingrese teléfono" tabindex="13" ng-model="newPerson.phone">
+									<input type="number" name="phone" class="form-control" required maxlength="20" placeholder="Ingrese teléfono" tabindex="13" ng-model="newPerson.phone">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="tooltip top" role="tooltip">
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.workphone.$dirty && createPersonForm.workphone.$invalid">
 									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar telófono laboral
-									  </div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.workphone.$error.required">Debe ingresar el teléfono laboral</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="workphone">Teléfono laboral</label>
-									<input type="text" name="workphone" class="form-control" maxlength="20" placeholder="Ingrese teléfono laboral" tabindex="14" ng-model="newPerson.workPhone">
+									<input type="number" name="workphone" class="form-control" required maxlength="20" placeholder="Ingrese teléfono laboral" tabindex="14" ng-model="newPerson.workPhone">
 								</div>
 							</div>							
 						</div>
@@ -263,7 +233,7 @@
 							<div class="col-sm-12">
 								<div class="pull-right">
 									<div class="form-group">
-										<input type="submit" class="btn btn-primary" tabindex="15" value="Cargar persona"/>
+										<input type="submit" class="btn btn-primary" tabindex="15" value="Cargar persona" ng-disabled="createPersonForm.$invalid || newPerson.genderName == '' || newPerson.identityTypeName == ''" />
 									</div>
 								</div>
 							</div>
