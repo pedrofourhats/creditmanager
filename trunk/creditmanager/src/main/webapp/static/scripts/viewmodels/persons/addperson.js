@@ -26,11 +26,12 @@ addPersonApp.controller('addPersonController', function ($scope, $http) {
 	  };
 	
 	$scope.addPerson = function() {
-		if ($scope.signup_form.$valid) {
+		if ($scope.createPersonForm.$valid) {
 			$http.post(getCompletePath("persons/createPerson"), JSON.stringify($scope.newPerson))
 			.success(function () {
-				
+				redirect('person/list');
 		    }).error(function () {
+		    	alert("Ocurrio un problema. Por favor intente nuevamente")
 		    });
 	    } else {
 	      $scope.createPersonForm.submitted = true;
