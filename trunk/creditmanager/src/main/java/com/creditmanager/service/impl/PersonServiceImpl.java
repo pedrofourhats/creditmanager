@@ -43,4 +43,10 @@ public class PersonServiceImpl implements PersonService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void deletePerson(long personId) {
+		Person person = this.personDAO.getById(personId);
+		this.personDAO.delete(person);
+	}
 }

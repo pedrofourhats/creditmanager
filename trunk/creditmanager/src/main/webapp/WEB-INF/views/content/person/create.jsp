@@ -247,7 +247,7 @@
 	<footer>
 	</footer>
 
-	<script src="<%=scriptPageContext %>/static/scripts/viewmodels/persons/addPerson.js" type="text/javascript"></script>	
+	<script src="<%=scriptPageContext %>/static/scripts/viewmodels/persons/addPerson.js" type="text/javascript"></script>
 	<script>
 		$("#goToPersonsLink").addClass("active");
 	</script>
