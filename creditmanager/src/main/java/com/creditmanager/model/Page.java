@@ -11,12 +11,15 @@ public class Page<T> {
 	private int pageSize;
 	
 	private Integer totalItems;
+	
+	private int totalPages;
 
 	public Page(List<T> elements, int pageIndex, int pageSize, Integer totalItems){
 		this.elements = elements;
 		this.pageIndex = pageIndex;
 		this.pageSize = pageSize;
 		this.totalItems = totalItems;
+		this.setTotalPages(this.calculateTotalPages());
 	}
 	
 	public List<T> getElements() {
@@ -52,6 +55,14 @@ public class Page<T> {
 	}
 
 	public int getTotalPages() {
+		return totalPages;
+	}
+	
+	public void setTotalPages(int totalPages) {
+		this.totalPages = totalPages;
+	}
+	
+	private int calculateTotalPages() {
 		if(totalItems == 0){
 			return 1;
 		}

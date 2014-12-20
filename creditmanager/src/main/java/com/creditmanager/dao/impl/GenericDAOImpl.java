@@ -42,7 +42,7 @@ public abstract class GenericDAOImpl<T, PK extends Serializable> implements Gene
 		
 		criteria.setProjection(null)
 			.setFirstResult((pageIndex - 1) * pageSize)
-				.setMaxResults(pageIndex * pageSize);
+				.setMaxResults(pageSize);
 		
 		List<T> elements = (List<T>) hibernateTemplate.findByCriteria(detachedCriteria);
 		

@@ -13,25 +13,13 @@ addPersonApp.controller('addPersonController', function ($scope, $http) {
 		$scope.newPerson.genderName = gender.name;
 	};
 	
-	$scope.dateOptions = {
-	    formatYear: 'yy',
-	    startingDay: 1
-	};
-
-	$scope.open = function($event) {
-	    $event.preventDefault();
-	    $event.stopPropagation();
-
-	    $scope.opened = true;
-	  };
-	
 	$scope.addPerson = function() {
 		if ($scope.createPersonForm.$valid) {
 			$http.post(getCompletePath("persons/createPerson"), JSON.stringify($scope.newPerson))
 			.success(function () {
 				redirect('person/list');
 		    }).error(function () {
-		    	alert("Ocurrio un problema. Por favor intente nuevamente")
+		    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
 		    });
 	    } else {
 	      $scope.createPersonForm.submitted = true;

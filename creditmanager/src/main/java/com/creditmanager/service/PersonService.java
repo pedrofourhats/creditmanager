@@ -10,7 +10,12 @@ import com.creditmanager.service.dto.PersonDTO;
 public interface PersonService {
 	
 	Person getById(Long id);
+	
 	Page<PersonDTO> getAllPerson(int pageIndex, int pageSize);
+	
 	void addPerson(PersonDTO person);
+	
 	void editPerson(PersonDTO person);
+	
+	void deletePerson(long personId);
 }

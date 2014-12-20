@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.creditmanager.service.PersonService;
+import com.google.gson.Gson;
 
 @Controller
 public class PersonController {
@@ -13,14 +14,10 @@ public class PersonController {
 	@Autowired
 	private PersonService personService;
 	
-//	@RequestMapping(value="/persons", method = RequestMethod.GET, headers="Accept=*/*")
-//	public @ResponseBody List<PersonDTO> getAll(){
-//		List<PersonDTO> persons = personService.getAll();
-//		return persons;
-//	}
-	
 	@RequestMapping(value="/person/list")
     public String goToList(Model model) {
+		Gson gson = new Gson();
+		model.addAttribute("personsPage", gson.toJson(personService.getAllPerson(1, 10)));
 		return "content/person/list";
     }
 	

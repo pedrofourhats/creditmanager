@@ -11,5 +11,9 @@
 <script src="<%=scriptPageContext %>/static/js/less-1.7.5.min.js" type="text/javascript"></script>
 <script src="<%=scriptPageContext %>/static/js/jquery.min.js" type="text/javascript"></script>		
 <script src="<%=scriptPageContext %>/static/js/bootstrap.js" type="text/javascript"></script>
+
+<!-- Angular Plugins-->
+<script src="<%=scriptPageContext %>/static/js/smart-table.min.js" type="text/javascript"></script>
+
 	
 <script src="<%=scriptPageContext%>/static/scripts/master.js" type="text/javascript"></script>
