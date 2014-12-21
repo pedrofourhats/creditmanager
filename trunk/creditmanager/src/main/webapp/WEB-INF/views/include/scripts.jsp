@@ -4,7 +4,8 @@
 
 <% String scriptPageContext = request.getContextPath(); %>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.7/angular-route.min.js">
 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
 <script src="http://code.angularjs.org/1.0.8/i18n/angular-locale_es-es.js"></script>
 
