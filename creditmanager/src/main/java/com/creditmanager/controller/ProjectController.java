@@ -9,7 +9,7 @@ public class ProjectController  {
 	
 	@RequestMapping(value="/project/list")
     public String goToList(Model model) {
-		return "content/project/list";
+		return "content/project/index";
     }
 	
 	@RequestMapping(value="/project/detail")
@@ -17,8 +17,18 @@ public class ProjectController  {
 		return "content/project/detail";
     }
 	
+//	@RequestMapping(value="/project/create")
+//    public String goToProjectCreation(Model model) {
+//		return "content/project/create";
+//    }
+	
+	@RequestMapping(value="/project/listHtml")
+	public String projectList(Model model){
+		return "redirect:/pages/project-list.html";
+	}
+	
 	@RequestMapping(value="/project/create")
-    public String goToProjectCreation(Model model) {
-		return "content/project/create";
-    }
+	public String goToProjectCreation(Model model){
+		return "redirect:/pages/project-create.html";
+	}
 }

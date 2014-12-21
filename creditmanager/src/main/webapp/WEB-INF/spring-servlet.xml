@@ -30,6 +30,7 @@
 <!--         p:maxUploadSize="2000000"/> -->
 	
 	<mvc:resources mapping="/static/**" location="/static/" />
+	<mvc:resources mapping="/templates/**" location="/WEB-INF/views/angular-templates/" />
 	
 	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
 		<property name="caseSensitive" value="true" />

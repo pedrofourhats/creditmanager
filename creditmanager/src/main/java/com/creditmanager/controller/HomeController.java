@@ -14,6 +14,6 @@ public class HomeController {
 	
 	@RequestMapping(value="/home")
     public String home(Model model) {
-		return "content/project/list";
+		return "content/project/index";
     }
 }

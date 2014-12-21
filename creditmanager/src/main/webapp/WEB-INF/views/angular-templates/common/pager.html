@@ -1,0 +1,18 @@
+<ul class="pagination pull-right">
+	<li>
+		<a href="javascript:void(0);" ng-hide="isFirstPage()" ng-click="getPreviousPage()">
+			<i class="fa fa-chevron-left"></i>
+		</a>
+	</li>
+	
+	<li ng-repeat="page in pagesToShow">
+		<a href="javascript:void(0);" ng-show="showPagingNumbers()" ng-disabled="page == currentPage" 
+		ng-class="{ on_: page == currentPage }" ng-click="getPage(page)">{{page}}</a>
+	</li>
+	
+	<li>
+		<a href="javascript:void(0);" ng-show="moreItems()" ng-click="getNextPage()">
+			<i class="fa fa-chevron-right"></i>
+		</a>
+	</li>
+</ul>
