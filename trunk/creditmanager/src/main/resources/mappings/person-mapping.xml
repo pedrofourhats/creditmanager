@@ -17,8 +17,16 @@
         <b>name</b>
       </field>
       <field>
+        <a>surname</a>
+        <b>surname</b>
+      </field>
+      <field>
         <a>identityNumber</a>
         <b>identityNumber</b>
+      </field>
+      <field>
+        <a>identityType</a>
+        <b>identityType</b>
       </field>
       <field>
         <a>birthDate</a>
@@ -27,6 +35,10 @@
       <field>
         <a>phone</a>
         <b>phone</b>
+      </field>
+      <field>
+        <a>gender</a>
+        <b>gender</b>
       </field>
       <field>
         <a>workPhone</a>
@@ -47,6 +59,10 @@
       <field>
         <a>locality</a>
         <b>locality</b>
+      </field>
+      <field>
+        <a>address</a>
+        <b>address</b>
       </field>
       <field>
         <a>postCode</a>
