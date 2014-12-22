@@ -9,6 +9,9 @@
 	<title>INTI</title>
 	<!-- SCRIPTS -->
 	<%@ include file="../../include/scripts.jsp" %>
+	<script>
+		var editablePerson = <%= request.getAttribute("editablePerson") %>; 
+	</script>
 	
 	<!-- STYLESHEET -->
 	<%@ include file="../../include/styles.jsp" %>
@@ -92,7 +95,7 @@
 									<!-- end VALIDACIO“N -->
 									<label for="idNumber">Número de documento</label>
 									<input type="number" name="idNumber" class="form-control" required maxlength="10" placeholder="Ingrese número de documento" tabindex="4" ng-model="newPerson.identityNumber">
-								</div>
+									</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group">
@@ -105,7 +108,7 @@
 									<!-- end VALIDACIO“N -->
 									<div class="control-group">
 										<label for="birthDate" class="control-label">Fecha de nacimiento</label>
-										<input type="date" name="birthDate" ng-model="value" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" required ng-model="newPerson.birthDate"/>	
+										<input type="date" name="birthDate" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" required ng-model="newPerson.birthDate"/>	
 									</div>
 								</div>
 								<div class="form-group">

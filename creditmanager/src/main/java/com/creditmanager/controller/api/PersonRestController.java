@@ -19,8 +19,13 @@ public class PersonRestController {
 	private PersonService personService;
 	
 	@RequestMapping(value="/persons/{pageIndex}/{pageSize}", method = RequestMethod.GET, consumes="*/*")
-	public @ResponseBody Page<PersonDTO> getAll(@PathVariable int pageIndex, @PathVariable int pageSize ){
-		return personService.getAllPerson(pageIndex, pageSize);
+	public @ResponseBody Page<PersonDTO> getAll(@PathVariable int pageIndex, @PathVariable int pageSize){
+		return personService.getAllPerson(pageIndex, pageSize, null);
+	}
+	
+	@RequestMapping(value="/persons/{pageIndex}/{pageSize}/{searchedKeyword}", method = RequestMethod.GET, consumes="*/*")
+	public @ResponseBody Page<PersonDTO> getFiltered(@PathVariable int pageIndex, @PathVariable int pageSize, @PathVariable String searchedKeyword){
+		return personService.getAllPerson(pageIndex, pageSize, searchedKeyword);
 	}
 	
 	@RequestMapping(value="/persons/createPerson", method = RequestMethod.POST)
@@ -33,8 +38,8 @@ public class PersonRestController {
 		personService.deletePerson(personId);
 	}
 	
-	@RequestMapping(value="/persons", method = RequestMethod.PUT)
-	public @ResponseBody void editPerson(PersonDTO person) {
+	@RequestMapping(value="/persons/editPerson", method = RequestMethod.PUT)
+	public @ResponseBody void editPerson(@RequestBody PersonDTO person) {
 		personService.editPerson(person);
 	}
 }

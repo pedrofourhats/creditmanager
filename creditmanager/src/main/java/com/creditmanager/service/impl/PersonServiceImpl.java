@@ -21,13 +21,20 @@ public class PersonServiceImpl implements PersonService {
 	private PersonDAO personDAO;
 
 	@Override
-	public Person getById(Long id) {
-		return personDAO.getById(id);
+	public PersonDTO getById(Long id) {
+		return MapperUtil.map(mapper, personDAO.getById(id), PersonDTO.class);
 	}
 
 	@Override
-	public Page<PersonDTO> getAllPerson(int pageIndex, int pageSize) {
-		Page<Person> personList = personDAO.getAllPerson(pageIndex, pageSize);
+	public Page<PersonDTO> getAllPerson(int pageIndex, int pageSize, String searchedKeyword) {
+		Page<Person> personList;
+		
+		if(searchedKeyword != null) {
+			personList = personDAO.getFilteredPerson(pageIndex, pageSize, searchedKeyword);
+		} else {
+			personList = personDAO.getAllPerson(pageIndex, pageSize);		
+		}
+		
 		return MapperUtil.map(mapper, personList, PersonDTO.class);
 	}
 
@@ -40,8 +47,22 @@ public class PersonServiceImpl implements PersonService {
 
 	@Override
 	public void editPerson(PersonDTO person) {
-		// TODO Auto-generated method stub
-		
+		Person personToEdit = personDAO.getById(person.getId());
+		personToEdit.setAddress(person.getAddress());
+		personToEdit.setBirthDate(person.getBirthDate());
+		personToEdit.setCellPhone(person.getCellPhone());
+		personToEdit.setEmail(person.getEmail());
+		personToEdit.setGender(person.getGender());
+		personToEdit.setIdentityNumber(person.getIdentityNumber());
+		personToEdit.setIdentityType(person.getIdentityType());
+		personToEdit.setLocality(person.getLocality());
+		personToEdit.setName(person.getName());
+		personToEdit.setPhone(person.getPhone());
+		personToEdit.setPostCode(person.getPostCode());
+		personToEdit.setProvince(person.getProvince());
+		personToEdit.setSurname(person.getSurname());
+		personToEdit.setWorkPhone(person.getWorkPhone());
+		personDAO.add(personToEdit);
 	}
 
 	@Override

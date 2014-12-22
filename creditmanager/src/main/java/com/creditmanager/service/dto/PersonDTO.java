@@ -21,6 +21,8 @@ public class PersonDTO {
 	
 	private Gender gender;
 	
+	private String genderName;
+	
 	private String phone;
 	
 	private String workPhone;
@@ -91,8 +93,17 @@ public class PersonDTO {
 
 	public void setGender(Gender gender) {
 		this.gender = gender;
+		this.setGenderName(this.gender.equals(Gender.MALE) ? "MASCULINO" : "FEMENINO");
 	}
 
+	public String getGenderName() {
+		return genderName;
+	}
+
+	public void setGenderName(String genderName) {
+		this.genderName = genderName;
+	}
+	
 	public String getPhone() {
 		return phone;
 	}

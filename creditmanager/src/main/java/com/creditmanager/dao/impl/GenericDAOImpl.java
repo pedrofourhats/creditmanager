@@ -33,7 +33,7 @@ public abstract class GenericDAOImpl<T, PK extends Serializable> implements Gene
 	}
 	
 	@SuppressWarnings("unchecked")
-	protected Page<T> getPageByCriteria(DetachedCriteria detachedCriteria, int pageIndex, int pageSize){
+	protected Page<T> getPageByCriteria(DetachedCriteria detachedCriteria, int pageIndex, int pageSize) {
 		Session session = hibernateTemplate.getSessionFactory().getCurrentSession();
 		Criteria criteria = detachedCriteria.getExecutableCriteria(session);
 		

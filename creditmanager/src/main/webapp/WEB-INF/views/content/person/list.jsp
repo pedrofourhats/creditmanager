@@ -59,12 +59,15 @@
 			</div>
 			<div class="pull-right form-inline">
 				<div class="form-group">
-					<label for="exampleInputEmail1">Buscar persona</label>
-					<input type="email" class="form-control" placeholder="Ingrese nombre">
+					<label>Buscar persona</label>
+					<input class="form-control" ng-model="searchedKeyword">
 				</div>
 				<div class="form-group">
-					<button type="button" class="btn btn-primary">
+					<button type="button" class="btn btn-primary" ng-click="search()" ng-disabled="!searchedKeyword">
 						<i class="fa fa-search"></i> Buscar
+					</button>
+					<button type="button" class="btn btn-primary" ng-click="deleteSearch()" ng-show="isSearching">
+						<i class="fa fa-search"></i> Eliminar filtro
 					</button>
 				</div>
 			</div>
@@ -97,11 +100,11 @@
 						  <td>{{person.surname}}</td>
 						  <td>{{person.identityNumber}}</td>
 						  <td>{{person.birthDate}}</td>
-						  <td>{{person.gender}}</td>
+						  <td>{{person.genderName}}</td>
 						  <td>{{person.phone}}</td>
 						  <td>{{person.cellPhone}}</td>
 						  <td class="txtC">
-							<button type="button" class="btn btn-link" onclick="redirect('person/detail');"><i class="fa fa-pencil txtSuccess"></i></button>
+							<button type="button" class="btn btn-link" ng-click="goToEditPerson(person)"><i class="fa fa-pencil txtSuccess"></i></button>
 							<button type="button" class="btn btn-link" ng-click="deletePerson(person)"><i class="fa fa-trash txtDanger"></i></button>
 						  </td>
 						</tr>
