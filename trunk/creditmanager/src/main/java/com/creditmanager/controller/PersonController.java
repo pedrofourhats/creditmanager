@@ -22,8 +22,10 @@ public class PersonController {
 		return "content/person/list";
     }
 	
-	@RequestMapping(value="/person/detail")
-    public String goToDetail(Model model) {
+	@RequestMapping(value="/person/detail/{personId}")
+    public String goToDetail(@PathVariable long personId, Model model) {
+		Gson gson = new Gson();
+		model.addAttribute("person", gson.toJson(personService.getById(personId)));
 		return "content/person/detail";
     }
 	

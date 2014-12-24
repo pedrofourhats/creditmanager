@@ -21,6 +21,10 @@ personsListApp.controller('personsListController', function ($scope, $http) {
     	redirect('person/edit/' + person.id);
     };
     
+    $scope.goToDetail = function(person) {
+    	redirect('person/detail/' + person.id);
+    };
+    
 	$scope.goToPage = function(pageNumber) {
 		if($scope.personsPage.pageIndex != pageNumber) {
 			var path = "persons/" + pageNumber + "/10" + ($scope.searchedKeyword ? "/" + $scope.searchedKeyword : "");

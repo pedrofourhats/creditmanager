@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="personApp">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,6 +10,9 @@
 	
 	<!-- SCRIPTS -->
 	<%@ include file="../../include/scripts.jsp" %>
+	<script>
+		var personDetail = <%= request.getAttribute("person") %>; 
+	</script>
 	
 	<!-- STYLESHEET -->
 	<%@ include file="../../include/styles.jsp" %>
@@ -18,7 +21,7 @@
 <body>
 	<%@ include file="../../include/header.jsp" %>
 	
-	<section>
+	<section ng-controller="personDetailController">
 		<div class="container">
 			<ol class="breadcrumb">
 			  <li><a href="#"><i class="fa fa-angel-right"></i> Personas</a></li>
@@ -31,42 +34,42 @@
 					<hr>
 					<div class="row txtBlue">
 						<div class="col-sm-12">
-							<h4>Nombre: <span>Nombre</span> <span>Apellido</span></h4>
+							<h4>Nombre: <span>{{person.name}}</span> <span>{{person.surname}}</span></h4>
 						</div>								
 					</div>
 					<hr>
 					<div class="row txtGrayd">
 						<div class="col-sm-4">
-							Tipo de documento: <span class="txtBlue">Nombre</span>
+							Tipo de documento: <span class="txtBlue">{{person.identityTypeName}}</span>
 							<br>
-							Número de documento: <span class="txtBlue">22222222</span>
+							Número de documento: <span class="txtBlue">{{person.identityNumber}}</span>
 						</div>
 						<div class="col-sm-4">
-							Fecha de nacimiento: <span class="txtBlue">22/22/2222</span>
+							Fecha de nacimiento: <span class="txtBlue">{{person.birthDate}}</span>
 							<br>
-							Genero:	<span class="txtBlue">22/22/2222</span>							
+							Genero:	<span class="txtBlue">{{person.genderName}}</span>							
 						</div>
 						<div class="col-sm-4">
-							Celular: <span class="txtBlue">22222222</span>
-							Email: <span class="txtBlue">email@email.com</span>
+							Celular: <span class="txtBlue">{{person.cellphone}}</span>
+							Email: <span class="txtBlue">{{person.email}}</span>
 						</div>
 					</div>
 					<hr>
 					<div class="row txtGrayd">
 						<div class="col-sm-4">
-							Provincia: <span class="txtBlue">PPPPPPPP</span>
+							Provincia: <span class="txtBlue">{{person.province}}</span>
 							<br>
-							Localidad: <span class="txtBlue">LLLLLLLL</span>
+							Localidad: <span class="txtBlue">{{person.locality}}</span>
 						</div>
 						<div class="col-sm-4">
-							DirecciÃ³n: <span class="txtBlue">DDDDDDDD</span>
+							Dirección: <span class="txtBlue">{{person.address}}</span>
 							<br>
-							Código postal: <span class="txtBlue">CPCPCPCP</span>
+							Código postal: <span class="txtBlue">{{person.postCode}}</span>
 						</div>
 						<div class="col-sm-4">
-							Teléfono: <span class="txtBlue">55555555</span>
+							Teléfono: <span class="txtBlue">{{person.phone}}</span>
 							<br>
-							Teléfono laboral: <span class="txtBlue">44444444</span>
+							Teléfono laboral: <span class="txtBlue">{{person.workPhone}}</span>
 						</div>							
 					</div>
 					<hr>
@@ -77,7 +80,7 @@
 						  <th>Proyecto
 						  	<a href="javascript:void(0);">
 						  		<!-- cambiar a fa-caret-up -->
-						  		Proyecto <i class="fa fa-caret-down pull-right"></i>
+						  		Proyecto<!--  <i class="fa fa-caret-down pull-right"></i> -->
 						  	</a>
 						  </th>
 						  <th>ID Proyecto</th>
@@ -112,9 +115,9 @@
 	</section>
 	
 	<footer>
-	
 	</footer>
 	
+	<script src="<%=scriptPageContext %>/static/scripts/viewmodels/persons/personDetail.js" type="text/javascript"></script>
 	<script>
 		$("#goToPersonsLink").addClass("active");
 	</script>
