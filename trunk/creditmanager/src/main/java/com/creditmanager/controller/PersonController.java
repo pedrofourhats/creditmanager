@@ -1,5 +1,8 @@
 package com.creditmanager.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.creditmanager.service.PersonService;
+import com.creditmanager.service.dto.ProjectDTO;
 import com.google.gson.Gson;
 
 @Controller
@@ -26,6 +30,17 @@ public class PersonController {
     public String goToDetail(@PathVariable long personId, Model model) {
 		Gson gson = new Gson();
 		model.addAttribute("person", gson.toJson(personService.getById(personId)));
+		
+		/**cambiar por una llamada al servicio**/
+		List<ProjectDTO> projects = new ArrayList<ProjectDTO>();
+		for(int i = 0; i < 3; i++) {
+			ProjectDTO p = new ProjectDTO();
+			p.setTitle("Proyecto " + i);
+			p.setId(new Long(12345 + i));
+			projects.add(p);	
+		}
+		
+		model.addAttribute("projects", gson.toJson(projects));
 		return "content/person/detail";
     }
 	

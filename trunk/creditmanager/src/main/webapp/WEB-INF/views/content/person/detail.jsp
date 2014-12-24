@@ -11,7 +11,8 @@
 	<!-- SCRIPTS -->
 	<%@ include file="../../include/scripts.jsp" %>
 	<script>
-		var personDetail = <%= request.getAttribute("person") %>; 
+		var personDetail = <%= request.getAttribute("person") %>;
+		var projects = <%= request.getAttribute("projects") %>;
 	</script>
 	
 	<!-- STYLESHEET -->
@@ -45,7 +46,7 @@
 							Número de documento: <span class="txtBlue">{{person.identityNumber}}</span>
 						</div>
 						<div class="col-sm-4">
-							Fecha de nacimiento: <span class="txtBlue">{{person.birthDate}}</span>
+							Fecha de nacimiento: <span class="txtBlue">{{person.formattedBirthDate}}</span>
 							<br>
 							Genero:	<span class="txtBlue">{{person.genderName}}</span>							
 						</div>
@@ -88,15 +89,10 @@
 						</tr>
 					  </thead>
 					  <tbody>
-						<tr>
-						  <td>Diseño industrial</td>
-						  <td>1A-2345</td>
+						<tr ng-repeat="project in projects">
+						  <td>{{project.title}}</td>
+						  <td>{{project.id}}</td>
 						  <td>Titular</td>
-						</tr>
-						<tr>
-						  <td>Metalurgica</td>
-						  <td>1B-2345</td>
-						  <td>Testigo</td>
 						</tr>
 					  </tbody>
 					</table>
