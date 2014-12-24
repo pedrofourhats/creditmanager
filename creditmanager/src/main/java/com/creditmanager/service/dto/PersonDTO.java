@@ -1,5 +1,7 @@
 package com.creditmanager.service.dto;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.creditmanager.model.enums.Gender;
@@ -18,6 +20,8 @@ public class PersonDTO {
 	private IdentityType identityType;
 	
 	private Date birthDate;
+	
+	private String formattedBirthDate;
 	
 	private Gender gender;
 	
@@ -85,6 +89,16 @@ public class PersonDTO {
 
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
+		this.setFormattedBirthDate(birthDate);
+	}
+	
+	public String getFormattedBirthDate() {
+		return formattedBirthDate;
+	}
+
+	@SuppressWarnings("deprecation")
+	public void setFormattedBirthDate(Date birthDate) {
+		this.formattedBirthDate = birthDate.getDate() + "/" + birthDate.getMonth() + "/" + birthDate.getYear();
 	}
 
 	public Gender getGender() {

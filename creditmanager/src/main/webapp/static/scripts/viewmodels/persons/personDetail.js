@@ -12,6 +12,8 @@ personDetailApp.controller('personDetailController', function ($scope, $http) {
 	personDetail.birthDate = new Date(personDetail.birthDate);
 	
 	$scope.person = personDetail;
+	
+	$scope.projects = projects;
 });
 
 function getIdentityTypeName(identityTypeName) {

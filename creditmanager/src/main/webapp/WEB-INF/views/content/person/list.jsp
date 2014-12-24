@@ -96,13 +96,13 @@
 					  </thead>
 					  <tbody>
 						<tr ng-repeat="person in personsPage.elements">
-						  <td ng-click="goToDetail(person)">{{person.name}}</td>
-						  <td ng-click="goToDetail(person)">{{person.surname}}</td>
-						  <td>{{person.identityNumber}}</td>
-						  <td>{{person.birthDate}}</td>
-						  <td>{{person.genderName}}</td>
-						  <td>{{person.phone}}</td>
-						  <td>{{person.cellPhone}}</td>
+						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.name}}</td>
+						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.surname}}</td>
+						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.identityNumber}}</td>
+						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.formattedBirthDate}}</td>
+						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.genderName}}</td>
+						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.phone}}</td>
+						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.cellPhone}}</td>
 						  <td class="txtC">
 							<button type="button" class="btn btn-link" ng-click="goToEditPerson(person)"><i class="fa fa-pencil txtSuccess"></i></button>
 							<button type="button" class="btn btn-link" ng-click="deletePerson(person)"><i class="fa fa-trash txtDanger"></i></button>
