@@ -96,8 +96,8 @@
 					  </thead>
 					  <tbody>
 						<tr ng-repeat="person in personsPage.elements">
-						  <td>{{person.name}}</td>
-						  <td>{{person.surname}}</td>
+						  <td ng-click="goToDetail(person)">{{person.name}}</td>
+						  <td ng-click="goToDetail(person)">{{person.surname}}</td>
 						  <td>{{person.identityNumber}}</td>
 						  <td>{{person.birthDate}}</td>
 						  <td>{{person.genderName}}</td>
