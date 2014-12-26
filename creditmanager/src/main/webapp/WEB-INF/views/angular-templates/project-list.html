@@ -12,18 +12,18 @@
 				</button>
 			</div>
 		</div>
-		<div class="pull-right form-inline">
+		<div class="pull-right form-inline" ng-hide="advancedSearch">
 			<div class="form-group">
-				<label for="exampleInputEmail1">Buscar por ID de proyecto</label> <input
-					type="email" class="form-control" placeholder="ID de proyecto">
+				<label for="exampleInputEmail1">Buscar por ID de proyecto</label> 
+				<input type="text" class="form-control" placeholder="ID de proyecto" ng-model="projectNumber">
 			</div>
 			<div class="form-group">
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-primary" ng-click="searchproject()">
 					<i class="fa fa-search"></i> Buscar
 				</button>
 			</div>
 			<div class="form-group">
-				<button type="button" class="btn btn-default">
+				<button type="button" class="btn btn-default" ng-click="toggleAdvancedSearch()">
 					<i class="fa fa-search"></i> Busqueda avanzada
 				</button>
 			</div>
@@ -31,7 +31,7 @@
 	</div>
 
 	<!-- BUSQUEDA AVANZADA -->
-	<div class="container">
+	<div class="container" ng-show="advancedSearch">
 		<div class="pull-left form-inline">
 			<div class="form-group">
 				<input type="email" class="form-control" placeholder="Buscar por...">
@@ -56,11 +56,11 @@
 			</div>
 		</div>
 		<div class="pull-right form-inline">
-			<div class="form-group">
-				<button type="button" class="btn btn-primary">
-					<i class="fa fa-print"></i> Imprimir
-				</button>
-			</div>
+<!-- 			<div class="form-group"> -->
+<!-- 				<button type="button" class="btn btn-primary"> -->
+<!-- 					<i class="fa fa-print"></i> Imprimir -->
+<!-- 				</button> -->
+<!-- 			</div> -->
 			<!-- esta opcion debe abrir modal -->
 			<div class="form-group">
 				<button type="button" class="btn btn-primary">
@@ -74,22 +74,29 @@
 	<div class="container">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<table
-					class="table table-hover table-condensed table-responsive table-product">
+				<table class="table table-hover table-condensed table-responsive table-product">
 					<thead>
 						<tr>
-							<th><a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->
-									T’tulo <i class="fa fa-caret-down pull-right"></i>
-							</a></th>
-							<th><a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->
-									Tipo <i class="fa fa-caret-down pull-right"></i>
-							</a></th>
-							<th><a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->
-									Sector <i class="fa fa-caret-down pull-right"></i>
-							</a></th>
-							<th><a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->
-									Rubro <i class="fa fa-caret-down pull-right"></i>
-							</a></th>
+							<th>
+								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->T’tulo 
+<!-- 									<i class="fa fa-caret-down pull-right"></i> -->
+								</a>
+							</th>
+							<th>
+								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->Tipo 
+<!-- 									<i class="fa fa-caret-down pull-right"></i> -->
+								</a>
+							</th>
+							<th>
+								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->Sector 
+<!-- 									<i class="fa fa-caret-down pull-right"></i> -->
+								</a>
+							</th>
+							<th>
+								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->Rubro 
+<!-- 									<i class="fa fa-caret-down pull-right"></i> -->
+								</a>
+							</th>
 							<th class="txtC">Acciones</th>
 						</tr>
 					</thead>
@@ -109,25 +116,10 @@
 								</button>
 							</td>
 						</tr>
-<!-- 						<tr> -->
-<!-- 							<td>2</td> -->
-<!-- 							<td>Jacob</td> -->
-<!-- 							<td>Thornton</td> -->
-<!-- 							<td>@fat</td> -->
-<!-- 							<td class="txtC"> -->
-<!-- 								<button type="button" class="btn btn-link" -->
-<!-- 									onclick="redirect('project/detail');"> -->
-<!-- 									<i class="fa fa-pencil txtSuccess"></i> -->
-<!-- 								</button> -->
-<!-- 								<button type="button" class="btn btn-link"> -->
-<!-- 									<i class="fa fa-trash txtDanger"></i> -->
-<!-- 								</button> -->
-<!-- 							</td> -->
-<!-- 						</tr> -->
 					</tbody>
 				</table>
 				<nav>
-					<pagination items-per-page="pageQty" service-name="'/creditmanager/projects'" on-success="onSucces(page)"></pagination>
+					<pagination items-per-page="pageQty" service-name="'/creditmanager/projects'" on-success="onSucces(page)" search="searchproject" filter="projectNumber"></pagination>
 				</nav>
 			</div>
 		</div>

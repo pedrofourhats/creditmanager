@@ -7,7 +7,9 @@ angular.module('pager', [])
             serviceName: '=',
             parentId: '=',
             spinner: '=',
-            onSuccess: '&'
+            onSuccess: '&',
+            search: '=search',
+            filter: '='
         },
         templateUrl: getCompletePath('/templates/common/pager.html'),
         controller: function ($scope, $element) {
@@ -46,10 +48,15 @@ angular.module('pager', [])
                 var filter = $scope.filter || '';
                 var parentId = $scope.parentId || null;
                 //var params = { type: type, filter: filter, page: pageNumber, maximumRows: $scope.itemsPerPage, parentId: parentId };
+                var serviceName = filter != '' ? $scope.serviceName + "/" + filter: $scope.serviceName;
                 var params = { pageIndex: pageNumber, pageSize: $scope.itemsPerPage };
-                $http({ method: 'GET', url: $scope.serviceName, params: params }).success($scope.getPageSuccess).error($scope.errorHandler);
+                $http({ method: 'GET', url: serviceName, params: params }).success($scope.getPageSuccess).error($scope.errorHandler);
             };
 
+            $scope.search = function(){
+            	$scope.getPage(1);
+            };
+            
             $scope.getNextPage = function () {
                 $scope.currentPage = $scope.currentPage + 1;
                 $scope.getPage($scope.currentPage);

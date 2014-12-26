@@ -21,14 +21,4 @@ public class ProjectController  {
 //    public String goToProjectCreation(Model model) {
 //		return "content/project/create";
 //    }
-	
-	@RequestMapping(value="/project/listHtml")
-	public String projectList(Model model){
-		return "redirect:/pages/project-list.html";
-	}
-	
-	@RequestMapping(value="/project/create")
-	public String goToProjectCreation(Model model){
-		return "redirect:/pages/project-create.html";
-	}
 }
