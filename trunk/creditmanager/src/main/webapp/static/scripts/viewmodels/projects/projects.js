@@ -1,4 +1,4 @@
-var projectApp = angular.module('projectApp',['ngRoute','project.controllers', 'pager']);
+var projectApp = angular.module('projectApp',['ngRoute','project.controllers', 'pager', 'smart-table']);
 
 projectApp.config(function($routeProvider){
 	$routeProvider.when('/project-list', {
@@ -23,12 +23,23 @@ var projectControllers = angular.module('project.controllers', []);
 
 projectControllers.controller('ProjectListCtrl', ['$scope','$location',
 	function($scope, $location){
-		$scope.pageQty = 1;
+		$scope.pageQty = 2;
 		$scope.projects = [];
+//		$scope.search = {};
+//		$scope.search.projectNumber = '2';
+		
+		$scope.advancedSearch = false;
+		
+		$scope.toggleAdvancedSearch = function(){
+			$scope.advancedSearch = !$scope.advancedSearch;
+		};
 		
 		$scope.onSucces = function (page){
 			$scope.projects = page.elements;
 		};
+		
+		//copy the references
+		$scope.displayedCollection = [].concat($scope.projects);
 		
 		$scope.createNewProject = function(){
 			$location.path('/project-creation');

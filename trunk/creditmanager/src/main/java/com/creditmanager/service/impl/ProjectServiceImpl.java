@@ -40,4 +40,9 @@ public class ProjectServiceImpl implements ProjectService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public Page<ProjectDTO> getByNumber(int pageIndex, int pageSize, Long number) {
+		return MapperUtil.map(mapper, projectDao.findByProjectNumber(pageIndex, pageSize, number), ProjectDTO.class);
+	}
 }
