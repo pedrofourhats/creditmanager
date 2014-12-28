@@ -166,40 +166,6 @@ h1, h2, h3, h4, h5 {
 	clear: both;
 }
 
-// BASIC COLS
-[class^="col-"],
-[class*=" col-"] {
-	float: left;
-}
-
-// QUICK 2 COLS
-.col2 {
-	width: 49.9999999999%;
-	float: left;
-	overflow: hidden
-}
-
-// QUICK 3 COLS
-.col3 {
-	width: 33.333333333%;
-	float: left;
-	overflow: hidden
-}
-
-// QUICK 4 COLS
-.col4 {
-	width: 25%;
-	float: left;
-	overflow: hidden
-}
-
-// QUICK 5 COLS
-.col5 {
-	width: 19.999999999%;
-	float: left;
-	overflow: hidden
-}
-
 // BOX SIZING
 * {
 	box-sizing:border-box;
@@ -272,6 +238,10 @@ h1, h2, h3, h4, h5 {
 }
 .vabl {
 	vertical-align: baseline;	
+}
+
+.mt10 {
+	margin-top: 10px;
 }
 
 .mt20 {
@@ -744,4 +714,19 @@ label.control-label span { cursor: pointer; }
 
 label {
 	color: @gray;
+}
+
+// FORMS LIST
+.forms-list {
+	.form-control {
+		display: inline-block;
+		width: auto;
+	}
+	hr {
+		margin: 50px 0 20px;
+		border: 1px dotted @gray-light;
+	}
+	.signature {
+		margin-top: 50px;
+	}
 }
