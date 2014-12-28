@@ -67,7 +67,7 @@
 						<i class="fa fa-search"></i> Buscar
 					</button>
 					<button type="button" class="btn btn-primary" ng-click="deleteSearch()" ng-show="isSearching">
-						<i class="fa fa-search"></i> Eliminar filtro
+						<i class="fa fa-close"></i> Eliminar filtro
 					</button>
 				</div>
 			</div>
