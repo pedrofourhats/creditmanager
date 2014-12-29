@@ -9,6 +9,8 @@
         <mapping class="com.creditmanager.model.Role" />
         <mapping class="com.creditmanager.model.Person" />
         <mapping class="com.creditmanager.model.Project" />
+        <mapping class="com.creditmanager.model.Accesor" />
+        <mapping class="com.creditmanager.model.Evaluator" />
     </session-factory>
          
 </hibernate-configuration>

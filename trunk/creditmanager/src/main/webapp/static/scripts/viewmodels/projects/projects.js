@@ -25,8 +25,6 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location',
 	function($scope, $location){
 		$scope.pageQty = 2;
 		$scope.projects = [];
-//		$scope.search = {};
-//		$scope.search.projectNumber = '2';
 		
 		$scope.advancedSearch = false;
 		

@@ -1,9 +1,16 @@
 package com.creditmanager.model;
 
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +22,7 @@ public class Project extends com.creditmanager.model.Entity {
 	private String title;
 	
 	@Column(name="type")
-	private int type;
+	private String type;
 	
 	@Column(name="economicArea")
 	private String economicArea;
@@ -24,7 +31,7 @@ public class Project extends com.creditmanager.model.Entity {
 	private String economicActivity;
 	
 	@Column(name="category")
-	private int category;
+	private String category;
 	
 	/* Institucional */
 	@Column(name="dateOfEntry")
@@ -36,11 +43,48 @@ public class Project extends com.creditmanager.model.Entity {
 	@Column(name="servicers")
 	private String servicers;
 	
-	@Column(name="state")
-	private int state;
+	@Column(name="situationState")
+	private String situationState;
 	
-	@Column(name="evaluator")
-	private String evaluator;
+//	@ManyToOne
+//	@JoinColumn(name="evaluatorId")
+//	private Evaluator evaluator;
+	
+//	@ManyToOne
+//	@JoinColumn(name="accesorId")
+//	private Accesor accesor;
+	
+	@ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@JoinTable(name="projectGuarantor", 
+		joinColumns = { @JoinColumn(name="projectId", nullable=false, updatable=false) },
+		inverseJoinColumns = { @JoinColumn(name="personId", nullable=false, updatable=false) }
+	)
+	private Set<Person> guarantors;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+	@JoinTable(name="projectHolder",
+		joinColumns = { @JoinColumn(name="projectId", nullable=false, updatable=false) },
+		inverseJoinColumns = { @JoinColumn(name="personId", nullable=false, updatable=false) }
+	)
+	private Set<Person> holders;
+	
+	private String investmentDestination;
+	
+	public Project(){
+	}
+	
+	public Project(Date dateOfEntry, Long number, String servicers, String situationState, Evaluator evaluator, Accesor accesor, 
+			Set<Person> guarantors, Set<Person> holders, String investmentDestination){
+		this.dateOfEntry = dateOfEntry;
+		this.number = number;
+		this.servicers = servicers;
+		this.situationState = situationState;
+//		this.evaluator = evaluator;
+//		this.accesor = accesor;
+		this.guarantors = guarantors;
+		this.holders = holders;
+		this.investmentDestination = investmentDestination;
+	}
 	
 	public Long getNumber() {
 		return number;
@@ -54,10 +98,10 @@ public class Project extends com.creditmanager.model.Entity {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public int getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(int type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public String getEconomicArea() {
@@ -72,10 +116,10 @@ public class Project extends com.creditmanager.model.Entity {
 	public void setEconomicActivity(String economicActivity) {
 		this.economicActivity = economicActivity;
 	}
-	public int getCategory() {
+	public String getCategory() {
 		return category;
 	}
-	public void setCategory(int category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 	public Date getDateOfEntry() {
@@ -90,16 +134,40 @@ public class Project extends com.creditmanager.model.Entity {
 	public void setServicers(String servicers) {
 		this.servicers = servicers;
 	}
-	public int getState() {
-		return state;
+	public String getSituationState() {
+		return situationState;
 	}
-	public void setState(int state) {
-		this.state = state;
+	public void setSituationState(String situationState) {
+		this.situationState = situationState;
 	}
-	public String getEvaluator() {
-		return evaluator;
+//	public Evaluator getEvaluator() {
+//		return evaluator;
+//	}
+//	public void setEvaluator(Evaluator evaluator) {
+//		this.evaluator = evaluator;
+//	}
+//	public Accesor getAccesor() {
+//		return accesor;
+//	}
+//	public void setAccesor(Accesor accesor) {
+//		this.accesor = accesor;
+//	}
+	public Set<Person> getGuarantors() {
+		return guarantors;
 	}
-	public void setEvaluator(String evaluator) {
-		this.evaluator = evaluator;
+	public void setGuarantors(Set<Person> guarantors) {
+		this.guarantors = guarantors;
+	}
+	public Set<Person> getHolders() {
+		return holders;
+	}
+	public void setHolders(Set<Person> holders) {
+		this.holders = holders;
+	}
+	public String getInvestmentDestination() {
+		return investmentDestination;
+	}
+	public void setInvestmentDestination(String investmentDestination) {
+		this.investmentDestination = investmentDestination;
 	}
 }

@@ -1,6 +1,7 @@
 package com.creditmanager.service.dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class ProjectDTO {
 	
@@ -8,13 +9,13 @@ public class ProjectDTO {
 	
 	private String title;
 	
-	private int type;
+	private String type;
 	
 	private String economicArea;
 	
 	private String economicActivity;
 	
-	private int category;
+	private String category;
 	
 	private Date dateOfEntry;
 	
@@ -22,10 +23,18 @@ public class ProjectDTO {
 	
 	private String servicers;
 	
-	private int state;
+	private String situationState;
 	
-	private String evaluator;
-
+//	private EvaluatorDTO evaluator;
+//
+//	private AccesorDTO accesor;
+//	
+	private List<PersonDTO> guarantors;
+	
+	private List<PersonDTO> holders;
+	
+	private String investmentDestination;
+	
 	public Long getId() {
 		return id;
 	}
@@ -42,11 +51,11 @@ public class ProjectDTO {
 		this.title = title;
 	}
 
-	public int getType() {
+	public String getType() {
 		return type;
 	}
 
-	public void setType(int type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 
@@ -66,11 +75,11 @@ public class ProjectDTO {
 		this.economicActivity = economicActivity;
 	}
 
-	public int getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(int category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 
@@ -98,19 +107,51 @@ public class ProjectDTO {
 		this.servicers = servicers;
 	}
 
-	public int getState() {
-		return state;
+	public String getSituationState() {
+		return situationState;
 	}
 
-	public void setState(int state) {
-		this.state = state;
+	public void setSituationState(String situationState) {
+		this.situationState = situationState;
 	}
 
-	public String getEvaluator() {
-		return evaluator;
+//	public EvaluatorDTO getEvaluator() {
+//		return evaluator;
+//	}
+//
+//	public void setEvaluator(EvaluatorDTO evaluator) {
+//		this.evaluator = evaluator;
+//	}
+//
+//	public AccesorDTO getAccesor() {
+//		return accesor;
+//	}
+//
+//	public void setAccesor(AccesorDTO accesor) {
+//		this.accesor = accesor;
+//	}
+//
+	public List<PersonDTO> getGuarantors() {
+		return guarantors;
 	}
 
-	public void setEvaluator(String evaluator) {
-		this.evaluator = evaluator;
+	public void setGuarantors(List<PersonDTO> guarantors) {
+		this.guarantors = guarantors;
+	}
+
+	public List<PersonDTO> getHolders() {
+		return holders;
+	}
+
+	public void setHolders(List<PersonDTO> holders) {
+		this.holders = holders;
+	}
+
+	public String getInvestmentDestination() {
+		return investmentDestination;
+	}
+
+	public void setInvestmentDestination(String investmentDestination) {
+		this.investmentDestination = investmentDestination;
 	}
 }

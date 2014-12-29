@@ -98,6 +98,8 @@
 	    <list>
 	    	<value>mappings/person-mapping.xml</value>
 	    	<value>mappings/project-mapping.xml</value>
+	    	<value>mappings/accesor-mapping.xml</value>
+	    	<value>mappings/evaluator-mapping.xml</value>
 	    </list>
 	  </property>
 	</bean>
