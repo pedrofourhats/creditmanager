@@ -1,11 +1,14 @@
 package com.creditmanager.model;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import com.creditmanager.model.enums.Gender;
@@ -56,6 +59,12 @@ public class Person extends com.creditmanager.model.Entity {
 	
 	@Column(name="postCode")
 	private String postCode;
+	
+	@ManyToMany(fetch=FetchType.LAZY, mappedBy="guarantors")
+	private Set<Project> guarantorProjects;
+	
+	@ManyToMany(fetch=FetchType.LAZY, mappedBy="holders")
+	private Set<Project> holderProjects;
 	
 	public Person(){
 	}
@@ -190,5 +199,21 @@ public class Person extends com.creditmanager.model.Entity {
 	
 	public void setPostCode(String postCode) {
 		this.postCode = postCode;
+	}
+
+	public Set<Project> getGuarantorProjects() {
+		return guarantorProjects;
+	}
+
+	public void setGuarantorProjects(Set<Project> guarantorProjects) {
+		this.guarantorProjects = guarantorProjects;
+	}
+
+	public Set<Project> getHolderProjects() {
+		return holderProjects;
+	}
+
+	public void setHolderProjects(Set<Project> holderProjects) {
+		this.holderProjects = holderProjects;
 	}
 }

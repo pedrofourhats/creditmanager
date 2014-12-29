@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.creditmanager.dao.ProjectDAO;
 import com.creditmanager.model.Page;
+import com.creditmanager.model.Project;
 import com.creditmanager.service.ProjectService;
 import com.creditmanager.service.dto.ProjectDTO;
 import com.creditmanager.service.util.MapperUtil;
@@ -21,7 +22,8 @@ public class ProjectServiceImpl implements ProjectService {
 
 	@Override
 	public Page<ProjectDTO> getAll(int pageIndex, int pageSize) {
-		return MapperUtil.map(mapper, projectDao.getAllProjects(pageIndex, pageSize), ProjectDTO.class);
+		Page<Project> projects = projectDao.getAllProjects(pageIndex, pageSize);
+		return MapperUtil.map(mapper, projects, ProjectDTO.class);
 	}
 
 	@Override
