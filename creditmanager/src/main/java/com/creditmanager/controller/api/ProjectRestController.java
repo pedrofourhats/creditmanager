@@ -2,6 +2,7 @@ package com.creditmanager.controller.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,5 +26,10 @@ public class ProjectRestController {
 	@RequestMapping(value="/projects/{projectNumber}", method = RequestMethod.GET, consumes="*/*")
 	public @ResponseBody Page<ProjectDTO> getProjects(@PathVariable Long projectNumber, int pageIndex, int pageSize){
 		return projectService.getByNumber(pageIndex, pageSize, projectNumber);
+	}
+	
+	@RequestMapping(value="/projects", method=RequestMethod.POST)
+	public @ResponseBody void addProject(@RequestBody ProjectDTO project){
+		projectService.addProject(project);
 	}
 }

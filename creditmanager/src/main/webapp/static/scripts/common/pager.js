@@ -1,5 +1,5 @@
 angular.module('pager', [])
-.directive('pagination', function ($http) {
+.directive('intiPagination', function ($http) {
     return {
         restrict: 'E',
         scope: {

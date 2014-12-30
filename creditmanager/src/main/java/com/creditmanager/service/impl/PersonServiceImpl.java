@@ -1,5 +1,7 @@
 package com.creditmanager.service.impl;
 
+import java.util.List;
+
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -69,5 +71,10 @@ public class PersonServiceImpl implements PersonService {
 	public void deletePerson(long personId) {
 		Person person = this.personDAO.getById(personId);
 		this.personDAO.delete(person);
+	}
+
+	@Override
+	public List<PersonDTO> autocomplete(String searchedKeyword) {
+		return MapperUtil.map(mapper, personDAO.findByName(searchedKeyword), PersonDTO.class);
 	}
 }
