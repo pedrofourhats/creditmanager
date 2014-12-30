@@ -10,14 +10,13 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="project")
 public class Project extends com.creditmanager.model.Entity {
 	
-	/* Aspectos */
+	/* Aspectos Economicos*/
 	@Column(name="title")
 	private String title;
 	
@@ -32,6 +31,25 @@ public class Project extends com.creditmanager.model.Entity {
 	
 	@Column(name="category")
 	private String category;
+	
+	/* Aspectos Financieros */
+	@Column(name="requestedAmount")
+	private Double requestedAmount;
+	
+	@Column(name="requestedDeadline")
+	private String requestedDeadline;
+	
+	@Column(name="requestedGracePeriod")
+	private String requestedGracePeriod;
+	
+	@Column(name="deliveryDate")
+	private Date deliveryDate;
+	
+	@Column(name="givenAmount")
+	private Double givenAmount;
+	
+	@Column(name="givenDeadline")
+	private String givenDeadline;
 	
 	/* Institucional */
 	@Column(name="dateOfEntry")
@@ -168,6 +186,77 @@ public class Project extends com.creditmanager.model.Entity {
 		return investmentDestination;
 	}
 	public void setInvestmentDestination(String investmentDestination) {
+		this.investmentDestination = investmentDestination;
+	}
+	public Double getRequestedAmount() {
+		return requestedAmount;
+	}
+
+	public void setRequestedAmount(Double requestedAmount) {
+		this.requestedAmount = requestedAmount;
+	}
+
+	public String getRequestedDeadline() {
+		return requestedDeadline;
+	}
+
+	public void setRequestedDeadline(String requestedDeadline) {
+		this.requestedDeadline = requestedDeadline;
+	}
+
+	public String getRequestedGracePeriod() {
+		return requestedGracePeriod;
+	}
+
+	public void setRequestedGracePeriod(String requestedGracePeriod) {
+		this.requestedGracePeriod = requestedGracePeriod;
+	}
+
+	public Date getDeliveryDate() {
+		return deliveryDate;
+	}
+
+	public void setDeliveryDate(Date deliveryDate) {
+		this.deliveryDate = deliveryDate;
+	}
+
+	public Double getGivenAmount() {
+		return givenAmount;
+	}
+
+	public void setGivenAmount(Double givenAmount) {
+		this.givenAmount = givenAmount;
+	}
+
+	public String getGivenDeadline() {
+		return givenDeadline;
+	}
+
+	public void setGivenDeadline(String givenDeadline) {
+		this.givenDeadline = givenDeadline;
+	}
+	
+	public void update(Date dateOfEntry, Long number, String servicers, String situationState, 
+		//Set<Person> guarantors, Set<Person> holders, 
+		String investmentDestination,
+		String title, String type, String economicArea, String category, Double requestedAmount, String requestedDeadline,
+		String requestedGracePeriod, Date deliveryDate, Double givenAmount, String givenDeadline){
+		
+		this.title = title;
+		this.type = type;
+		this.economicArea = economicArea;
+		this.category = category;
+		this.requestedAmount = requestedAmount;
+		this.requestedDeadline = requestedDeadline;
+		this.requestedGracePeriod = requestedGracePeriod;
+		this.deliveryDate = deliveryDate;
+		this.givenAmount = givenAmount;
+		this.givenDeadline = givenDeadline;
+		
+		this.dateOfEntry = dateOfEntry;
+		this.number = number;
+		this.servicers = servicers;
+		this.situationState = situationState;
 		this.investmentDestination = investmentDestination;
 	}
 }

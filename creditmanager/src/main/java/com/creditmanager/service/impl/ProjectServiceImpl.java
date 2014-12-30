@@ -3,7 +3,6 @@ package com.creditmanager.service.impl;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 
 import org.apache.commons.beanutils.BeanToPropertyValueTransformer;
 import org.apache.commons.collections.CollectionUtils;
@@ -45,7 +44,7 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public void addProject(ProjectDTO projectDto) {
+	public ProjectDTO addProject(ProjectDTO projectDto) {
 		List<Long> guarantorIds = getPersonIds(projectDto.getGuarantors());
 		List<Long> holderIds = getPersonIds(projectDto.getHolders());
 		
@@ -54,12 +53,17 @@ public class ProjectServiceImpl implements ProjectService {
 		Project project = new Project(projectDto.getDateOfEntry(), projectDto.getNumber(), projectDto.getServicers(), projectDto.getSituationState(), 
 			guarantors, holders, projectDto.getInvestmentDestination());
 		projectDao.add(project);
+		
+		return mapper.map(project, ProjectDTO.class);
 	}
 
 	@Override
 	public void editProject(ProjectDTO project) {
-		// TODO Auto-generated method stub
-		
+		Project projectToEdit = projectDao.getById(project.getId());
+		projectToEdit.update(project.getDateOfEntry(), project.getNumber(), project.getServicers(), project.getSituationState(), project.getInvestmentDestination(),
+			project.getTitle(), project.getType(), project.getEconomicArea(), project.getCategory(), project.getRequestedAmount(), project.getRequestedDeadline(),
+			project.getRequestedGracePeriod(), project.getDeliveryDate(), project.getGivenAmount(), project.getGivenDeadline());
+		projectDao.add(projectToEdit);
 	}
 
 	@Override
