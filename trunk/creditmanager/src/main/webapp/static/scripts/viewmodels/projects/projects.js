@@ -47,25 +47,26 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location',
 projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal',
 	function($scope,$http,$modal){
 		var self = this;
-		$scope.tab = 'tab1';
+		//$scope.tab = 'tab1';
 		$scope.step = 1;
 		$scope.newProject = {};
 		$scope.newProject.holders = [];
 		$scope.newProject.guarantors = [];
+		$scope.projectId;
 		
-		$scope.changeTab = function(tab){
-			$scope.tab = tab;
+		$scope.changeStep = function(step){
+			$scope.step = step;
 		};
 	
 		$scope.nextSetp = function(){
 //			if(!$scope.institutionalForm.$valid) {
 //				return;
 //			}
-			switch($scope.step){
-				case 1:
-					self.createProject();
-					break;
-			};
+			if($scope.step == 1 && !$scope.projectId){
+				self.createProject();
+			} else {
+				self.editProject();
+			}
 		};
 		
 		$scope.openAddPerson = function(type){
@@ -99,6 +100,16 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		
 		self.createProject = function(){
 			$http.post(getCompletePath("projects"), JSON.stringify($scope.newProject))
+			.success(function (project) {
+				$scope.projectId = project.id;
+				$scope.step++;
+		    }).error(function (err) {
+		    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
+		    });
+		};
+		
+		self.editProject = function(){
+			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify($scope.newProject))
 			.success(function () {
 				$scope.step++;
 		    }).error(function (err) {

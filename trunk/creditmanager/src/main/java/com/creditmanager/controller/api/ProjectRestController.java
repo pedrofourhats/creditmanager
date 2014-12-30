@@ -29,7 +29,13 @@ public class ProjectRestController {
 	}
 	
 	@RequestMapping(value="/projects", method=RequestMethod.POST)
-	public @ResponseBody void addProject(@RequestBody ProjectDTO project){
-		projectService.addProject(project);
+	public @ResponseBody ProjectDTO addProject(@RequestBody ProjectDTO project){
+		return projectService.addProject(project);
+	}
+	
+	@RequestMapping(value="/projects/{id}",method=RequestMethod.PUT)
+	public @ResponseBody void editProject(@RequestBody ProjectDTO project, @PathVariable Long id){
+		project.setId(id);
+		projectService.editProject(project);
 	}
 }

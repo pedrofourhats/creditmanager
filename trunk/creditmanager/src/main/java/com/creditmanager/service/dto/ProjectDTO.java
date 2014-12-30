@@ -17,6 +17,18 @@ public class ProjectDTO {
 	
 	private String category;
 	
+	private Double requestedAmount;
+	
+	private String requestedDeadline;
+	
+	private String requestedGracePeriod;
+	
+	private Date deliveryDate;
+	
+	private Double givenAmount;
+	
+	private String givenDeadline;
+	
 	private Date dateOfEntry;
 	
 	private Long number;
@@ -153,5 +165,53 @@ public class ProjectDTO {
 
 	public void setInvestmentDestination(String investmentDestination) {
 		this.investmentDestination = investmentDestination;
+	}
+
+	public Double getRequestedAmount() {
+		return requestedAmount;
+	}
+
+	public void setRequestedAmount(Double requestedAmount) {
+		this.requestedAmount = requestedAmount;
+	}
+
+	public String getRequestedDeadline() {
+		return requestedDeadline;
+	}
+
+	public void setRequestedDeadline(String requestedDeadline) {
+		this.requestedDeadline = requestedDeadline;
+	}
+
+	public String getRequestedGracePeriod() {
+		return requestedGracePeriod;
+	}
+
+	public void setRequestedGracePeriod(String requestedGracePeriod) {
+		this.requestedGracePeriod = requestedGracePeriod;
+	}
+
+	public Date getDeliveryDate() {
+		return deliveryDate;
+	}
+
+	public void setDeliveryDate(Date deliveryDate) {
+		this.deliveryDate = deliveryDate;
+	}
+
+	public Double getGivenAmount() {
+		return givenAmount;
+	}
+
+	public void setGivenAmount(Double givenAmount) {
+		this.givenAmount = givenAmount;
+	}
+
+	public String getGivenDeadline() {
+		return givenDeadline;
+	}
+
+	public void setGivenDeadline(String givenDeadline) {
+		this.givenDeadline = givenDeadline;
 	}
 }
