@@ -1,5 +1,7 @@
 package com.creditmanager.controller.api;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,5 +43,10 @@ public class PersonRestController {
 	@RequestMapping(value="/persons/editPerson", method = RequestMethod.PUT)
 	public @ResponseBody void editPerson(@RequestBody PersonDTO person) {
 		personService.editPerson(person);
+	}
+	
+	@RequestMapping(value="/person/autocomplete/{searchedKeyword}", method=RequestMethod.GET, consumes="*/*")
+	public @ResponseBody List<PersonDTO> autocomplete(@PathVariable String searchedKeyword){
+		return personService.autocomplete(searchedKeyword);
 	}
 }

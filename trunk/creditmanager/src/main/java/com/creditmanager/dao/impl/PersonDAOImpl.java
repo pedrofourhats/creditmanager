@@ -25,7 +25,10 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 	@Override
 	public List<Person> findByName(String name) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
-		criteria.add(Restrictions.ilike("name", name, MatchMode.ANYWHERE));
+		criteria.add(Restrictions.disjunction()
+			.add(Restrictions.ilike("name", name, MatchMode.ANYWHERE))
+			.add(Restrictions.ilike("surname", name, MatchMode.ANYWHERE))
+		);
 		return (List<Person>) getHibernateTemplate().findByCriteria(criteria);
 	}
 
@@ -55,6 +58,14 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 		
 		List<Person> persons = (List<Person>) hibernateTemplate.findByCriteria(detachedCriteria);
 		return new Page<Person>(persons, pageIndex, pageSize, totalItems);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Person> getByIds(List<Long> ids) {
+		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
+		criteria.add(Restrictions.in("id", ids));
+		return (List<Person>) getHibernateTemplate().findByCriteria(criteria);
 	}
 
 }

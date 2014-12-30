@@ -48,7 +48,6 @@
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-	
 	<script>
 		$("#goToProjectsLink").addClass("active");
 	</script>

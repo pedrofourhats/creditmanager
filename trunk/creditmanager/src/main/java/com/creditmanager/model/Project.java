@@ -73,7 +73,7 @@ public class Project extends com.creditmanager.model.Entity {
 	public Project(){
 	}
 	
-	public Project(Date dateOfEntry, Long number, String servicers, String situationState, Evaluator evaluator, Accesor accesor, 
+	public Project(Date dateOfEntry, Long number, String servicers, String situationState, /*Evaluator evaluator, Accesor accesor,*/ 
 			Set<Person> guarantors, Set<Person> holders, String investmentDestination){
 		this.dateOfEntry = dateOfEntry;
 		this.number = number;

@@ -16,7 +16,7 @@ import com.creditmanager.model.enums.IdentityType;
 
 @Entity
 @Table(name="person")
-public class Person extends com.creditmanager.model.Entity {
+public class Person extends com.creditmanager.model.Entity implements Comparable<Person> {
 	
 	@Column(name="name")
 	private String name;
@@ -215,5 +215,10 @@ public class Person extends com.creditmanager.model.Entity {
 
 	public void setHolderProjects(Set<Project> holderProjects) {
 		this.holderProjects = holderProjects;
+	}
+
+	@Override
+	public int compareTo(Person obj) {
+		return getId().compareTo(obj.getId());
 	}
 }

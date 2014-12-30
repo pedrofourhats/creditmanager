@@ -27,240 +27,226 @@
 				<!-- Tab panes -->
 				<div class="tab-content">
 				    <div role="tabpanel" class="tab-pane fade in active" id="institutional" ng-class="{'in active': tab == 'tab1'}">
-				    	<div class="row">
-				    		<div class="col-sm-12">
-				    			<h4>InformaciÃ³n institucionales</h4>
-				    		</div>
-				    	</div>
-				    	<div class="row mt20">
-							<div class="col-sm-4">
-								<div class="form-group">
-									<!-- VALIDACIÃN -->
-									<div class="tooltip top" role="tooltip">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Fecha de ingreso INTI
-									  </div>
-									</div>
-									<!-- end VALIDACIÃN -->
-									<div class="control-group">
-										<label for="date-picker-2" class="control-label">Fecha de ingreso al INTI</label>
-										<div class="controls">
-											<div class="input-group">
-												<input id="date-picker-2" type="text" class="date-picker form-control" tabindex="5" />
-												<label for="date-picker-2" class="input-group-addon btn"><span class="fa fa-calendar"></span>
-
-												</label>
+				    	<form name="institutionalForm">
+					    	<div class="row">
+					    		<div class="col-sm-12">
+					    			<h4>InformaciÃ³n institucionales</h4>
+					    		</div>
+					    	</div>
+					    	<div class="row mt20">
+								<div class="col-sm-4">
+									<div class="form-group">
+										<!-- VALIDACIÃN -->
+										<div class="tooltip top" role="tooltip" ng-show="institutionalForm.dateOfEntry.$dirty && institutionalForm.dateOfEntry.$invalid">
+										  <div class="tooltip-arrow"></div>
+										  <div class="tooltip-inner">
+											Fecha de ingreso INTI
+										  </div>
+										</div>
+										<!-- end VALIDACIÃN -->
+										<div class="control-group">
+											<label for="date-picker-2" class="control-label">Fecha de ingreso al INTI</label>
+											<div class="controls">
+												<div class="input-group">
+													<input id="date-picker-2" name="dateOfEntry" type="date" class="date-picker form-control" tabindex="5" required ng-model="newProject.dateOfEntry" />
+													<label for="date-picker-2" class="input-group-addon btn">
+<!-- 														<span class="fa fa-calendar"></span> -->
+													</label>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-
-								<div class="form-group">
-									<!-- VALIDACIÃN -->
-									<div class="tooltip top" role="tooltip">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar un nÃºmero de proyecto
-									  </div>
+	
+									<div class="form-group">
+										<!-- VALIDACIÃN -->
+										<div class="tooltip top" role="tooltip">
+										  <div class="tooltip-arrow"></div>
+										  <div class="tooltip-inner">
+											Debe ingresar un nÃºmero de proyecto
+										  </div>
+										</div>
+										<!-- end VALIDACIÃN -->
+										<label>NÃºmero de proyecto</label>
+										<input type="text" class="form-control" placeholder="Ingrese nÃºmero de documento" tabindex="2" ng-model="newProject.number">
 									</div>
-									<!-- end VALIDACIÃN -->
-									<label>NÃºmero de proyecto</label>
-									<input type="text" class="form-control" placeholder="Ingrese nÃºmero de documento" tabindex="2">
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<!-- VALIDACIÃN -->
+										<div class="tooltip top" role="tooltip">
+										  <div class="tooltip-arrow"></div>
+										  <div class="tooltip-inner">
+											Debe ingresar services
+										  </div>
+										</div>
+										<!-- end VALIDACIÃN -->
+										<label>NÃºmero de services</label>
+										<input type="text" class="form-control" placeholder="Ingrese nÃºmero de services" tabindex="3" ng-model="newProject.servicers">
+									</div>
+									<div class="form-group">
+										<!-- VALIDACIÃN -->
+										<div class="tooltip top" role="tooltip">
+										  <div class="tooltip-arrow"></div>
+										  <div class="tooltip-inner">
+											Debe ingresar situaciÃ³n
+										  </div>
+										</div>
+										<!-- end VALIDACIÃN -->
+										<label>Estado de situaciÃ³n</label>
+										<input type="text" class="form-control" placeholder="Ingrese estado de situaciÃ³n" ng-model="newProject.situationState">
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<!-- VALIDACIÃN -->
+										<div class="tooltip top" role="tooltip">
+										  <div class="tooltip-arrow"></div>
+										  <div class="tooltip-inner">
+											Debe ingresar evaluador segÃºn services
+										  </div>
+										</div>
+										<!-- end VALIDACIÃN -->
+										<label>Evaluador segun services</label>
+										<div class="dropdown">
+										  <a id="" type="button" data-toggle="dropdown">
+										    Elegir evaluador
+										    <i class="fa fa-chevron-down"></i>
+										  </a>
+										  <ul class="dropdown-menu">
+										    <li><a href="#">Evaluador 1</a></li>
+									          <li><a href="#">Evaluador 2</a></li>
+										  </ul>
+										</div>
+									</div>
+									<div class="form-group">
+										<!-- VALIDACIÃN -->
+										<div class="tooltip top" role="tooltip">
+										  <div class="tooltip-arrow"></div>
+										  <div class="tooltip-inner">
+											Debe ingresar ascesor CAFESG
+										  </div>
+										</div>
+										<!-- end VALIDACIÃN -->
+										<label>Ascesor CAFESG</label>
+										<div class="dropdown">
+										  <a id="" type="button" data-toggle="dropdown">
+										    Elegir evaluador
+										    <i class="fa fa-chevron-down"></i>
+										  </a>
+										  <ul class="dropdown-menu">
+										    <li><a href="#">Evaluador 1</a></li>
+									          <li><a href="#">Evaluador 2</a></li>
+										  </ul>
+										</div>
+									</div>
+								</div>
+	
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group">
+										<!-- VALIDACIÃN -->
+										<div class="tooltip top" role="tooltip">
+										  <div class="tooltip-arrow"></div>
+										  <div class="tooltip-inner">
+											Debe ingresar destino de la inversiÃ³n
+										  </div>
+										</div>
+										<!-- end VALIDACIÃN -->
+										<label>Destino de la inversiÃ³n</label>
+										<textarea class="form-control" placeholder="Ingrese estado de situaciÃ³n" ng-model="newProject.investmentDestination"></textarea>
+									</div>
+								</div> 
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="row head-small">
+										<div class="col-sm-6">
+											<h4>Titulares</h4>
+										</div>
+										<div class="col-sm-6 txtR">
+											<button type="button" class="btn btn-primary" ng-click="openAddPerson('Titular')">
+												<i class="fa fa-plus-circle"></i> Agregar titular
+											</button>
+										</div>	
+									</div>
+									<table class="table table-hover table-condensed table-responsive table-small">
+									  <thead>
+										<tr>
+										  <th>
+										  	<a href="javascript:void(0);">
+										  		<!-- cambiar a fa-caret-up -->
+										  		NÂ° <i class="fa fa-caret-down pull-right"></i>
+										  	</a>
+										  </th>
+										  <th>
+										  	<a href="javascript:void(0);">
+										  		<!-- cambiar a fa-caret-up -->
+										  		Nombre <i class="fa fa-caret-down pull-right"></i>
+										  	</a>
+										  </th>
+										  <th class="txtC">Acciones</th>
+										</tr>
+									  </thead>
+									  <tbody>
+										<tr ng-repeat="holder in newProject.holders">
+										  <td>{{holder.id}}</td>
+										  <td>{{holder.name + ' ' + holder.surname}}</td>
+										  <td class="txtC">
+<!-- 											<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button> -->
+											<button type="button" class="btn btn-link" ng-click="deleteHolder($index)"><i class="fa fa-trash txtDanger"></i></button>
+										  </td>
+										</tr>
+									  </tbody>
+									</table>
+								</div>						
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="row head-small">
+										<div class="col-sm-6">
+											<h4>Garantes</h4>
+										</div>
+										<div class="col-sm-6 txtR">
+											<button type="button" class="btn btn-primary" ng-click="openAddPerson('Garante')">
+												<i class="fa fa-plus-circle"></i> Agregar garante
+											</button>
+										</div>	
+									</div>
+									<table class="table table-hover table-condensed table-responsive table-small">
+									  <thead>
+										<tr>
+										  <th>
+										  	<a href="javascript:void(0);">
+										  		<!-- cambiar a fa-caret-up -->
+										  		NÂ° <i class="fa fa-caret-down pull-right"></i>
+										  	</a>
+										  </th>
+										  <th>
+										  	<a href="javascript:void(0);">
+										  		<!-- cambiar a fa-caret-up -->
+										  		Nombre <i class="fa fa-caret-down pull-right"></i>
+										  	</a>
+										  </th>
+										  <th class="txtC">Acciones</th>
+										</tr>
+									  </thead>
+									  <tbody>
+										<tr ng-repeat="holder in newProject.guarantors">
+										  <td>{{holder.id}}</td>
+										  <td>{{holder.name + ' ' + holder.surname}}</td>
+										  <td class="txtC">
+<!-- 											<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button> -->
+											<button type="button" class="btn btn-link" ng-click="deleteGuarantor($index)"><i class="fa fa-trash txtDanger"></i></button>
+										  </td>
+										</tr>
+									  </tbody>
+									</table>
 								</div>
 							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<!-- VALIDACIÃN -->
-									<div class="tooltip top" role="tooltip">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar services
-									  </div>
-									</div>
-									<!-- end VALIDACIÃN -->
-									<label>NÃºmero de services</label>
-									<input type="text" class="form-control" placeholder="Ingrese nÃºmero de services" tabindex="3">
-								</div>
-								<div class="form-group">
-									<!-- VALIDACIÃN -->
-									<div class="tooltip top" role="tooltip">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar situaciÃ³n
-									  </div>
-									</div>
-									<!-- end VALIDACIÃN -->
-									<label>Estado de situaciÃ³n</label>
-									<input type="text" class="form-control" placeholder="Ingrese estado de situaciÃ³n">
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<!-- VALIDACIÃN -->
-									<div class="tooltip top" role="tooltip">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar evaluador segÃºn services
-									  </div>
-									</div>
-									<!-- end VALIDACIÃN -->
-									<label>Evaluador segun services</label>
-									<div class="dropdown">
-									  <a id="" type="button" data-toggle="dropdown">
-									    Elegir evaluador
-									    <i class="fa fa-chevron-down"></i>
-									  </a>
-									  <ul class="dropdown-menu">
-									    <li><a href="#">Evaluador 1</a></li>
-								          <li><a href="#">Evaluador 2</a></li>
-									  </ul>
-									</div>
-								</div>
-								<div class="form-group">
-									<!-- VALIDACIÃN -->
-									<div class="tooltip top" role="tooltip">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar ascesor CAFESG
-									  </div>
-									</div>
-									<!-- end VALIDACIÃN -->
-									<label>Ascesor CAFESG</label>
-									<div class="dropdown">
-									  <a id="" type="button" data-toggle="dropdown">
-									    Elegir evaluador
-									    <i class="fa fa-chevron-down"></i>
-									  </a>
-									  <ul class="dropdown-menu">
-									    <li><a href="#">Evaluador 1</a></li>
-								          <li><a href="#">Evaluador 2</a></li>
-									  </ul>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="form-group">
-									<!-- VALIDACIÃN -->
-									<div class="tooltip top" role="tooltip">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar destino de la inversiÃ³n
-									  </div>
-									</div>
-									<!-- end VALIDACIÃN -->
-									<label>Destino de la inversiÃ³n</label>
-									<textarea class="form-control" placeholder="Ingrese estado de situaciÃ³n"></textarea>
-								</div>
-							</div> 
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="row head-small">
-									<div class="col-sm-6">
-										<h4>Titulares</h4>
-									</div>
-									<div class="col-sm-6 txtR">
-										<button type="button" class="btn btn-primary" onclick="">
-											<i class="fa fa-plus-circle"></i> Agregar titular
-										</button>
-									</div>	
-								</div>
-								<table class="table table-hover table-condensed table-responsive table-small">
-								  <thead>
-									<tr>
-									  <th>
-									  	<a href="javascript:void(0);">
-									  		<!-- cambiar a fa-caret-up -->
-									  		NÂ° <i class="fa fa-caret-down pull-right"></i>
-									  	</a>
-									  </th>
-									  <th>
-									  	<a href="javascript:void(0);">
-									  		<!-- cambiar a fa-caret-up -->
-									  		Nombre <i class="fa fa-caret-down pull-right"></i>
-									  	</a>
-									  </th>
-									  <th class="txtC">Acciones</th>
-									</tr>
-								  </thead>
-								  <tbody>
-									<tr>
-									  <td>1</td>
-									  <td>Nombre del titular</td>
-									  <td class="txtC">
-										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
-										<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
-									  </td>
-									</tr>
-									<tr>
-									  <td>2</td>
-									  <td>Nombre del titular</td>
-									  <td class="txtC">
-										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
-										<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
-									  </td>
-									</tr>
-								  </tbody>
-								</table>
-							</div>						
-						</div>
-						<hr>
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="row head-small">
-									<div class="col-sm-6">
-										<h4>Garantes</h4>
-									</div>
-									<div class="col-sm-6 txtR">
-										<button type="button" class="btn btn-primary" onclick="">
-											<i class="fa fa-plus-circle"></i> Agregar garante
-										</button>
-									</div>	
-								</div>
-								<table class="table table-hover table-condensed table-responsive table-small">
-								  <thead>
-									<tr>
-									  <th>
-									  	<a href="javascript:void(0);">
-									  		<!-- cambiar a fa-caret-up -->
-									  		NÂ° <i class="fa fa-caret-down pull-right"></i>
-									  	</a>
-									  </th>
-									  <th>
-									  	<a href="javascript:void(0);">
-									  		<!-- cambiar a fa-caret-up -->
-									  		Nombre <i class="fa fa-caret-down pull-right"></i>
-									  	</a>
-									  </th>
-									  <th class="txtC">Acciones</th>
-									</tr>
-								  </thead>
-								  <tbody>
-									<tr>
-									  <td>1</td>
-									  <td>Nombre del garante</td>
-									  <td class="txtC">
-										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
-										<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
-									  </td>
-									</tr>
-									<tr>
-									  <td>2</td>
-									  <td>Nombre del garante</td>
-									  <td class="txtC">
-										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
-										<button type="button" class="btn btn-link"><i class="fa fa-trash txtDanger"></i></button>
-									  </td>
-									</tr>
-								  </tbody>
-								</table>
-							</div>
-						</div>
+						</form>
 					</div>
 				    <div role="tabpanel" class="tab-pane fade" id="aspects" ng-class="{'in active': tab == 'tab2'}">
 				    	<div class="row">
@@ -675,7 +661,7 @@
 					<div class="col-sm-12">
 						<div class="pull-right">
 							<div class="form-group">
-								<button type="button" class="btn btn-primary">
+								<button type="button" class="btn btn-primary" ng-click="nextSetp()">
 									<i class="fa fa-plus"></i> Cargar proyecto
 								</button>
 							</div>
@@ -686,3 +672,28 @@
 			</div>
 		</div>
 	</div>
+	
+	<script type="text/ng-template" id="addPersonModalContent.html">
+			<div class="modal-header">
+            	<h3 class="modal-title">Agregar {{type}}</h3>
+        	</div>
+        	<div class="modal-body">
+         		<label for="exampleInputEmail1">Buscar {{type}}</label> 
+				<input type="text" class="form-control" placeholder="{{type}}" ng-model="selected" 
+					typeahead="person as (person.name + ' ' + person.surname) for person in persons($viewValue)">
+				
+				<b>{{type}} Seleccionado</b>
+    			<div class="list-group">
+					<blockquote>
+      					ID: {{selected.id}}<br/>
+      					Nombre: {{selected.name + ' ' + selected.surname}}<br/>
+      					DNI: {{selected.identityNumber}}<br/>
+      					Sexo: {{selected.gender}}
+    				</blockquote>
+				</div>
+        	</div>
+        	<div class="modal-footer">
+            	<button class="btn btn-primary" ng-click="ok()" ng-disabled="!selected">OK</button>
+            	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        	</div>
+    	</script>
