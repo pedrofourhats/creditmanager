@@ -38,4 +38,9 @@ public class ProjectRestController {
 		project.setId(id);
 		projectService.editProject(project);
 	}
+	
+	@RequestMapping(value="/projects/findById/{id}", method=RequestMethod.GET, consumes="*/*")
+	public @ResponseBody ProjectDTO getProjectById(@PathVariable Long id){
+		return projectService.getById(id);
+	}
 }

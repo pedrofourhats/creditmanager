@@ -5,10 +5,10 @@ projectApp.config(function($routeProvider){
 		templateUrl : getCompletePath('/templates/project-list.html'),
 		controller : 'ProjectListCtrl'
 	});
-//	$routeProvider.when('/user-detail/:id', {
-//		templateUrl : 'partials/user-detail.html',
-//		controller : 'UserDetailCtrl'
-//	});
+	$routeProvider.when('/project-detail/:id', {
+		templateUrl : getCompletePath('/templates/project-create.html'),
+		controller : 'ProjectDetailCtrl'
+	});
 	$routeProvider.when('/project-creation', {
 		templateUrl : getCompletePath('/templates/project-create.html'),
 		controller : 'ProjectCreationCtrl'
@@ -42,16 +42,20 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location',
 		$scope.createNewProject = function(){
 			$location.path('/project-creation');
 		};
+		
+		$scope.goToDetail = function(projectId){
+			$location.path('/project-detail/' + projectId);
+		};
 }]);
 
 projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal',
 	function($scope,$http,$modal){
 		var self = this;
-		//$scope.tab = 'tab1';
 		$scope.step = 1;
-		$scope.newProject = {};
-		$scope.newProject.holders = [];
-		$scope.newProject.guarantors = [];
+		$scope.title = 'CARGAR NUEVO PROYECTO';
+		$scope.project = {};
+		$scope.project.holders = [];
+		$scope.project.guarantors = [];
 		$scope.projectId;
 		
 		$scope.changeStep = function(step){
@@ -83,23 +87,23 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			
 			modalInstance.result.then(function (selectedItem) {
 				if(type == 'Titular'){
-					$scope.newProject.holders.push({ id: selectedItem.id, name: selectedItem.name, surname: selectedItem.surname });
+					$scope.project.holders.push({ id: selectedItem.id, name: selectedItem.name, surname: selectedItem.surname });
 				} else{
-					$scope.newProject.guarantors.push({ id: selectedItem.id, name: selectedItem.name, surname: selectedItem.surname });
+					$scope.project.guarantors.push({ id: selectedItem.id, name: selectedItem.name, surname: selectedItem.surname });
 				}
 		    });
 		};
 		
 		$scope.deleteHolder = function(index){
-			$scope.newProject.holders.splice(index, 1);
+			$scope.project.holders.splice(index, 1);
 		};
 		
 		$scope.deleteGuarantor = function(index){
-			$scope.newProject.guarantors.splice(index, 1);
+			$scope.project.guarantors.splice(index, 1);
 		};
 		
 		self.createProject = function(){
-			$http.post(getCompletePath("projects"), JSON.stringify($scope.newProject))
+			$http.post(getCompletePath("projects"), JSON.stringify($scope.project))
 			.success(function (project) {
 				$scope.projectId = project.id;
 				$scope.step++;
@@ -109,7 +113,7 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		};
 		
 		self.editProject = function(){
-			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify($scope.newProject))
+			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify($scope.project))
 			.success(function () {
 				$scope.step++;
 		    }).error(function (err) {
