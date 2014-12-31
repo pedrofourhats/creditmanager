@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html ng-app="projectApp">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
 	<title>INTI</title>
 	<!-- SCRIPTS -->
 	<%@ include file="../../include/scripts.jsp" %>
 	<script type="text/javascript" src="<%=scriptPageContext %>/static/scripts/viewmodels/projects/projects.js"></script>
+	<script type="text/javascript" src="<%=scriptPageContext %>/static/scripts/viewmodels/projects/projectDetail.js"></script>
 	<script type="text/javascript" src="<%=scriptPageContext %>/static/scripts/common/pager.js"></script>
 	
 	<!-- STYLESHEET -->
@@ -35,7 +35,7 @@
 	      <div class="modal-body">
 	        <div class="list-group">
 		      <a href="#" class="list-group-item active">
-		        Títulos <span class="badge"><i class="fa fa-times"></i></span>
+		        TÃ­tulos <span class="badge"><i class="fa fa-times"></i></span>
 		      </a>
 		      <a href="#" class="list-group-item">Tipo <span class="badge"><i class="fa fa-times"></i></span></a>
 		      <a href="#" class="list-group-item">Rubro <span class="badge"><i class="fa fa-times"></i></span></a>
