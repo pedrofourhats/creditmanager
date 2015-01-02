@@ -49,7 +49,10 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		};
 		
 		self.editProject = function(){
-			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify($scope.project))
+			var projectToEdit = $scope.project;
+			projectToEdit.guarantors = $.map(projectToEdit.guarantors, function(value){ delete value.formattedBirthDate; return value; });
+			projectToEdit.holders = $.map(projectToEdit.holders, function(value){ delete value.formattedBirthDate; return value; });
+			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify(projectToEdit))
 			.success(function () {
 				$scope.step++;
 		    }).error(function (err) {

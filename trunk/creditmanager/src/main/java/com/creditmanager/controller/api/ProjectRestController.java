@@ -1,14 +1,20 @@
 package com.creditmanager.controller.api;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.creditmanager.model.Page;
+import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
 import com.creditmanager.service.ProjectService;
 import com.creditmanager.service.dto.ProjectDTO;
 
@@ -42,5 +48,16 @@ public class ProjectRestController {
 	@RequestMapping(value="/projects/findById/{id}", method=RequestMethod.GET, consumes="*/*")
 	public @ResponseBody ProjectDTO getProjectById(@PathVariable Long id){
 		return projectService.getById(id);
+	}
+	
+	@RequestMapping(value="/projects/{id}", method=RequestMethod.DELETE)
+	public @ResponseBody void deleteProject(@PathVariable Long id) throws ProjectHasHoldersOrGuarantorsException{
+		projectService.deleteProject(id);
+	}
+	
+	@ExceptionHandler(Exception.class)
+	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+	public @ResponseBody Exception handleException(Exception ex, HttpServletResponse response){
+		return ex;
 	}
 }

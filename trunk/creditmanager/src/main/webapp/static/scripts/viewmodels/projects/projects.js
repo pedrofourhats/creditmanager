@@ -21,8 +21,8 @@ projectApp.config(function($routeProvider){
 
 var projectControllers = angular.module('project.controllers', []);
 
-projectControllers.controller('ProjectListCtrl', ['$scope','$location',
-	function($scope, $location){
+projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
+	function($scope, $location,$http){
 		$scope.pageQty = 2;
 		$scope.projects = [];
 		
@@ -45,6 +45,15 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location',
 		
 		$scope.goToDetail = function(projectId){
 			$location.path('/project-detail/' + projectId);
+		};
+		
+		$scope.remove = function(projectId){
+			$http.delete(getCompletePath("projects/" + projectId), {})
+			.success(function () {
+				$location.path('/project-list');
+		    }).error(function (data, status, headers, config) {
+		    	alert("No se puede eliminar el proyecto porque tiene personas asignadas.");
+		    });
 		};
 }]);
 

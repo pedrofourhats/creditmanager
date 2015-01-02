@@ -236,10 +236,8 @@ public class Project extends com.creditmanager.model.Entity {
 		this.givenDeadline = givenDeadline;
 	}
 	
-	public void update(Date dateOfEntry, Long number, String servicers, String situationState, 
-		//Set<Person> guarantors, Set<Person> holders, 
-		String investmentDestination,
-		String title, String type, String economicArea, String category, Double requestedAmount, String requestedDeadline,
+	public void update(Date dateOfEntry, Long number, String servicers, String situationState, Set<Person> guarantors, Set<Person> holders, 
+		String investmentDestination,String title, String type, String economicArea, String category, Double requestedAmount, String requestedDeadline,
 		String requestedGracePeriod, Date deliveryDate, Double givenAmount, String givenDeadline){
 		
 		this.title = title;
@@ -257,6 +255,8 @@ public class Project extends com.creditmanager.model.Entity {
 		this.number = number;
 		this.servicers = servicers;
 		this.situationState = situationState;
+		this.guarantors = guarantors;
+		this.holders = holders;
 		this.investmentDestination = investmentDestination;
 	}
 }

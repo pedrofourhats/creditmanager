@@ -15,6 +15,7 @@ import com.creditmanager.dao.ProjectDAO;
 import com.creditmanager.model.Page;
 import com.creditmanager.model.Person;
 import com.creditmanager.model.Project;
+import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
 import com.creditmanager.service.ProjectService;
 import com.creditmanager.service.dto.PersonDTO;
 import com.creditmanager.service.dto.ProjectDTO;
@@ -60,10 +61,17 @@ public class ProjectServiceImpl implements ProjectService {
 
 	@Override
 	public void editProject(ProjectDTO project) {
+		List<Long> guarantorIds = getPersonIds(project.getGuarantors());
+		List<Long> holderIds = getPersonIds(project.getHolders());
+		
+		Set<Person> guarantors = new HashSet<Person>(personDao.getByIds(guarantorIds));
+		Set<Person> holders = new HashSet<Person>(personDao.getByIds(holderIds));
+		
 		Project projectToEdit = projectDao.getById(project.getId());
-		projectToEdit.update(project.getDateOfEntry(), project.getNumber(), project.getServicers(), project.getSituationState(), project.getInvestmentDestination(),
-			project.getTitle(), project.getType(), project.getEconomicArea(), project.getCategory(), project.getRequestedAmount(), project.getRequestedDeadline(),
-			project.getRequestedGracePeriod(), project.getDeliveryDate(), project.getGivenAmount(), project.getGivenDeadline());
+		projectToEdit.update(project.getDateOfEntry(), project.getNumber(), project.getServicers(), project.getSituationState(), guarantors, holders, 
+			project.getInvestmentDestination(), project.getTitle(), project.getType(), project.getEconomicArea(), project.getCategory(), 
+			project.getRequestedAmount(), project.getRequestedDeadline(), project.getRequestedGracePeriod(), project.getDeliveryDate(), 
+			project.getGivenAmount(), project.getGivenDeadline());
 		projectDao.add(projectToEdit);
 	}
 
@@ -76,5 +84,14 @@ public class ProjectServiceImpl implements ProjectService {
 	private List<Long> getPersonIds(List<PersonDTO> guarantors) {
 		List<Long> idList = (List<Long>) CollectionUtils.collect(guarantors, new BeanToPropertyValueTransformer("id"));
 		return idList;
+	}
+
+	@Override
+	public void deleteProject(Long projectId) throws ProjectHasHoldersOrGuarantorsException {
+		Project project = projectDao.getById(projectId);
+		if(project.getGuarantors().size() > 0 || project.getHolders().size() > 0){
+			throw new ProjectHasHoldersOrGuarantorsException();
+		}
+		projectDao.delete(project);
 	}
 }
