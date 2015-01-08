@@ -23,6 +23,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 		editablePerson.genderName = getGenderName(editablePerson.gender);
 		editablePerson.gender = getGender(editablePerson.genderName);
 		editablePerson.birthDate = new Date(editablePerson.birthDate);
+		delete editablePerson.formattedBirthDate;
 		
 		$scope.newPerson = editablePerson;
 	} else {
@@ -39,7 +40,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 			    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
 			    });
 			} else {
-				$http.put(getCompletePath("persons/editPerson"), JSON.stringify($scope.newPerson))
+				$http.post(getCompletePath("persons/editPerson"), JSON.stringify($scope.newPerson))
 				.success(function () {
 					redirect('person/list');
 			    }).error(function () {

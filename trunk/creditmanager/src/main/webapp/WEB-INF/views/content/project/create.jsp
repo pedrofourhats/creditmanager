@@ -37,7 +37,7 @@
 				    <div role="tabpanel" class="tab-pane fade in active" id="institutional">
 				    	<div class="row">
 				    		<div class="col-sm-12">
-				    			<h4>InformaciÃ³n institucionales</h4>
+				    			<h4>Información institucionales</h4>
 				    		</div>
 				    	</div>
 				    	<div class="row mt20">
@@ -69,11 +69,11 @@
 									<div class="tooltip top" role="tooltip">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner">
-										Debe ingresar un nÃºmero de proyecto
+										Debe ingresar un número de proyecto
 									  </div>
 									</div>
 									<!-- end VALIDACIÃ“N -->
-									<label>NÃºmero de proyecto</label>
+									<label>Número de proyecto</label>
 									<input type="text" class="form-control" placeholder="Ingrese nÃºmero de documento" tabindex="2">
 								</div>
 							</div>
@@ -87,20 +87,20 @@
 									  </div>
 									</div>
 									<!-- end VALIDACIÃ“N -->
-									<label>NÃºmero de services</label>
-									<input type="text" class="form-control" placeholder="Ingrese nÃºmero de services" tabindex="3">
+									<label>Número de services</label>
+									<input type="text" class="form-control" placeholder="Ingrese número de services" tabindex="3">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIÃ“N -->
 									<div class="tooltip top" role="tooltip">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner">
-										Debe ingresar situaciÃ³n
+										Debe ingresar situación
 									  </div>
 									</div>
 									<!-- end VALIDACIÃ“N -->
-									<label>Estado de situaciÃ³n</label>
-									<input type="text" class="form-control" placeholder="Ingrese estado de situaciÃ³n">
+									<label>Estado de situación</label>
+									<input type="text" class="form-control" placeholder="Ingrese estado de situación">
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -109,7 +109,7 @@
 									<div class="tooltip top" role="tooltip">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner">
-										Debe ingresar evaluador segÃºn services
+										Debe ingresar evaluador según services
 									  </div>
 									</div>
 									<!-- end VALIDACIÃ“N -->
@@ -120,8 +120,8 @@
 									    <i class="fa fa-chevron-down"></i>
 									  </a>
 									  <ul class="dropdown-menu">
-									    <li><a href="#">Evaluador 1</a></li>
-								          <li><a href="#">Evaluador 2</a></li>
+									    <li><a href="javascript:void(0);">Evaluador 1</a></li>
+								          <li><a href="javascript:void(0);">Evaluador 2</a></li>
 									  </ul>
 									</div>
 								</div>
@@ -141,8 +141,8 @@
 									    <i class="fa fa-chevron-down"></i>
 									  </a>
 									  <ul class="dropdown-menu">
-									    <li><a href="#">Evaluador 1</a></li>
-								          <li><a href="#">Evaluador 2</a></li>
+									    <li><a href="javascript:void(0);">Evaluador 1</a></li>
+								          <li><a href="javascript:void(0);">Evaluador 2</a></li>
 									  </ul>
 									</div>
 								</div>
@@ -156,11 +156,11 @@
 									<div class="tooltip top" role="tooltip">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner">
-										Debe ingresar destino de la inversiÃ³n
+										Debe ingresar destino de la inversión
 									  </div>
 									</div>
 									<!-- end VALIDACIÃ“N -->
-									<label>Destino de la inversiÃ³n</label>
+									<label>Destino de la inversión</label>
 									<textarea class="form-control" placeholder="Ingrese estado de situaciÃ³n"></textarea>
 								</div>
 							</div> 
@@ -184,7 +184,7 @@
 									  <th>
 									  	<a href="javascript:void(0);">
 									  		<!-- cambiar a fa-caret-up -->
-									  		NÂ° <i class="fa fa-caret-down pull-right"></i>
+									  		N° <i class="fa fa-caret-down pull-right"></i>
 									  	</a>
 									  </th>
 									  <th>
@@ -236,7 +236,7 @@
 									  <th>
 									  	<a href="javascript:void(0);">
 									  		<!-- cambiar a fa-caret-up -->
-									  		NÂ° <i class="fa fa-caret-down pull-right"></i>
+									  		N° <i class="fa fa-caret-down pull-right"></i>
 									  	</a>
 									  </th>
 									  <th>
@@ -273,7 +273,7 @@
 				    <div role="tabpanel" class="tab-pane fade" id="aspects">
 				    	<div class="row">
 				    		<div class="col-sm-12">
-				    			<h4>Aspectos econÃ³micos</h4>		
+				    			<h4>Aspectos económicos</h4>		
 				    		</div>
 				    	</div>	
 				    	<div class="row mt20">
@@ -309,24 +309,24 @@
 									<div class="tooltip top" role="tooltip">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner">
-										Debe ingresar sector econÃ³mico
+										Debe ingresar sector económico
 									  </div>
 									</div>
 									<!-- end VALIDACIÃ“N -->
-									<label>Sector econÃ³mico</label>
-									<input type="text" class="form-control" placeholder="Ingrese sector econÃ³mico" tabindex="3" autofocus>
+									<label>Sector económico</label>
+									<input type="text" class="form-control" placeholder="Ingrese sector económico" tabindex="3" autofocus>
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIÃ“N -->
 									<div class="tooltip top" role="tooltip">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner">
-										Debe ingresar activdad econÃ³mica
+										Debe ingresar activdad económica
 									  </div>
 									</div>
 									<!-- end VALIDACIÃ“N -->
-									<label>Actividad econÃ³mica</label>
-									<input type="text" class="form-control" placeholder="Ingrese activdad econÃ³mica" tabindex="4">
+									<label>Actividad económica</label>
+									<input type="text" class="form-control" placeholder="Ingrese activdad económica" tabindex="4">
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -395,12 +395,12 @@
 									<div class="tooltip top" role="tooltip">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner">
-										Debe ingresar fecha de otorgamiento del crÃ©dito
+										Debe ingresar fecha de otorgamiento del crédito
 									  </div>
 									</div>
 									<!-- end VALIDACIÃ“N -->
 									<div class="control-group">
-										<label for="date-picker-2" class="control-label">Fecha de otorgamiento del crÃ©dito</label>
+										<label for="date-picker-2" class="control-label">Fecha de otorgamiento del crédito</label>
 										<div class="controls">
 											<div class="input-group">
 												<input id="date-picker-2" type="text" class="date-picker form-control" tabindex="9" />
@@ -443,7 +443,7 @@
 				    <div role="tabpanel" class="tab-pane fade" id="forms">
 				    	<div class="row">
 				    		<div class="col-sm-12">
-				    			<h4>DocumentaciÃ³n a presentar</h4>
+				    			<h4>Documentación a presentar</h4>
 				    		</div>
 				    	</div>
 				    	<div class="row mt20">
@@ -501,12 +501,12 @@
 									<div class="tooltip top" role="tooltip">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner">
-										Debe ingresar destino de la inversiÃ³n
+										Debe ingresar destino de la inversión
 									  </div>
 									</div>
 									<!-- end VALIDACIÃ“N -->
-									<label>Destino de la inversiÃ³n</label>
-									<textarea class="form-control" placeholder="Ingrese estado de situaciÃ³n"></textarea>
+									<label>Destino de la inversión</label>
+									<textarea class="form-control" placeholder="Ingrese estado de situación"></textarea>
 								</div>
 							</div> 
 						</div>
@@ -525,7 +525,7 @@
 									  <th>
 									  	<a href="javascript:void(0);">
 									  		<!-- cambiar a fa-caret-up -->
-									  		Fecha de emisiÃ³n <i class="fa fa-caret-down pull-right"></i>
+									  		Fecha de emisión <i class="fa fa-caret-down pull-right"></i>
 									  	</a>
 									  </th>
 									  <th class="txtC">Acciones</th>
@@ -568,7 +568,7 @@
 							<div class="col-sm-12">
 								<div class="row head-small">
 									<div class="col-sm-6">
-										<h4>Ãšltimos pagos</h4>
+										<h4>Útimos pagos</h4>
 									</div>
 									<div class="col-sm-6 txtR">
 										<button type="button" class="btn btn-primary" onclick="">
@@ -585,7 +585,7 @@
 									  <th>
 									  	<a href="javascript:void(0);">
 									  		<!-- cambiar a fa-caret-up -->
-									  		NÂ° <i class="fa fa-caret-down pull-right"></i>
+									  		N° <i class="fa fa-caret-down pull-right"></i>
 									  	</a>
 									  </th>
 									  <th>Vencimientos</th>

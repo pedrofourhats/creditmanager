@@ -54,7 +54,8 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			projectToEdit.holders = $.map(projectToEdit.holders, function(value){ delete value.formattedBirthDate; return value; });
 			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify(projectToEdit))
 			.success(function () {
-				$scope.step++;
+				alert("El proyecto se ha actualizado con exito");
+				//$scope.step++;
 		    }).error(function (err) {
 		    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
 		    });
