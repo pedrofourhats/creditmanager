@@ -23,7 +23,7 @@ var projectControllers = angular.module('project.controllers', []);
 
 projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
 	function($scope, $location,$http){
-		$scope.pageQty = 2;
+		$scope.pageQty = 5;
 		$scope.projects = [];
 		
 		$scope.advancedSearch = false;
