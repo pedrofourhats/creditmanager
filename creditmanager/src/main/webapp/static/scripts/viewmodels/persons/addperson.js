@@ -11,9 +11,9 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 		$scope.newPerson.genderName = gender.name;
 	};
 	
-	var isEdition = false;
+	$scope.isEdition = false;
 	if(editablePerson) {
-		isEdition = true;
+		$scope.isEdition = true;
 		editablePerson.cellPhone = parseInt(editablePerson.cellPhone);
 		editablePerson.phone = parseInt(editablePerson.phone);
 		editablePerson.workPhone = parseInt(editablePerson.workPhone);
@@ -32,7 +32,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 	
 	$scope.addPerson = function() {
 		if ($scope.createPersonForm.$valid) {
-			if(!isEdition) {
+			if(!$scope.isEdition) {
 				$http.post(getCompletePath("persons/createPerson"), JSON.stringify($scope.newPerson))
 				.success(function () {
 					redirect('person/list');

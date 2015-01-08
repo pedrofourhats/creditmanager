@@ -8,6 +8,18 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		$scope.project.holders = [];
 		$scope.project.guarantors = [];
 		
+		$scope.buttonName = 'Editar proyecto';
+		
+		$scope.fakeProject = { serviceEvaluatorName: "", adviserEvaluatorName: "" };
+		
+		$scope.selectServiceEvaluator = function(serviceEvaluator) {
+			$scope.fakeProject.serviceEvaluatorName = serviceEvaluator.name;
+		};
+		
+		$scope.selectAdviserEvaluator = function(adviserEvaluator) {
+			$scope.fakeProject.adviserEvaluatorName = adviserEvaluator.name;
+		};
+		
 		$scope.changeStep = function(step){
 			$scope.step = step;
 		};
