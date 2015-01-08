@@ -40,7 +40,7 @@ public class PersonRestController {
 		personService.deletePerson(personId);
 	}
 	
-	@RequestMapping(value="/persons/editPerson", method = RequestMethod.PUT)
+	@RequestMapping(value="/persons/editPerson", method = RequestMethod.POST)
 	public @ResponseBody void editPerson(@RequestBody PersonDTO person) {
 		personService.editPerson(person);
 	}

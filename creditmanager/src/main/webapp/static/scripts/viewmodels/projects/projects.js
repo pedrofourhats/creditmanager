@@ -115,7 +115,8 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			$http.post(getCompletePath("projects"), JSON.stringify($scope.project))
 			.success(function (project) {
 				$scope.projectId = project.id;
-				$scope.step++;
+				//$scope.step++;
+				alert("El proyecto se ha creado con exito");
 		    }).error(function (err) {
 		    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
 		    });
@@ -124,7 +125,8 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		self.editProject = function(){
 			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify($scope.project))
 			.success(function () {
-				$scope.step++;
+				//$scope.step++;
+				alert("El proyecto se ha actualizado con exito");
 		    }).error(function (err) {
 		    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
 		    });
