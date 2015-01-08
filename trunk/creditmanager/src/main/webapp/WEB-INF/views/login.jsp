@@ -30,7 +30,7 @@
 				<h3 class="txtC">Ingresar al sistema</h3>
 				<div class="form-group">
 					<!-- VALIDACIÓN, agregar active a tooltip -->
-					<div class="tooltip top active" role="tooltip">
+					<div class="tooltip top" role="tooltip">
 					  <div class="tooltip-arrow"></div>
 					  <div class="tooltip-inner">
 						Email invalido

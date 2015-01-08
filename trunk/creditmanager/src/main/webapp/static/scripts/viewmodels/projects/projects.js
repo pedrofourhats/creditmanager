@@ -66,6 +66,17 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		$scope.project.holders = [];
 		$scope.project.guarantors = [];
 		$scope.projectId;
+		$scope.fakeProject = { serviceEvaluatorName: "", adviserEvaluatorName: "" };
+		
+		$scope.selectServiceEvaluator = function(serviceEvaluator) {
+			$scope.fakeProject.serviceEvaluatorName = serviceEvaluator.name;
+		};
+		
+		$scope.selectAdviserEvaluator = function(adviserEvaluator) {
+			$scope.fakeProject.adviserEvaluatorName = adviserEvaluator.name;
+		};
+		
+		$scope.buttonName = ($scope.step == 1 && !$scope.projectId) ? 'Cargar proyecto' : 'Editar proyecto';
 		
 		$scope.changeStep = function(step){
 			$scope.step = step;
@@ -75,7 +86,7 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 //			if(!$scope.institutionalForm.$valid) {
 //				return;
 //			}
-			if($scope.step == 1 && !$scope.projectId){
+			if($scope.step == 1 && !$scope.projectId) {
 				self.createProject();
 			} else {
 				self.editProject();

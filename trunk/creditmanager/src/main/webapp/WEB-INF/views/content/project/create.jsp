@@ -57,7 +57,6 @@
 											<div class="input-group">
 												<input id="date-picker-2" type="text" class="date-picker form-control" tabindex="5" />
 												<label for="date-picker-2" class="input-group-addon btn"><span class="fa fa-calendar"></span>
-
 												</label>
 											</div>
 										</div>
@@ -74,7 +73,7 @@
 									</div>
 									<!-- end VALIDACIÃ“N -->
 									<label>Número de proyecto</label>
-									<input type="text" class="form-control" placeholder="Ingrese nÃºmero de documento" tabindex="2">
+									<input type="text" class="form-control" placeholder="Ingrese número de documento" tabindex="2">
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -124,7 +123,23 @@
 								          <li><a href="javascript:void(0);">Evaluador 2</a></li>
 									  </ul>
 									</div>
+									<!-- <div class="dropdown" dropdown is-open="status.isopen">
+									  <a type="button" data-toggle="dropdown">
+									    <span ng-show="project.serviceEvaluator == ''">
+									    	Elegir evaluador
+									    </span>
+									    <span ng-show="newPerson.genderName != ''">
+										    {{newPerson.genderName}} 
+									    </span>
+									    <i class="fa fa-chevron-down"></i>
+									  </a>
+									  <ul class="dropdown-menu" role="menu">
+									    <li ng-click="selectGender({value: 0, name: 'MASCULINO'})"><a href="javascript:void(0);">MASCULINO</a></li>
+								        <li ng-click="selectGender({value: 1, name: 'FEMENINO'})"><a href="javascript:void(0);">FEMENINO</a></li>
+									  </ul>
+									</div>-->
 								</div>
+								
 								<div class="form-group">
 									<!-- VALIDACIÃ“N -->
 									<div class="tooltip top" role="tooltip">
@@ -680,7 +695,7 @@
 						<div class="pull-right">
 							<div class="form-group">
 								<button type="button" class="btn btn-primary">
-									<i class="fa fa-plus"></i> Cargar proyecto
+									<i class="fa fa-plus"></i> {{buttonName}}
 								</button>
 							</div>
 						</div>

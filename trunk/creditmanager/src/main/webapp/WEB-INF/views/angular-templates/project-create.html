@@ -108,14 +108,19 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Evaluador segun services</label>
-										<div class="dropdown">
-										  <a id="" type="button" data-toggle="dropdown">
-										    Elegir evaluador
+										<div class="dropdown" dropdown is-open="status.isopen">
+										  <a type="button" data-toggle="dropdown">
+										    <span ng-show="fakeProject.serviceEvaluatorName == ''">
+										    	Elegir evaluador
+										    </span>
+										    <span ng-show="fakeProject.serviceEvaluatorName != ''">
+											    {{fakeProject.serviceEvaluatorName }} 
+										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
-										  <ul class="dropdown-menu">
-										    <li><a href="#">Evaluador 1</a></li>
-									          <li><a href="#">Evaluador 2</a></li>
+										  <ul class="dropdown-menu" role="menu">
+										    <li ng-click="selectServiceEvaluator({value: 0, name: 'Evaluador 1'})"><a href="javascript:void(0);">Evaluador 1</a></li>
+									        <li ng-click="selectServiceEvaluator({value: 1, name: 'Evaluador 2'})"><a href="javascript:void(0);">Evaluador 2</a></li>
 										  </ul>
 										</div>
 									</div>
@@ -124,19 +129,24 @@
 										<div class="tooltip top" role="tooltip">
 										  <div class="tooltip-arrow"></div>
 										  <div class="tooltip-inner">
-											Debe ingresar ascesor CAFESG
+											Debe ingresar asesor CAFESG
 										  </div>
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Ascesor CAFESG</label>
-										<div class="dropdown">
-										  <a id="" type="button" data-toggle="dropdown">
-										    Elegir evaluador
+										<div class="dropdown" dropdown is-open="status.isopen">
+										  <a type="button" data-toggle="dropdown">
+										    <span ng-show="fakeProject.adviserEvaluatorName == ''">
+										    	Elegir evaluador
+										    </span>
+										    <span ng-show="fakeProject.adviserEvaluatorName != ''">
+											    {{fakeProject.adviserEvaluatorName }} 
+										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
-										  <ul class="dropdown-menu">
-										    <li><a href="#">Evaluador 1</a></li>
-									          <li><a href="#">Evaluador 2</a></li>
+										  <ul class="dropdown-menu" role="menu">
+										    <li ng-click="selectAdviserEvaluator({value: 0, name: 'Evaluador 1'})"><a href="javascript:void(0);">Evaluador 1</a></li>
+									        <li ng-click="selectAdviserEvaluator({value: 1, name: 'Evaluador 2'})"><a href="javascript:void(0);">Evaluador 2</a></li>
 										  </ul>
 										</div>
 									</div>
@@ -150,7 +160,7 @@
 										<div class="tooltip top" role="tooltip">
 										  <div class="tooltip-arrow"></div>
 										  <div class="tooltip-inner">
-											Debe ingresar destino de la inversiÃ³n
+											Debe ingresar destino de la inversión
 										  </div>
 										</div>
 										<!-- end VALIDACIÃN -->
@@ -643,7 +653,7 @@
 						<div class="pull-right">
 							<div class="form-group">
 								<button type="button" class="btn btn-primary" ng-click="nextSetp()">
-									<i class="fa fa-plus"></i> Cargar proyecto
+									<i class="fa fa-plus"></i> {{buttonName}}
 								</button>
 							</div>
 						</div>

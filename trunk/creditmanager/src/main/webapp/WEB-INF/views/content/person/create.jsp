@@ -236,7 +236,8 @@
 							<div class="col-sm-12">
 								<div class="pull-right">
 									<div class="form-group">
-										<input type="submit" class="btn btn-primary" tabindex="15" value="Cargar persona" ng-disabled="createPersonForm.$invalid || newPerson.genderName == '' || newPerson.identityTypeName == ''" />
+										<input type="submit" class="btn btn-primary" tabindex="15" value="Cargar persona" ng-show="!isEdition" ng-disabled="createPersonForm.$invalid || newPerson.genderName == '' || newPerson.identityTypeName == ''" />
+										<input type="submit" class="btn btn-primary" tabindex="15" value="Actualizar persona" ng-show="isEdition" ng-disabled="createPersonForm.$invalid || newPerson.genderName == '' || newPerson.identityTypeName == ''" />
 									</div>
 								</div>
 							</div>
