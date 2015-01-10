@@ -80,4 +80,14 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		}).error(function(err){
 			alert("Ha ocurrido un problema. Por favor intente nuevamente");
 		});
+		
+		$scope.loadForm = function() {
+			$modal.open({
+				templateUrl: 'loadFormModalContent.html',
+			    controller: 'ModalLoadFormCtrl',
+			    size: 'lg',
+			    resolve: {
+			    }
+			});
+		};
 }]);
