@@ -494,7 +494,7 @@
 									  <th>
 									  	<a href="javascript:void(0);">
 									  		<!-- cambiar a fa-caret-up -->
-									  		Fecha de emisiÃ³n <i class="fa fa-caret-down pull-right"></i>
+									  		Fecha de emisión <i class="fa fa-caret-down pull-right"></i>
 									  	</a>
 									  </th>
 									  <th class="txtC">Acciones</th>
@@ -521,7 +521,7 @@
 								</table>
 								<div class="row mt20">
 									<div class="col-sm-12 txtR">
-										<button type="button" class="btn btn-primary" onclick="">
+										<button type="button" class="btn btn-primary" ng-click="loadForm()">
 											<i class="fa fa-file-text-o"></i> Cargar formulario
 										</button>
 										<button type="button" class="btn btn-primary" onclick="">
@@ -665,25 +665,45 @@
 	</div>
 	
 	<script type="text/ng-template" id="addPersonModalContent.html">
-			<div class="modal-header">
-            	<h3 class="modal-title">Agregar {{type}}</h3>
-        	</div>
-        	<div class="modal-body">
-         		<label for="exampleInputEmail1">Buscar {{type}}</label> 
-				<input type="text" class="form-control" placeholder="{{type}}" ng-model="selected" 
-					typeahead="person as (person.name + ' ' + person.surname) for person in persons($viewValue)">
+		<div class="modal-header">
+        	<h3 class="modal-title">Agregar {{type}}</h3>
+        </div>
+        <div class="modal-body">
+        	<label for="exampleInputEmail1">Buscar {{type}}</label> 
+			<input type="text" class="form-control" placeholder="{{type}}" ng-model="selected" 
+				typeahead="person as (person.name + ' ' + person.surname) for person in persons($viewValue)">
 				
-				<b>{{type}} Seleccionado</b>
-    			<div class="list-group">
-					<blockquote>
-      					Nombre: {{selected.name + ' ' + selected.surname}}<br/>
-      					DNI: {{selected.identityNumber}}<br/>
-      					Sexo: {{selected.gender}}
-    				</blockquote>
-				</div>
-        	</div>
-        	<div class="modal-footer">
-            	<button class="btn btn-primary" ng-click="ok()" ng-disabled="!selected">OK</button>
-            	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        	</div>
-    	</script>
+			<b>{{type}} Seleccionado</b>
+    		<div class="list-group">
+				<blockquote>
+      				Nombre: {{selected.name + ' ' + selected.surname}}<br/>
+      				DNI: {{selected.identityNumber}}<br/>
+      				Sexo: {{selected.gender}}
+    			</blockquote>
+			</div>
+        </div>
+        <div class="modal-footer">
+        	<button class="btn btn-primary" ng-click="ok()" ng-disabled="!selected">OK</button>
+        	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="loadFormModalContent.html">
+		<div class="modal-header">
+        	<h3 class="modal-title">Cargar formulario</h3>
+        </div>
+        <div class="modal-body">
+    		<div class="list-group">
+				<blockquote>
+      				<a href="javascript: redirect('forms/form1');">Formulario 1</a><br>
+      				<a href="javascript: redirect('forms/form2')">Formulario 2</a><br>
+					<a href="javascript: redirect('forms/form3')">Formulario 3</a><br>
+					<a href="javascript: redirect('forms/form4')">Formulario 4</a><br>
+					<a href="javascript: redirect('forms/form5')">Formulario 5</a>
+    			</blockquote>
+			</div>
+        </div>
+        <div class="modal-footer">
+        	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>

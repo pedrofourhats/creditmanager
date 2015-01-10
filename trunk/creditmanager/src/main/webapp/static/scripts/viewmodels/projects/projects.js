@@ -142,6 +142,16 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
 		    });
 		};
+		
+		$scope.loadForm = function() {
+			$modal.open({
+				templateUrl: 'loadFormModalContent.html',
+			    controller: 'ModalLoadFormCtrl',
+			    size: 'lg',
+			    resolve: {
+			    }
+			});
+		};
 }]);
 
 projectControllers.controller('ModalAddPersonCtrl', 
@@ -163,3 +173,14 @@ projectControllers.controller('ModalAddPersonCtrl',
 			$modalInstance.dismiss('cancel');
 	  };
 });
+
+projectControllers.controller('ModalLoadFormCtrl', 
+		function ($scope, $modalInstance, $http) {
+			$scope.goToForm = function(formNumber) {
+				alert(formNumber);
+			};
+	
+			$scope.cancel = function () {
+				$modalInstance.dismiss('cancel');
+			};
+		});
