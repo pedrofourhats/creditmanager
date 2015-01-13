@@ -1,5 +1,6 @@
 package com.creditmanager.service.impl;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -15,6 +16,7 @@ import com.creditmanager.dao.ProjectDAO;
 import com.creditmanager.model.Page;
 import com.creditmanager.model.Person;
 import com.creditmanager.model.Project;
+import com.creditmanager.model.User;
 import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
 import com.creditmanager.service.ProjectService;
 import com.creditmanager.service.dto.PersonDTO;
@@ -93,5 +95,21 @@ public class ProjectServiceImpl implements ProjectService {
 			throw new ProjectHasHoldersOrGuarantorsException();
 		}
 		projectDao.delete(project);
+	}
+
+	@Override
+	public List<ProjectDTO> getGuarantorProjectsByUser(long personId) {
+		//TODO: HACERLO BIEN EN ALGUN MOMENTO
+		List<Project> projects = new ArrayList<Project>();
+		projects.addAll(this.personDao.getById(personId).getGuarantorProjects());
+		return MapperUtil.map(mapper, projects, ProjectDTO.class);
+	}
+	
+	@Override
+	public List<ProjectDTO> getHolderProjectsByUser(long personId) {
+		//TODO: HACERLO BIEN EN ALGUN MOMENTO
+		List<Project> projects = new ArrayList<Project>();
+		projects.addAll(this.personDao.getById(personId).getHolderProjects());
+		return MapperUtil.map(mapper, projects, ProjectDTO.class);
 	}
 }

@@ -1,5 +1,7 @@
 package com.creditmanager.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.creditmanager.model.Page;
@@ -15,4 +17,6 @@ public interface ProjectService {
 	ProjectDTO addProject(ProjectDTO project);
 	void editProject(ProjectDTO project);
 	void deleteProject(Long projectId) throws ProjectHasHoldersOrGuarantorsException;
+	List<ProjectDTO> getGuarantorProjectsByUser(long personId);
+	List<ProjectDTO> getHolderProjectsByUser(long personId);
 }
