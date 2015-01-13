@@ -13,7 +13,8 @@ personDetailApp.controller('personDetailController', function ($scope, $http) {
 	
 	$scope.person = personDetail;
 	
-	$scope.projects = projects;
+	$scope.guarantorProjects = guarantorProjects;
+	$scope.holderProjects = holderProjects;
 });
 
 function getIdentityTypeName(identityTypeName) {

@@ -27,5 +27,4 @@ public class ProjectDAOImpl extends GenericDAOImpl<Project, Long> implements Pro
 		criteria.add(Restrictions.eq("number", number));
 		return getPageByCriteria(criteria, pageIndex, pageSize);
 	}
-
 }

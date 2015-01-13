@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.creditmanager.service.PersonService;
+import com.creditmanager.service.ProjectService;
 import com.creditmanager.service.dto.ProjectDTO;
 import com.google.gson.Gson;
 
@@ -18,6 +19,9 @@ public class PersonController {
 
 	@Autowired
 	private PersonService personService;
+	
+	@Autowired
+	private ProjectService projectService;
 	
 	@RequestMapping(value="/person/list")
     public String goToList(Model model) {
@@ -30,17 +34,9 @@ public class PersonController {
     public String goToDetail(@PathVariable long personId, Model model) {
 		Gson gson = new Gson();
 		model.addAttribute("person", gson.toJson(personService.getById(personId)));
+		model.addAttribute("guarantorProjects", gson.toJson(projectService.getGuarantorProjectsByUser(personId)));
+		model.addAttribute("holderProjects", gson.toJson(projectService.getHolderProjectsByUser(personId)));
 		
-		/**cambiar por una llamada al servicio**/
-		List<ProjectDTO> projects = new ArrayList<ProjectDTO>();
-		for(int i = 0; i < 3; i++) {
-			ProjectDTO p = new ProjectDTO();
-			p.setTitle("Proyecto " + i);
-			p.setId(new Long(12345 + i));
-			projects.add(p);	
-		}
-		
-		model.addAttribute("projects", gson.toJson(projects));
 		return "content/person/detail";
     }
 	

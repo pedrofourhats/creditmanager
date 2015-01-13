@@ -12,7 +12,8 @@
 	<%@ include file="../../include/scripts.jsp" %>
 	<script>
 		var personDetail = <%= request.getAttribute("person") %>;
-		var projects = <%= request.getAttribute("projects") %>;
+		var guarantorProjects = <%= request.getAttribute("guarantorProjects") %>;
+		var holderProjects = <%= request.getAttribute("holderProjects") %>;
 	</script>
 	
 	<!-- STYLESHEET -->
@@ -78,10 +79,9 @@
 					<table class="table table-hover table-condensed table-responsive table-my-projects">
 					  <thead>
 						<tr>
-						  <th>Proyecto
+						  <th>
 						  	<a href="javascript:void(0);">
-						  		<!-- cambiar a fa-caret-up -->
-						  		Proyecto<!--  <i class="fa fa-caret-down pull-right"></i> -->
+						  		Proyecto
 						  	</a>
 						  </th>
 						  <th>ID Proyecto</th>
@@ -89,22 +89,18 @@
 						</tr>
 					  </thead>
 					  <tbody>
-						<tr ng-repeat="project in projects">
+						<tr ng-repeat="project in guarantorProjects">
+						  <td>{{project.title}}</td>
+						  <td>{{project.id}}</td>
+						  <td>Garante</td>
+						</tr>
+						<tr ng-repeat="project in holderProjects">
 						  <td>{{project.title}}</td>
 						  <td>{{project.id}}</td>
 						  <td>Titular</td>
 						</tr>
 					  </tbody>
 					</table>
-					<nav>
-					  <ul class="pagination pull-right">
-						<li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-					  </ul>
-					</nav>
 				</div>
 			</div>
 		</div>
