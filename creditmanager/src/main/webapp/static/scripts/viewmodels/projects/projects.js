@@ -58,7 +58,7 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
 }]);
 
 projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal',
-	function($scope,$http,$modal){
+	function($scope, $http, $modal) {
 		var self = this;
 		$scope.step = 1;
 		$scope.title = 'CARGAR NUEVO PROYECTO';
@@ -67,6 +67,12 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		$scope.project.guarantors = [];
 		$scope.projectId;
 		$scope.fakeProject = { serviceEvaluatorName: "", adviserEvaluatorName: "" };
+		
+		$scope.servicers = [{name: "INTI"}, {name: "INTA"}];
+		
+		$scope.selectServicer = function(servicerName) {
+			$scope.project.servicers = servicerName;
+		};
 		
 		$scope.selectServiceEvaluator = function(serviceEvaluator) {
 			$scope.fakeProject.serviceEvaluatorName = serviceEvaluator.name;
@@ -78,11 +84,11 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		
 		$scope.buttonName = ($scope.step == 1 && !$scope.projectId) ? 'Cargar proyecto' : 'Editar proyecto';
 		
-		$scope.changeStep = function(step){
+		$scope.changeStep = function(step) {
 			$scope.step = step;
 		};
 	
-		$scope.nextSetp = function(){
+		$scope.nextSetp = function() {
 //			if(!$scope.institutionalForm.$valid) {
 //				return;
 //			}
