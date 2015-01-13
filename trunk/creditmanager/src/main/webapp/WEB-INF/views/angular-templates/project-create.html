@@ -81,8 +81,22 @@
 										  </div>
 										</div>
 										<!-- end VALIDACIÃN -->
-										<label>Número de services</label>
-										<input type="text" class="form-control" placeholder="Ingrese número de services" tabindex="3" ng-model="project.servicers">
+										<label>Número de servicers</label>
+										<div class="dropdown" dropdown is-open="status.isopen">
+										  <a type="button" data-toggle="dropdown">
+										    <span ng-show="project.servicers == undefined">
+										    	Elegir servicers
+										    </span>
+										    <span ng-show="project.servicers != undefined">
+											    {{ project.servicers }} 
+										    </span>
+										    <i class="fa fa-chevron-down"></i>
+										  </a>
+										  <ul class="dropdown-menu" role="menu">
+										    <li ng-repeat="servicer in servicers" ng-click="selectServicer(servicer.name)"><a href="javascript:void(0);">{{servicer.name}}</a></li>
+										  </ul>
+										</div>
+										<!-- <input type="text" class="form-control" placeholder="Ingrese número de services" tabindex="3" ng-model="project.servicers"> -->
 									</div>
 									<div class="form-group">
 										<!-- VALIDACIÃN -->
