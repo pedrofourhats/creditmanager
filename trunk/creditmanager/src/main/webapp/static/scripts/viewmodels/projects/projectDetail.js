@@ -87,6 +87,9 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			    controller: 'ModalLoadFormCtrl',
 			    size: 'lg',
 			    resolve: {
+			    	projectId: function () {
+			    		return $scope.projectId;
+			        }
 			    }
 			});
 		};

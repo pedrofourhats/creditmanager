@@ -39,7 +39,7 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
 		//copy the references
 		$scope.displayedCollection = [].concat($scope.projects);
 		
-		$scope.createNewProject = function(){
+		$scope.createNewProject = function() {
 			$location.path('/project-creation');
 		};
 		
@@ -47,7 +47,7 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
 			$location.path('/project-detail/' + projectId);
 		};
 		
-		$scope.remove = function(projectId){
+		$scope.remove = function(projectId) {
 			$http.delete(getCompletePath("projects/" + projectId), {})
 			.success(function () {
 				$location.path('/project-list');
@@ -173,6 +173,9 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			    controller: 'ModalLoadFormCtrl',
 			    size: 'lg',
 			    resolve: {
+			    	projectId: function () {
+			    		return $scope.projectId;
+			        }
 			    }
 			});
 		};
@@ -199,9 +202,9 @@ projectControllers.controller('ModalAddPersonCtrl',
 });
 
 projectControllers.controller('ModalLoadFormCtrl', 
-		function ($scope, $modalInstance, $http) {
-			$scope.goToForm = function(formNumber) {
-				alert(formNumber);
+		function ($scope, $modalInstance, $http, projectId) {
+			$scope.goToForm = function(formName) {
+				redirect('forms/' + formName + "/" + projectId);
 			};
 	
 			$scope.cancel = function () {

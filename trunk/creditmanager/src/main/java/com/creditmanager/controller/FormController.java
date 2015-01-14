@@ -1,39 +1,30 @@
 package com.creditmanager.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.creditmanager.service.ProjectService;
+import com.google.gson.Gson;
 
 @Controller
 public class FormController {
 
+	@Autowired
+	private ProjectService projectService;
+	
 	@RequestMapping(value="/form")
     public String goToForm(Model model) {
         return "content/form/index";
     }
 	
-	@RequestMapping(value="/forms/form1")
-    public String goToForm1(Model model) {
-        return "content/form/form1";
-    }
-	
-	@RequestMapping(value="/forms/form2")
-    public String goToForm2(Model model) {
-        return "content/form/form2";
-    }
-	
-	@RequestMapping(value="/forms/form3")
-    public String goToForm3(Model model) {
-        return "content/form/form3";
-    }
-	
-	@RequestMapping(value="/forms/form4")
-    public String goToForm4(Model model) {
-        return "content/form/form4";
-    }
-	
-	@RequestMapping(value="/forms/form5")
-    public String goToForm5(Model model) {
-        return "content/form/form5";
+	@RequestMapping(value="/forms/{formName}/{projectId}")
+    public String goToForm1(@PathVariable String formName, @PathVariable long projectId, Model model) {
+		Gson gson = new Gson();
+		model.addAttribute("project", gson.toJson(projectService.getById(projectId)));
+		
+        return "content/form/" + formName;
     }
 }

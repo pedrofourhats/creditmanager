@@ -7,6 +7,9 @@
   <title>INTI</title>
   <!-- SCRIPTS -->
   <%@ include file="../../include/scripts.jsp" %>
+  	<script>
+		var project = <%= request.getAttribute("project") %>;
+	</script>
   
   <!-- STYLESHEET -->
   <%@ include file="../../include/styles.jsp" %>
@@ -66,8 +69,6 @@
       </div>
     </div>
   </div>
-  <script>
-    $("#goToFormsLink").addClass("active");
-  </script>
+<script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
 </body>
 </html>
