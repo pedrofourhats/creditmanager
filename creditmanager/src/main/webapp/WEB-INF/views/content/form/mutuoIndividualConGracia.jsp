@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="formApp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>INTI</title>
   <!-- SCRIPTS -->
-  <%@ include file="../../include/scripts.jsp" %>
+  <!-- SCRIPTS -->
+	<%@ include file="../../include/scripts.jsp" %>
+	<script>
+		var project = <%= request.getAttribute("project") %>;
+	</script>
   
   <!-- STYLESHEET -->
   <%@ include file="../../include/styles.jsp" %>
@@ -14,10 +18,10 @@
 <body>
   <%@ include file="../../include/header.jsp" %>
 
-  <div class="container forms-list">
+  <div class="container forms-list" ng-controller="formController">
     <div class="panel panel-default">
       <div class="panel-body">
-<div class="panel-body">
+		<div class="panel-body">
                 <h3>
                   Contrato de mutuo entre EL POLO TECNOLÓGICO CONSTITUYENTES S.A., en su calidad de FIDUCIARIO del FIDEICOMISO SALTO GRANDE, celebrado el 10 de Junio de 2005,  y Gomez, Mario Rene 
                 </h3>
@@ -102,8 +106,7 @@
       </div>
     </div>
   </div>
-  <script>
-    $("#goToFormsLink").addClass("active");
-  </script>
+  
+  <script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
 </body>
 </html>

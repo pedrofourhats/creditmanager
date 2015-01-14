@@ -490,22 +490,6 @@
 								</div>								
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="form-group">
-									<!-- VALIDACIÃN -->
-									<div class="tooltip top" role="tooltip">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner">
-										Debe ingresar destino de la inversión
-									  </div>
-									</div>
-									<!-- end VALIDACIÃN -->
-									<label>Destino de la inversión</label>
-									<textarea class="form-control" placeholder="Ingrese estado de situación"></textarea>
-								</div>
-							</div> 
-						</div>
 						<hr>
 						<div class="row">
 							<div class="col-sm-12">
@@ -548,7 +532,7 @@
 								</table>
 								<div class="row mt20">
 									<div class="col-sm-12 txtR">
-										<button type="button" class="btn btn-primary" ng-click="loadForm()">
+										<button type="button" class="btn btn-primary" ng-click="loadForm()" ng-disabled="projectId == undefined">
 											<i class="fa fa-file-text-o"></i> Cargar formulario
 										</button>
 										<button type="button" class="btn btn-primary" onclick="">
@@ -564,7 +548,7 @@
 							<div class="col-sm-12">
 								<div class="row head-small">
 									<div class="col-sm-6">
-										<h4>Ãltimos pagos</h4>
+										<h4>Últimos pagos</h4>
 									</div>
 									<div class="col-sm-6 txtR">
 										<button type="button" class="btn btn-primary" onclick="">
@@ -722,11 +706,11 @@
         <div class="modal-body">
     		<div class="list-group">
 				<blockquote>
-      				<a href="javascript: redirect('forms/form1');">Formulario 1</a><br>
-      				<a href="javascript: redirect('forms/form2')">Formulario 2</a><br>
-					<a href="javascript: redirect('forms/form3')">Formulario 3</a><br>
-					<a href="javascript: redirect('forms/form4')">Formulario 4</a><br>
-					<a href="javascript: redirect('forms/form5')">Formulario 5</a>
+      				<a href="javascript: void(0);" ng-click="goToForm('mutuoIndividualConGracia')">Mutuo Individual Con Gracia</a><br>
+					<a href="javascript: void(0);" ng-click="goToForm('form2')">Form 2</a><br>
+					<a href="javascript: void(0);" ng-click="goToForm('form3')">Form 3</a><br>
+					<a href="javascript: void(0);" ng-click="goToForm('mutuoAsociativoConGracia')">Mutuo Asociativo Con Gracia</a><br>
+					<a href="javascript: void(0);" ng-click="goToForm('mutuoIndividualSinGracia')">Mutuo Individual Sin Gracia</a><br>
     			</blockquote>
 			</div>
         </div>

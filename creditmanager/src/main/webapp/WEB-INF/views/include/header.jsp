@@ -26,11 +26,11 @@
 	        		<span>PERSONAS</span>
 	        	</a>
 			</li>
-			<li id="goToFormsLink">
+			<!-- <li id="goToFormsLink">
 				<a href="javascript:void(0)" onclick="redirect('form');">
 	        		<span>FORMULARIOS</span>
 	        	</a>
-			</li>
+			</li>-->
 			<li id="goToReportsLink">
 				<a href="javascript:void(0)" onclick="redirect('report/list');">
 	        		<span>REPORTES</span>
