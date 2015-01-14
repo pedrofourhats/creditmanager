@@ -19,7 +19,7 @@
       <div class="panel-body">
 <div class="panel-body">
                 <h3>
-                  Mutuo asociativo con gracias - Contrato de mutuo entre EL POLO TECNOLÓGICO CONSTITUYENTES S.A., en su calidad de FIDUCIARIO del FIDEICOMISO SALTO GRANDE, celebrado el 10 de Junio de 2005,  y Gomez, Mario Rene 
+                  Contrato de mutuo entre EL POLO TECNOLÓGICO CONSTITUYENTES S.A., en su calidad de FIDUCIARIO del FIDEICOMISO SALTO GRANDE, celebrado el 10 de Junio de 2005,  y Gomez, Mario Rene 
                 </h3>
                 <p class="mt10">
                   Entre el POLO TECNOLÓGICO CONSTITUYENTES S.A. en su calidad de administrador FIDUCIARIO del contrato de fideicomiso que hubiere celebrado en fecha 10 de junio de 2005 con la Comisión Administradora para el Fondo Especial de Salto Grande, representado por su apoderado para este acto CPN Elina Gabriela Buffa, titular del DNI Nº 25.511.090 con domicilio en Paraná 145 Piso 4º, de la Ciudad Autónoma de Buenos Aires, en adelante el ACREEDOR, y por otra parte Gomez, Mario Rene con DNI Nº 25.416.423 con domicilio en 24 Oeste Sur Bis Casa N° 56, de la Ciudad de Concepción del Uruguay, Provincia de Entre Ríos, en adelante el DEUDOR, se celebra el presente contrato de MUTUO, el que se sujetará a las siguientes cláusulas:
