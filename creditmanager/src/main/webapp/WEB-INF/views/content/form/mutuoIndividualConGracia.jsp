@@ -86,23 +86,7 @@
                   </div>
                   <div class="clearfix"></div>
                 </div>
-                <p class="signature">
-                  En la Ciudad  Autónoma de Buenos Aires,  a los DATOFORMULARIO_DIA días del mes de DATOFORMULARIO_MES de DATOFORMULARIO_AÑO.
-                </p>
-                <p class="mt20">
-                  A LA VISTA pagaré sin protesto (Art. 50 Dec. Ley Nº 5965/63) al  Administrador Fiduciario  Polo  Tecnológico  Constituyentes  S.A., o  a  su  orden,  la  cantidad  de $ IMPORTEOTORGADO (IMPORTEOTORGADOENPALABRAS) por igual valor recibido en efectivo a mi entera satisfacción. De conformidad con lo dispuesto en el artículo 36 de Decreto Ley 5965/63, se amplía el plazo de presentación a cinco (5) años a contar de la fecha de libramiento del presente.
-                </p>
-                <p class="mt20">
-                  Pagadero en: Paraná 145 4º Capital Federal.
-                </p>
-                <p class="signature">
-                  Firma : ___________________________________
-                  <br>
-                  Aclaración: 
-                  <br>
-                  D.N.I.  Nº : 
-                </p>
-              </div>
+               </div>
       </div>
     </div>
   </div>
