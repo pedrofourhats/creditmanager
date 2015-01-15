@@ -22,6 +22,9 @@
     <div class="panel panel-default">
       <div class="panel-body">
 		<div class="panel-body">
+		{{project.dateOfEntry}} <br>
+		{{project.holders[0].identityNumber}}
+		
                 <h3>
                   Contrato de mutuo entre EL POLO TECNOLÓGICO CONSTITUYENTES S.A., en su calidad de FIDUCIARIO del FIDEICOMISO SALTO GRANDE, celebrado el 10 de Junio de 2005,  y Gomez, Mario Rene 
                 </h3>
