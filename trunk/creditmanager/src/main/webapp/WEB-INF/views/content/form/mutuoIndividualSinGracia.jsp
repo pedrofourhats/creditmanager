@@ -85,22 +85,6 @@
                   </div>
                   <div class="clearfix"></div>
                 </div>
-                <p class="signature">
-                  En la Ciudad  Autónoma de Buenos Aires, a los <input type="text" name="num-dias" class="form-control"> días del mes de <input type="text" name="num-mes" class="form-control"> de 2014.-
-                </p>
-                <p class="mt20">
-                  A LA VISTA pagaré sin protesto (Art. 50 Dec. Ley Nº 5965/63) al  Administrador Fiduciario  Polo  Tecnológico  Constituyentes  S.A., o  a  su  orden,  la  cantidad  de $ 30.000 (pesos treinta mil) por igual valor recibido en efectivo a mi entera satisfacción. De conformidad con lo dispuesto en el artículo 36 de Decreto Ley 5965/63, se amplía el plazo de presentación a cinco (5) años a contar de la fecha de libramiento del presente.
-                </p>
-                <p class="mt20">
-                  Pagadero en: Paraná 145 4º Capital Federal.
-                </p>
-                <p class="signature">
-                  Firma : ___________________________________
-                  <br>
-                  Aclaración: Gomez, Mario Rene
-                  <br>
-                  D.N.I.  Nº : 25.416.423
-                </p>
               </div>
       </div>
     </div>

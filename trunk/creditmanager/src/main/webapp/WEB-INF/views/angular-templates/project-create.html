@@ -137,17 +137,16 @@
 										<label>Evaluador segun services</label>
 										<div class="dropdown" dropdown is-open="status.isopen">
 										  <a type="button" data-toggle="dropdown">
-										    <span ng-show="fakeProject.serviceEvaluatorName == ''">
+										    <span ng-show="project.states == undefined">
 										    	Elegir evaluador
 										    </span>
-										    <span ng-show="fakeProject.serviceEvaluatorName != ''">
-											    {{fakeProject.serviceEvaluatorName }} 
+										    <span ng-show="project.states != undefined">
+											    {{ project.evaluators }} 
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
 										  <ul class="dropdown-menu" role="menu">
-										    <li ng-click="selectServiceEvaluator({value: 0, name: 'Evaluador 1'})"><a href="javascript:void(0);">Evaluador 1</a></li>
-									        <li ng-click="selectServiceEvaluator({value: 1, name: 'Evaluador 2'})"><a href="javascript:void(0);">Evaluador 2</a></li>
+										    <li ng-repeat="evaluator in evaluators" ng-click=""><a href="javascript:void(0);">{{evaluator.name}}</a></li>
 										  </ul>
 										</div>
 									</div>
