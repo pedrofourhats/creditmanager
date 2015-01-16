@@ -31,7 +31,7 @@
 							  <th>
 							  	<a href="javascript:void(0);">
 							  		<!-- cambiar a fa-caret-up -->
-							  		DescripciÃ³n
+							  		Descripción
 							  	</a>
 							  </th>
 							  <th class="txtC">Acciones</th>
@@ -42,7 +42,7 @@
 							  <td>Cronograma de pago</td>
 							  <td>Detalle del cronograma</td>
 							  <td class="txtC">
-								<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
+								<button type="button" class="btn btn-link" onclick="redirect('/report/defaulters')"><i class="fa fa-eye txtSuccess" ></i></button>
 							  </td>
 							</tr>
 							<tr>
