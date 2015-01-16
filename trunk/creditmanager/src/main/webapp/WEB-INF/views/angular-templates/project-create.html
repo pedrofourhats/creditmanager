@@ -110,16 +110,16 @@
 										<label>Estado de situación</label>
 										<div class="dropdown" dropdown is-open="status.isopen">
 										  <a type="button" data-toggle="dropdown">
-										    <span ng-show="project.states == undefined">
+										    <span ng-show="project.situationState == undefined">
 										    	Elegir estado
 										    </span>
-										    <span ng-show="project.states != undefined">
-											    {{ project.states }} 
+										    <span ng-show="project.situationState != undefined">
+											    {{ project.situationState }} 
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
 										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="state in states" ng-click=""><a href="javascript:void(0);">{{state.name}}</a></li>
+										    <li ng-repeat="state in states" ng-click="selectState(state.name)"><a href="javascript:void(0);">{{state.name}}</a></li>
 										  </ul>
 										</div>
 									</div>
@@ -162,17 +162,16 @@
 										<label>Ascesor CAFESG</label>
 										<div class="dropdown" dropdown is-open="status.isopen">
 										  <a type="button" data-toggle="dropdown">
-										    <span ng-show="fakeProject.adviserEvaluatorName == ''">
-										    	Elegir evaluador
+										    <span ng-show="fakeProject.adviserEvaluatorName == undefined">
+										    	Elegir asesor
 										    </span>
-										    <span ng-show="fakeProject.adviserEvaluatorName != ''">
-											    {{fakeProject.adviserEvaluatorName }} 
+										    <span ng-show="fakeProject.adviserEvaluatorName != undefined">
+											    {{ fakeProject.adviserEvaluatorName }} 
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
 										  <ul class="dropdown-menu" role="menu">
-										    <li ng-click="selectAdviserEvaluator({value: 0, name: 'Evaluador 1'})"><a href="javascript:void(0);">Evaluador 1</a></li>
-									        <li ng-click="selectAdviserEvaluator({value: 1, name: 'Evaluador 2'})"><a href="javascript:void(0);">Evaluador 2</a></li>
+										    <li ng-repeat="adviser in advisers" ng-click="selectAdviserEvaluator(adviser.name)"><a href="javascript:void(0);">{{adviser.name}}</a></li>
 										  </ul>
 										</div>
 									</div>
@@ -312,7 +311,20 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Tipo de proyecto</label> 
-										<input type="text" class="form-control" placeholder="Ingrese tipo de proyecto" tabindex="2" ng-model="project.type">
+										<div class="dropdown" dropdown is-open="status.isopen">
+										  <a type="button" data-toggle="dropdown">
+										    <span ng-show="project.type == undefined">
+										    	Elegir tipo
+										    </span>
+										    <span ng-show="project.type != undefined">
+											    {{ project.type }} 
+										    </span>
+										    <i class="fa fa-chevron-down"></i>
+										  </a>
+										  <ul class="dropdown-menu" role="menu">
+										    <li ng-repeat="type in types" ng-click="selectType(type.name)"><a href="javascript:void(0);">{{type.name}}</a></li>
+										  </ul>
+										</div>
 									</div>
 								</div>
 								<div class="col-sm-4">
@@ -324,7 +336,20 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Sector económico</label> 
-										<input type="text" class="form-control" placeholder="Ingrese sector económico" tabindex="3" autofocus ng-model="project.economicArea">
+										<div class="dropdown" dropdown is-open="status.isopen">
+										  <a type="button" data-toggle="dropdown">
+										    <span ng-show="project.economicArea == undefined">
+										    	Elegir sector económico
+										    </span>
+										    <span ng-show="project.economicArea != undefined">
+											    {{ project.economicArea }} 
+										    </span>
+										    <i class="fa fa-chevron-down"></i>
+										  </a>
+										  <ul class="dropdown-menu" role="menu">
+										    <li ng-repeat="economicSector in economicSectors" ng-click="selectEconomicArea(economicSector.name)"><a href="javascript:void(0);">{{economicSector.name}}</a></li>
+										  </ul>
+										</div>
 									</div>
 									<div class="form-group">
 										<!-- VALIDACIÃN -->
@@ -334,7 +359,20 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Actividad económica</label> 
-										<input type="text" class="form-control" placeholder="Ingrese activdad económica" tabindex="4" ng-model="project.economicActivity">
+										<div class="dropdown" dropdown is-open="status.isopen">
+										  <a type="button" data-toggle="dropdown">
+										    <span ng-show="project.economicActivity == undefined">
+										    	Elegir actividad económica
+										    </span>
+										    <span ng-show="project.economicActivity != undefined">
+											    {{ project.economicActivity }} 
+										    </span>
+										    <i class="fa fa-chevron-down"></i>
+										  </a>
+										  <ul class="dropdown-menu" role="menu">
+										    <li ng-repeat="economicActivity in economicActivities" ng-click="selectEconomicActivity(economicActivity.name)"><a href="javascript:void(0);">{{economicActivity.name}}</a></li>
+										  </ul>
+										</div>
 									</div>
 								</div>
 								<div class="col-sm-4">
@@ -346,7 +384,20 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Rubro</label> 
-										<input type="text" class="form-control" placeholder="Ingrese rubro" tabindex="5" autofocus ng-model="project.category">
+										<div class="dropdown" dropdown is-open="status.isopen">
+										  <a type="button" data-toggle="dropdown">
+										    <span ng-show="project.category == undefined">
+										    	Elegir rubro
+										    </span>
+										    <span ng-show="project.category != undefined">
+											    {{ project.category }} 
+										    </span>
+										    <i class="fa fa-chevron-down"></i>
+										  </a>
+										  <ul class="dropdown-menu" role="menu">
+										    <li ng-repeat="category in categories" ng-click="selectCategory(category.name)"><a href="javascript:void(0);">{{category.name}}</a></li>
+										  </ul>
+										</div>
 									</div>
 								</div>
 							</div>

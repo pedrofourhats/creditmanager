@@ -39,17 +39,73 @@
 						  </thead>
 						  <tbody>
 							<tr>
-							  <td>Cronograma de pago</td>
-							  <td>Detalle del cronograma</td>
+							  <td>Datos filiatorios titulares</td>
+							  <td>Detalle de datos filiatorios titulares</td>
 							  <td class="txtC">
-								<button type="button" class="btn btn-link" onclick="redirect('/report/defaulters')"><i class="fa fa-eye txtSuccess" ></i></button>
+								<button type="button" class="btn btn-link" onclick="redirect('report/datosFiliatoriosTitulares')"><i class="fa fa-eye txtSuccess" ></i></button>
 							  </td>
 							</tr>
 							<tr>
-							  <td>Reporte de cartera en mora</td>
+							  <td>Cartera en mora</td>
 							  <td>Detalle de la cartera en mora</td>
 							  <td class="txtC">
-								<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button>
+								<button type="button" class="btn btn-link" onclick="redirect('report/defaulters')"><i class="fa fa-eye txtSuccess" ></i></button>
+							  </td>
+							</tr>
+							<tr>
+							  <td>Cartera de créditos activos</td>
+							  <td>Detalle de Cartera de créditos activos</td>
+							  <td class="txtC">
+								<button type="button" class="btn btn-link" onclick="redirect('report/carteraDeCreditosActivos')"><i class="fa fa-eye txtSuccess" ></i></button>
+							  </td>
+							</tr>
+							<tr>
+							  <td>Indicadores socio-economicos</td>
+							  <td>Detalle de Indicadores socio-economicos</td>
+							  <td class="txtC">
+								<button type="button" class="btn btn-link" onclick="redirect('report/indicadoresSocioEconomicos')"><i class="fa fa-eye txtSuccess" ></i></button>
+							  </td>
+							</tr>
+							<tr>
+							  <td>Registro de pagos</td>
+							  <td>Detalle de Registro de pagos</td>
+							  <td class="txtC">
+								<button type="button" class="btn btn-link" onclick="redirect('report/registroDePagos')"><i class="fa fa-eye txtSuccess" ></i></button>
+							  </td>
+							</tr>
+						<tr>
+							  <td>Movimientos</td>
+							  <td>Detalle de Movimientos</td>
+							  <td class="txtC">
+								<button type="button" class="btn btn-link" onclick="redirect('report/movimientos')"><i class="fa fa-eye txtSuccess" ></i></button>
+							  </td>
+							</tr>
+							<tr>
+							  <td>Creditos otorgados</td>
+							  <td>Detalle de Creditos otorgados</td>
+							  <td class="txtC">
+								<button type="button" class="btn btn-link" onclick="redirect('report/creditosOtorgados')"><i class="fa fa-eye txtSuccess" ></i></button>
+							  </td>
+							</tr>
+							<tr>
+							  <td>Cobranzas</td>
+							  <td>Detalle de Cobranzas</td>
+							  <td class="txtC">
+								<button type="button" class="btn btn-link" onclick="redirect('report/cobranzas')"><i class="fa fa-eye txtSuccess" ></i></button>
+							  </td>
+							</tr>
+							<tr>
+							  <td>Estado de cartera</td>
+							  <td>Detalle de la cartera en mora</td>
+							  <td class="txtC">
+								<button type="button" class="btn btn-link" onclick="redirect('report/estadoDeCartera')"><i class="fa fa-eye txtSuccess" ></i></button>
+							  </td>
+							</tr>
+							<tr>
+							  <td>Movimiento de banco</td>
+							  <td>Detalle de Movimiento de banco</td>
+							  <td class="txtC">
+								<button type="button" class="btn btn-link" onclick="redirect('report/movimientoDeBanco')"><i class="fa fa-eye txtSuccess" ></i></button>
 							  </td>
 							</tr>
 						  </tbody>
