@@ -380,6 +380,11 @@ input[type=email] {
   padding: 8px 15px 8px 0;
   list-style: none;
 }
+.table-content {
+  width: 100%;
+  margin-bottom: 15px;
+  overflow-y: hidden;
+}
 table thead {
   background-color: #eaeaea;
 }
@@ -454,6 +459,29 @@ table.table-report-detail thead th {
 }
 table.table-report-detail thead th:first-child {
   width: 10%;
+}
+table.table-report-expanded {
+  margin-top: 20px;
+}
+table.table-report-expanded th,
+table.table-report-expanded td {
+  text-align: center;
+}
+table.table-report-expanded thead tr th {
+  min-width: 50px;
+  vertical-align: top;
+}
+table.table-report-expanded thead tr th:first-child {
+  min-width: 110px;
+}
+table.table-report-expanded thead tr:first-child {
+  min-height: 35px;
+}
+table.table-report-expanded thead tr:last-child {
+  background-color: #f3f2f2;
+}
+table.table-report-expanded tbody tr td {
+  min-width: 150px;
 }
 table.table-tiny thead th {
   max-width: 65%;
@@ -549,4 +577,3 @@ label {
 .forms-list .signature {
   margin-top: 50px;
 }
-
