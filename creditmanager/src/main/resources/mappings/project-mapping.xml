@@ -68,5 +68,25 @@
         <a>investmentDestination</a>
         <b>investmentDestination</b>
       </field>
+      <field>
+        <a>requestedAmount</a>
+        <b>requestedAmount</b>
+      </field>
+      <field>
+        <a>requestedDeadline</a>
+        <b>requestedDeadline</b>
+      </field>
+      <field>
+        <a>deliveryDate</a>
+        <b>deliveryDate</b>
+      </field>
+      <field>
+        <a>givenAmount</a>
+        <b>givenAmount</b>
+      </field>
+      <field>
+        <a>givenDeadline</a>
+        <b>givenDeadline</b>
+      </field>
   </mapping>
 </mappings>
