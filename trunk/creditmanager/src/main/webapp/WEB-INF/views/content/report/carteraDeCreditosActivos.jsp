@@ -20,8 +20,7 @@
 		</ol>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<h3>Reportes</h3>
-				<h4>Cronograma de pago</h4>
+				<h3>Cartera de cr�ditos activos.</h3>
 				<div class="row mt20">
 					<div class="col-sm-12">
 						<div class="form-inline">
@@ -43,50 +42,83 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<table class="table table-hover table-condensed table-responsive table-report-detail">
-						  <thead>
-							<tr>
-							  <th>
-							  	<a href="javascript:void(0);">
-							  		<!-- cambiar a fa-caret-up -->
-							  		N° Proyecto <i class="fa fa-caret-down pull-right"></i>
-							  	</a>
-							  </th>
-							  <th>
-							  	<a href="javascript:void(0);">
-							  		<!-- cambiar a fa-caret-up -->
-							  		Apellido y nombre <i class="fa fa-caret-down pull-right"></i>
-							  	</a>
-							  </th>
-							  <th>
-							  	Domicilio
-							  </th>
-							  <th>
-							  	Teléfono
-							  </th>
-							  <th>Lugar de trabajo</th>
-							  <th>Email</th>
-							</tr>
-						  </thead>
-						  <tbody>
-							<tr>
-							  <td>N° de proyecto</td>	
-							  <td>Apellido y nombre</td>
-							  <td>Domicilio</td>
-							  <td>Teléfono</td>
-							  <td>Lugar de trabajo</td>
-							  <td>Email</td>
-							</tr>
-							<tr>
-							  <td>N° de proyecto</td>	
-							  <td>Apellido y nombre</td>
-							  <td>Domicilio</td>
-							  <td>Teléfono</td>
-							  <td>Lugar de trabajo</td>
-							  <td>Email</td>
-							</tr>
-						  </tbody>
-						</table>
+						<div class="table-content">
+							<table class="table table-hover table-condensed table-responsive table-report-expanded">
+							  <thead>
+								<tr>
+								  <th>
+								  	<a href="javascript:void(0);">
+								  		<!-- cambiar a fa-caret-up -->
+								  		N� Proyecto <i class="fa fa-caret-down pull-right"></i>
+								  	</a>
+								  </th>
+								  <th>
+								  	<a href="javascript:void(0);">
+								  		<!-- cambiar a fa-caret-up -->
+								  		Apellido y nombre <i class="fa fa-caret-down pull-right"></i>
+								  	</a>
+								  </th>
+								  <th>
+								  	Capital otorgado
+								  </th>
+								  <th>
+								  	Fecha de otorgamiento
+								  </th>
+								  <th colspan="2">
+								  	Creditos
+								  </th>
+								  <th>
+								  	Deusa original
+								  </th>
+								  <th>
+								  	Saldo deudor
+								  </th>
+								  <th>
+								  	Plazo otorgado
+								  </th>
+								  <th>
+								  	Cuotas pagadas
+								  </th>
+								  <th>
+								  	Fecha de pago
+								  </th>
+								  <th>
+								  	Cuotas vencidas
+								  </th>
+								</tr>
+								<tr>
+								  <th></th>	
+								  <th></th>
+								  <th></th>
+								  <th></th>
+								  <th>Activos</th>
+								  <th>Cancelados</th>
+								  <th>(capital+interes)</th>
+								  <th>(capital+interes+pun.+comp.)</th>
+								  <th></th>
+								  <th></th>
+								  <th></th>
+								  <th></th>
+								</tr>
+							  </thead>
+							  <tbody>
+								<tr>
+								  <td>YYY</td>	
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								</tr>
+							  </tbody>
+							</table>
+						</div>
 						<nav>
 						  <ul class="pagination pull-right">
 							<li><a href="#"><i class="fa fa-chevron-left"></i></a></li>

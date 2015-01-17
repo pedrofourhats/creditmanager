@@ -20,8 +20,7 @@
 		</ol>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<h3>Reportes</h3>
-				<h4>Cronograma de pago</h4>
+				<h3>Indicadores socioeconómicos.</h3>
 				<div class="row mt20">
 					<div class="col-sm-12">
 						<div class="form-inline">
@@ -43,50 +42,93 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<table class="table table-hover table-condensed table-responsive table-report-detail">
-						  <thead>
-							<tr>
-							  <th>
-							  	<a href="javascript:void(0);">
-							  		<!-- cambiar a fa-caret-up -->
-							  		NÂ° Proyecto <i class="fa fa-caret-down pull-right"></i>
-							  	</a>
-							  </th>
-							  <th>
-							  	<a href="javascript:void(0);">
-							  		<!-- cambiar a fa-caret-up -->
-							  		Apellido y nombre <i class="fa fa-caret-down pull-right"></i>
-							  	</a>
-							  </th>
-							  <th>
-							  	Domicilio
-							  </th>
-							  <th>
-							  	TelÃ©fono
-							  </th>
-							  <th>Lugar de trabajo</th>
-							  <th>Email</th>
-							</tr>
-						  </thead>
-						  <tbody>
-							<tr>
-							  <td>NÂ° de proyecto</td>	
-							  <td>Apellido y nombre</td>
-							  <td>Domicilio</td>
-							  <td>TelÃ©fono</td>
-							  <td>Lugar de trabajo</td>
-							  <td>Email</td>
-							</tr>
-							<tr>
-							  <td>NÂ° de proyecto</td>	
-							  <td>Apellido y nombre</td>
-							  <td>Domicilio</td>
-							  <td>TelÃ©fono</td>
-							  <td>Lugar de trabajo</td>
-							  <td>Email</td>
-							</tr>
-						  </tbody>
-						</table>
+						<div class="table-content">
+							<table class="table table-hover table-condensed table-responsive table-report-expanded table-long">
+							  <thead>
+								<tr>
+								  <th rowspan="2">
+								  	Total de proyectos ingresados por Mes/Año
+								  </th>
+								  <th colspan="3">
+								  	Estado de los proyectos
+								  </th>
+								  <th colspan="2">
+								  	Servicer
+								  </th>
+								  <th colspan="3">
+								  	Tipo de activdad
+								  </th>
+								  <th colspan="2">
+								  	Temporalidad
+								  </th>
+								  <th colspan="2">
+								  	Tipo de emprendimiento
+								  </th>
+								  <th colspan="4">
+								  	Tipo de inversión
+								  </th>
+								  <th colspan="7">
+								  	Otros indicadores
+								  </th>
+								</tr>
+
+								<tr>
+								  <th>Aprobados</th>
+								  <th>Rechazados</th>
+								  <th>Evaluación</th>
+								  <th>INTI</th>
+								  <th>INTA</th>
+								  <th>Industrial</th>
+								  <th>Servicios</th>
+								  <th>Agropecuario</th>
+								  <th>Nuevos</th>
+								  <th>Existentes</th>
+
+								  <th>Individual</th>
+								  <th>Asociativo</th>
+								  <th>Construcción</th>
+								  <th>Utilitarios</th>
+								  <th>K de trabajos</th>
+								  <th>Otros</th>
+								  <th>Genero</th>
+								  <th>Edad</th>
+								  <th>Localidad</th>
+								  <th>Rubro</th>
+								  <th>Puestos de trabajo generados</th>
+								  <th>Cantidad de ingresos familiares</th>
+								  <th>Habilitados</th>
+								</tr>
+							  </thead>
+							  <tbody>
+								<tr>
+								  <td>YYY</td>	
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								  <td>YYY</td>
+								</tr>
+							  </tbody>
+							</table>
+						</div>
 						<nav>
 						  <ul class="pagination pull-right">
 							<li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
