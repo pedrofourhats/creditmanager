@@ -116,6 +116,7 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		$http.get(getCompletePath("projects/findById/" + $scope.projectId), {})
 		.success(function(project){
 			project.dateOfEntry = new Date(project.dateOfEntry);
+			project.deliveryDate = new Date(project.deliveryDate);
 			$scope.project = project;
 		}).error(function(err){
 			alert("Ha ocurrido un problema. Por favor intente nuevamente");

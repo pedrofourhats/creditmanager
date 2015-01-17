@@ -70,7 +70,7 @@ public class ProjectServiceImpl implements ProjectService {
 		
 		Project projectToEdit = projectDao.getById(project.getId());
 		projectToEdit.update(project.getDateOfEntry(), project.getNumber(), project.getServicers(), project.getSituationState(), guarantors, holders, 
-			project.getInvestmentDestination(), project.getTitle(), project.getType(), project.getEconomicArea(), project.getCategory(), 
+			project.getInvestmentDestination(), project.getTitle(), project.getType(), project.getEconomicArea(), project.getEconomicActivity(), project.getCategory(), 
 			project.getRequestedAmount(), project.getRequestedDeadline(), project.getRequestedGracePeriod(), project.getDeliveryDate(), 
 			project.getGivenAmount(), project.getGivenDeadline());
 		projectDao.add(projectToEdit);

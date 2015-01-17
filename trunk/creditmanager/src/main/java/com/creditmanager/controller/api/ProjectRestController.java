@@ -25,7 +25,7 @@ public class ProjectRestController {
 	ProjectService projectService;
 	
 	@RequestMapping(value="/projects", method = RequestMethod.GET, consumes="*/*")
-	public @ResponseBody Page<ProjectDTO> getProjects( int pageIndex, int pageSize){
+	public @ResponseBody Page<ProjectDTO> getProjects(int pageIndex, int pageSize){
 		return projectService.getAll(pageIndex, pageSize);
 	}
 	
