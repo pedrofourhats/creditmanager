@@ -16,7 +16,6 @@ import com.creditmanager.dao.ProjectDAO;
 import com.creditmanager.model.Page;
 import com.creditmanager.model.Person;
 import com.creditmanager.model.Project;
-import com.creditmanager.model.User;
 import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
 import com.creditmanager.service.ProjectService;
 import com.creditmanager.service.dto.PersonDTO;
@@ -55,7 +54,7 @@ public class ProjectServiceImpl implements ProjectService {
 		Set<Person> guarantors = new HashSet<Person>(personDao.getByIds(guarantorIds));
 		Set<Person> holders = new HashSet<Person>(personDao.getByIds(holderIds));
 		Project project = new Project(projectDto.getDateOfEntry(), projectDto.getNumber(), projectDto.getServicers(), projectDto.getSituationState(), 
-			guarantors, holders, projectDto.getInvestmentDestination());
+			projectDto.getEvaluator(), projectDto.getAccesor(), guarantors, holders, projectDto.getInvestmentDestination());
 		projectDao.add(project);
 		
 		return mapper.map(project, ProjectDTO.class);

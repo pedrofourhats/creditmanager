@@ -64,13 +64,11 @@ public class Project extends com.creditmanager.model.Entity {
 	@Column(name="situationState")
 	private String situationState;
 	
-//	@ManyToOne
-//	@JoinColumn(name="evaluatorId")
-//	private Evaluator evaluator;
+	@Column(name="evaluator")
+	private String evaluator;
 	
-//	@ManyToOne
-//	@JoinColumn(name="accesorId")
-//	private Accesor accesor;
+	@Column(name="accesor")
+	private String accesor;
 	
 	@ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinTable(name="projectGuarantor", 
@@ -91,14 +89,14 @@ public class Project extends com.creditmanager.model.Entity {
 	public Project(){
 	}
 	
-	public Project(Date dateOfEntry, Long number, String servicers, String situationState, /*Evaluator evaluator, Accesor accesor,*/ 
-			Set<Person> guarantors, Set<Person> holders, String investmentDestination){
+	public Project(Date dateOfEntry, Long number, String servicers, String situationState, String evaluator, String accesor, 
+			Set<Person> guarantors, Set<Person> holders, String investmentDestination) {
 		this.dateOfEntry = dateOfEntry;
 		this.number = number;
 		this.servicers = servicers;
 		this.situationState = situationState;
-//		this.evaluator = evaluator;
-//		this.accesor = accesor;
+		this.evaluator = evaluator;
+		this.accesor = accesor;
 		this.guarantors = guarantors;
 		this.holders = holders;
 		this.investmentDestination = investmentDestination;
@@ -158,18 +156,18 @@ public class Project extends com.creditmanager.model.Entity {
 	public void setSituationState(String situationState) {
 		this.situationState = situationState;
 	}
-//	public Evaluator getEvaluator() {
-//		return evaluator;
-//	}
-//	public void setEvaluator(Evaluator evaluator) {
-//		this.evaluator = evaluator;
-//	}
-//	public Accesor getAccesor() {
-//		return accesor;
-//	}
-//	public void setAccesor(Accesor accesor) {
-//		this.accesor = accesor;
-//	}
+	public String getEvaluator() {
+		return evaluator;
+	}
+	public void setEvaluator(String evaluator) {
+		this.evaluator = evaluator;
+	}
+	public String getAccesor() {
+		return accesor;
+	}
+	public void setAccesor(String accesor) {
+		this.accesor = accesor;
+	}
 	public Set<Person> getGuarantors() {
 		return guarantors;
 	}

@@ -66,15 +66,14 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		$scope.project.holders = [];
 		$scope.project.guarantors = [];
 		$scope.projectId;
-		$scope.fakeProject = { serviceEvaluatorName: "", adviserEvaluatorName: ""};
 		
 		$scope.servicers = [{name: "INTI"}, {name: "INTA"}];
 		
-		$scope.states = [{name: "EVALUACIÓN INTI"}, {name: "EVALUACION INTA"}, {name: "INFORMACION CAFESG"}, {name: "RECHAZADO / DESISTIDO"}, {name: "SUJETO A REVISIÓN"}, {name: "COMITÉ DE CRÉDITO"}, {name: "APROBADO"}, {name: "CREDITO OTORGADO"}, {name: "CREDITO VIGENTE"}, {name: "CREDITO EN MORA"}, {name: "CREDITO CANCELADO"}];
+		$scope.states = [{name: "EVALUACION INTI"}, {name: "EVALUACION INTA"}, {name: "INFORMACION CAFESG"}, {name: "RECHAZADO / DESISTIDO"}, {name: "SUJETO A REVISION"}, {name: "COMITE DE CREDITO"}, {name: "APROBADO"}, {name: "CREDITO OTORGADO"}, {name: "CREDITO VIGENTE"}, {name: "CREDITO EN MORA"}, {name: "CREDITO CANCELADO"}];
 		
 		$scope.evaluators = [{name: "ELIZABETH A."}, {name: "ADRIANA V."}, {name: "ROMINA M."}, {name: "WALTER H."}, {name: "MELINA SCH."}, {name: "MARTIN S."}, {name: "ELINA B."}, {name: "INTA"}];
 		
-		$scope.advisers = [{name: "NOELIA A."}, {name: "JAVIER B."}, {name: "EMANUEL R."}, {name: "ROSA F."}, {name: "ROSANA G."}, {name: "NOELIA D."}, {name: "DIEGO"}, {name: "CECILIA B."}, {name: "MARTIN L."}];
+		$scope.accesors = [{name: "NOELIA A."}, {name: "JAVIER B."}, {name: "EMANUEL R."}, {name: "ROSA F."}, {name: "ROSANA G."}, {name: "NOELIA D."}, {name: "DIEGO"}, {name: "CECILIA B."}, {name: "MARTIN L."}];
 
 		$scope.types = [{name: "NUEVO"}, {name: "EN MARCHA"}];
 
@@ -86,7 +85,7 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 
 		$scope.department = [{name: "CONCORDIA"}, {name: "COLON"}, {name: "FEDERAL"}, {name: "VILLAGUAY"}, {name: "SAN SALVADOR"}, {name: "FEDERACION"}, {name: "CONCEPCION DEL URUGUAY"}, {name: "FELICIANO"}];
 
-		$scope.locality = [{name: "BENITO LEGEREN"}, {name: "CALABACILLA"}, {name: "CASEROS"}, {name: "CHAJARÍ"}, {name: "COLONIA ALEMANA"}, {name: "COLONIA ENSANCHE SAUCE"}, {name: "COLONIA HUGUES"}, {name: "COLONIA LA ARGENTINA"}, {name: "COLONIA PEÑA"}, {name: "COLONIA SANTA MARÍA"}, {name: "CONCEPCIÓN DEL URUGUAY"}, {name: "CONCORDIA"}, {name: "CONSCRIPTO BERNARDI"}, {name: "EL CIMARRÓN"}, {name: "EL COLORADO"}, {name: "EL REDOMON"}, {name: "ESTACIÓN RAÍCES"}, {name: "ESTACION YERUA"}, {name: "FEDERACIÓN"}, {name: "FEDERAL"}, {name: "GENERAL CAMPOS"}, {name: "HOCKER"}, {name: "INGENIERO MIGUEL SAJAROFF"}, {name: "JUBILEO"}, {name: "LA CLARITA"}, {name: "LA CRIOLLA"}, {name: "LAS TEJAS"}, {name: "MOJONES NORTE"}, {name: "NUEVA ESCOCIA"}, {name: "NUEVA VIZCAYA"}, {name: "OSVALDO MAGNASCO"}, {name: "PASO DE LA LAGUNA"}, {name: "PEDERNAL"}, {name: "PRONUNCIAMIENTO"}, {name: "PUEBLO CAZES"}, {name: "PUEBLO LIEBIG'S"}, {name: "PUERTO YERUA"}, {name: "SAN JOSÉ"}, {name: "SAN PEDRO"}, {name: "SAN SALVADOR"}, {name: "SANTA ANITA"}, {name: "SAUCE DE LUNA"}, {name: "UBAJAY"}, {name: "VILLA CLARA"}, {name: "VILLA DEL ROSARIO"}, {name: "VILLA DOMINGUEZ"}, {name: "VILLA ELISA"}, {name: "VILLA MANTERO"}, {name: "VILLA SAN JUSTO"}, {name: "VILLA ZORRAQUIN"}, {name: "SAN JOSE DE FELICIANO"}, {name: "CASEROS"}, {name: "VILLAGUAY"}];
+		$scope.locality = [{name: "BENITO LEGEREN"}, {name: "CALABACILLA"}, {name: "CASEROS"}, {name: "CHAJARI"}, {name: "COLONIA ALEMANA"}, {name: "COLONIA ENSANCHE SAUCE"}, {name: "COLONIA HUGUES"}, {name: "COLONIA LA ARGENTINA"}, {name: "COLONIA PEÑA"}, {name: "COLONIA SANTA MARIA"}, {name: "CONCEPCION DEL URUGUAY"}, {name: "CONCORDIA"}, {name: "CONSCRIPTO BERNARDI"}, {name: "EL CIMARRON"}, {name: "EL COLORADO"}, {name: "EL REDOMON"}, {name: "ESTACION RAICES"}, {name: "ESTACION YERUA"}, {name: "FEDERACION"}, {name: "FEDERAL"}, {name: "GENERAL CAMPOS"}, {name: "HOCKER"}, {name: "INGENIERO MIGUEL SAJAROFF"}, {name: "JUBILEO"}, {name: "LA CLARITA"}, {name: "LA CRIOLLA"}, {name: "LAS TEJAS"}, {name: "MOJONES NORTE"}, {name: "NUEVA ESCOCIA"}, {name: "NUEVA VIZCAYA"}, {name: "OSVALDO MAGNASCO"}, {name: "PASO DE LA LAGUNA"}, {name: "PEDERNAL"}, {name: "PRONUNCIAMIENTO"}, {name: "PUEBLO CAZES"}, {name: "PUEBLO LIEBIG'S"}, {name: "PUERTO YERUA"}, {name: "SAN JOSE"}, {name: "SAN PEDRO"}, {name: "SAN SALVADOR"}, {name: "SANTA ANITA"}, {name: "SAUCE DE LUNA"}, {name: "UBAJAY"}, {name: "VILLA CLARA"}, {name: "VILLA DEL ROSARIO"}, {name: "VILLA DOMINGUEZ"}, {name: "VILLA ELISA"}, {name: "VILLA MANTERO"}, {name: "VILLA SAN JUSTO"}, {name: "VILLA ZORRAQUIN"}, {name: "SAN JOSE DE FELICIANO"}, {name: "CASEROS"}, {name: "VILLAGUAY"}];
 		
 		$scope.selectServicer = function(servicerName) {
 			$scope.project.servicers = servicerName;
@@ -96,12 +95,12 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			$scope.project.situationState = stateName;
 		};
 		
-		$scope.selectServiceEvaluator = function(serviceEvaluator) {
-			$scope.fakeProject.serviceEvaluatorName = serviceEvaluator.name;
+		$scope.selectEvaluator = function(evaluatorName) {
+			$scope.project.evaluator = evaluatorName;
 		};
 		
-		$scope.selectAdviserEvaluator = function(adviserEvaluator) {
-			$scope.fakeProject.adviserEvaluatorName = adviserEvaluator.name;
+		$scope.selectAccesor = function(accesorName) {
+			$scope.project.accesor = accesorName;
 		};
 		
 		$scope.selectEconomicArea = function(economicArea) {

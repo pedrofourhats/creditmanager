@@ -48,14 +48,14 @@
         <a>situationState</a>
         <b>situationState</b>
       </field>
-<!--       <field> -->
-<!--         <a>evaluator</a> -->
-<!--         <b>evaluator</b> -->
-<!--       </field> -->
-<!--       <field> -->
-<!--         <a>accesor</a> -->
-<!--         <b>accesor</b> -->
-<!--       </field> -->
+      <field>
+        <a>evaluator</a>
+        <b>evaluator</b>
+      </field>
+      <field>
+        <a>accesor</a>
+        <b>accesor</b>
+      </field>
       <field>
         <a>guarantors</a>
         <b>guarantors</b>
