@@ -93,7 +93,7 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		};
 		
 		$scope.selectState = function(stateName) {
-			$scope.project.situationState = stateName.name;
+			$scope.project.situationState = stateName;
 		};
 		
 		$scope.selectServiceEvaluator = function(serviceEvaluator) {
@@ -105,19 +105,19 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		};
 		
 		$scope.selectEconomicArea = function(economicArea) {
-			$scope.project.economicArea = economicArea.name;
+			$scope.project.economicArea = economicArea;
 		};
 
 		$scope.selectCategory = function(category) {
-			$scope.project.category = category.name;
+			$scope.project.category = category;
 		};
 		
 		$scope.selectType = function(type) {
-			$scope.project.type = type.name;
+			$scope.project.type = type;
 		};
 
 		$scope.selectEconomicActivity = function(economicActivity) {
-			$scope.project.economicActivity = economicActivity.name;
+			$scope.project.economicActivity = economicActivity;
 		};
 
 		$scope.buttonName = ($scope.step == 1 && !$scope.projectId) ? 'Cargar proyecto' : 'Editar proyecto';
