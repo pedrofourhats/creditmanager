@@ -20,8 +20,7 @@
 		</ol>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<h3>Reportes</h3>
-				<h4>Cronograma de pago</h4>
+				<h3>Datos filiatorios de titulares y garantes en mora.</h3>
 				<div class="row mt20">
 					<div class="col-sm-12">
 						<div class="form-inline">
@@ -49,7 +48,7 @@
 							  <th>
 							  	<a href="javascript:void(0);">
 							  		<!-- cambiar a fa-caret-up -->
-							  		NÂ° Proyecto <i class="fa fa-caret-down pull-right"></i>
+							  		N° Proyecto <i class="fa fa-caret-down pull-right"></i>
 							  	</a>
 							  </th>
 							  <th>
@@ -62,7 +61,7 @@
 							  	Domicilio
 							  </th>
 							  <th>
-							  	TelÃ©fono
+							  	Teléfono
 							  </th>
 							  <th>Lugar de trabajo</th>
 							  <th>Email</th>
@@ -70,18 +69,18 @@
 						  </thead>
 						  <tbody>
 							<tr>
-							  <td>NÂ° de proyecto</td>	
+							  <td>N° de proyecto</td>	
 							  <td>Apellido y nombre</td>
 							  <td>Domicilio</td>
-							  <td>TelÃ©fono</td>
+							  <td>Teléfono</td>
 							  <td>Lugar de trabajo</td>
 							  <td>Email</td>
 							</tr>
 							<tr>
-							  <td>NÂ° de proyecto</td>	
+							  <td>N° de proyecto</td>	
 							  <td>Apellido y nombre</td>
 							  <td>Domicilio</td>
-							  <td>TelÃ©fono</td>
+							  <td>Teléfono</td>
 							  <td>Lugar de trabajo</td>
 							  <td>Email</td>
 							</tr>

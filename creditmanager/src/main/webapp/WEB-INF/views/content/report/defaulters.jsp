@@ -20,8 +20,7 @@
 		</ol>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<h3>Reportes</h3>
-				<h4>Cronograma de pago</h4>
+				<h3>Cartera en mora.</h3>
 				<div class="row mt20">
 					<div class="col-sm-12">
 						<div class="form-inline">
@@ -43,13 +42,13 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<table class="table table-hover table-condensed table-responsive table-report-detail">
+						<table class="table table-hover table-condensed table-responsive table-report-detail-expanded">
 						  <thead>
 							<tr>
 							  <th>
 							  	<a href="javascript:void(0);">
 							  		<!-- cambiar a fa-caret-up -->
-							  		N° Proyecto <i class="fa fa-caret-down pull-right"></i>
+							  		N� Proyecto <i class="fa fa-caret-down pull-right"></i>
 							  	</a>
 							  </th>
 							  <th>
@@ -59,31 +58,65 @@
 							  	</a>
 							  </th>
 							  <th>
-							  	Domicilio
+							  	Capital otorgado
 							  </th>
 							  <th>
-							  	Teléfono
+							  	Fecha de otorgamiento
 							  </th>
-							  <th>Lugar de trabajo</th>
-							  <th>Email</th>
+							  <th>
+							  	Deuda original (K+I)
+							  </th>
+							  <th>
+							  	Saldo deudor (K+I+P+C)
+							  </th>
+							  <th>
+							  	Plazo otorgado
+							  </th>
+							  <th>
+							  	Cuotas pagadas
+							  </th>
+							  <th>
+							  	Fecha de pago
+							  </th>
+							  <th>
+							  	Importe pagado
+							  </th>
+							  <th>
+							  	Cuotas impagadas
+							  </th>
+							  <th>
+							  	Dias transcurridos
+							  </th>
 							</tr>
 						  </thead>
 						  <tbody>
 							<tr>
-							  <td>N° de proyecto</td>	
-							  <td>Apellido y nombre</td>
-							  <td>Domicilio</td>
-							  <td>Teléfono</td>
-							  <td>Lugar de trabajo</td>
-							  <td>Email</td>
+							  <td>YYY</td>	
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
 							</tr>
 							<tr>
-							  <td>N° de proyecto</td>	
-							  <td>Apellido y nombre</td>
-							  <td>Domicilio</td>
-							  <td>Teléfono</td>
-							  <td>Lugar de trabajo</td>
-							  <td>Email</td>
+							  <td>YYY</td>	
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
+							  <td>YYY</td>
 							</tr>
 						  </tbody>
 						</table>
