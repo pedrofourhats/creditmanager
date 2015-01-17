@@ -91,6 +91,7 @@
 									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.idNumber.$dirty && createPersonForm.idNumber.$invalid">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner" ng-show="createPersonForm.idNumber.$error.required">Debe ingresar un documento</div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.idNumber.$error.number">Debe ingresar números</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="idNumber">Número de documento</label>
@@ -143,6 +144,7 @@
 									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.cellPhone.$dirty && createPersonForm.cellPhone.$invalid">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner" ng-show="createPersonForm.cellPhone.$error.required">Debe ingresar el celular</div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.cellPhone.$error.number">Debe ingresar números</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="cellPhone">Celular</label>
@@ -214,6 +216,7 @@
 									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.phone.$dirty && createPersonForm.phone.$invalid">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner" ng-show="createPersonForm.phone.$error.required">Debe ingresar el teléfono</div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.phone.$error.number">Debe ingresar números</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="phone">Teléfono</label>
@@ -224,6 +227,7 @@
 									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.workphone.$dirty && createPersonForm.workphone.$invalid">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner" ng-show="createPersonForm.workphone.$error.required">Debe ingresar el teléfono laboral</div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.workphone.$error.number">Debe ingresar números</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="workphone">Teléfono laboral</label>

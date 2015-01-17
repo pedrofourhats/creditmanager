@@ -37,10 +37,10 @@ public class ProjectDTO {
 	
 	private String situationState;
 	
-//	private EvaluatorDTO evaluator;
-//
-//	private AccesorDTO accesor;
-//	
+	private String evaluator;
+
+	private String accesor;
+	
 	private List<PersonDTO> guarantors;
 	
 	private List<PersonDTO> holders;
@@ -127,22 +127,22 @@ public class ProjectDTO {
 		this.situationState = situationState;
 	}
 
-//	public EvaluatorDTO getEvaluator() {
-//		return evaluator;
-//	}
-//
-//	public void setEvaluator(EvaluatorDTO evaluator) {
-//		this.evaluator = evaluator;
-//	}
-//
-//	public AccesorDTO getAccesor() {
-//		return accesor;
-//	}
-//
-//	public void setAccesor(AccesorDTO accesor) {
-//		this.accesor = accesor;
-//	}
-//
+	public String getEvaluator() {
+		return evaluator;
+	}
+
+	public void setEvaluator(String evaluator) {
+		this.evaluator = evaluator;
+	}
+
+	public String getAccesor() {
+		return accesor;
+	}
+
+	public void setAccesor(String accesor) {
+		this.accesor = accesor;
+	}
+
 	public List<PersonDTO> getGuarantors() {
 		return guarantors;
 	}

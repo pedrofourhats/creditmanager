@@ -49,7 +49,7 @@
 											<label for="date-picker-2" class="control-label">Fecha de ingreso al INTI</label>
 											<div class="controls">
 												<div class="input-group">
-													<input id="date-picker-2" name="dateOfEntry" type="date" class="date-picker form-control" tabindex="5" required ng-model="project.dateOfEntry" />
+													<input id="date-picker-2" name="dateOfEntry" type="date" class="date-picker form-control" tabindex="1" required ng-model="project.dateOfEntry" />
 													<label for="date-picker-2" class="input-group-addon btn">
 <!-- 														<span class="fa fa-calendar"></span> -->
 													</label>
@@ -82,7 +82,7 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Número de servicers</label>
-										<div class="dropdown" dropdown is-open="status.isopen">
+										<div class="dropdown" tabindex="3" dropdown>
 										  <a type="button" data-toggle="dropdown">
 										    <span ng-show="project.servicers == undefined">
 										    	Elegir servicers
@@ -108,7 +108,7 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Estado de situación</label>
-										<div class="dropdown" dropdown is-open="status.isopen">
+										<div class="dropdown" tabindex="4" dropdown>
 										  <a type="button" data-toggle="dropdown">
 										    <span ng-show="project.situationState == undefined">
 										    	Elegir estado
@@ -135,18 +135,18 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Evaluador segun services</label>
-										<div class="dropdown" dropdown is-open="status.isopen">
+										<div class="dropdown" dropdown tabindex="5">
 										  <a type="button" data-toggle="dropdown">
-										    <span ng-show="project.states == undefined">
+										    <span ng-show="project.evaluator == undefined">
 										    	Elegir evaluador
 										    </span>
-										    <span ng-show="project.states != undefined">
-											    {{ project.evaluators }} 
+										    <span ng-show="project.evaluator != undefined">
+											    {{ project.evaluator }} 
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
 										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="evaluator in evaluators" ng-click=""><a href="javascript:void(0);">{{evaluator.name}}</a></li>
+										    <li ng-repeat="evaluator in evaluators" ng-click="selectEvaluator(evaluator.name)"><a href="javascript:void(0);">{{evaluator.name}}</a></li>
 										  </ul>
 										</div>
 									</div>
@@ -160,18 +160,18 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Ascesor CAFESG</label>
-										<div class="dropdown" dropdown is-open="status.isopen">
+										<div class="dropdown" dropdown tabindex="6">
 										  <a type="button" data-toggle="dropdown">
-										    <span ng-show="fakeProject.adviserEvaluatorName == undefined">
+										    <span ng-show="project.accesor == undefined">
 										    	Elegir asesor
 										    </span>
-										    <span ng-show="fakeProject.adviserEvaluatorName != undefined">
-											    {{ fakeProject.adviserEvaluatorName }} 
+										    <span ng-show="project.accesor != undefined">
+											    {{ project.accesor}} 
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
 										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="adviser in advisers" ng-click="selectAdviserEvaluator(adviser.name)"><a href="javascript:void(0);">{{adviser.name}}</a></li>
+										    <li ng-repeat="accesor in accesors" ng-click="selectAccesor(accesor.name)"><a href="javascript:void(0);">{{accesor.name}}</a></li>
 										  </ul>
 										</div>
 									</div>
@@ -190,7 +190,7 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Destino de la inversión</label>
-										<textarea class="form-control" placeholder="Ingrese estado de situación" ng-model="project.investmentDestination"></textarea>
+										<textarea class="form-control" tabindex="7" placeholder="Ingrese estado de situación" ng-model="project.investmentDestination"></textarea>
 									</div>
 								</div> 
 							</div>
@@ -202,7 +202,7 @@
 											<h4>Titulares</h4>
 										</div>
 										<div class="col-sm-6 txtR">
-											<button type="button" class="btn btn-primary" ng-click="openAddPerson('Titular')">
+											<button type="button" tabindex="8" class="btn btn-primary" ng-click="openAddPerson('Titular')">
 												<i class="fa fa-plus-circle"></i> Agregar titular
 											</button>
 										</div>	
@@ -246,7 +246,7 @@
 											<h4>Garantes</h4>
 										</div>
 										<div class="col-sm-6 txtR">
-											<button type="button" class="btn btn-primary" ng-click="openAddPerson('Garante')">
+											<button type="button" class="btn btn-primary" tabindex="9" ng-click="openAddPerson('Garante')">
 												<i class="fa fa-plus-circle"></i> Agregar garante
 											</button>
 										</div>	
@@ -311,7 +311,7 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Tipo de proyecto</label> 
-										<div class="dropdown" dropdown is-open="status.isopen">
+										<div class="dropdown" dropdown tabindex="2">
 										  <a type="button" data-toggle="dropdown">
 										    <span ng-show="project.type == undefined">
 										    	Elegir tipo
