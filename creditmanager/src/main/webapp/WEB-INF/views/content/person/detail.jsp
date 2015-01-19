@@ -52,7 +52,8 @@
 							Genero:	<span class="txtBlue">{{person.genderName}}</span>							
 						</div>
 						<div class="col-sm-4">
-							Celular: <span class="txtBlue">{{person.cellphone}}</span>
+							Celular: <span class="txtBlue">{{person.cellPhone}}</span>
+							<br>
 							Email: <span class="txtBlue">{{person.email}}</span>
 						</div>
 					</div>

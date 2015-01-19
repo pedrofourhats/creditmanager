@@ -119,7 +119,8 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			$scope.project.economicActivity = economicActivity;
 		};
 
-		$scope.buttonName = ($scope.step == 1 && !$scope.projectId) ? 'Cargar proyecto' : 'Editar proyecto';
+		$scope.loadProjectButtonName = ($scope.step == 1 && !$scope.projectId) ? 'Cargar proyecto' : 'Editar proyecto';
+		$scope.loadProjectButtonEnable = false;
 		
 		$scope.changeStep = function(step) {
 			$scope.step = step;
