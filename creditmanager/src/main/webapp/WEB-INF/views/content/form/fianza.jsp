@@ -21,6 +21,8 @@
     <div class="panel panel-default">
       <div class="panel-body">
 		<div class="panel-body">
+				{{project.dateOfEntry}} <br>
+		{{project.holders[0].identityNumber}}
                 <h4>
                   Ciudad Autónoma de Buenos Aires, <input type="text" name="num-fecha" class="form-control"> 
                 </h4>
