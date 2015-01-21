@@ -21,13 +21,12 @@
     <div class="panel panel-default">
       <div class="panel-body">
 		<div class="panel-body">
-				{{project.dateOfEntry}} <br>
-		{{project.holders[0].identityNumber}}
+				GUARDAR: FECHA 
                 <h4>
                   Ciudad Autónoma de Buenos Aires, <input type="text" name="num-fecha" class="form-control"> 
                 </h4>
                 <p class="mt10">
-                  Por la presente, Ratto, Carlos Ignacio con DNI Nº 16.327.318, se constituye en fiador solidario, liso, llano y principal pagador a favor del Polo Tecnológico Constituyentes S.A. en su carácter de Fiduciario del FIDEICOMISO SALTO GRANDE, de todas las obligaciones contraídas por Gomez, Mario Rene en virtud del Contrato celebrado con Polo Tecnológico Constituyentes S.A. con fecha               /                               /2014, por la suma de $ 30.000 (pesos treinta mil)La deuda quedará instrumentada causalmente por el Contrato formalizado entre el Polo Tecnológico Constituyentes S. A . y el deudor principal que afianzamos.
+                  Por la presente, {{project.guarantors[0].name}} {{project.guarantors[0].surname}} con DNI Nº {{project.guarantors[0].idNumber}}, se constituye en fiador solidario, liso, llano y principal pagador a favor del Polo Tecnológico Constituyentes S.A. en su carácter de Fiduciario del FIDEICOMISO SALTO GRANDE, de todas las obligaciones contraídas por Gomez, Mario Rene en virtud del Contrato celebrado con Polo Tecnológico Constituyentes S.A. con fecha <input type="text" >, por la suma de $ {{project.givenAmount}} ({{project.givenAmount}}). La deuda quedará instrumentada causalmente por el Contrato formalizado entre el Polo Tecnológico Constituyentes S. A . y el deudor principal que afianzamos.
                 </p>
                 <p class="mt10">                
 					Para el caso en que el afianzado incurriere en mora en el cumplimiento de sus obligaciones,  el Polo Tecnológico Constituyentes S.A. queda expresamente autorizada a aplicar a partir del momento en que se produzca la mora, además del interés compensatorio equivalente al de descuento de documentos comerciales a 30 días que perciba el Banco de la Nación Argentina, un interés punitorio anual igual al 50% de la misma tasa sobre los montos abonados.  
@@ -45,7 +44,7 @@
 					Asimismo renunciamos expresamente a los beneficios de excusión, división e interpelación previa al deudor principal, así como al de extinción de la fianza por prórrogas, renovaciones, modificaciones o novaciones que pudieran producirse en las obligaciones contraídas como consecuencia de las obligaciones afianzadas, y que fueran otorgadas sin requerir nuestra intervención y consentimiento.
                 </p>
                 <p class="mt10">
-					Manifiesto conocer las cláusulas del Contrato suscripto entre el Polo Tecnológico Constituyentes S.A. y Gomez, Mario Rene y que expresamente acepto y considero aplicable. La falta de cumplimiento de ésta obligación faculta al Polo Tecnológico Constituyentes S.A. para iniciar las acciones legales comerciales y criminales que considere menester. 
+					Manifiesto conocer las cláusulas del Contrato suscripto entre el Polo Tecnológico Constituyentes S.A. y {{project.guarantors[0].surname}}, {{project.guarantors[0].name}} y que expresamente acepto y considero aplicable. La falta de cumplimiento de ésta obligación faculta al Polo Tecnológico Constituyentes S.A. para iniciar las acciones legales comerciales y criminales que considere menester. 
                 </p>
                 <p class="mt10">
 					La existencia de otras garantías reales o personales que el Polo Tecnológico Constituyentes S.A.  pudiera tener, no impide ni coarta su derecho a que reclame el pago de la deuda, aún antes de excutir o liquidar aquellas.
@@ -61,9 +60,9 @@
                   <div class="col-sm-4">
                     Firma del DEUDOR 
                     <hr>
-                    Gomez, Mario Rene
+                    {{project.guarantors[0].surname}}, {{project.guarantors[0].name}} 
                     <br>
-                    DNI Nº: 25.416.423
+                    DNI Nº: {{project.guarantors[0].idNumber}}
                   </div>
                   <div class="clearfix"></div>
                 </div>

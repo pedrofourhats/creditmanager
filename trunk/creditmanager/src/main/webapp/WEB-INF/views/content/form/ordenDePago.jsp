@@ -18,6 +18,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
 		<div class="panel-body">
+		GUARDAR: Nº DE CHEQUE
                 <h3>
                   Orden de Pago                
                 </h3>
