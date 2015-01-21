@@ -21,6 +21,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
 <div class="panel-body">
+NO GUARDA NADA
                 <h3>
                   PROGRAMA DE CRÉDITOS PARA EMPRENDEDORES DE LA REGIÓN DE SALTO GRANDE<br>
                   MICROBANCO DE LA REGIÓN DE SALTO GRANDE<br>

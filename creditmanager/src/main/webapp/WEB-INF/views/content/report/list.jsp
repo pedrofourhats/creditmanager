@@ -67,13 +67,6 @@
 							  </td>
 							</tr>
 							<tr>
-							  <td>Registro de pagos</td>
-							  <td>Detalle de Registro de pagos</td>
-							  <td class="txtC">
-								<button type="button" class="btn btn-link" onclick="redirect('report/registroDePagos')"><i class="fa fa-eye txtSuccess" ></i></button>
-							  </td>
-							</tr>
-						<tr>
 							  <td>Movimientos</td>
 							  <td>Detalle de Movimientos</td>
 							  <td class="txtC">
