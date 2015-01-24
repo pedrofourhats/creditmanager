@@ -11,7 +11,7 @@ angular.module('pager', [])
             search: '=search',
             filter: '='
         },
-        templateUrl: getCompletePath('/templates/common/pager.html'),
+        templateUrl: getCompletePath('templates/common/pager.html'),
         controller: function ($scope, $element) {
             $scope.currentPage = 1;
             $scope.pageCount = 0;
