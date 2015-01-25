@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+	<mapping wildcard="false">
+		<class-a>com.creditmanager.model.Form</class-a>
+		<class-b>com.creditmanager.service.dto.FormDTO</class-b>
+
+		<field>
+			<a>id</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>name</a>
+			<b>name</b>
+		</field>
+		<field>
+			<a>emitionDate</a>
+			<b>emitionDate</b>
+		</field>
+		<field>
+			<a>date</a>
+			<b>date</b>
+		</field>
+		<field>
+			<a>checkNumber</a>
+			<b>checkNumber</b>
+		</field>
+		<field>
+			<a>day</a>
+			<b>day</b>
+		</field>
+		<field>
+			<a>month</a>
+			<b>month</b>
+		</field>
+		<field>
+			<a>year</a>
+			<b>year</b>
+		</field>
+	</mapping>
+
+</mappings>

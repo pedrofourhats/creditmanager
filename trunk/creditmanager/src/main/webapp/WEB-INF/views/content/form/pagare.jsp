@@ -8,6 +8,7 @@
   <%@ include file="../../include/scripts.jsp" %>
   	<script>
 		var project = <%= request.getAttribute("project") %>;
+		var formName = '<%= request.getAttribute("formName") %>';
 	</script>
 
   <!-- STYLESHEET -->
@@ -18,16 +19,15 @@
 
   <div class="container forms-list" ng-controller="formController">
     <div class="panel panel-default">
-      <div class="panel-body">
-		<div class="panel-body">
-			<label for="day">Día: </label><input type="text" name="day" ng-model="day" class="form-control"> 
-			<label for="month">Mes: </label><input type="text" name="month" ng-model="month" class="form-control"> 
-			<label for="years">Año: </label><input type="text" name="year" ng-model="year" class="form-control"> 
+		<label for="day">Día: </label><input type="text" id="day" ng-model="form.day" class="form-control"> 
+		<label for="month">Mes: </label><input type="text" id="month" ng-model="form.month" class="form-control"> 
+		<label for="years">Año: </label><input type="text" id="year" ng-model="form.year" class="form-control"> 
+		<div class="panel-body" id="printableDiv">
 				<h3>
 				Pagaré
 				</h3>
                 <p class="signature">
-                  En la Ciudad  Autónoma de Buenos Aires, a los {{day}} días del mes de {{month}} de {{year}}.-
+                  En la Ciudad  Autónoma de Buenos Aires, a los {{form.day}} días del mes de {{form.month}} de {{form.year}}.-
                 </p>
                 <p class="mt20">
                   A LA VISTA pagaré sin protesto (Art. 50 Dec. Ley Nº 5965/63) al  Administrador Fiduciario  Polo  Tecnológico  Constituyentes  S.A., o  a  su  orden,  la  cantidad  de $ {{project.givenAmount}} ({{project.givenAmount}}) por igual valor recibido en efectivo a mi entera satisfacción. De conformidad con lo dispuesto en el artículo 36 de Decreto Ley 5965/63, se amplía el plazo de presentación a cinco (5) años a contar de la fecha de libramiento del presente.
@@ -43,8 +43,18 @@
                   D.N.I.  Nº : 
                 </p>
 	      </div>
+	      <div class="row">
+				<div class="col-sm-12">
+					<div class="pull-right">
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary" value="Cargar formulario" ng-show="!isEdition" ng-disabled="form.day == '' || form.month == '' || form.year == ''" ng-click="saveForm()" />
+							<input type="submit" class="btn btn-primary" value="Actualizar formulario" ng-show="isEdition" ng-disabled="form.day == '' || form.month == '' || form.year == ''" ng-click="saveForm()"/>
+							<input type="submit" class="btn btn-primary" value="Imprimir formulario" ng-click="printDiv()"/>
+						</div>
+					</div>
+				</div>
+			</div>
 	    </div>
-	  </div>
   </div>
   <script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
 </body>

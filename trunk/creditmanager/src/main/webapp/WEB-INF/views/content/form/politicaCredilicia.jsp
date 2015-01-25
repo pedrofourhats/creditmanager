@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="formApp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>INTI</title>
@@ -9,18 +9,18 @@
   <%@ include file="../../include/scripts.jsp" %>
   	<script>
 		var project = <%= request.getAttribute("project") %>;
+		var formName = '<%= request.getAttribute("formName") %>';
 	</script>
-
+  
   <!-- STYLESHEET -->
   <%@ include file="../../include/styles.jsp" %>
 </head>
 <body>
   <%@ include file="../../include/header.jsp" %>
 
-  <div class="container forms-list">
+  <div class="container forms-list" ng-controller="formController">
     <div class="panel panel-default">
-      <div class="panel-body">
-		<div class="panel-body">
+		<div class="panel-body" id="printableDiv">
                 <h3>
                   PROGRAMA DE CRÉDITOS PARA EMPRENDEDORES DE LA REGIÓN DE SALTO GRANDE<br>
                   MICROBANCO DE LA REGIÓN DE SALTO GRANDE<br>
@@ -88,8 +88,18 @@
                   <br>
                   <b>Forma de pago</b> Mensual, Posibilidad de pre-cancelación parcial o total sin gastos.
               </div>
+              <div class="row">
+				<div class="col-sm-12">
+					<div class="pull-right">
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary" value="Cargar formulario" ng-show="!isEdition" ng-click="saveForm()" />
+							<input type="submit" class="btn btn-primary" value="Actualizar formulario" ng-show="isEdition" ng-click="saveForm()"/>
+							<input type="submit" class="btn btn-primary" value="Imprimir formulario" ng-click="printDiv()"/>
+						</div>
+					</div>
+				</div>
+			</div>
       </div>
-    </div>
   </div>
 <script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
 </body>
