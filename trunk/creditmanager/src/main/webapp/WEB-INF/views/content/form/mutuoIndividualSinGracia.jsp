@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="formApp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>INTI</title>
@@ -10,18 +9,21 @@
   	<script>
 		var project = <%= request.getAttribute("project") %>;
 	</script>
-  
+
   <!-- STYLESHEET -->
   <%@ include file="../../include/styles.jsp" %>
-</head>
+</head>head>
 <body>
   <%@ include file="../../include/header.jsp" %>
 
   <div class="container forms-list">
     <div class="panel panel-default">
       <div class="panel-body">
-<div class="panel-body">
-GUARDAR: NUMERODECHEQUE, DIA, MES, AÑOS
+		<div class="panel-body">
+			<label for="checkNumber">Número de cheque: </label><input type="text" id="checkNumber" ng-model="checkNumber" class="form-control"> 
+			<label for="day">Día: </label><input type="text" id="day" ng-model="day" class="form-control"> 
+			<label for="month">Mes: </label><input type="text" id="month" ng-model="month" class="form-control"> 
+			<label for="years">Año: </label><input type="text" id="year" ng-model="year" class="form-control"> 
                 <h3>
                   Contrato de mutuo entre EL POLO TECNOLÓGICO CONSTITUYENTES S.A., en su calidad de FIDUCIARIO del FIDEICOMISO SALTO GRANDE, celebrado el 10 de Junio de 2005,  y Gomez, Mario Rene 
                 </h3>
@@ -29,7 +31,7 @@ GUARDAR: NUMERODECHEQUE, DIA, MES, AÑOS
                   Entre el POLO TECNOLÓGICO CONSTITUYENTES S.A. en su calidad de administrador FIDUCIARIO del contrato de fideicomiso que hubiere celebrado en fecha 10 de junio de 2005 con la Comisión Administradora para el Fondo Especial de Salto Grande, representado por su apoderado para este acto CPN Elina Gabriela Buffa, titular del DNI Nº 25.511.090 con domicilio en Paraná 145 Piso 4º, de la Ciudad Autónoma de Buenos Aires, en adelante el ACREEDOR, y por otra parte Gomez, Mario Rene con DNI Nº 25.416.423 con domicilio en 24 Oeste Sur Bis Casa N° 56, de la Ciudad de Concepción del Uruguay, Provincia de Entre Ríos, en adelante el DEUDOR, se celebra el presente contrato de MUTUO, el que se sujetará a las siguientes cláusulas:
                 </p>
                 <p class="span-inline">
-                  <b>PRIMERA: Monto del Préstamo</b>. El DEUDOR recibe en este acto del ACREEDOR la suma de $ ……………….. (…………………………………….), mediante cheques del  Banco Credicoop Nº ..............................................., sirviendo el presente de eficaz recibo en legal forma, por lo cual el DEUDOR otorga a favor del ACREEDOR formal carta de adeudo.
+                  <b>PRIMERA: Monto del Préstamo</b>. El DEUDOR recibe en este acto del ACREEDOR la suma de $ ……………….. (…………………………………….), mediante cheques del  Banco Credicoop Nº {{checkNumber}}, sirviendo el presente de eficaz recibo en legal forma, por lo cual el DEUDOR otorga a favor del ACREEDOR formal carta de adeudo.
                   <br>
                   <b>SEGUNDA: Amortización</b>. El  DEUDOR  se  obliga a pagar al ACREEDOR el total del préstamo que asciende a $ ……… (…………………………………………) con más una tasa de interés mensual variable, que se establecerá sobre las bases estipuladas en la cláusula 9 del contrato de mutuo suscripto entre el FONCAP S.A. y el ACREEDOR, que el DEUDOR declara conocer y forma parte del presente contrato como Anexo I, en …….. períodos mensuales y consecutivos, correspondientes a la deuda de capital, otorgándose un plazo de gracia de ……. días para la devolución del capital a contar desde el momento de desembolso por parte de FONCAP, en el lugar y tiempo que indique el  ACREEDOR. En tal sentido, el DEUDOR comenzara a pagar las cuotas de los servicios correspondientes a capital e intereses el día ………………………………, según consta en el cronograma de pago, entregado a la firma del presente contrato o al día hábil inmediato posterior en el caso que este fuera inhábil.
                   <br>
@@ -53,7 +55,7 @@ GUARDAR: NUMERODECHEQUE, DIA, MES, AÑOS
                   <br>
                   <b>DÉCIMO SEGUNDA: Codeudores</b>. El / La Sr/a …………………… con DNI Nº ..................... con domicilio en la calle ……………………., y el Sr. ...................... con DNI Nº ............................ con domicilio en la calle .........................., Departamento de ................., Provincia de Entre Ríos, se constituyen en codeudores solidarios, fiadores lisos y llanos, principales pagadores del DEUDOR respecto del cumplimiento de todas y cada una de las obligaciones asumidas en este contrato frente al ACREEDOR, por lo cual este último podrá requerirle el cumplimiento de la totalidad de las obligaciones asumidas por el DEUDOR, no pudiendo invocar los beneficios de excusión  y/o división.
                   <br>
-                  <b>DECIMOTERCERA: Domicilio - Jurisdicción</b>. A todos los efectos del presente, el DEUDOR constituye domicilio legal en 24 Oeste Sur Bis Casa N° 56, de la Ciudad de Concepción del Uruguay, Provincia de Entre Ríos y el ACREEDOR en Paraná 145 Piso 4º de la Ciudad Autónoma de Buenos Aires, en donde serán válidas todas las notificaciones judiciales y/o extrajudiciales que se cursen, y se someten a la jurisdicción y competencia de los Tribunales Ordinarios en lo Comercial de la Ciudad Autónoma de Buenos Aires, con exclusión de todo otro fuero o jurisdicción. En prueba de conformidad se suscriben tres ejemplares de un mismo tenor y a un sólo efecto en la Ciudad Autónoma de Buenos Aires, a los <input type="text" name="num-dias" class="form-control"> días del mes de <input type="text" name="nombre-mes" class="form-control"> del 2014.
+                  <b>DECIMOTERCERA: Domicilio - Jurisdicción</b>. A todos los efectos del presente, el DEUDOR constituye domicilio legal en 24 Oeste Sur Bis Casa N° 56, de la Ciudad de Concepción del Uruguay, Provincia de Entre Ríos y el ACREEDOR en Paraná 145 Piso 4º de la Ciudad Autónoma de Buenos Aires, en donde serán válidas todas las notificaciones judiciales y/o extrajudiciales que se cursen, y se someten a la jurisdicción y competencia de los Tribunales Ordinarios en lo Comercial de la Ciudad Autónoma de Buenos Aires, con exclusión de todo otro fuero o jurisdicción. En prueba de conformidad se suscriben tres ejemplares de un mismo tenor y a un sólo efecto en la Ciudad Autónoma de Buenos Aires, a los {{day}} días del mes de {{month}} del {{year}}.
                 </p>
                 <div class="row txtC signature">
                   <div class="col-sm-4">
@@ -90,6 +92,6 @@ GUARDAR: NUMERODECHEQUE, DIA, MES, AÑOS
       </div>
     </div>
   </div>
-<script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
+	<script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
 </body>
 </html>

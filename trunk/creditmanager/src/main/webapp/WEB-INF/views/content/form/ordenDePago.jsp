@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="formApp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>INTI</title>
   <!-- SCRIPTS -->
   <%@ include file="../../include/scripts.jsp" %>
+  	<script>
+		var project = <%= request.getAttribute("project") %>;
+	</script>
   
   <!-- STYLESHEET -->
   <%@ include file="../../include/styles.jsp" %>
@@ -14,11 +17,11 @@
 <body>
   <%@ include file="../../include/header.jsp" %>
 
-  <div class="container forms-list">
+  <div class="container forms-list" ng-controller="formController">
     <div class="panel panel-default">
       <div class="panel-body">
 		<div class="panel-body">
-		GUARDAR: Nº DE CHEQUE
+			<label for="checkNumber">Número de cheque: </label><input type="text" id="checkNumber" ng-model="checkNumber" class="form-control"> 
                 <h3>
                   Orden de Pago                
                 </h3>
@@ -33,7 +36,7 @@
                   <br>
                   <b>Nº de proyecto: </b>
                   <br>
-                  <b>Nº de cheque: </b>
+                  <b>Nº de cheque: </b>{{checkNumber}}
                   <br>  
                   <b>Importe aprobado: </b>
                   <br>
@@ -49,8 +52,6 @@
       </div>
     </div>
   </div>
-  <script>
-    $("#goToFormsLink").addClass("active");
-  </script>
+  <script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
 </body>
 </html>

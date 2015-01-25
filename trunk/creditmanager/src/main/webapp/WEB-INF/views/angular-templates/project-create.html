@@ -754,10 +754,10 @@
 					<div class="col-sm-12">
 						<div class="pull-right">
 							<div class="form-group">
-								<button type="button" class="btn btn-primary" ng-click="nextSetp()" ng-disabled="loadProjectButtonEnable || step  != 1">
+								<button type="button" class="btn btn-primary" ng-click="nextSetp()" ng-disabled="!loadProjectButtonEnable && step  != 1">
 									<i class="fa fa-plus"></i> {{loadProjectButtonName}}
 								</button>
-								<span ng-show="loadProjectButtonEnable || step  != 1">Debe primero guardar el proyecto desde la pestaña Institucional</span>
+								<span ng-show="!loadProjectButtonEnable && step  != 1">Debe primero guardar el proyecto desde la pestaña Institucional</span>
 							</div>
 						</div>
 					</div>
@@ -805,7 +805,7 @@
       				<a href="javascript: void(0);" ng-click="goToForm('mutuoIndividualConGracia')">Mutuo Individual Con Gracia</a><br>
 					<a href="javascript: void(0);" ng-click="goToForm('mutuoAsociativoConGracia')">Mutuo Asociativo Con Gracia</a><br>
 					<a href="javascript: void(0);" ng-click="goToForm('mutuoIndividualSinGracia')">Mutuo Individual Sin Gracia</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('mutuoAsociativoSinGracia')">Mutuo Asociativo Con Gracia</a><br>
+					<a href="javascript: void(0);" ng-click="goToForm('mutuoAsociativoSinGracia')">Mutuo Asociativo Sin Gracia</a><br>
     			</blockquote>
 			</div>
         </div>
