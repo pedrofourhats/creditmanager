@@ -11,6 +11,7 @@
         <mapping class="com.creditmanager.model.Project" />
         <mapping class="com.creditmanager.model.Accesor" />
         <mapping class="com.creditmanager.model.Evaluator" />
+        <mapping class="com.creditmanager.model.Form" />
     </session-factory>
          
 </hibernate-configuration>

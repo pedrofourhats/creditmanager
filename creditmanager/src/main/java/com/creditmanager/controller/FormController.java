@@ -24,6 +24,7 @@ public class FormController {
     public String goToForm1(@PathVariable String formName, @PathVariable long projectId, Model model) {
 		Gson gson = new Gson();
 		model.addAttribute("project", gson.toJson(projectService.getById(projectId)));
+		model.addAttribute("formName", formName);
 		
         return "content/form/" + formName;
     }

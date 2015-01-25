@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.creditmanager.model.Page;
 import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
+import com.creditmanager.service.dto.FormDTO;
 import com.creditmanager.service.dto.ProjectDTO;
 
 @Service
@@ -19,4 +20,5 @@ public interface ProjectService {
 	void deleteProject(Long projectId) throws ProjectHasHoldersOrGuarantorsException;
 	List<ProjectDTO> getGuarantorProjectsByUser(long personId);
 	List<ProjectDTO> getHolderProjectsByUser(long personId);
+	void saveProjectForm(FormDTO form, Long projectId);
 }

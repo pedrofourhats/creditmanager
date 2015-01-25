@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.creditmanager.model.Page;
 import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
 import com.creditmanager.service.ProjectService;
+import com.creditmanager.service.dto.FormDTO;
 import com.creditmanager.service.dto.ProjectDTO;
 
 @RestController
@@ -40,13 +41,18 @@ public class ProjectRestController {
 	}
 	
 	@RequestMapping(value="/projects/{id}",method=RequestMethod.PUT)
-	public @ResponseBody void editProject(@RequestBody ProjectDTO project, @PathVariable Long id){
+	public @ResponseBody void editProject(@RequestBody ProjectDTO project, @PathVariable Long id) {
 		project.setId(id);
 		projectService.editProject(project);
 	}
 	
+	@RequestMapping(value="/projects/form/{id}",method=RequestMethod.PUT)
+	public @ResponseBody void saveForm(@RequestBody FormDTO form, @PathVariable Long id) {
+		projectService.saveProjectForm(form, id);
+	}
+	
 	@RequestMapping(value="/projects/findById/{id}", method=RequestMethod.GET, consumes="*/*")
-	public @ResponseBody ProjectDTO getProjectById(@PathVariable Long id){
+	public @ResponseBody ProjectDTO getProjectById(@PathVariable Long id) {
 		return projectService.getById(id);
 	}
 	

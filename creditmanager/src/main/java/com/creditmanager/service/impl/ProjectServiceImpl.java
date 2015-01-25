@@ -11,13 +11,16 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.creditmanager.dao.FormDAO;
 import com.creditmanager.dao.PersonDAO;
 import com.creditmanager.dao.ProjectDAO;
+import com.creditmanager.model.Form;
 import com.creditmanager.model.Page;
 import com.creditmanager.model.Person;
 import com.creditmanager.model.Project;
 import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
 import com.creditmanager.service.ProjectService;
+import com.creditmanager.service.dto.FormDTO;
 import com.creditmanager.service.dto.PersonDTO;
 import com.creditmanager.service.dto.ProjectDTO;
 import com.creditmanager.service.util.MapperUtil;
@@ -33,6 +36,9 @@ public class ProjectServiceImpl implements ProjectService {
 	
 	@Autowired
 	private PersonDAO personDao; 
+	
+	@Autowired
+	private FormDAO formDao; 
 
 	@Override
 	public Page<ProjectDTO> getAll(int pageIndex, int pageSize) {
@@ -74,6 +80,25 @@ public class ProjectServiceImpl implements ProjectService {
 			project.getRequestedAmount(), project.getRequestedDeadline(), project.getRequestedGracePeriod(), project.getDeliveryDate(), 
 			project.getGivenAmount(), project.getGivenDeadline());
 		projectDao.add(projectToEdit);
+	}
+	
+	@Override
+	public void saveProjectForm(FormDTO formDto, Long projectId) {
+		Project project = projectDao.getById(projectId);
+		Form form = new Form();
+		if(formDto.getId() != null) {
+			form = formDao.getById(formDto.getId());
+		}
+		
+		form.setCheckNumber(formDto.getCheckNumber());
+		form.setDate(formDto.getDate());
+		form.setDay(formDto.getDay());
+		form.setMonth(formDto.getMonth());
+		form.setName(formDto.getName());
+		form.setProject(project);
+		form.setYear(formDto.getYear());
+
+		formDao.add(form);
 	}
 
 	@Override

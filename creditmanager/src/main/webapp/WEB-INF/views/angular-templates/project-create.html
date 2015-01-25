@@ -588,35 +588,21 @@
 								  <thead>
 									<tr>
 									  <th>
-									  	<a href="javascript:void(0);">
-									  		<!-- cambiar a fa-caret-up -->
-									  		Tipo <i class="fa fa-caret-down pull-right"></i>
-									  	</a>
+									  	Tipo
 									  </th>
 									  <th>
-									  	<a href="javascript:void(0);">
-									  		<!-- cambiar a fa-caret-up -->
-									  		Fecha de emisión <i class="fa fa-caret-down pull-right"></i>
-									  	</a>
+									  	Fecha de emisión
 									  </th>
 									  <th class="txtC">Acciones</th>
 									</tr>
 								  </thead>
 								  <tbody>
-									<tr>
-									  <td>Fianza</td>
-									  <td>5/5/2004</td>
+									<tr ng-repeat="form in project.forms">
+									  <td>{{form.name}}</td>
+									  <td>{{form.emitionDate}}</td>
 									  <td class="txtC">
-										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-print txtBlue" ></i></button>
-										<button type="button" class="btn btn-link"><i class="fa fa-pencil txtSuccess"></i></button>
-									  </td>
-									</tr>
-									<tr>
-									  <td>Contrato</td>
-									  <td>5/11/2012</td>
-									  <td class="txtC">
-										<button type="button" class="btn btn-link" onclick=""><i class="fa fa-print txtBlue" ></i></button>
-										<button type="button" class="btn btn-link"><i class="fa fa-pencil txtSuccess"></i></button>
+										<!-- <button type="button" class="btn btn-link"><i class="fa fa-print txtBlue" ></i></button> -->
+										<button type="button" class="btn btn-link" ng-click="goToForm(form.name)"><i class="fa fa-pencil txtSuccess"></i></button>
 									  </td>
 									</tr>
 								  </tbody>

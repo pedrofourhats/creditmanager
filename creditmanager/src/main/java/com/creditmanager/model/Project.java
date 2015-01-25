@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -83,6 +84,9 @@ public class Project extends com.creditmanager.model.Entity {
 		inverseJoinColumns = { @JoinColumn(name="personId", nullable=false, updatable=false) }
 	)
 	private Set<Person> holders;
+	
+	@OneToMany(mappedBy="project")
+	private Set<Form> forms;
 	
 	private String investmentDestination;
 	
@@ -180,6 +184,15 @@ public class Project extends com.creditmanager.model.Entity {
 	public void setHolders(Set<Person> holders) {
 		this.holders = holders;
 	}
+	
+	public Set<Form> getForms() {
+		return forms;
+	}
+
+	public void setForms(Set<Form> forms) {
+		this.forms = forms;
+	}
+
 	public String getInvestmentDestination() {
 		return investmentDestination;
 	}
