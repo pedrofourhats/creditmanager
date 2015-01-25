@@ -1,17 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html ng-app="formApp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>INTI</title>
   <!-- SCRIPTS -->
-  <!-- SCRIPTS -->
-	<%@ include file="../../include/scripts.jsp" %>
-	<script>
+  <%@ include file="../../include/scripts.jsp" %>
+  	<script>
 		var project = <%= request.getAttribute("project") %>;
 	</script>
-  
+
   <!-- STYLESHEET -->
   <%@ include file="../../include/styles.jsp" %>
 </head>
@@ -22,7 +20,10 @@
     <div class="panel panel-default">
       <div class="panel-body">
 		<div class="panel-body">
-		GUARDAR: NUMERODECHEQUE, DIA, MES, AÑOS
+			<label for="checkNumber">Número de cheque: </label><input type="text" id="checkNumber" ng-model="checkNumber" class="form-control"> 
+			<label for="day">Día: </label><input type="text" id="day" ng-model="day" class="form-control"> 
+			<label for="month">Mes: </label><input type="text" id="month" ng-model="month" class="form-control"> 
+			<label for="years">Año: </label><input type="text" id="year" ng-model="year" class="form-control"> 
                 <h3>
                   Contrato de mutuo entre EL POLO TECNOLÓGICO CONSTITUYENTES S.A., en su calidad de FIDUCIARIO del FIDEICOMISO SALTO GRANDE, celebrado el 10 de Junio de 2005,  y Gomez, Mario Rene 
                 </h3>
@@ -30,7 +31,7 @@
                   Entre el POLO TECNOLÓGICO CONSTITUYENTES S.A. en su calidad de administrador FIDUCIARIO del contrato de fideicomiso que hubiere celebrado en fecha 10 de junio de 2005 con la Comisión Administradora para el Fondo Especial de Salto Grande, representado por su apoderado para este acto CPN Elina Gabriela Buffa, titular del DNI Nº 25.511.090 con domicilio en Paraná 145 Piso 4º, de la Ciudad Autónoma de Buenos Aires, en adelante el ACREEDOR, y por otra parte {{project.guarantors[0].name}} {{project.guarantors[0].surname}} con DNI Nº {{project.guarantors[0].identityNumber}} con domicilio en la calle {{project.guarantors[0].address}} , Departamento de {{project.guarantors[0].locality}} , Provincia de Entre Ríos, en adelante el DEUDOR, se celebra el presente contrato de MUTUO, el que se sujetará a las siguientes cláusulas:
                 </p>
                 <p class="span-inline">
-                  <b>PRIMERA: Monto del Préstamo</b>. El DEUDOR recibe en este acto del ACREEDOR la suma de {{project.givenAmount}} ({{project.givenAmount}}), mediante cheques del  Banco Credicoop Nº DATODELFORMULARIO_NCHEQUE, sirviendo el presente de eficaz recibo en legal forma, por lo cual el DEUDOR otorga a favor del ACREEDOR formal carta de adeudo.
+                  <b>PRIMERA: Monto del Préstamo</b>. El DEUDOR recibe en este acto del ACREEDOR la suma de {{project.givenAmount}} ({{project.givenAmount}}), mediante cheques del  Banco Credicoop Nº {{checkNumber}}, sirviendo el presente de eficaz recibo en legal forma, por lo cual el DEUDOR otorga a favor del ACREEDOR formal carta de adeudo.
                   <br>
                   <b>SEGUNDA: Amortización</b>. El  DEUDOR  se  obliga a pagar al ACREEDOR el total del préstamo que asciende a $ 	IMPORTEOTORGADO*INTERES (IMPORTEENPALABRAS) con más una tasa de interés mensual variable, que se establecerá sobre las bases estipuladas en la cláusula 9 del contrato de mutuo suscripto entre el FONCAP S.A. y el ACREEDOR, que el DEUDOR declara conocer y forma parte del presente contrato como Anexo I, en …….. períodos mensuales y consecutivos, correspondientes a la deuda de capital, otorgándose un plazo de gracia de ……. días para la devolución del capital a contar desde el momento de desembolso por parte de FONCAP, en el lugar y tiempo que indique el  ACREEDOR. En tal sentido, el DEUDOR comenzara a pagar las cuotas de los primeros servicios correspondientes a la atención de los intereses el día FECHAOTORGAMIENTODELCREDITO. según consta en el cronograma de pago, entregado a la firma del presente contrato o al día hábil inmediato posterior en el caso que este fuera inhábil. A partir del …………….. del 201………, el DEUDOR comenzará a pagar conjuntamente los 1º de cada mes las cuotas en concepto de capital e intereses de los meses sucesivos a la atención de los intereses o al día hábil inmediato posterior si estos fueran inhábiles.
                   <br>
@@ -54,7 +55,7 @@
                   <br>
                   <b>DÉCIMO SEGUNDA: Codeudores</b>. El / La Sr/a GARANTE1 con DNI Nº DNIGARANTE1 con domicilio en la calle DIRECCIONGARANTE1, y el Sr GARANTE2 con DNI Nº DNIGARANTE1 con domicilio en la calle DIRECCIONGARANTE2, Departamento de DEPARTAMENTOGARANTE2, Provincia de Entre Ríos, se constituyen en codeudores solidarios, fiadores lisos y llanos, principales pagadores del DEUDOR respecto del cumplimiento de todas y cada una de las obligaciones asumidas en este contrato frente al ACREEDOR, por lo cual este último podrá requerirle el cumplimiento de la totalidad de las obligaciones asumidas por el DEUDOR, no pudiendo invocar los beneficios de excusión  y/o división.
                   <br>
-                  <b>DECIMOTERCERA: Domicilio - Jurisdicción</b>. A todos los efectos del presente, el DEUDOR constituye domicilio legal en DOMICILIOTITULAR, Departamento de  LOCALIDADTITULAR, Provincia de Entre Ríos y el ACREEDOR en Paraná 145 Piso 4º de la Ciudad Autónoma de Buenos Aires, en donde serán válidas todas las notificaciones judiciales y/o extrajudiciales que se cursen, y se someten a la jurisdicción y competencia de los Tribunales Ordinarios en lo Comercial de la Ciudad Autónoma de Buenos Aires, con exclusión de todo otro fuero o jurisdicción. En prueba de conformidad se suscriben tres ejemplares de un mismo tenor y a un sólo efecto en la Ciudad Autónoma de Buenos Aires, a los DATOFORMULARIO_DIA días del mes de DATOFORMULARIO_MES de DATOFORMULARIO_AÑO
+                  <b>DECIMOTERCERA: Domicilio - Jurisdicción</b>. A todos los efectos del presente, el DEUDOR constituye domicilio legal en DOMICILIOTITULAR, Departamento de  LOCALIDADTITULAR, Provincia de Entre Ríos y el ACREEDOR en Paraná 145 Piso 4º de la Ciudad Autónoma de Buenos Aires, en donde serán válidas todas las notificaciones judiciales y/o extrajudiciales que se cursen, y se someten a la jurisdicción y competencia de los Tribunales Ordinarios en lo Comercial de la Ciudad Autónoma de Buenos Aires, con exclusión de todo otro fuero o jurisdicción. En prueba de conformidad se suscriben tres ejemplares de un mismo tenor y a un sólo efecto en la Ciudad Autónoma de Buenos Aires, a los {{day}} días del mes de {{month}} del {{year}}.
                 </p>
                 <div class="row txtC signature">
                   <div class="col-sm-4">

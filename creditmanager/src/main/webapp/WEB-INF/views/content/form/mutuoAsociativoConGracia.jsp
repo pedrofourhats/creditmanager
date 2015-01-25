@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="formApp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>INTI</title>
@@ -17,11 +16,14 @@
 <body>
   <%@ include file="../../include/header.jsp" %>
 
-  <div class="container forms-list">
+  <div class="container forms-list" ng-controller="formController">
     <div class="panel panel-default">
       <div class="panel-body">
-<div class="panel-body">
-GUARDAR: NUMERODECHEQUE, DIA, MES, AÑOS
+		<div class="panel-body">
+			<label for="checkNumber">Número de cheque: </label><input type="text" id="checkNumber" ng-model="checkNumber" class="form-control"> 
+			<label for="day">Día: </label><input type="text" id="day" ng-model="day" class="form-control"> 
+			<label for="month">Mes: </label><input type="text" id="month" ng-model="month" class="form-control"> 
+			<label for="years">Año: </label><input type="text" id="year" ng-model="year" class="form-control"> 
                 <h3>
                   Contrato de mutuo entre EL POLO TECNOLÓGICO CONSTITUYENTES S.A., en su calidad de FIDUCIARIO del FIDEICOMISO SALTO GRANDE, celebrado el 10 de Junio de 2005,  y   {{project.guarantors[0].surname}}, {{project.guarantors[0].name}} 
                 </h3>
@@ -29,7 +31,7 @@ GUARDAR: NUMERODECHEQUE, DIA, MES, AÑOS
                   Entre el POLO TECNOLÓGICO CONSTITUYENTES S.A. en su calidad de administrador FIDUCIARIO del contrato de fideicomiso que hubiere celebrado en fecha 10 de junio de 2005 con la Comisión Administradora para el Fondo Especial de Salto Grande, representado por su apoderado para este acto CPN Elina Gabriela Buffa, titular del DNI Nº 25.511.090 con domicilio en Paraná 145 Piso 4º, de la Ciudad Autónoma de Buenos Aires, en adelante el ACREEDOR, y por otra parte {{project.guarantors[0].name}} {{project.guarantors[0].surname}} con DNI Nº {{project.guarantors[0].identityNumber}} con domicilio en la calle {{project.guarantors[0].address}} , Departamento de {{project.guarantors[0].locality}} , Provincia de Entre Ríos, en adelante el DEUDOR, se celebra el presente contrato de MUTUO, el que se sujetará a las siguientes cláusulas:
                 </p>
                 <p class="span-inline">
-                  <b>PRIMERA: Monto del Préstamo</b>. El DEUDOR recibe en este acto del ACREEDOR la suma de {{project.givenAmount}} ({{project.givenAmount}}), mediante cheques del  Banco Credicoop Nº ndecheque, sirviendo el presente de eficaz recibo en legal forma, por lo cual el DEUDOR otorga a favor del ACREEDOR formal carta de adeudo.
+                  <b>PRIMERA: Monto del Préstamo</b>. El DEUDOR recibe en este acto del ACREEDOR la suma de {{project.givenAmount}} ({{project.givenAmount}}), mediante cheques del  Banco Credicoop Nº {{checkNumber}}, sirviendo el presente de eficaz recibo en legal forma, por lo cual el DEUDOR otorga a favor del ACREEDOR formal carta de adeudo.
                   <br>
                   <b>SEGUNDA: Amortización</b>. El  DEUDOR  se  obliga a pagar al ACREEDOR el total del préstamo que asciende a {{project.givenAmount}} ({{project.givenAmount}}) con más una tasa de interés mensual variable, que se establecerá sobre las bases estipuladas en la cláusula 9 del contrato de mutuo suscripto entre el FONCAP S.A. y el ACREEDOR, que el DEUDOR declara conocer y forma parte del presente contrato como Anexo I, en PERIODOSMENSUALES períodos mensuales y consecutivos, correspondientes a la deuda de capital,  otorgándose un plazo de gracia de …………. días para la devolución del capital a contar desde el momento de desembolso por parte de FONCAP, en el lugar y tiempo que indique el  ACREEDOR. En tal sentido, el DEUDOR comenzara a pagar las cuotas de los primeros servicios correspondientes a la atención de los intereses el día …………………….. según consta en el cronograma de pago, entregado a la firma del presente contrato o al día hábil inmediato posterior en el caso que este fuera inhábil. A partir del ……………………, el DEUDOR comenzará a pagar conjuntamente los …………. de cada mes las cuotas en concepto de capital e intereses de los meses sucesivos a la atención de los intereses o al día hábil inmediato posterior si estos fueran inhábiles.
                   <br>
@@ -45,15 +47,15 @@ GUARDAR: NUMERODECHEQUE, DIA, MES, AÑOS
                   <br>  
                   <b>OCTAVA: Tutoría</b>. El DEUDOR aceptará el seguimiento “in situ” por parte del INTI del desarrollo del Proyecto, hasta la cancelación de la obligación principal, a efectos de verificar el cumplimiento de las condiciones técnicas y económico-financieras del Proyecto que le diera origen al préstamo.
                   <br>
-                  <b>NOVENA</b>: Las obligaciones que asume el INTI por medio del presente Contrato o los acuerdos complementarios que se suscriban en su consecuencia son de medio, no de resultado. En virtud de lo expuesto el INTI deslinda cualquier tipo de responsabilidad por los resultados que se produzcan como consecuencia de la utilización de los productos y/o servicios resultantes del micro emprendimiento aquí promovido. Asimismo, el INTI deslinda toda responsabilidad bajo cualquier concepto tanto frente al DEUDOR como hacia sus colaboradores, dependientes, contratados o hacia terceros en general, usuarios o no usuarios de los productos comercializados como resultado del desarrollo aquí promovido, respecto a todo reclamo de índole civil, laboral, penal o administrativo, vinculado directa o indirectamente con sus acciones en ejecución del presente Convenio.
+                  <b>NOVENA:</b> Las obligaciones que asume el INTI por medio del presente Contrato o los acuerdos complementarios que se suscriban en su consecuencia son de medio, no de resultado. En virtud de lo expuesto el INTI deslinda cualquier tipo de responsabilidad por los resultados que se produzcan como consecuencia de la utilización de los productos y/o servicios resultantes del micro emprendimiento aquí promovido. Asimismo, el INTI deslinda toda responsabilidad bajo cualquier concepto tanto frente al DEUDOR como hacia sus colaboradores, dependientes, contratados o hacia terceros en general, usuarios o no usuarios de los productos comercializados como resultado del desarrollo aquí promovido, respecto a todo reclamo de índole civil, laboral, penal o administrativo, vinculado directa o indirectamente con sus acciones en ejecución del presente Convenio.
                   <br>
-                  <b>DECIMA: El DEUDOR ofrece en garantía los Contratos de Fianza del/la Sr./Sra. ………………….con DNI Nº ................ y del/la Sr./Sra. ................................. con DNI Nº 17.316.833 emitidos en beneficio del ACREEDOR, respecto de las obligaciones por el asumidas en este Contrato de Mutuo, el que exhibe en este acto y cuya copia se agrega como Anexo II, y declara conocer y consentir, además, el contrato de mutuo suscripto el 17/08/2005, entre el ACREEDOR y el FONCAP S.A., que se integra al presente contrato y se adjunta como anexo I. El DEUDOR, dará cumplimiento a las cargas y obligaciones contenidas en los referidos instrumentos que pesan sobre el ACREEDOR, así como se somete al régimen de causales de rescisión allí contenidas y a los efectos pactados, por su acción u omisión.
+                  <b>DECIMA:</b> El DEUDOR ofrece en garantía los Contratos de Fianza del/la Sr./Sra. ………………….con DNI Nº ................ y del/la Sr./Sra. ................................. con DNI Nº 17.316.833 emitidos en beneficio del ACREEDOR, respecto de las obligaciones por el asumidas en este Contrato de Mutuo, el que exhibe en este acto y cuya copia se agrega como Anexo II, y declara conocer y consentir, además, el contrato de mutuo suscripto el 17/08/2005, entre el ACREEDOR y el FONCAP S.A., que se integra al presente contrato y se adjunta como anexo I. El DEUDOR, dará cumplimiento a las cargas y obligaciones contenidas en los referidos instrumentos que pesan sobre el ACREEDOR, así como se somete al régimen de causales de rescisión allí contenidas y a los efectos pactados, por su acción u omisión.
                   <br>
                   <b>UNDÉCIMA: Lugar de Pago</b>. El DEUDOR devolverá el préstamo abonando las cuotas al vencimiento, con la tarjeta de pago el Banco Credicoop que recibiera para tal fin al momento de la firma del presente contrato. Los pagos se efectuarán en los Cajeros Automáticos del Banco Credicoop o Cajeros de la red LINK habilitados para tal fin, o en cualquier lugar y/o bajo la nueva modalidad que indique el ACREEDOR.
                   <br>
                   <b>DÉCIMO SEGUNDA: Codeudores</b>. El/La Sr./Sra................... con DNI Nº ............... con domicilio en la calle …………………. y el/la Sr./Sra. ..................... con DNI Nº ............................ con domicilio en ………………………., de la Ciudad de …………………, Departamento de ……………., Provincia de Entre Ríos, se constituyen en codeudores solidarios, fiadores lisos y llanos, principales pagadores del DEUDOR respecto del cumplimiento de todas y cada una de las obligaciones asumidas en este contrato frente al ACREEDOR, por lo cual este último podrá requerirle el cumplimiento de la totalidad de las obligaciones asumidas por el DEUDOR, no pudiendo invocar los beneficios de excusión  y/o división.
                   <br>
-                  <b>DECIMOTERCERA: Domicilio - Jurisdicción</b>. A todos los efectos del presente, el DEUDOR constituye domicilio legal en 24 Oeste Sur Bis Casa N° 56, de la Ciudad de Concepción del Uruguay, Provincia de Entre Ríos y el ACREEDOR en Paraná 145 Piso 4º de la Ciudad Autónoma de Buenos Aires, en donde serán válidas todas las notificaciones judiciales y/o extrajudiciales que se cursen, y se someten a la jurisdicción y competencia de los Tribunales Ordinarios en lo Comercial de la Ciudad Autónoma de Buenos Aires, con exclusión de todo otro fuero o jurisdicción. En prueba de conformidad se suscriben tres ejemplares de un mismo tenor y a un sólo efecto en la Ciudad Autónoma de Buenos Aires, a los DIA días del mes de MES del AÑO.
+                  <b>DECIMOTERCERA: Domicilio - Jurisdicción</b>. A todos los efectos del presente, el DEUDOR constituye domicilio legal en 24 Oeste Sur Bis Casa N° 56, de la Ciudad de Concepción del Uruguay, Provincia de Entre Ríos y el ACREEDOR en Paraná 145 Piso 4º de la Ciudad Autónoma de Buenos Aires, en donde serán válidas todas las notificaciones judiciales y/o extrajudiciales que se cursen, y se someten a la jurisdicción y competencia de los Tribunales Ordinarios en lo Comercial de la Ciudad Autónoma de Buenos Aires, con exclusión de todo otro fuero o jurisdicción. En prueba de conformidad se suscriben tres ejemplares de un mismo tenor y a un sólo efecto en la Ciudad Autónoma de Buenos Aires, a los {{day}} días del mes de {{month}} del {{year}}.
                 </p>
                 <div class="row txtC signature">
                   <div class="col-sm-4">
@@ -90,6 +92,6 @@ GUARDAR: NUMERODECHEQUE, DIA, MES, AÑOS
       </div>
     </div>
   </div>
-<script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
+	<script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
 </body>
 </html>

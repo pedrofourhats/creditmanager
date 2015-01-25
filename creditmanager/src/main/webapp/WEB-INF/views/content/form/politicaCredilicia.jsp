@@ -20,8 +20,7 @@
   <div class="container forms-list">
     <div class="panel panel-default">
       <div class="panel-body">
-<div class="panel-body">
-NO GUARDA NADA
+		<div class="panel-body">
                 <h3>
                   PROGRAMA DE CRÉDITOS PARA EMPRENDEDORES DE LA REGIÓN DE SALTO GRANDE<br>
                   MICROBANCO DE LA REGIÓN DE SALTO GRANDE<br>
