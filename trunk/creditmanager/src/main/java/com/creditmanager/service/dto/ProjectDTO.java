@@ -2,9 +2,6 @@ package com.creditmanager.service.dto;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
-
-import com.creditmanager.model.Form;
 
 public class ProjectDTO {
 	
