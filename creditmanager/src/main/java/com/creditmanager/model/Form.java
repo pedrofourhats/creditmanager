@@ -15,7 +15,6 @@ public class Form extends com.creditmanager.model.Entity {
 	public Form() {
 	}
 	
-	
 	public Form(String name, Project project, String date,
 			String checkNumber, String day, String month, String year) {
 		this.name = name;
@@ -25,6 +24,7 @@ public class Form extends com.creditmanager.model.Entity {
 		this.day = day;
 		this.month = month;
 		this.year = year;
+		this.emitionDate = new Date();
 	}
 
 	@Column(name="name")
