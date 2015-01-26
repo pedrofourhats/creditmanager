@@ -2,13 +2,12 @@ package com.creditmanager.service.dto;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-
 public class FormDTO {
 	private Long id;
 	private String name;
 	private Date emitionDate;
 	private String date;
+	private String formattedName;
 	private String checkNumber;
 	private String day;
 	private String month;
@@ -25,7 +24,33 @@ public class FormDTO {
 	}
 	public void setName(String name) {
 		this.name = name;
+		this.setFormattedName(name);
 	}
+	
+	public String getFormattedName() {
+		return this.formattedName;
+	}
+	
+	public void setFormattedName(String formattedName) {
+		if(formattedName.equals("fianza")) {
+			this.formattedName = "Fianza";
+		} if(formattedName.equals("mutuoAsociativoConGracia")) {
+			this.formattedName = "Mutuo Asociativo Con Gracia";
+		} else if(formattedName.equals("mutuoAsociativoSinGracia")) {
+			this.formattedName = "Mutuo Asociativo Sin Gracia";
+		} else if(formattedName.equals("mutuoIndividualConGracia")) {
+			this.formattedName = "Mutuo Individual Con Gracia";
+		} else if(formattedName.equals("mutuoIndividualSinGracia")) {
+			this.formattedName = "Mutuo Individual Sin Gracia";
+		} else if(formattedName.equals("ordenDePago")) {
+			this.formattedName = "Orden De Pago";
+		} else if(formattedName.equals("pagare")) {
+			this.formattedName = "Pagare";
+		} else if(formattedName.equals("politicaCredilicia")) {
+			this.formattedName = "Politica Credilicia";
+		} 
+	}
+	
 	public Date getEmitionDate() {
 		return emitionDate;
 	}
