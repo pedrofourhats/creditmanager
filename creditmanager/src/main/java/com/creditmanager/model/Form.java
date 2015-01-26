@@ -13,17 +13,6 @@ import javax.persistence.Table;
 public class Form extends com.creditmanager.model.Entity {
 	
 	public Form() {
-	}
-	
-	public Form(String name, Project project, String date,
-			String checkNumber, String day, String month, String year) {
-		this.name = name;
-		this.project = project;
-		this.date = date;
-		this.checkNumber = checkNumber;
-		this.day = day;
-		this.month = month;
-		this.year = year;
 		this.emitionDate = new Date();
 	}
 
