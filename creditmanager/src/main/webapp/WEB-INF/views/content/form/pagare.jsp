@@ -19,9 +19,12 @@
 
   <div class="container forms-list" ng-controller="formController">
     <div class="panel panel-default">
-		<label for="day">Día: </label><input type="text" id="day" ng-model="form.day" class="form-control"> 
-		<label for="month">Mes: </label><input type="text" id="month" ng-model="form.month" class="form-control"> 
-		<label for="years">Año: </label><input type="text" id="year" ng-model="form.year" class="form-control"> 
+    	<div class="formParameters">
+      		<h4 class="parameterTitle">Parametros</h4>
+			<input placeholder="Día"  type="text" id="day" ng-model="form.day" class="form-control"> 
+			<input placeholder="Mes"  type="text" id="month" ng-model="form.month" class="form-control"> 
+			<input placeholder="Año"  type="text" id="year" ng-model="form.year" class="form-control"> 
+		</div>
 		<div class="panel-body" id="printableDiv">
 				<h3>
 				Pagaré
