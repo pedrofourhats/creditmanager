@@ -109,6 +109,7 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			var projectToEdit = $scope.project;
 			projectToEdit.guarantors = $.map(projectToEdit.guarantors, function(value){ delete value.formattedBirthDate; return value; });
 			projectToEdit.holders = $.map(projectToEdit.holders, function(value){ delete value.formattedBirthDate; return value; });
+			projectToEdit.defaultForms = self.getDefaultForms().toString();
 			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify(projectToEdit))
 			.success(function () {
 				alert("El proyecto se ha actualizado con exito");
@@ -118,11 +119,55 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		    });
 		};
 		
+		self.getDefaultForms = function() {
+			var defaultForms = [];
+			var index = -1;
+			if($scope.defaultForm1) defaultForms[++index] = "1";
+			if($scope.defaultForm2) defaultForms[++index] = "2";
+			if($scope.defaultForm3) defaultForms[++index] = "3";
+			if($scope.defaultForm4) defaultForms[++index] = "4";
+			if($scope.defaultForm5) defaultForms[++index] = "5";
+			if($scope.defaultForm6) defaultForms[++index] = "6";
+			if($scope.defaultForm7) defaultForms[++index] = "7";
+			if($scope.defaultForm8) defaultForms[++index] = "8";
+			if($scope.defaultForm9) defaultForms[++index] = "9";
+			if($scope.defaultForm10) defaultForms[++index] = "10";
+			if($scope.defaultForm11) defaultForms[++index] = "11";
+			if($scope.defaultForm12) defaultForms[++index] = "12";
+			if($scope.defaultForm13) defaultForms[++index] = "13";
+			if($scope.defaultForm14) defaultForms[++index] = "14";
+			if($scope.defaultForm15) defaultForms[++index] = "15";
+			if($scope.defaultForm16) defaultForms[++index] = "16";
+			
+			return defaultForms;
+		};
+		
 		$http.get(getCompletePath("projects/findById/" + $scope.projectId), {})
 		.success(function(project){
 			project.dateOfEntry = new Date(project.dateOfEntry);
 			project.deliveryDate = new Date(project.deliveryDate);
 			$scope.project = project;
+			var defaultForms = [];
+			if(project.defaultForms) {
+				defaultForms = project.defaultForms.split(",");
+			}
+			
+			$scope.defaultForm1 = defaultForms.indexOf("1") > -1;
+			$scope.defaultForm2 = defaultForms.indexOf("2") > -1;
+			$scope.defaultForm3 = defaultForms.indexOf("3") > -1;
+			$scope.defaultForm4 = defaultForms.indexOf("4") > -1;
+			$scope.defaultForm5 = defaultForms.indexOf("5") > -1;
+			$scope.defaultForm6 = defaultForms.indexOf("6") > -1;
+			$scope.defaultForm7 = defaultForms.indexOf("7") > -1;
+			$scope.defaultForm8 = defaultForms.indexOf("8") > -1;
+			$scope.defaultForm9 = defaultForms.indexOf("9") > -1;
+			$scope.defaultForm10 = defaultForms.indexOf("10") > -1;
+			$scope.defaultForm11 = defaultForms.indexOf("11") > -1;
+			$scope.defaultForm12 = defaultForms.indexOf("12") > -1;
+			$scope.defaultForm13 = defaultForms.indexOf("13") > -1;
+			$scope.defaultForm14 = defaultForms.indexOf("14") > -1;
+			$scope.defaultForm15 = defaultForms.indexOf("15") > -1;
+			$scope.defaultForm16 = defaultForms.indexOf("16") > -1;
 		}).error(function(err){
 			alert("Ha ocurrido un problema. Por favor intente nuevamente");
 		});

@@ -49,6 +49,8 @@ public class ProjectDTO {
 	
 	private String investmentDestination;
 	
+	private String defaultForms;
+	
 	public Long getId() {
 		return id;
 	}
@@ -223,5 +225,13 @@ public class ProjectDTO {
 
 	public void setGivenDeadline(String givenDeadline) {
 		this.givenDeadline = givenDeadline;
+	}
+
+	public String getDefaultForms() {
+		return defaultForms;
+	}
+
+	public void setDefaultForms(String defaultForms) {
+		this.defaultForms = defaultForms;
 	}
 }
