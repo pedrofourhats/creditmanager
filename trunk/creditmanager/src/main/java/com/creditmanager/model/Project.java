@@ -88,6 +88,10 @@ public class Project extends com.creditmanager.model.Entity {
 	@OneToMany(mappedBy="project")
 	private Set<Form> forms;
 	
+	@Column(name="defaultForms")
+	private String defaultForms;
+	
+	@Column(name="investmentDestination")
 	private String investmentDestination;
 	
 	public Project(){
@@ -247,9 +251,17 @@ public class Project extends com.creditmanager.model.Entity {
 		this.givenDeadline = givenDeadline;
 	}
 	
+	public String getDefaultForms() {
+		return defaultForms;
+	}
+
+	public void setDefaultForms(String defaultForms) {
+		this.defaultForms = defaultForms;
+	}
+
 	public void update(Date dateOfEntry, Long number, String servicers, String situationState, Set<Person> guarantors, Set<Person> holders, 
 		String investmentDestination,String title, String type, String economicArea, String economicActivity, String category, Double requestedAmount, String requestedDeadline,
-		String requestedGracePeriod, Date deliveryDate, Double givenAmount, String givenDeadline){
+		String requestedGracePeriod, Date deliveryDate, Double givenAmount, String givenDeadline, String defaultForms){
 		
 		this.title = title;
 		this.type = type;
@@ -270,5 +282,6 @@ public class Project extends com.creditmanager.model.Entity {
 		this.guarantors = guarantors;
 		this.holders = holders;
 		this.investmentDestination = investmentDestination;
+		this.defaultForms = defaultForms;
 	}
 }

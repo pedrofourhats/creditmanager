@@ -81,6 +81,10 @@
         <b>requestedDeadline</b>
       </field>
       <field>
+        <a>requestedGracePeriod</a>
+        <b>requestedGracePeriod</b>
+      </field>
+      <field>
         <a>deliveryDate</a>
         <b>deliveryDate</b>
       </field>
@@ -91,6 +95,10 @@
       <field>
         <a>givenDeadline</a>
         <b>givenDeadline</b>
+      </field>
+      <field>
+        <a>defaultForms</a>
+        <b>defaultForms</b>
       </field>
   </mapping>
 </mappings>
