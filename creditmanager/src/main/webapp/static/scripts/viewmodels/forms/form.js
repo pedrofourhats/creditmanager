@@ -13,6 +13,7 @@ formApp.controller('formController', function ($scope, $http) {
 	}
 	
 	$scope.saveForm = function() {
+		$scope.form.emitionDate = null;
 		$http.put(getCompletePath("projects/form/" + $scope.project.id), JSON.stringify($scope.form))
 		.success(function () {
 			redirect("project/list#/project-detail/" + $scope.project.id);
