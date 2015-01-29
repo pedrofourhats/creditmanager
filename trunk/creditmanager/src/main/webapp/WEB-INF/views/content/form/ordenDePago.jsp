@@ -20,7 +20,10 @@
 
   <div class="container forms-list" ng-controller="formController">
     <div class="panel panel-default">
-    <label for="checkNumber">Número de cheque: </label><input type="text" id="checkNumber" ng-model="form.checkNumber" class="form-control">
+		<div class="formParameters">
+			<h4 class="parameterTitle">Parametros</h4>
+    		<input placeholdeR="Nº de cheque" type="text" id="checkNumber" ng-model="form.checkNumber" class="form-control">
+    	</div>
 		<div class="panel-body" id="printableDiv">
                <h3>
                  Orden de Pago                

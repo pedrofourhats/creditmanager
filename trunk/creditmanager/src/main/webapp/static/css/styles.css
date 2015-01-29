@@ -578,3 +578,12 @@ label {
   margin-top: 50px;
 }
 
+.formParameters{
+padding: 15px;
+border-bottom: 5px solid #eaeaea;	
+}
+
+.parameterTitle{
+	margin-bottom: 5px;
+	}
+}
