@@ -94,6 +94,9 @@ public class Project extends com.creditmanager.model.Entity {
 	@Column(name="investmentDestination")
 	private String investmentDestination;
 	
+	
+	//private Set<Contact> contacts;
+	
 	public Project(){
 	}
 	

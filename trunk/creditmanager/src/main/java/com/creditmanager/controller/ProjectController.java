@@ -17,6 +17,11 @@ public class ProjectController  {
 		return "content/project/detail";
     }
 	
+	@RequestMapping(value="/projects/paymentCalendar")
+	public String goToPaymentCalendar(Model model){
+		return "content/project/paymentCalendar";
+	}
+	
 //	@RequestMapping(value="/project/create")
 //    public String goToProjectCreation(Model model) {
 //		return "content/project/create";
