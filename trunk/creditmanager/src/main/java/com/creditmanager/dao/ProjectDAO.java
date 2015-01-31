@@ -5,5 +5,5 @@ import com.creditmanager.model.Project;
 
 public interface ProjectDAO extends GenericDAO<Project, Long> {
 	Page<Project> getAllProjects(int pageIndex, int pageSize);
-	Page<Project> findByProjectNumber(int pageIndex, int pageSize, Long number);
+	Page<Project> findByProjectNumber(int pageIndex, int pageSize, String number);
 }
