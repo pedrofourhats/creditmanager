@@ -102,7 +102,7 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public Page<ProjectDTO> getByNumber(int pageIndex, int pageSize, Long number) {
+	public Page<ProjectDTO> getByNumber(int pageIndex, int pageSize, String number) {
 		return MapperUtil.map(mapper, projectDao.findByProjectNumber(pageIndex, pageSize, number), ProjectDTO.class);
 	}
 	

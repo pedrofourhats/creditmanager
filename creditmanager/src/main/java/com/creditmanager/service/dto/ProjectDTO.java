@@ -31,7 +31,7 @@ public class ProjectDTO {
 	
 	private Date dateOfEntry;
 	
-	private Long number;
+	private String number;
 	
 	private String servicers;
 	
@@ -107,11 +107,11 @@ public class ProjectDTO {
 		this.dateOfEntry = dateOfEntry;
 	}
 
-	public Long getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
-	public void setNumber(Long number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 

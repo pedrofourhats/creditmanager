@@ -57,7 +57,7 @@ public class Project extends com.creditmanager.model.Entity {
 	private Date dateOfEntry;
 	
 	@Column(name="number")
-	private Long number;
+	private String number;
 	
 	@Column(name="servicers")
 	private String servicers;
@@ -97,7 +97,7 @@ public class Project extends com.creditmanager.model.Entity {
 	public Project(){
 	}
 	
-	public Project(Date dateOfEntry, Long number, String servicers, String situationState, String evaluator, String accesor, 
+	public Project(Date dateOfEntry, String number, String servicers, String situationState, String evaluator, String accesor, 
 			Set<Person> guarantors, Set<Person> holders, String investmentDestination) {
 		this.dateOfEntry = dateOfEntry;
 		this.number = number;
@@ -110,10 +110,10 @@ public class Project extends com.creditmanager.model.Entity {
 		this.investmentDestination = investmentDestination;
 	}
 	
-	public Long getNumber() {
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(Long number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 	public String getTitle() {
@@ -259,7 +259,7 @@ public class Project extends com.creditmanager.model.Entity {
 		this.defaultForms = defaultForms;
 	}
 
-	public void update(Date dateOfEntry, Long number, String servicers, String situationState, Set<Person> guarantors, Set<Person> holders, 
+	public void update(Date dateOfEntry, String number, String servicers, String situationState, Set<Person> guarantors, Set<Person> holders, 
 		String investmentDestination,String title, String type, String economicArea, String economicActivity, String category, Double requestedAmount, String requestedDeadline,
 		String requestedGracePeriod, Date deliveryDate, Double givenAmount, String givenDeadline, String defaultForms){
 		

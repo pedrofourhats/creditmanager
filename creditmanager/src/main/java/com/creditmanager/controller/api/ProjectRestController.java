@@ -31,7 +31,7 @@ public class ProjectRestController {
 	}
 	
 	@RequestMapping(value="/projects/{projectNumber}", method = RequestMethod.GET, consumes="*/*")
-	public @ResponseBody Page<ProjectDTO> getProjects(@PathVariable Long projectNumber, int pageIndex, int pageSize){
+	public @ResponseBody Page<ProjectDTO> getProjects(@PathVariable String projectNumber, int pageIndex, int pageSize){
 		return projectService.getByNumber(pageIndex, pageSize, projectNumber);
 	}
 	

@@ -14,7 +14,7 @@ public interface ProjectService {
 	
 	ProjectDTO getById(Long id);
 	Page<ProjectDTO> getAll(int pageIndex, int pageSize);
-	Page<ProjectDTO> getByNumber(int pageIndex, int pageSize, Long number);
+	Page<ProjectDTO> getByNumber(int pageIndex, int pageSize, String number);
 	ProjectDTO addProject(ProjectDTO project);
 	void editProject(ProjectDTO project);
 	void deleteProject(Long projectId) throws ProjectHasHoldersOrGuarantorsException;

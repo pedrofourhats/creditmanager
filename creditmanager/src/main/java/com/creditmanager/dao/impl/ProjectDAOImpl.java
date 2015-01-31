@@ -1,6 +1,7 @@
 package com.creditmanager.dao.impl;
 
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
@@ -22,9 +23,9 @@ public class ProjectDAOImpl extends GenericDAOImpl<Project, Long> implements Pro
 	}
 
 	@Override
-	public Page<Project> findByProjectNumber(int pageIndex, int pageSize, Long number) {
+	public Page<Project> findByProjectNumber(int pageIndex, int pageSize, String number) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
-		criteria.add(Restrictions.eq("number", number));
+		criteria.add(Restrictions.ilike("number", number, MatchMode.START));
 		return getPageByCriteria(criteria, pageIndex, pageSize);
 	}
 }
