@@ -192,6 +192,9 @@ h5 {
 .mt30 {
   margin-top: 30px;
 }
+small {
+  color: #125490;
+}
 html,
 body,
 form {
@@ -516,6 +519,8 @@ table.table-tiny thead th:last-child {
 }
 .dropdown .dropdown-menu {
   width: 100%;
+  height: 300px;
+  overflow: auto;
 }
 .dropdown .dropdown-menu a {
   display: block;
@@ -577,13 +582,10 @@ label {
 .forms-list .signature {
   margin-top: 50px;
 }
-
-.formParameters{
-padding: 15px;
-border-bottom: 5px solid #eaeaea;	
+.formParameters {
+  padding: 15px;
+  border-bottom: 5px solid #eaeaea;
 }
-
-.parameterTitle{
-	margin-bottom: 5px;
-	}
+.parameterTitle {
+  margin-bottom: 5px;
 }

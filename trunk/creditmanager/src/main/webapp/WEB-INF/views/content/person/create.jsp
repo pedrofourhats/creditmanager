@@ -95,6 +95,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="idNumber">Número de documento</label>
+									<small class="fr">Soló números sin puntos</small>
 									<input type="number" name="idNumber" class="form-control" required maxlength="10" placeholder="Ingrese número de documento" tabindex="4" ng-model="newPerson.identityNumber">
 									</div>
 							</div>
