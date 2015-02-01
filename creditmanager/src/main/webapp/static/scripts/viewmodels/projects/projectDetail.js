@@ -7,7 +7,7 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		$scope.project = { };
 		$scope.project.holders = [];
 		$scope.project.guarantors = [];
-		$scope.loadProjectButtonName = 'Editar proyecto';
+		$scope.loadProjectButtonName = 'Guardar proyecto';
 		$scope.loadProjectButtonEnable = true;
 		
 		$scope.servicers = [{name: "INTI"}, {name: "INTA"}];
