@@ -56,9 +56,17 @@ public class ProjectServiceImpl implements ProjectService {
 	public ProjectDTO addProject(ProjectDTO projectDto) {
 		List<Long> guarantorIds = getPersonIds(projectDto.getGuarantors());
 		List<Long> holderIds = getPersonIds(projectDto.getHolders());
+		Set<Person> guarantors = new HashSet<Person>();
+		Set<Person> holders = new HashSet<Person>();
 		
-		Set<Person> guarantors = new HashSet<Person>(personDao.getByIds(guarantorIds));
-		Set<Person> holders = new HashSet<Person>(personDao.getByIds(holderIds));
+		if(guarantorIds.size() > 0) {
+			guarantors = new HashSet<Person>(personDao.getByIds(guarantorIds));
+		}
+		
+		if(holderIds.size() > 0) {
+			holders = new HashSet<Person>(personDao.getByIds(holderIds));
+		}
+		
 		Project project = new Project(projectDto.getDateOfEntry(), projectDto.getNumber(), projectDto.getServicers(), projectDto.getSituationState(), 
 			projectDto.getEvaluator(), projectDto.getAccesor(), guarantors, holders, projectDto.getInvestmentDestination());
 		projectDao.add(project);
@@ -70,9 +78,16 @@ public class ProjectServiceImpl implements ProjectService {
 	public void editProject(ProjectDTO project) {
 		List<Long> guarantorIds = getPersonIds(project.getGuarantors());
 		List<Long> holderIds = getPersonIds(project.getHolders());
+		Set<Person> guarantors = new HashSet<Person>();
+		Set<Person> holders = new HashSet<Person>();
 		
-		Set<Person> guarantors = new HashSet<Person>(personDao.getByIds(guarantorIds));
-		Set<Person> holders = new HashSet<Person>(personDao.getByIds(holderIds));
+		if(guarantorIds.size() > 0) {
+			guarantors = new HashSet<Person>(personDao.getByIds(guarantorIds));
+		}
+		
+		if(holderIds.size() > 0) {
+			holders = new HashSet<Person>(personDao.getByIds(holderIds));
+		}
 		
 		Project projectToEdit = projectDao.getById(project.getId());
 		projectToEdit.update(project.getDateOfEntry(), project.getNumber(), project.getServicers(), project.getSituationState(), guarantors, holders, 
