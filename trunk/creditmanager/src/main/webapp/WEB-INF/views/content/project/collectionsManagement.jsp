@@ -37,17 +37,6 @@
 					</ul>
 					
 					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="institutional" ng-class="{'in active': step == 1 }">
-							<label class="control-label">Deudor</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
-							<label class="control-label">Proyecto Nº</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
-							<label class="control-label">Capital Otorgado</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
-							<label class="control-label">Fecha Otorgamiento</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
-							<label class="control-label">Fecha Actual</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
-							<label class="control-label">Amortización</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
-							<label class="control-label">Gracia</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
-							<label class="control-label">Total de Plazo</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
-							<label class="control-label">Crédito Inicial</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
-						</div>
 						<div role="tabpanel" class="tab-pane fade in active" id="institutional" ng-class="{'in active': step == 2 }">
 							<label class="control-label">Cuotas</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
 							<label class="control-label">Cuotas pagadas</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
@@ -61,68 +50,6 @@
 							<label class="control-label">Saldo Negociado</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
 							<label class="control-label">Gastos x Cobranzas</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
 							<label class="control-label">Saldo Total Original</label><input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="" tabindex="1" ng-model="" value="test"></br>
-						</div>
-						<div role="tabpanel" class="tab-pane fade in active" id="institutional" ng-class="{'in active': step == 3 }">
-							<table class="table table-hover table-condensed table-responsive table-report-expanded">
-								<thead>
-									<tr>
-									<th>Nº</th>
-									<th>Tasa de Interes</th>
-									<th>Vencimientos</th>
-									<th>Periodo</th>
-									<th>Cuotas Pagadas</th>
-									<th>Cuotas Vencidas</th>
-									<th>Cuotas x Vencer</th>
-									<th>Monto Cuota (1)</th>
-									<th>Fecha de Real de Pago</th>
-									<th>Pago Real (2)</th>
-									<th>Días</th>
-									<th>Saldo Final de Capital</th>
-									<th>Saldo Inicial de Capital</th>
-									<th>Disminución x Pago de Cuotas</th>
-									<th></th>
-									<th>Nº</th>
-									<th>Capital</th>
-									<th>Tasa</th>
-									<th>Interés</th>
-									<th>IVA 21%</th>
-									<th>Monto Cuota</th>
-									<th>Punit./Adm.</th>
-									<th>Cuota + Punit.</th>
-									<th>Días Transc.</th>
-									<th>Saldo Mensual</th>
-									<th>Gastos Adm. X Gestión de Cobranza</th>
-									</tr>
-								</thead>
-								<tr>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-								</tr>									
-							</table>
-
 						</div>
 					</div>
 	      </div>
