@@ -25,14 +25,14 @@
 	
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
-					    <li role="presentation" ng-class="{'active': step == 1 }">
-					    	<a href="javascript:void(0);" aria-controls="institutional" role="tab" data-toggle="tab" ng-click="changeStep(1)">Detalle cuotas cobradas</a>
+					    <li role="presentation" id="quoteDetailTab">
+					    	<a href="javascript:void(0);" aria-controls="institutional" role="tab" data-toggle="tab" onclick="redirect('project/quoteDetail')">Detalle cuotas cobradas</a>
 					    </li>
-					    <li role="presentation" ng-class="{'active': step == 2 }">
-					    	<a href="javascript:void(0);" aria-controls="aspects" role="tab" data-toggle="tab" ng-click="changeStep(2)">Gestión de cobranzas</a>
+					    <li role="presentation" id="collectionsManagementTab">
+					    	<a href="javascript:void(0);" aria-controls="aspects" role="tab" data-toggle="tab" onclick="redirect('project/collectionsManagement')">Gestión de cobranzas</a>
 					    </li>
-					    <li role="presentation" ng-class="{'active': step == 3 }">
-					    	<a href="javascript:void(0);" aria-controls="forms" role="tab" data-toggle="tab" ng-click="changeStep(3)">Cobranzas simples y polo</a>
+					    <li role="presentation" id="simpleCollectionsAndPoleTab">
+					    	<a href="javascript:void(0);" aria-controls="forms" role="tab" data-toggle="tab" onclick="redirect('project/simpleCollectionsAndPole')">Cobranzas simples y polo</a>
 					    </li>
 					</ul>
 					
@@ -103,6 +103,9 @@
 	      </div>
 	    </div>
 	</div>
-  <script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
+	<script>
+		$("#goToProjectsLink").addClass("active");
+		$("#simpleCollectionsAndPoleTab").addClass("active");
+	</script>
 </body>
 </html>
