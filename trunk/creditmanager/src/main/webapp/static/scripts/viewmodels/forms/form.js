@@ -29,5 +29,9 @@ formApp.controller('formController', function ($scope, $http) {
 	  popupWin.document.open();
 	  popupWin.document.write('<html><head></head><body onload="window.print()">' + printContents + '</html>');
 	  popupWin.document.close();
-	} ;
+	};
+	
+	$scope.numberToLetter = function(number) {
+		return NumeroALetras(number);
+	};
 });
