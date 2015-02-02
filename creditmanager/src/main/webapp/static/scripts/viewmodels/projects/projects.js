@@ -48,18 +48,20 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
 			$location.path('/project-detail/' + projectId);
 		};
 		
-		$scope.remove = function(projectId){
-			$http.delete(getCompletePath("projects/" + projectId), {})
+		$scope.remove = function(project){
+			$http.delete(getCompletePath("projects/" + project.id), {})
 			.success(function () {
-				$location.path('/project-list');
+				var index = $scope.projects.indexOf(project);
+                $scope.projects.splice(index, 1);
+				//$location.path('/project-list');
 		    }).error(function (data, status, headers, config) {
 		    	alert("No se puede eliminar el proyecto porque tiene personas asignadas.");
 		    });
 		};
 }]);
 
-projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal',
-	function($scope, $http, $modal) {
+projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal', "$location",
+	function($scope, $http, $modal, $location) {
 		var self = this;
 		$scope.step = 1;
 		$scope.title = 'CARGAR NUEVO PROYECTO';
@@ -131,7 +133,7 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 //			if(!$scope.institutionalForm.$valid) {
 //				return;
 //			}
-			if($scope.step == 1 && !$scope.projectId) {
+			if(($scope.step == 1 || $scope.step == 2) && !$scope.projectId) {
 				self.createProject();
 			} else {
 				self.editProject();
@@ -170,8 +172,9 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		self.createProject = function(){
 			$http.post(getCompletePath("projects"), JSON.stringify($scope.project))
 			.success(function (project) {
-				$scope.projectId = project.id;
+				//$scope.projectId = project.id;
 				//$scope.step++;
+				$location.path('/project-detail/' + project.id);
 				alert("El proyecto se ha creado con exito");
 		    }).error(function (err) {
 		    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
