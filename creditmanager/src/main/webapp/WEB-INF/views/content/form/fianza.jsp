@@ -25,6 +25,9 @@
       			<input type="text" name="num-fecha" id="date" ng-model="form.date" class="form-control" placeholder="Fecha">
       		</div>
 			<div class="panel-body" id="printableDiv">
+				{{numberToLetter(547)}}<br>
+				{{numberToLetter(project.guarantors[0].identityNumber)}}
+			
                 <h4>
                   Ciudad Autónoma de Buenos Aires
                 </h4>
@@ -85,5 +88,6 @@
       </div>
     </div>
   <script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
+  <script src="<%=scriptPageContext %>/static/scripts/common/numberToLetter.js" type="text/javascript"></script>
 </body>
 </html>
