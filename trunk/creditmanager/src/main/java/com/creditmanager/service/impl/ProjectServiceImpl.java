@@ -68,7 +68,9 @@ public class ProjectServiceImpl implements ProjectService {
 		}
 		
 		Project project = new Project(projectDto.getDateOfEntry(), projectDto.getNumber(), projectDto.getServicers(), projectDto.getSituationState(), 
-			projectDto.getEvaluator(), projectDto.getAccesor(), guarantors, holders, projectDto.getInvestmentDestination());
+			projectDto.getEvaluator(), projectDto.getAccesor(), guarantors, holders, projectDto.getInvestmentDestination(), projectDto.getTitle(), projectDto.getType(),
+			projectDto.getEconomicArea(), projectDto.getEconomicActivity(), projectDto.getCategory(), projectDto.getRequestedAmount(), projectDto.getRequestedDeadline(),
+			projectDto.getRequestedGracePeriod(), projectDto.getDeliveryDate(), projectDto.getGivenAmount(), projectDto.getGivenDeadline());
 		projectDao.add(project);
 		
 		return mapper.map(project, ProjectDTO.class);

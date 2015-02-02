@@ -94,9 +94,6 @@ public class Project extends com.creditmanager.model.Entity {
 	@Column(name="investmentDestination")
 	private String investmentDestination;
 	
-	
-	//private Set<Contact> contacts;
-	
 	public Project(){
 	}
 	
@@ -113,6 +110,36 @@ public class Project extends com.creditmanager.model.Entity {
 		this.investmentDestination = investmentDestination;
 	}
 	
+	public Project(Date dateOfEntry, String number, String servicers, String situationState, String evaluator, String accesor, 
+			Set<Person> guarantors, Set<Person> holders, String investmentDestination, String title, String type,
+			String economicArea, String economicActivity, String category, Double requestedAmount, 
+			String requestedDeadline, String requestedGracePeriod, Date deliveryDate, Double givenAmount,
+			String givenDeadline) {
+		this.dateOfEntry = dateOfEntry;
+		this.number = number;
+		this.servicers = servicers;
+		this.situationState = situationState;
+		this.evaluator = evaluator;
+		this.accesor = accesor;
+		this.guarantors = guarantors;
+		this.holders = holders;
+		this.investmentDestination = investmentDestination;
+		//Aspectos economicos
+		this.title = title;
+		this.type = type;
+		this.economicArea = economicArea;
+		this.economicActivity = economicActivity;
+		this.category = category;
+		//Aspectos Financieros
+		this.requestedAmount = requestedAmount;
+		this.requestedDeadline = requestedDeadline;
+		this.requestedGracePeriod = requestedGracePeriod;
+		this.deliveryDate = deliveryDate;
+		this.givenAmount = givenAmount;
+		this.givenDeadline = givenDeadline;
+		
+	}
+
 	public String getNumber() {
 		return number;
 	}

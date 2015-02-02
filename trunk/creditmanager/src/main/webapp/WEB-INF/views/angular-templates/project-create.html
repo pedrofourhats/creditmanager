@@ -702,7 +702,7 @@
 										  <th>
 										  	<a href="javascript:void(0);">
 										  		<!-- cambiar a fa-caret-up -->
-										  		NÂ° <i class="fa fa-caret-down pull-right"></i>
+										  		N° <i class="fa fa-caret-down pull-right"></i>
 										  	</a>
 										  </th>
 										  <th>Vencimientos</th>
@@ -746,10 +746,10 @@
 					<div class="col-sm-12">
 						<div class="pull-right">
 							<div class="form-group">
-								<button type="button" class="btn btn-primary" ng-click="nextSetp()" ng-disabled="!loadProjectButtonEnable && step  != 1">
+								<button type="button" class="btn btn-primary" ng-click="nextSetp()" ng-disabled="!loadProjectButtonEnable && step  != 1 && step != 2">
 									<i class="fa fa-plus"></i> {{loadProjectButtonName}}
 								</button>
-								<span ng-show="!loadProjectButtonEnable && step  != 1">Debe primero guardar el proyecto desde la pestaña Institucional</span>
+								<span ng-show="!loadProjectButtonEnable && step  != 1 && step != 2">Debe primero guardar el proyecto desde la pestaña Control de Gestión o Aspectos</span>
 							</div>
 						</div>
 					</div>
