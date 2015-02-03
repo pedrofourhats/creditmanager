@@ -1,5 +1,9 @@
 package com.creditmanager.service.impl;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.dozer.Mapper;
@@ -42,6 +46,16 @@ public class PersonServiceImpl implements PersonService {
 
 	@Override
 	public void addPerson(PersonDTO person) {
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			Date d = formatter.parse("1001-01-01");
+			if(person.getBirthDate().compareTo(d) < 0) {
+				person.setBirthDate(null);
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
 		Person newPerson = new Person(person.getName(), person.getSurname(), person.getIdentityType(), person.getIdentityNumber(), person.getBirthDate(), person.getGender(), person.getPhone(), person.getWorkPhone(),
 				person.getCellPhone(), person.getEmail(), person.getProvince(), person.getLocality(), person.getAddress(), person.getPostCode());
 		personDAO.add(newPerson);
@@ -49,6 +63,16 @@ public class PersonServiceImpl implements PersonService {
 
 	@Override
 	public void editPerson(PersonDTO person) {
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			Date d = formatter.parse("1001-01-01");
+			if(person.getBirthDate().compareTo(d) < 0) {
+				person.setBirthDate(null);
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
 		Person personToEdit = personDAO.getById(person.getId());
 		personToEdit.setAddress(person.getAddress());
 		personToEdit.setBirthDate(person.getBirthDate());

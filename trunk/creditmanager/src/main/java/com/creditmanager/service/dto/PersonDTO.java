@@ -96,7 +96,11 @@ public class PersonDTO {
 
 	@SuppressWarnings("deprecation")
 	public void setFormattedBirthDate(Date birthDate) {
-		this.formattedBirthDate = birthDate.getDate() + "/" + birthDate.getMonth() + "/" + birthDate.getYear();
+		if(birthDate != null) {
+			this.formattedBirthDate = birthDate.getDate() + "/" + birthDate.getMonth() + "/" + birthDate.getYear();
+		} else {
+			this.formattedBirthDate = "";
+		}
 	}
 
 	public Gender getGender() {
