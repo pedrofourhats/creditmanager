@@ -24,15 +24,12 @@
       			<h4 class="parameterTitle">Parametros</h4>
       			<input type="text" name="num-fecha" id="date" ng-model="form.date" class="form-control" placeholder="Fecha">
       		</div>
-			<div class="panel-body" id="printableDiv">
-				{{numberToLetter(547)}}<br>
-				{{numberToLetter(project.guarantors[0].identityNumber)}}
-			
+			<div class="panel-body" id="printableDiv">	
                 <h4>
                   Ciudad Autónoma de Buenos Aires
                 </h4>
                 <p class="mt10">
-                  Por la presente, {{project.guarantors[0].name}} {{project.guarantors[0].surname}} con DNI Nº {{project.guarantors[0].identityNumber}}, se constituye en fiador solidario, liso, llano y principal pagador a favor del Polo Tecnológico Constituyentes S.A. en su carácter de Fiduciario del FIDEICOMISO SALTO GRANDE, de todas las obligaciones contraídas por {{project.holders[0].name}} {{project.holders[0].surname}} en virtud del Contrato celebrado con Polo Tecnológico Constituyentes S.A. con fecha {{form.date}}, por la suma de $ {{project.givenAmount}} ({{project.givenAmount}}). La deuda quedará instrumentada causalmente por el Contrato formalizado entre el Polo Tecnológico Constituyentes S. A . y el deudor principal que afianzamos.
+                  Por la presente, {{project.guarantors[0].name}} {{project.guarantors[0].surname}} con DNI Nº {{project.guarantors[0].identityNumber}}, se constituye en fiador solidario, liso, llano y principal pagador a favor del Polo Tecnológico Constituyentes S.A. en su carácter de Fiduciario del FIDEICOMISO SALTO GRANDE, de todas las obligaciones contraídas por {{project.holders[0].name}} {{project.holders[0].surname}} en virtud del Contrato celebrado con Polo Tecnológico Constituyentes S.A. con fecha {{form.date}}, por la suma de $ {{project.givenAmount}} ({{numberToLetter(project.givenAmount)}} pesos). La deuda quedará instrumentada causalmente por el Contrato formalizado entre el Polo Tecnológico Constituyentes S. A . y el deudor principal que afianzamos.
                 </p>
                 <p class="mt10">                
 					Para el caso en que el afianzado incurriere en mora en el cumplimiento de sus obligaciones,  el Polo Tecnológico Constituyentes S.A. queda expresamente autorizada a aplicar a partir del momento en que se produzca la mora, además del interés compensatorio equivalente al de descuento de documentos comerciales a 30 días que perciba el Banco de la Nación Argentina, un interés punitorio anual igual al 50% de la misma tasa sobre los montos abonados.  
