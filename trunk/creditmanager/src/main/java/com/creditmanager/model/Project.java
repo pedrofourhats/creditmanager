@@ -94,6 +94,9 @@ public class Project extends com.creditmanager.model.Entity {
 	@Column(name="investmentDestination")
 	private String investmentDestination;
 	
+	@OneToMany(mappedBy="project")
+	private Set<Contact> contacts;
+	
 	public Project(){
 	}
 	
@@ -287,6 +290,14 @@ public class Project extends com.creditmanager.model.Entity {
 
 	public void setDefaultForms(String defaultForms) {
 		this.defaultForms = defaultForms;
+	}
+
+	public Set<Contact> getContacts() {
+		return contacts;
+	}
+
+	public void setContacts(Set<Contact> contacts) {
+		this.contacts = contacts;
 	}
 
 	public void update(Date dateOfEntry, String number, String servicers, String situationState, Set<Person> guarantors, Set<Person> holders, 

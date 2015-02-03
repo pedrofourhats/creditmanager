@@ -226,12 +226,36 @@ projectControllers.controller('ModalAddPersonCtrl',
 });
 
 projectControllers.controller('ModalLoadFormCtrl', 
-		function ($scope, $modalInstance, $http, projectId) {
-			$scope.goToForm = function(formName) {
-				redirect('forms/' + formName + "/" + projectId);
-			};
-	
-			$scope.cancel = function () {
-				$modalInstance.dismiss('cancel');
-			};
+function ($scope, $modalInstance, $http, projectId) {
+	$scope.goToForm = function(formName) {
+		redirect('forms/' + formName + "/" + projectId);
+	};
+
+	$scope.cancel = function () {
+		$modalInstance.dismiss('cancel');
+	};
+});
+
+projectControllers.controller('ModalAddContactCtrl', 
+function ($scope, $modalInstance, $http, projectId, contact) {
+	function pad(s) { return (s < 10) ? '0' + s : s; }
+	$scope.title = contact.id ? "Modificar Contacto" : "Agregar Contacto";
+	$scope.contactDate = contact.date != null ? new Date(contact.date) : new Date();
+	$scope.contactComment = contact.comment;
+	$scope.addContact = function() {
+		$http.put(getCompletePath("projects/contact/" + projectId), JSON.stringify({ id: contact.id, date: $scope.contactDate, comment: $scope.contactComment}))
+		.then(function(response){
+			var date = new Date(response.data.date);
+			contact.id = response.data.id;
+			contact.date = response.data.date;
+			contact.comment = response.data.comment;
+			contact.dateFormatted = [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('/');
+			$modalInstance.close(contact);
+			
 		});
+	};
+
+	$scope.cancel = function () {
+		$modalInstance.dismiss('cancel');
+	};
+});

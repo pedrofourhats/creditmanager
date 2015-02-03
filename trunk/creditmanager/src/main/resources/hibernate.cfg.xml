@@ -12,6 +12,7 @@
         <mapping class="com.creditmanager.model.Accesor" />
         <mapping class="com.creditmanager.model.Evaluator" />
         <mapping class="com.creditmanager.model.Form" />
+        <mapping class="com.creditmanager.model.Contact" />
         <mapping class="com.creditmanager.model.report.DefaultProjects" />
     </session-factory>
          

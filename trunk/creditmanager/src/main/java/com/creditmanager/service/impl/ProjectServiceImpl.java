@@ -11,15 +11,18 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.creditmanager.dao.ContactDAO;
 import com.creditmanager.dao.FormDAO;
 import com.creditmanager.dao.PersonDAO;
 import com.creditmanager.dao.ProjectDAO;
+import com.creditmanager.model.Contact;
 import com.creditmanager.model.Form;
 import com.creditmanager.model.Page;
 import com.creditmanager.model.Person;
 import com.creditmanager.model.Project;
 import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
 import com.creditmanager.service.ProjectService;
+import com.creditmanager.service.dto.ContactDTO;
 import com.creditmanager.service.dto.FormDTO;
 import com.creditmanager.service.dto.PersonDTO;
 import com.creditmanager.service.dto.ProjectDTO;
@@ -39,6 +42,9 @@ public class ProjectServiceImpl implements ProjectService {
 	
 	@Autowired
 	private FormDAO formDao; 
+	
+	@Autowired
+	private ContactDAO contactDao;
 
 	@Override
 	public Page<ProjectDTO> getAll(int pageIndex, int pageSize) {
@@ -116,6 +122,19 @@ public class ProjectServiceImpl implements ProjectService {
 		form.setYear(formDto.getYear());
 
 		formDao.add(form);
+	}
+	
+	@Override
+	public ContactDTO saveProjectContact(ContactDTO contactDto, Long projectId) {
+		Project project = projectDao.getById(projectId);
+		Contact contact = new Contact();
+		if(contactDto.getId() != null){
+			contact = contactDao.getById(contactDto.getId());
+		}
+		
+		contact.upadte(contactDto.getDate(), contactDto.getComment(), contactDto.getUserId(), project);
+		contactDao.add(contact);
+		return mapper.map(contact, ContactDTO.class);
 	}
 
 	@Override
