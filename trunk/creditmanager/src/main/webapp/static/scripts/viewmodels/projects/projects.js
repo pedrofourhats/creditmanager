@@ -55,7 +55,7 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
                 $scope.projects.splice(index, 1);
 				//$location.path('/project-list');
 		    }).error(function (data, status, headers, config) {
-		    	alert("No se puede eliminar el proyecto porque tiene personas asignadas.");
+		    	alert("No se puede eliminar un proyecto que tenga personas asignadas.");
 		    });
 		};
 }]);

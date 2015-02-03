@@ -135,6 +135,7 @@ public class ProjectServiceImpl implements ProjectService {
 		if(project.getGuarantors().size() > 0 || project.getHolders().size() > 0){
 			throw new ProjectHasHoldersOrGuarantorsException();
 		}
+		
 		projectDao.delete(project);
 	}
 

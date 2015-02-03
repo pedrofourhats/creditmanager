@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.creditmanager.dao.PersonDAO;
 import com.creditmanager.model.Page;
 import com.creditmanager.model.Person;
+import com.creditmanager.model.exceptions.PersonHasProjectsException;
 import com.creditmanager.service.PersonService;
 import com.creditmanager.service.dto.PersonDTO;
 import com.creditmanager.service.util.MapperUtil;
@@ -92,8 +93,12 @@ public class PersonServiceImpl implements PersonService {
 	}
 
 	@Override
-	public void deletePerson(long personId) {
+	public void deletePerson(long personId) throws PersonHasProjectsException {
 		Person person = this.personDAO.getById(personId);
+		if(person.getGuarantorProjects().size() > 0 || person.getHolderProjects().size() > 0){
+			throw new PersonHasProjectsException();
+		}
+		
 		this.personDAO.delete(person);
 	}
 
