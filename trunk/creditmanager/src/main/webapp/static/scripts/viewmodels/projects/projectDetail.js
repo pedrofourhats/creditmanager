@@ -138,6 +138,8 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			if($scope.defaultForm14) defaultForms[++index] = "14";
 			if($scope.defaultForm15) defaultForms[++index] = "15";
 			if($scope.defaultForm16) defaultForms[++index] = "16";
+			if($scope.defaultForm17) defaultForms[++index] = "17";
+			if($scope.defaultForm18) defaultForms[++index] = "18";
 			
 			return defaultForms;
 		};
@@ -168,6 +170,8 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			$scope.defaultForm14 = defaultForms.indexOf("14") > -1;
 			$scope.defaultForm15 = defaultForms.indexOf("15") > -1;
 			$scope.defaultForm16 = defaultForms.indexOf("16") > -1;
+			$scope.defaultForm17 = defaultForms.indexOf("17") > -1;
+			$scope.defaultForm18 = defaultForms.indexOf("18") > -1;
 		}).error(function(err){
 			alert("Ha ocurrido un problema. Por favor intente nuevamente");
 		});
