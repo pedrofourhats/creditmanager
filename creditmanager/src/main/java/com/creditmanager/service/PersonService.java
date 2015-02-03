@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.creditmanager.model.Page;
+import com.creditmanager.model.exceptions.PersonHasProjectsException;
 import com.creditmanager.service.dto.PersonDTO;
 
 @Service
@@ -20,5 +21,5 @@ public interface PersonService {
 	
 	void editPerson(PersonDTO person);
 	
-	void deletePerson(long personId);
+	void deletePerson(long personId) throws PersonHasProjectsException;
 }

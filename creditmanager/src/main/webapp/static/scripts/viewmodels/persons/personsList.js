@@ -11,8 +11,8 @@ personsListApp.controller('personsListController', function ($scope, $http) {
 			.success(function () {
 				var index = $scope.personsPage.elements.indexOf(person);
 	            $scope.personsPage.elements.splice(index, 1);
-		    }).error(function () {
-		    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
+		    }).error(function (data, status, headers, config) {
+		    	alert("No se puede eliminar una persona que tenga proyectos asignados.");
 		    });
     	}
     };

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.creditmanager.model.Page;
+import com.creditmanager.model.exceptions.PersonHasProjectsException;
 import com.creditmanager.service.PersonService;
 import com.creditmanager.service.dto.PersonDTO;
 
@@ -36,7 +37,7 @@ public class PersonRestController {
 	}
 	
 	@RequestMapping(value="/persons/deletePerson", method = RequestMethod.POST)
-	public @ResponseBody void deletePerson(@RequestBody long personId) {
+	public @ResponseBody void deletePerson(@RequestBody long personId) throws PersonHasProjectsException {
 		personService.deletePerson(personId);
 	}
 	
