@@ -193,7 +193,7 @@
 										</div>
 										<!-- end VALIDACIÃN -->
 										<label>Destino de la inversión</label>
-										<textarea class="form-control" tabindex="7" placeholder="Ingrese estado de situación" ng-model="project.investmentDestination"></textarea>
+										<textarea class="form-control" tabindex="7" placeholder="Ingrese el destino de la inversión" ng-model="project.investmentDestination"></textarea>
 									</div>
 								</div> 
 							</div>
@@ -492,43 +492,17 @@
 				    <div role="tabpanel" class="tab-pane fade" id="forms" ng-class="{'in active': step == 3 }">
 				    	<div class="row">
 				    		<div class="col-sm-12">
-				    			<h4>Carpetas aprobadas</h4>
+				    			<h4>Checklist</h4>
 				    		</div>
 				    	</div>
 				    	<div class="row mt20">
 							<div class="col-sm-4">
+								<h5>Aspectos generales</h5>
 								<div class="form-group pos-rel">
 									<label class="checkbox">
 									  <input type="checkbox" tabindex="1" ng-model="defaultForm1"> Formulario Completo
 									</label>
 								</div>
-								<div class="form-group pos-rel">
-									<label class="checkbox">
-									  <input type="checkbox" tabindex="2" ng-model="defaultForm2"> Pedido de más información
-									</label>
-								</div>
-								<div class="form-group pos-rel">
-									<label class="checkbox">
-									  <input type="checkbox" tabindex="3" ng-model="defaultForm3"> Contacto telefónico
-									</label>
-								</div>
-								<div class="form-group pos-rel">
-									<label class="checkbox">
-									  <input type="checkbox" tabindex="4" ng-model="defaultForm4"> Flujo de Fondos
-									</label>
-								</div>		
-								<div class="form-group pos-rel">
-									<label class="checkbox">
-									  <input type="checkbox" tabindex="5" ng-model="defaultForm5"> Visita CAFESG
-									</label>
-								</div>
-								<div class="form-group pos-rel">
-									<label class="checkbox">
-									  <input type="checkbox" tabindex="6" ng-model="defaultForm6"> Orden de Pago
-									</label>
-								</div>																																															
-							</div>
-							<div class="col-sm-4">
 								<div class="form-group pos-rel">
 									<label class="checkbox">
 									  <input type="checkbox" tabindex="7" ng-model="defaultForm7"> DNI de titular y codeudores
@@ -541,26 +515,32 @@
 								</div>
 								<div class="form-group pos-rel">
 									<label class="checkbox">
+									  <input type="checkbox" tabindex="12" ng-model="defaultForm12"> Comprobantes de Sueldo de Co-deudores
+									</label>
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
 									  <input type="checkbox" tabindex="9" ng-model="defaultForm9"> Axesor y/o Veraz de titular y codeudores actualizado
 									</label>
 								</div>
 								<div class="form-group pos-rel">
 									<label class="checkbox">
-									  <input type="checkbox" tabindex="10" ng-model="defaultForm10"> Planilla de Co-Deudores
+									  <input type="checkbox" tabindex="5" ng-model="defaultForm5"> Visita CAFESG
 									</label>
 								</div>
 								<div class="form-group pos-rel">
 									<label class="checkbox">
-									  <input type="checkbox" tabindex="11" ng-model="defaultForm11"> Mutuos
+									  <input type="checkbox" tabindex="2" ng-model="defaultForm2"> Pedido de más información
 									</label>
-								</div>																				
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="3" ng-model="defaultForm3"> Contacto telefónico
+									</label>
+								</div>																																														
 							</div>
 							<div class="col-sm-4">
-								<div class="form-group pos-rel">
-									<label class="checkbox">
-									  <input type="checkbox" tabindex="12" ng-model="defaultForm12"> Comprobantes de Sueldo de Co-deudores
-									</label>
-								</div>
+								<h5>Carpeta aprobada</h5>
 								<div class="form-group pos-rel">
 									<label class="checkbox">
 									  <input type="checkbox" tabindex="13" ng-model="defaultForm13"> Caratula
@@ -571,6 +551,30 @@
 									  <input type="checkbox" tabindex="14" ng-model="defaultForm14"> Resumen del proyecto
 									</label>
 								</div>
+								<!-- <div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="99" ng-model="defaultForm99"> Carta de autorización
+									</label>
+								</div>-->
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="4" ng-model="defaultForm4"> Flujo de Fondos
+									</label>
+								</div>		
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="10" ng-model="defaultForm10"> Planilla de Co-Deudores
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<h5>Documentos Legales y/o Administrativos</h5>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="11" ng-model="defaultForm11"> Mutuos
+									</label>
+								</div>																				
+								
 								<div class="form-group pos-rel">
 									<label class="checkbox">
 									  <input type="checkbox" tabindex="15" ng-model="defaultForm15"> Fianzas
@@ -581,7 +585,17 @@
 									<label class="checkbox">
 									  <input type="checkbox" tabindex="16" ng-model="defaultForm16"> Pagares
 									</label>
-								</div>																											
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="6" ng-model="defaultForm6"> Orden de Pago
+									</label>
+								</div>
+								<!-- <div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input type="checkbox" tabindex="99" ng-model="defaultForm99"> Cronograma de Pagos inicial
+									</label>
+								</div> -->
 							</div>
 						</div>
 						<hr>
