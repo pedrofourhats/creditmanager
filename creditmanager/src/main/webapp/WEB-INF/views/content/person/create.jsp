@@ -96,7 +96,7 @@
 									<!-- end VALIDACIO“N -->
 									<label for="idNumber">Número de documento</label>
 									<small class="fr">Soló números sin puntos</small>
-									<input type="number" name="idNumber" class="form-control" required maxlength="10" placeholder="Ingrese número de documento" tabindex="4" ng-model="newPerson.identityNumber">
+									<input type="number" name="idNumber" class="form-control" maxlength="10" placeholder="Ingrese número de documento" tabindex="4" ng-model="newPerson.identityNumber">
 									</div>
 							</div>
 							<div class="col-sm-4">
@@ -110,7 +110,7 @@
 									<!-- end VALIDACIO“N -->
 									<div class="control-group">
 										<label for="birthDate" class="control-label">Fecha de nacimiento</label>
-										<input type="date" name="birthDate" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" required ng-model="newPerson.birthDate"/>	
+										<input type="date" name="birthDate" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" ng-model="newPerson.birthDate"/>	
 									</div>
 								</div>
 								<div class="form-group">
@@ -149,7 +149,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="cellPhone">Celular</label>
-									<input type="number" name="cellPhone" class="form-control" required maxlength="20" placeholder="Ingrese celular" tabindex="7" ng-model="newPerson.cellPhone">
+									<input type="number" name="cellPhone" class="form-control" maxlength="20" placeholder="Ingrese celular" tabindex="7" ng-model="newPerson.cellPhone">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
@@ -160,7 +160,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="email">Email</label>
-									<input type="email" name="email" class="form-control" required maxlength="45" placeholder="Ingrese email" tabindex="8" ng-model="newPerson.email">
+									<input type="email" name="email" class="form-control" maxlength="45" placeholder="Ingrese email" tabindex="8" ng-model="newPerson.email">
 								</div>
 							</div>
 						</div>
@@ -175,7 +175,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="province">Provincia</label>
-									<input type="text" name="province" class="form-control" required maxlength="45" placeholder="Ingrese una provincia" tabindex="9" ng-model="newPerson.province">
+									<input type="text" name="province" class="form-control" maxlength="45" placeholder="Ingrese una provincia" tabindex="9" ng-model="newPerson.province">
 	
 								</div>
 								<div class="form-group">
@@ -186,7 +186,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="locality">Localidad</label>
-									<input type="text" name="locality" class="form-control" required maxlength="45" placeholder="Ingrese una provincia" tabindex="10" ng-model="newPerson.locality">
+									<input type="text" name="locality" class="form-control" maxlength="45" placeholder="Ingrese una provincia" tabindex="10" ng-model="newPerson.locality">
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -198,7 +198,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="address">Dirección</label>
-									<input type="text" name="address" class="form-control" required maxlength="100" placeholder="Ingrese dirección" tabindex="11" ng-model="newPerson.address">
+									<input type="text" name="address" class="form-control" maxlength="100" placeholder="Ingrese dirección" tabindex="11" ng-model="newPerson.address">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
@@ -208,7 +208,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="postCode">Código postal</label>
-									<input type="text" name="postCode" class="form-control" required maxlength="10" placeholder="Ingrese código postal" tabindex="12" ng-model="newPerson.postCode">
+									<input type="text" name="postCode" class="form-control" maxlength="10" placeholder="Ingrese código postal" tabindex="12" ng-model="newPerson.postCode">
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -221,7 +221,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="phone">Teléfono</label>
-									<input type="number" name="phone" class="form-control" required maxlength="20" placeholder="Ingrese teléfono" tabindex="13" ng-model="newPerson.phone">
+									<input type="number" name="phone" class="form-control" maxlength="20" placeholder="Ingrese teléfono" tabindex="13" ng-model="newPerson.phone">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
@@ -232,7 +232,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="workphone">Teléfono laboral</label>
-									<input type="number" name="workphone" class="form-control" required maxlength="20" placeholder="Ingrese teléfono laboral" tabindex="14" ng-model="newPerson.workPhone">
+									<input type="number" name="workphone" class="form-control" maxlength="20" placeholder="Ingrese teléfono laboral" tabindex="14" ng-model="newPerson.workPhone">
 								</div>
 							</div>							
 						</div>
@@ -241,8 +241,8 @@
 							<div class="col-sm-12">
 								<div class="pull-right">
 									<div class="form-group">
-										<input type="submit" class="btn btn-primary" tabindex="15" value="Cargar persona" ng-show="!isEdition" ng-disabled="createPersonForm.$invalid || newPerson.genderName == '' || newPerson.identityTypeName == ''" />
-										<input type="submit" class="btn btn-primary" tabindex="15" value="Actualizar persona" ng-show="isEdition" ng-disabled="createPersonForm.$invalid || newPerson.genderName == '' || newPerson.identityTypeName == ''" />
+										<input type="submit" class="btn btn-primary" tabindex="15" value="Cargar persona" ng-show="!isEdition" ng-disabled="createPersonForm.$invalid" />
+										<input type="submit" class="btn btn-primary" tabindex="15" value="Actualizar persona" ng-show="isEdition" ng-disabled="createPersonForm.$invalid" />
 									</div>
 								</div>
 							</div>

@@ -32,6 +32,10 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 	
 	$scope.addPerson = function() {
 		if ($scope.createPersonForm.$valid) {
+			if(!$scope.newPerson.birthDate) {
+				$scope.newPerson.birthDate = new Date(1000,0,1);
+			}
+			
 			if(!$scope.isEdition) {
 				$http.post(getCompletePath("persons/createPerson"), JSON.stringify($scope.newPerson))
 				.success(function () {
