@@ -17,6 +17,7 @@
 @orange				:	#c96041;
 @orange-light		:	#dc846b;
 @orange-dark		:	#b74a2a;
+@green				:	#307e1b; 
 @blue				:	#125490;
 @blue-light			:	#1769b4;
 @blue-dark			:	#0c3860;
@@ -253,7 +254,7 @@ h1, h2, h3, h4, h5 {
 }
 
 small {
-	color:@blue;
+	color:@green;
 }
 
 /////////////////
@@ -302,7 +303,7 @@ body {
   color: @gray;
 }
 .txtBlue {
-  color: @blue;
+  color: @green;
 }
 
 // LINKS - Base link settings
@@ -319,7 +320,7 @@ a {
 
 // HEADER
 header {
-	background-color: @blue;
+	background-color: @green;
 	
 	.btn-default {
 		margin-top: 95px;
@@ -374,11 +375,11 @@ header {
 			&.active {
 				a {
 					cursor: default;
-					color: @blue;
+					color: @green;
 					&:after {
 						content: " ";
 						.pos-abs;
-						background: @blue;
+						background: @green;
 						left: 0;
 						bottom: 0;
 						width: 100%;
@@ -445,6 +446,15 @@ input[type=text], input[type=password], input[type=email] {
 	background: @gray-light;
 }
 
+input[type=text], input[type=number], input[type=date], textarea{
+	text-transform: uppercase;
+	outline: none;
+}
+
+input[type=name]{
+	outline: none;
+}
+
 .btn {
 	border-radius: 2px;
 	
@@ -464,7 +474,7 @@ input[type=text], input[type=password], input[type=email] {
 			border-color: white;
 			
 			&:hover {
-				color: @blue;
+				color: @green;
 				background: white;
 			}
 		}
@@ -670,6 +680,8 @@ table {
     border-radius: 2px;
     width: 100%;
     background-color: @gray;
+    text-transform: uppercase;
+    outline: none;
 
 	a {
 		display: block;
@@ -687,7 +699,7 @@ table {
 
 	.dropdown-menu {
 		width: 100%;
-		height: 300px;
+		max-height: 300px;
 		overflow: auto;
 
 		a {
@@ -730,7 +742,7 @@ label.control-label span { cursor: pointer; }
 // LOGIN
 
 .login {
-	background-color: @blue;
+	background-color: @green;
 	width: 320px;
 	min-height: 100%;
 	overflow: hidden;
@@ -757,7 +769,7 @@ label.control-label span { cursor: pointer; }
 }
 
 label {
-	color: @gray;
+	color: @gray-light;
 }
 
 // FORMS LIST
