@@ -34,4 +34,8 @@ formApp.controller('formController', function ($scope, $http) {
 	$scope.numberToLetter = function(number) {
 		return NumeroALetras(number);
 	};
+	
+	$scope.goToProject = function() {
+		redirect('project/list#/project-detail/' + $scope.project.id);
+	};
 });

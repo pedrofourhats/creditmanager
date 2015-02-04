@@ -15,6 +15,10 @@ personDetailApp.controller('personDetailController', function ($scope, $http) {
 	
 	$scope.guarantorProjects = guarantorProjects;
 	$scope.holderProjects = holderProjects;
+	
+	$scope.goToProject = function(id) {
+		redirect('project/list#/project-detail/' + id);
+	};
 });
 
 function getIdentityTypeName(identityTypeName) {
