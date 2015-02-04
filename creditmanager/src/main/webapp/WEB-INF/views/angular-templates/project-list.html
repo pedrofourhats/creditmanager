@@ -79,22 +79,22 @@
 					<thead>
 						<tr>
 							<th>
-								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->Título 
+								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->N° Proyecto 
 <!-- 									<i class="fa fa-caret-down pull-right"></i> -->
 								</a>
 							</th>
 							<th>
-								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->Tipo 
+								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->Nombre del Emprendedor Titular 
 <!-- 									<i class="fa fa-caret-down pull-right"></i> -->
 								</a>
 							</th>
 							<th>
-								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->Sector 
+								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->DNI 
 <!-- 									<i class="fa fa-caret-down pull-right"></i> -->
 								</a>
 							</th>
 							<th>
-								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->Rubro 
+								<a href="javascript:void(0);"> <!-- cambiar a fa-caret-up -->Título del Proyecto 
 <!-- 									<i class="fa fa-caret-down pull-right"></i> -->
 								</a>
 							</th>
@@ -103,10 +103,10 @@
 					</thead>
 					<tbody>
 						<tr ng-repeat="project in projects">
+							<td>{{project.number}}</td>
+							<td>{{getHolderNames(project)}}</td>
+							<td>{{getHolderDocumentNumbers(project)}}</td>
 							<td>{{project.title}}</td>
-							<td>{{project.type}}</td>
-							<td>{{project.economicArea}}</td>
-							<td>{{project.category}}</td>
 							<td class="txtC">
 								<button type="button" class="btn btn-link" ng-click="goToDetail(project.id)">
 									<i class="fa fa-pencil txtSuccess"></i>
