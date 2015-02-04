@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.creditmanager.controller.GenericController;
 import com.creditmanager.model.Page;
 import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
 import com.creditmanager.service.ProjectService;
@@ -21,7 +22,7 @@ import com.creditmanager.service.dto.FormDTO;
 import com.creditmanager.service.dto.ProjectDTO;
 
 @RestController
-public class ProjectRestController {
+public class ProjectRestController extends GenericController {
 	
 	@Autowired
 	ProjectService projectService;
@@ -54,6 +55,7 @@ public class ProjectRestController {
 	
 	@RequestMapping(value="/projects/contact/{id}")
 	public @ResponseBody ContactDTO saveContact(@RequestBody ContactDTO contactDto, @PathVariable Long id){
+		contactDto.setUserId(getUserId());
 		return projectService.saveProjectContact(contactDto, id);
 	}
 	

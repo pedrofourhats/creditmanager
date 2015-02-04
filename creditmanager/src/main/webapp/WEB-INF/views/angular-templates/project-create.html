@@ -827,17 +827,19 @@
         	<h3 class="modal-title">{{title}}</h3>
         </div>
         <div class="modal-body">
-    		<div class="input-group">
-				<label for="contactDate">Fecha</label> 
-				<input type="date" class="form-control" ng-model="contactDate">
-			</div>
-			<div class="list-group">
-				<label for="contactComment">Observacion</label> 
-				<input type="text" class="form-control" ng-model="contactComment">
-			</div>
+			<form name="contactForm">
+    			<div class="input-group">
+					<label for="contactDate">Fecha</label> 
+					<input type="date" class="form-control" ng-model="contactDate" min="1900-01-01" max="3000-12-31" required>
+				</div>
+				<div class="list-group">
+					<label for="contactComment">Observacion</label> 
+					<input type="text" class="form-control" ng-model="contactComment" required>
+				</div>
+			</form>
         </div>
         <div class="modal-footer">
-        	<button class="btn btn-primary" ng-click="addContact()">OK</button>
+        	<button class="btn btn-primary" ng-click="addContact()" ng-disabled="contactForm.$invalid">OK</button>
         	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
         </div>
     </script>
