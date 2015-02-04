@@ -58,6 +58,19 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
 		    	alert("No se puede eliminar un proyecto que tenga personas asignadas.");
 		    });
 		};
+		
+		$scope.getHolderNames = function(project){
+			var holderNames = '';
+			for(var i=0; i<project.holders.length; i++){
+				var person = project.holders[i];
+				holderNames += person.name + ' ' + person.surname + ', ';
+			}
+			return holderNames != '' ? holderNames.substring(0, holderNames.length - 2) : '';
+		};
+		
+		$scope.getHolderDocumentNumbers = function(project){
+			return project.holders.length == 1 ? project.holders[0].identityNumber : '- - -';
+		};
 }]);
 
 projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal', "$location",
