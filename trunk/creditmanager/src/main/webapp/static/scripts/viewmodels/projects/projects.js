@@ -242,6 +242,7 @@ function ($scope, $modalInstance, $http, projectId, contact) {
 	$scope.title = contact.id ? "Modificar Contacto" : "Agregar Contacto";
 	$scope.contactDate = contact.date != null ? new Date(contact.date) : new Date();
 	$scope.contactComment = contact.comment;
+	
 	$scope.addContact = function() {
 		$http.put(getCompletePath("projects/contact/" + projectId), JSON.stringify({ id: contact.id, date: $scope.contactDate, comment: $scope.contactComment}))
 		.then(function(response){
