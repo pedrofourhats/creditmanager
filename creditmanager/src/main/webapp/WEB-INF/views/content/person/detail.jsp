@@ -91,13 +91,13 @@
 					  </thead>
 					  <tbody>
 						<tr ng-repeat="project in guarantorProjects">
-						  <td>{{project.title}}</td>
-						  <td>{{project.id}}</td>
+						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">{{project.title}}</a></td>
+						  <td>{{project.number}}</td>
 						  <td>Garante</td>
 						</tr>
 						<tr ng-repeat="project in holderProjects">
-						  <td>{{project.title}}</td>
-						  <td>{{project.id}}</td>
+						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">{{project.title}}</a></td>
+						  <td>{{project.number}}</td>
 						  <td>Titular</td>
 						</tr>
 					  </tbody>

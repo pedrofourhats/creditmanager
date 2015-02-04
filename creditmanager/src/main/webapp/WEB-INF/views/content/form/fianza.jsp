@@ -20,6 +20,7 @@
 
   <div class="container forms-list" ng-controller="formController">
     <div class="panel panel-default">
+    		<button ng-click="goToProject()">Volver a proyecto</button>
     		<div class="formParameters">
       			<h4 class="parameterTitle">Parametros</h4>
       			<input type="text" name="num-fecha" id="date" ng-model="form.date" class="form-control" placeholder="Fecha">

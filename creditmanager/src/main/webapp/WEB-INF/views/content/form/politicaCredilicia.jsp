@@ -20,6 +20,7 @@
 
   <div class="container forms-list" ng-controller="formController">
     <div class="panel panel-default">
+    	<button ng-click="goToProject()">Volver a proyecto</button>
 		<div class="panel-body" id="printableDiv">
                 <h3>
                   PROGRAMA DE CRÉDITOS PARA EMPRENDEDORES DE LA REGIÓN DE SALTO GRANDE<br>

@@ -19,6 +19,7 @@
 
   <div class="container forms-list" ng-controller="formController">
     <div class="panel panel-default">
+    	<button ng-click="goToProject()">Volver a proyecto</button>
     	<div class="formParameters">
       		<h4 class="parameterTitle">Parametros</h4>
     		<input placeholder="Número de cheque" type="text" id="checkNumber" ng-model="form.checkNumber" class="form-control"> 
