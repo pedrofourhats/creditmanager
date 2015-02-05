@@ -25,7 +25,15 @@ public class ProjectDAOImpl extends GenericDAOImpl<Project, Long> implements Pro
 	@Override
 	public Page<Project> findByProjectNumber(int pageIndex, int pageSize, String number) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
-		criteria.add(Restrictions.ilike("number", number, MatchMode.START));
+		criteria.add(
+			Restrictions.or(
+				Restrictions.or(
+					Restrictions.ilike("title", number, MatchMode.ANYWHERE),
+					Restrictions.ilike("investmentDestination", number, MatchMode.ANYWHERE)
+				),
+				Restrictions.ilike("number", number, MatchMode.START)
+			)
+		);
 		return getPageByCriteria(criteria, pageIndex, pageSize);
 	}
 }
