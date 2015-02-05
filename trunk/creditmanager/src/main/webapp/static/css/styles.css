@@ -355,6 +355,11 @@ textarea {
 input[type=name] {
   outline: none;
 }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .btn {
   border-radius: 2px;
 }
@@ -581,6 +586,9 @@ label.control-label span {
   margin-left: 20px;
 }
 label {
+  color: #808181;
+}
+.login label {
   color: #eaeaea;
 }
 .forms-list .form-control {
