@@ -92,13 +92,13 @@
 					  <tbody>
 						<tr ng-repeat="project in guarantorProjects">
 						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">{{project.title}}</a></td>
-						  <td>{{project.number}}</td>
-						  <td>Garante</td>
+						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">{{project.number}}</a></td>
+						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">Garante</a></td>
 						</tr>
 						<tr ng-repeat="project in holderProjects">
 						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">{{project.title}}</a></td>
-						  <td>{{project.number}}</td>
-						  <td>Titular</td>
+						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">{{project.number}}</a></td>
+						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">Titular</a></td>
 						</tr>
 					  </tbody>
 					</table>
