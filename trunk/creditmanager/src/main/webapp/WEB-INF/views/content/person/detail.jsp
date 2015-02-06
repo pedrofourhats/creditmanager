@@ -54,7 +54,7 @@
 						<div class="col-sm-4">
 							Celular: <span class="txtBlue">{{person.cellPhone}}</span>
 							<br>
-							Email: <span class="txtBlue">{{person.email}}</span>
+							Email: <span class="txtBlue"><a href="mailto:{{person.email}}">{{person.email}}</a></span>
 						</div>
 					</div>
 					<hr>
