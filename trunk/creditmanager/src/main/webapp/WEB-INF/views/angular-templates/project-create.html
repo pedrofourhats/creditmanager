@@ -40,21 +40,12 @@
 					    	<div class="row mt20">
 								<div class="col-sm-4">
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip" ng-show="institutionalForm.dateOfEntry.$dirty && institutionalForm.dateOfEntry.$invalid">
-										  <div class="tooltip-arrow"></div>
-										  <div class="tooltip-inner">
-											Fecha de ingreso INTI
-										  </div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<div class="control-group">
 											<label for="date-picker-2" class="control-label">Fecha de ingreso al INTI</label>
 											<div class="controls">
 												<div class="input-group">
 													<input id="date-picker-2" name="dateOfEntry" type="date" class="date-picker form-control" tabindex="1" required ng-model="project.dateOfEntry" />
 													<label for="date-picker-2" class="input-group-addon btn">
-<!-- 														<span class="fa fa-calendar"></span> -->
 													</label>
 												</div>
 											</div>
@@ -62,28 +53,12 @@
 									</div>
 	
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-										  <div class="tooltip-arrow"></div>
-										  <div class="tooltip-inner">
-											Debe ingresar un número de proyecto
-										  </div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Número de proyecto</label>
 										<input type="text" class="form-control" placeholder="Ingrese número de documento" tabindex="2" ng-model="project.number">
 									</div>
 								</div>
 								<div class="col-sm-4">
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-										  <div class="tooltip-arrow"></div>
-										  <div class="tooltip-inner">
-											Debe ingresar services
-										  </div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Número de servicers</label>
 										<div class="dropdown" tabindex="3" dropdown>
 										  <a type="button" data-toggle="dropdown">
@@ -99,17 +74,8 @@
 										    <li ng-repeat="servicer in servicers" ng-click="selectServicer(servicer.name)"><a href="javascript:void(0);">{{servicer.name}}</a></li>
 										  </ul>
 										</div>
-										<!-- <input type="text" class="form-control" placeholder="Ingrese número de services" tabindex="3" ng-model="project.servicers"> -->
 									</div>
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-										  <div class="tooltip-arrow"></div>
-										  <div class="tooltip-inner">
-											Debe ingresar situación
-										  </div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Estado de situación</label>
 										<div class="dropdown" tabindex="4" dropdown>
 										  <a type="button" data-toggle="dropdown">
@@ -129,14 +95,6 @@
 								</div>
 								<div class="col-sm-4">
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-										  <div class="tooltip-arrow"></div>
-										  <div class="tooltip-inner">
-											Debe ingresar evaluador según services
-										  </div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Evaluador segun services</label>
 										<div class="dropdown" dropdown tabindex="5">
 										  <a type="button" data-toggle="dropdown">
@@ -154,14 +112,6 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-										  <div class="tooltip-arrow"></div>
-										  <div class="tooltip-inner">
-											Debe ingresar asesor CAFESG
-										  </div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Ascesor CAFESG</label>
 										<div class="dropdown" dropdown tabindex="6">
 										  <a type="button" data-toggle="dropdown">
@@ -184,14 +134,6 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-										  <div class="tooltip-arrow"></div>
-										  <div class="tooltip-inner">
-											Debe ingresar destino de la inversión
-										  </div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Destino de la inversión</label>
 										<textarea class="form-control" tabindex="7" placeholder="Ingrese el destino de la inversión" ng-model="project.investmentDestination"></textarea>
 									</div>
@@ -215,14 +157,12 @@
 										<tr>
 										  <th>
 										  	<a href="javascript:void(0);">
-										  		<!-- cambiar a fa-caret-up -->
-										  		Nº <i class="fa fa-caret-down pull-right"></i>
+										  		Nº
 										  	</a>
 										  </th>
 										  <th>
 										  	<a href="javascript:void(0);">
-										  		<!-- cambiar a fa-caret-up -->
-										  		Nombre <i class="fa fa-caret-down pull-right"></i>
+										  		Nombre
 										  	</a>
 										  </th>
 										  <th class="txtC">Acciones</th>
@@ -233,7 +173,6 @@
 										  <td>{{holder.id}}</td>
 										  <td>{{holder.name + ' ' + holder.surname}}</td>
 										  <td class="txtC">
-<!-- 											<button type="button" class="btn btn-link" onclick=""><i class="fa fa-eye txtSuccess" ></i></button> -->
 											<button type="button" class="btn btn-link" ng-click="deleteHolder($index)"><i class="fa fa-trash txtDanger"></i></button>
 										  </td>
 										</tr>
@@ -259,14 +198,12 @@
 										<tr>
 										  <th>
 										  	<a href="javascript:void(0);">
-										  		<!-- cambiar a fa-caret-up -->
-										  		Nº <i class="fa fa-caret-down pull-right"></i>
+										  		Nº
 										  	</a>
 										  </th>
 										  <th>
 										  	<a href="javascript:void(0);">
-										  		<!-- cambiar a fa-caret-up -->
-										  		Nombre <i class="fa fa-caret-down pull-right"></i>
+										  		Nombre
 										  	</a>
 										  </th>
 										  <th class="txtC">Acciones</th>
@@ -297,22 +234,10 @@
 							<div class="row mt20">
 								<div class="col-sm-4">
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar titulo</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Titulo del proyecto</label> 
 										<input type="text" class="form-control" placeholder="Ingrese titulo del proyecto" tabindex="1" autofocus ng-model="project.title">
 									</div>
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar tipo de proyecto</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Tipo de proyecto</label> 
 										<div class="dropdown" dropdown tabindex="2">
 										  <a type="button" data-toggle="dropdown">
@@ -332,12 +257,6 @@
 								</div>
 								<div class="col-sm-4">
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar sector econÃ³mico</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Sector económico</label> 
 										<div class="dropdown" dropdown is-open="status.isopen">
 										  <a type="button" data-toggle="dropdown">
@@ -355,12 +274,6 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar activdad econÃ³mica</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Actividad económica</label> 
 										<div class="dropdown" dropdown is-open="status.isopen">
 										  <a type="button" data-toggle="dropdown">
@@ -380,12 +293,6 @@
 								</div>
 								<div class="col-sm-4">
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar rubro</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Rubro</label> 
 										<div class="dropdown" dropdown is-open="status.isopen">
 										  <a type="button" data-toggle="dropdown">
@@ -413,51 +320,26 @@
 							<div class="row mt20">
 								<div class="col-sm-4">
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar importe solicitado</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Importe solicitado</label> 
 										<input type="number" class="form-control" placeholder="Ingrese importe solicitado" tabindex="6" ng-model="project.requestedAmount">
 									</div>
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar plazo solicitado</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Plazo solicitado</label> 
 										<input type="text" class="form-control" placeholder="Ingrese plazo solicitado" tabindex="7" ng-model="project.requestedDeadline">
 									</div>
 								</div>
 								<div class="col-sm-4">
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar periodo de gracia</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Periodo de gracia solicitado</label> 
 										<input type="text" class="form-control" placeholder="Ingrese periodo de gracia solicitado" tabindex="8" ng-model="project.requestedGracePeriod">
 									</div>
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar fecha de otorgamiento del crédito</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<div class="control-group">
 											<label for="date-picker-2" class="control-label">Fecha de otorgamiento del crédito</label>
 											<div class="controls">
 												<div class="input-group">
 													<input id="date-picker-2" type="date" class="date-picker form-control" tabindex="9" ng-model="project.deliveryDate"/> 
 													<label for="date-picker-2" class="input-group-addon btn">
-<!-- 														<span class="fa fa-calendar"></span> -->
 													</label>
 												</div>
 											</div>
@@ -466,22 +348,10 @@
 								</div>
 								<div class="col-sm-4">
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar importe otorgado</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Importe otorgado</label> 
 										<input type="number" class="form-control" placeholder="Ingrese importe otorgado" tabindex="10" ng-model="project.givenAmount">
 									</div>
 									<div class="form-group">
-										<!-- VALIDACIÃN -->
-										<div class="tooltip top" role="tooltip">
-											<div class="tooltip-arrow"></div>
-											<div class="tooltip-inner">Debe ingresar plazo otorgado</div>
-										</div>
-										<!-- end VALIDACIÃN -->
 										<label>Plazo otorgado</label> 
 										<input type="text" class="form-control" placeholder="Ingrese plazo otorgado" tabindex="11" ng-model="project.givenDeadline">
 									</div>
@@ -623,7 +493,6 @@
 									  <td>{{form.formattedName}}</td>
 									  <td>{{form.emitionDate | date:"dd/MM/yyyy"}}</td>
 									  <td class="txtC">
-										<!-- <button type="button" class="btn btn-link"><i class="fa fa-print txtBlue" ></i></button> -->
 										<button type="button" class="btn btn-link" ng-click="goToForm(form.name)"><i class="fa fa-pencil txtSuccess"></i></button>
 									  </td>
 									</tr>
@@ -706,8 +575,7 @@
 										<tr>
 										  <th>
 										  	<a href="javascript:void(0);">
-										  		<!-- cambiar a fa-caret-up -->
-										  		N° <i class="fa fa-caret-down pull-right"></i>
+										  		N°
 										  	</a>
 										  </th>
 										  <th>Vencimientos</th>
