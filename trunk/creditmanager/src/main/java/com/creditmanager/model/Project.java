@@ -97,6 +97,9 @@ public class Project extends com.creditmanager.model.Entity {
 	@OneToMany(mappedBy="project")
 	private Set<Contact> contacts;
 	
+	@OneToMany(mappedBy="project")
+	private Set<AdditionalForm> additionalForms;
+	
 	public Project(){
 	}
 	
@@ -298,6 +301,14 @@ public class Project extends com.creditmanager.model.Entity {
 
 	public void setContacts(Set<Contact> contacts) {
 		this.contacts = contacts;
+	}
+
+	public Set<AdditionalForm> getAdditionalForms() {
+		return additionalForms;
+	}
+
+	public void setAdditionalForms(Set<AdditionalForm> additionalForms) {
+		this.additionalForms = additionalForms;
 	}
 
 	public void update(Date dateOfEntry, String number, String servicers, String situationState, Set<Person> guarantors, Set<Person> holders, 

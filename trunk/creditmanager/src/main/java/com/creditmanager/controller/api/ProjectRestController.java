@@ -17,6 +17,7 @@ import com.creditmanager.controller.GenericController;
 import com.creditmanager.model.Page;
 import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
 import com.creditmanager.service.ProjectService;
+import com.creditmanager.service.dto.AdditionalFormDTO;
 import com.creditmanager.service.dto.ContactDTO;
 import com.creditmanager.service.dto.FormDTO;
 import com.creditmanager.service.dto.ProjectDTO;
@@ -57,6 +58,16 @@ public class ProjectRestController extends GenericController {
 	public @ResponseBody ContactDTO saveContact(@RequestBody ContactDTO contactDto, @PathVariable Long id){
 		contactDto.setUserId(getUserId());
 		return projectService.saveProjectContact(contactDto, id);
+	}
+	
+	@RequestMapping(value="/projects/additionalForm", method=RequestMethod.POST)
+	public @ResponseBody void saveAdditionalForm(@RequestBody AdditionalFormDTO form){
+		projectService.saveProjectAdditionalForm(form);
+	}
+	
+	@RequestMapping(value="/projects/additionalForm", method=RequestMethod.GET)
+	public @ResponseBody Page<AdditionalFormDTO> getAdditionalForms(int pageIndex, int pageSize){
+		return projectService.getAdditionalForms(pageIndex, pageSize);
 	}
 	
 	@RequestMapping(value="/projects/findById/{id}", method=RequestMethod.GET, consumes="*/*")
