@@ -1,4 +1,4 @@
-var projectApp = angular.module('projectApp',['ngRoute','project.controllers', 'pager', 'smart-table','ui.bootstrap']);
+var projectApp = angular.module('projectApp',['ngRoute','project.controllers', 'pager', 'intiFileUpload', 'smart-table','ui.bootstrap']);
 
 projectApp.config(function($routeProvider){
 	$routeProvider.when('/project-list', {

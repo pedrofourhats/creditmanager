@@ -224,4 +224,28 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 				//$scope.project.contacts.splice(index, 1);
 			});
 		};
+		
+		$scope.additionalFormsVisible = false;
+		
+		$scope.pdfUploadUrl = function(){
+			return getCompletePath('fileUploader/uploadPdf');
+		};
+		
+		$scope.toggleAdditionalForm = function(){
+			$scope.additionalFormsVisible = !$scope.additionalFormsVisible;
+		};
+		
+		$scope.onPdfUploadSuccess = function(fileName){
+			var form = { fileName: fileName, projectId: $scope.projectId };
+			$http.post(getCompletePath("projects/additionalForm"), JSON.stringify(form))
+			.success(function () {
+				$scope.project.additionalForms.push(form);
+		    }).error(function (err) {
+		    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
+		    });
+		};
+		
+		$scope.pdfUrl = function(fileName){
+			return getCompletePath("fileUploader/getPdfFile?fileName=" + fileName);
+		};
 }]);

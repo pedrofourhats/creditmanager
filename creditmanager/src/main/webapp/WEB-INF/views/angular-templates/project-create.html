@@ -498,13 +498,40 @@
 									</tr>
 								  </tbody>
 								</table>
+								
+								<table class="table table-hover table-condensed table-responsive table-tiny">
+									<thead>
+										<tr>
+											<th>Archivo</th>
+											<th class="txtC">Acciones</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="addform in project.additionalForms">
+											<td>{{addform.fileName}}</td>
+											<td>
+												<a href="{{pdfUrl(addform.fileName)}}" target="_blank">Vista Previa</a>
+												<button type="button" class="btn btn-link" ng-click="">
+													<i class="fa fa-trash txtDanger"></i>
+												</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<div ng-show="additionalFormsVisible">
+									<input type="file" name="file" file-uploader on-success="onPdfUploadSuccess(fileName)" url="pdfUploadUrl()">
+								</div>
+								
 								<div class="row mt20">
 									<div class="col-sm-12 txtR">
 										<button type="button" class="btn btn-primary" ng-click="loadForm()" ng-disabled="projectId == undefined">
 											<i class="fa fa-file-text-o"></i> Cargar formulario
 										</button>
-										<button type="button" class="btn btn-primary" onclick="">
-											<i class="fa fa-file-text"></i> Cargar formulario extra
+										<button type="button" class="btn btn-primary" ng-click="toggleAdditionalForm()">
+											<i class="fa fa-file-text"></i> 
+											<span ng-show="!additionalFormsVisible">Cargar formulario extra</span>
+											<span ng-show="additionalFormsVisible">Finalizar Cargar de formulario extra</span>
 										</button>
 									</div>	
 								</div>

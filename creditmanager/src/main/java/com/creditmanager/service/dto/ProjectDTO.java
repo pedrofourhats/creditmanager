@@ -47,6 +47,8 @@ public class ProjectDTO {
 	
 	private List<FormDTO> forms;
 	
+	private List<AdditionalFormDTO> additionalForms;
+	
 	private List<ContactDTO> contacts;
 	
 	private String investmentDestination;
@@ -243,5 +245,13 @@ public class ProjectDTO {
 
 	public void setContacts(List<ContactDTO> contacts) {
 		this.contacts = contacts;
+	}
+
+	public List<AdditionalFormDTO> getAdditionalForms() {
+		return additionalForms;
+	}
+
+	public void setAdditionalForms(List<AdditionalFormDTO> additionalForms) {
+		this.additionalForms = additionalForms;
 	}
 }

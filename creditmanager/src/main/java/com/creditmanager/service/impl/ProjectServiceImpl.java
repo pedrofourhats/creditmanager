@@ -11,10 +11,12 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.creditmanager.dao.AdditionalFormDAO;
 import com.creditmanager.dao.ContactDAO;
 import com.creditmanager.dao.FormDAO;
 import com.creditmanager.dao.PersonDAO;
 import com.creditmanager.dao.ProjectDAO;
+import com.creditmanager.model.AdditionalForm;
 import com.creditmanager.model.Contact;
 import com.creditmanager.model.Form;
 import com.creditmanager.model.Page;
@@ -22,6 +24,7 @@ import com.creditmanager.model.Person;
 import com.creditmanager.model.Project;
 import com.creditmanager.model.exceptions.ProjectHasHoldersOrGuarantorsException;
 import com.creditmanager.service.ProjectService;
+import com.creditmanager.service.dto.AdditionalFormDTO;
 import com.creditmanager.service.dto.ContactDTO;
 import com.creditmanager.service.dto.FormDTO;
 import com.creditmanager.service.dto.PersonDTO;
@@ -45,6 +48,9 @@ public class ProjectServiceImpl implements ProjectService {
 	
 	@Autowired
 	private ContactDAO contactDao;
+	
+	@Autowired
+	private AdditionalFormDAO additionalFormDao;
 
 	@Override
 	public Page<ProjectDTO> getAll(int pageIndex, int pageSize) {
@@ -138,6 +144,13 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
+	public void saveProjectAdditionalForm(AdditionalFormDTO formDto) {
+		Project project = projectDao.getById(formDto.getProjectId());
+		AdditionalForm form = new AdditionalForm(formDto.getFileName(), project);
+		additionalFormDao.add(form);
+	}
+	
+	@Override
 	public Page<ProjectDTO> getByNumber(int pageIndex, int pageSize, String number) {
 		return MapperUtil.map(mapper, projectDao.findByProjectNumber(pageIndex, pageSize, number), ProjectDTO.class);
 	}
@@ -172,5 +185,12 @@ public class ProjectServiceImpl implements ProjectService {
 		List<Project> projects = new ArrayList<Project>();
 		projects.addAll(this.personDao.getById(personId).getHolderProjects());
 		return MapperUtil.map(mapper, projects, ProjectDTO.class);
+	}
+	
+
+	@Override
+	public Page<AdditionalFormDTO> getAdditionalForms(int pageIndex, int pageSize) {
+		Page<AdditionalForm> forms = additionalFormDao.getFormsPage(pageIndex, pageSize);
+		return MapperUtil.map(mapper, forms, AdditionalFormDTO.class);
 	}
 }
