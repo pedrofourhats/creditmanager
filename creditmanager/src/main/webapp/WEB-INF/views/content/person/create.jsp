@@ -35,25 +35,25 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
-									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.name.$dirty && createPersonForm.name.$invalid">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner" ng-show="createPersonForm.name.$error.required">Debe ingresar un nombre</div>
-									</div>
-									<!-- end VALIDACIO“N -->
-									<label for="name">Nombre</label>
-									<input type="text" name="name" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="1" autofocus ng-model="newPerson.name">
-								</div>
-							</div>	
-							<div class="col-sm-6">								
-								<div class="form-group">
-									<!-- VALIDACIO“N -->
 									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.surname.$dirty && createPersonForm.surname.$invalid">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner" ng-show="createPersonForm.surname.$error.required">Debe ingresar un apellido</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="surname">Apellido</label>
-									<input type="text" name="surname" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="2" ng-model="newPerson.surname">
+									<input type="text" name="surname" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="1" ng-model="newPerson.surname">
+								</div>
+							</div>
+							<div class="col-sm-6">								
+								<div class="form-group">
+									<!-- VALIDACIO“N -->
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.name.$dirty && createPersonForm.name.$invalid">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.name.$error.required">Debe ingresar un nombre</div>
+									</div>
+									<!-- end VALIDACIO“N -->
+									<label for="name">Nombre</label>
+									<input type="text" name="name" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="2" autofocus ng-model="newPerson.name">
 								</div>								
 							</div>
 						</div>
@@ -186,7 +186,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="locality">Localidad</label>
-									<input type="text" name="locality" class="form-control" maxlength="45" placeholder="Ingrese una provincia" tabindex="10" ng-model="newPerson.locality">
+									<input type="text" name="locality" class="form-control" maxlength="45" placeholder="Ingrese una localidad" tabindex="10" ng-model="newPerson.locality">
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -241,7 +241,7 @@
 							<div class="col-sm-12">
 								<div class="pull-right">
 									<div class="form-group">
-										<input type="submit" class="btn btn-primary" tabindex="15" value="Cargar persona" ng-show="!isEdition" ng-disabled="createPersonForm.$invalid" />
+										<input type="submit" class="btn btn-primary" tabindex="15" value="Guardar persona" ng-show="!isEdition" ng-disabled="createPersonForm.$invalid" />
 										<input type="submit" class="btn btn-primary" tabindex="15" value="Actualizar persona" ng-show="isEdition" ng-disabled="createPersonForm.$invalid" />
 									</div>
 								</div>

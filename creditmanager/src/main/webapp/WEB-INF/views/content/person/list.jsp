@@ -82,10 +82,10 @@
 						  <th>
 						  	<!-- <a href="javascript:void(0);">
 						  		<!-- cambiar a fa-caret-up -->
-						  		Nombre<!-- <i class="fa fa-caret-down pull-right"></i> -->
+						  		Apellido<!-- <i class="fa fa-caret-down pull-right"></i> -->
 						  	<!-- </a> -->
 						  </th>
-						  <th>Apellido</th>
+						  <th>Nombre</th>
 						  <th>Documento</th>
 						  <th>Nacimiento</th>
 						  <th>Genero</th>
@@ -96,8 +96,8 @@
 					  </thead>
 					  <tbody>
 						<tr ng-repeat="person in personsPage.elements">
-						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.name}}</td>
 						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.surname}}</td>
+						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.name}}</td>
 						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.identityNumber}}</td>
 						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.formattedBirthDate}}</td>
 						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.genderName}}</td>
