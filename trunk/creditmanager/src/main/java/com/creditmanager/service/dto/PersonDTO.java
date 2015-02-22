@@ -1,5 +1,6 @@
 package com.creditmanager.service.dto;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.creditmanager.model.enums.Gender;
@@ -94,12 +95,15 @@ public class PersonDTO {
 		return formattedBirthDate;
 	}
 
-	@SuppressWarnings("deprecation")
 	public void setFormattedBirthDate(Date birthDate) {
+		this.formattedBirthDate = "";
 		if(birthDate != null) {
-			this.formattedBirthDate = birthDate.getDate() + "/" + birthDate.getMonth() + "/" + birthDate.getYear();
-		} else {
-			this.formattedBirthDate = "";
+			try {
+				SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+				this.formattedBirthDate = format.format(birthDate);			
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

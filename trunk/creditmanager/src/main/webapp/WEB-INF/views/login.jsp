@@ -37,7 +37,7 @@
 					  </div>
 					</div>
 					<!-- end VALIDACIÓN -->
-					<label for="emailInputLogin">Email</label>
+					<label for="emailInputLogin">Usuario</label>
 					<input type="name" class="form-control" name='j_username' id="emailInputLogin" placeholder="Email" required autofocus>
 				</div>
 				<div class="form-group">
