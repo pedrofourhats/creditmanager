@@ -53,8 +53,8 @@
 									</div>
 	
 									<div class="form-group">
-										<label>Número de proyecto</label>
-										<input type="text" class="form-control" placeholder="Ingrese número de documento" tabindex="2" ng-model="project.number">
+										<label>Número de proyecto (formato: CO nnnnnn/aaaa)</label>
+										<input type="text" class="form-control" placeholder="Ingrese número de proyecto" tabindex="2" ng-model="project.number">
 									</div>
 								</div>
 								<div class="col-sm-4">
@@ -349,7 +349,7 @@
 								<div class="col-sm-4">
 									<div class="form-group">
 										<label>Importe otorgado</label> 
-										<input type="number" class="form-control" placeholder="Ingrese importe otorgado" tabindex="10" ng-model="project.givenAmount">
+										<input type="number" class="form-control" pattern="(d{3})([.])(d{2})" placeholder="Ingrese importe otorgado" tabindex="10" ng-model="project.givenAmount">
 									</div>
 									<div class="form-group">
 										<label>Plazo otorgado</label> 

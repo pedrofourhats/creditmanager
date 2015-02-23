@@ -31,7 +31,7 @@ public class ProjectDAOImpl extends GenericDAOImpl<Project, Long> implements Pro
 					Restrictions.ilike("title", number, MatchMode.ANYWHERE),
 					Restrictions.ilike("investmentDestination", number, MatchMode.ANYWHERE)
 				),
-				Restrictions.ilike("number", number, MatchMode.START)
+				Restrictions.ilike("number", number, MatchMode.ANYWHERE)
 			)
 		);
 		return getPageByCriteria(criteria, pageIndex, pageSize);
