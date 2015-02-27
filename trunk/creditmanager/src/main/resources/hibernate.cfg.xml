@@ -14,6 +14,7 @@
         <mapping class="com.creditmanager.model.Form" />
         <mapping class="com.creditmanager.model.Contact" />
         <mapping class="com.creditmanager.model.AdditionalForm" />
+        <mapping class="com.creditmanager.model.Payment" />
         <mapping class="com.creditmanager.model.report.DefaultProjects" />
     </session-factory>
          

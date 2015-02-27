@@ -38,7 +38,7 @@ public abstract class GenericDAOImpl<T, PK extends Serializable> implements Gene
 		Criteria criteria = detachedCriteria.getExecutableCriteria(session);
 		
 		criteria.setProjection(Projections.rowCount());
-		Integer totalItems = (Integer) criteria.uniqueResult();
+		Long totalItems = (Long) criteria.uniqueResult();
 		
 		criteria.setProjection(null)
 			.setFirstResult((pageIndex - 1) * pageSize)
