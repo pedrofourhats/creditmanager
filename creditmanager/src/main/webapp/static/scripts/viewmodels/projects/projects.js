@@ -273,3 +273,20 @@ function ($scope, $modalInstance, $http, projectId, contact) {
 		$modalInstance.dismiss('cancel');
 	};
 });
+
+projectControllers.controller('ModalLoadPayCtrl',
+function($scope, $modalInstance, $http, projectId, feeNumberToPay){
+	$scope.feeNumberToPay = feeNumberToPay;
+	
+	$scope.pay = function(){
+		var param = { quoteAmountPaid: parseFloat($scope.fee), paymentDate: $scope.paymentDate, projectId: parseInt(projectId), feeNumber: feeNumberToPay };
+		$http.post(getCompletePath("payment"), JSON.stringify(param))
+		.then(function(response){
+			$scope.cancel();
+		});
+	};
+	
+	$scope.cancel = function(){
+		$modalInstance.dismiss('cancel');
+	};
+});

@@ -2,6 +2,7 @@ package com.creditmanager.model;
 
 import java.util.Date;
 import java.util.Set;
+import java.util.TreeSet;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -50,7 +51,7 @@ public class Project extends com.creditmanager.model.Entity {
 	private Double givenAmount;
 	
 	@Column(name="givenDeadline")
-	private String givenDeadline;
+	private int givenDeadline;
 	
 	/* Institucional */
 	@Column(name="dateOfEntry")
@@ -100,6 +101,9 @@ public class Project extends com.creditmanager.model.Entity {
 	@OneToMany(mappedBy="project")
 	private Set<AdditionalForm> additionalForms;
 	
+	@OneToMany(mappedBy="project")
+	private Set<Payment> payments;
+	
 	public Project(){
 	}
 	
@@ -120,7 +124,7 @@ public class Project extends com.creditmanager.model.Entity {
 			Set<Person> guarantors, Set<Person> holders, String investmentDestination, String title, String type,
 			String economicArea, String economicActivity, String category, Double requestedAmount, 
 			String requestedDeadline, String requestedGracePeriod, Date deliveryDate, Double givenAmount,
-			String givenDeadline) {
+			int givenDeadline) {
 		this.dateOfEntry = dateOfEntry;
 		this.number = number;
 		this.servicers = servicers;
@@ -279,11 +283,11 @@ public class Project extends com.creditmanager.model.Entity {
 		this.givenAmount = givenAmount;
 	}
 
-	public String getGivenDeadline() {
+	public int getGivenDeadline() {
 		return givenDeadline;
 	}
 
-	public void setGivenDeadline(String givenDeadline) {
+	public void setGivenDeadline(int givenDeadline) {
 		this.givenDeadline = givenDeadline;
 	}
 	
@@ -311,9 +315,17 @@ public class Project extends com.creditmanager.model.Entity {
 		this.additionalForms = additionalForms;
 	}
 
+	public Set<Payment> getPayments() {
+		return payments;
+	}
+
+	public void setPayments(Set<Payment> payments) {
+		this.payments = payments;
+	}
+
 	public void update(Date dateOfEntry, String number, String servicers, String situationState, Set<Person> guarantors, Set<Person> holders, 
 		String investmentDestination,String title, String type, String economicArea, String economicActivity, String category, Double requestedAmount, String requestedDeadline,
-		String requestedGracePeriod, Date deliveryDate, Double givenAmount, String givenDeadline, String defaultForms){
+		String requestedGracePeriod, Date deliveryDate, Double givenAmount, int givenDeadline, String defaultForms){
 		
 		this.title = title;
 		this.type = type;
@@ -335,5 +347,14 @@ public class Project extends com.creditmanager.model.Entity {
 		this.holders = holders;
 		this.investmentDestination = investmentDestination;
 		this.defaultForms = defaultForms;
+	}
+	
+	public boolean isInDebt(){
+		return payments.size() < givenDeadline;
+	}
+	
+	public Payment getLastPayment(){
+		TreeSet<Payment> sortedPayments = new TreeSet<Payment>(payments);
+		return sortedPayments.last();
 	}
 }

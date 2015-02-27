@@ -189,6 +189,8 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			});
 		};
 		
+		/*********************** CONTACTS **************************/
+		
 		$scope.addContact = function(){
 			$scope.selectedContact = { date: null, comment: '' };
 			self.openContactPopin();
@@ -225,6 +227,8 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			});
 		};
 		
+		/*********************** ADDITIONAL FORM *************************/
+		
 		$scope.additionalFormsVisible = false;
 		
 		$scope.pdfUploadUrl = function(){
@@ -247,5 +251,37 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		
 		$scope.pdfUrl = function(fileName){
 			return getCompletePath("fileUploader/getPdfFile?fileName=" + fileName);
+		};
+		
+		/************************ PAYMENT ****************************/
+		
+		$scope.goToPaymentCalendar = function(){
+			redirect('project/paymentCalendar/' + $scope.projectId);
+		};
+		
+		$scope.openPaymentModal = function(){
+			$http.get(getCompletePath("payment/project/" + $scope.projectId), {})
+			.success(function (feeNumber) {
+				$scope.feeNumberToPay = feeNumber;
+				$scope.ShowPaymentModal();
+		    }).error(function (data, status, headers, config) {
+		    	alert("Estan todas las cuotas pagas!");
+		    });
+		};
+		
+		$scope.ShowPaymentModal = function(){
+			$modal.open({
+				templateUrl: 'paymentModalContent.html',
+				controller: 'ModalLoadPayCtrl',
+				size: 'sm',
+				resolve: {
+					projectId: function(){
+						return $scope.projectId;
+					},
+					feeNumberToPay: function(){
+						return $scope.feeNumberToPay;
+					}
+				}
+			});
 		};
 }]);

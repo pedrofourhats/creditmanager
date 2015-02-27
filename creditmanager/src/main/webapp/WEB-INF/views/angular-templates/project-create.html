@@ -589,10 +589,10 @@
 											<h4>Últimos pagos</h4>
 										</div>
 										<div class="col-sm-6 txtR">
-											<button type="button" class="btn btn-primary" onclick="">
+											<button type="button" class="btn btn-primary" ng-click="openPaymentModal()">
 												<i class="fa fa-plus-circle"></i> Cargar pago
 											</button>
-											<button type="button" class="btn btn-primary" onclick="redirect('project/quoteDetail')">
+											<button type="button" class="btn btn-primary" ng-click="goToPaymentCalendar()">
 												<i class="fa fa-calendar-o"></i> Ver calendario de pagos
 											</button>
 										</div>	
@@ -724,6 +724,30 @@
         </div>
         <div class="modal-footer">
         	<button class="btn btn-primary" ng-click="addContact()" ng-disabled="contactForm.$invalid">OK</button>
+        	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="paymentModalContent.html">
+		<div class="modal-header">
+        	<h3 class="modal-title">Cargar Pago</h3>
+        </div>
+        <div class="modal-body">
+			<form name="paymentForm">
+				<div class="input-group">
+					<label for="feeNumber">Cuota</label> {{feeNumberToPay}}
+				</div>
+    			<div class="input-group">
+					<label for="contactDate">Fecha</label> 
+					<input type="date" class="form-control" ng-model="paymentDate" min="1900-01-01" max="3000-12-31" required>
+				</div>
+				<div class="input-group">
+					<label for="contactComment">Monto</label> 
+					<input type="text" class="form-control" ng-model="fee" required>
+				</div>
+			</form>
+        </div>
+        <div class="modal-footer">
+        	<button class="btn btn-primary" ng-click="pay()" ng-disabled="paymentForm.$invalid">OK</button>
         	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
         </div>
     </script>

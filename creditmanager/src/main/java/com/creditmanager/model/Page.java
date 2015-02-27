@@ -10,11 +10,11 @@ public class Page<T> {
 	
 	private int pageSize;
 	
-	private Integer totalItems;
+	private Long totalItems;
 	
 	private int totalPages;
 
-	public Page(List<T> elements, int pageIndex, int pageSize, Integer totalItems){
+	public Page(List<T> elements, int pageIndex, int pageSize, Long totalItems){
 		this.elements = elements;
 		this.pageIndex = pageIndex;
 		this.pageSize = pageSize;
@@ -46,11 +46,11 @@ public class Page<T> {
 		this.pageSize = pageSize;
 	}
 
-	public int getTotalItems() {
+	public long getTotalItems() {
 		return totalItems;
 	}
 
-	public void setTotalItems(Integer totalItems) {
+	public void setTotalItems(Long totalItems) {
 		this.totalItems = totalItems;
 	}
 
@@ -67,7 +67,7 @@ public class Page<T> {
 			return 1;
 		}
 		
-		int pages = (totalItems / pageSize) + 1;
+		int pages = (int) ((totalItems / pageSize) + 1);
 		if(totalItems % pageSize == 0){
 			return pages - 1;
 		} else {

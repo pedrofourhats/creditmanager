@@ -11,7 +11,7 @@
   <properties>
   	<org.springframework.version>4.1.2.RELEASE</org.springframework.version>
     <spring.security.version>3.0.5.RELEASE</spring.security.version>
-	<hibernate.version>3.3.2.GA</hibernate.version>
+	<hibernate.version>3.6.10.Final</hibernate.version>
 	<mysql.connector.version>5.1.21</mysql.connector.version>
   </properties>
 	
@@ -161,8 +161,8 @@
 	</dependency>
 	<dependency>
    		<groupId>org.slf4j</groupId>
-   		<artifactId>slf4j-log4j12</artifactId> 
-    	<version>1.4.2</version>
+   		<artifactId>slf4j-api</artifactId> 
+    	<version>1.6.0</version>
     </dependency>
     
     <!-- DOZER -->

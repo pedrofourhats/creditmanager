@@ -27,7 +27,7 @@ public class ProjectDTO {
 	
 	private Double givenAmount;
 	
-	private String givenDeadline;
+	private int givenDeadline;
 	
 	private Date dateOfEntry;
 	
@@ -223,11 +223,11 @@ public class ProjectDTO {
 		this.givenAmount = givenAmount;
 	}
 
-	public String getGivenDeadline() {
+	public int getGivenDeadline() {
 		return givenDeadline;
 	}
 
-	public void setGivenDeadline(String givenDeadline) {
+	public void setGivenDeadline(int givenDeadline) {
 		this.givenDeadline = givenDeadline;
 	}
 

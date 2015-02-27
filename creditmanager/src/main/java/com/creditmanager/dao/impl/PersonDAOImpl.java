@@ -50,7 +50,7 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 				Restrictions.ilike("name", searchedKeyword, MatchMode.ANYWHERE)),
 				Restrictions.ilike("identityNumber", searchedKeyword, MatchMode.ANYWHERE)));
 		criteria.setProjection(Projections.rowCount());
-		Integer totalItems = (Integer) criteria.uniqueResult();
+		Long totalItems = (Long) criteria.uniqueResult();
 		
 		criteria.setProjection(null)
 			.setFirstResult((pageIndex - 1) * pageSize)
