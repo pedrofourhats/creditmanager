@@ -122,7 +122,7 @@
 									<!-- end VALIDACIO“N -->
 									<label>Genero</label>
 	
-									<div class="dropdown" tabindex="6" dropdown is-open="status.isopen">
+									<div class="dropdown" tabindex="6" dropdown>
 									  <a type="button" data-toggle="dropdown">
 									    <span ng-show="newPerson.genderName == ''">
 									    	Elegir genero
@@ -186,7 +186,20 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="locality">Localidad</label>
-									<input type="text" name="locality" class="form-control" maxlength="45" placeholder="Ingrese una localidad" tabindex="10" ng-model="newPerson.locality">
+									<div class="dropdown" tabindex="10" dropdown>
+									  <a type="button" data-toggle="dropdown">
+									    <span ng-show="newPerson.locality == undefined">
+									    	Elegir localidad
+									    </span>
+									    <span ng-show="newPerson.locality != undefined">
+										    {{newPerson.locality}} 
+									    </span>
+									    <i class="fa fa-chevron-down"></i>
+									  </a>
+									  <ul class="dropdown-menu" role="menu">
+									    <li ng-repeat="locality in localities" ng-click="selectLocality({localityName: locality.name, cpName: locality.cp})"><a href="javascript:void(0);">{{locality.name}}</a></li>
+									  </ul>
+									</div>
 								</div>
 							</div>
 							<div class="col-sm-4">
