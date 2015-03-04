@@ -27,10 +27,11 @@ formApp.controller('formController', function ($scope, $http) {
 	  var originalContents = document.body.innerHTML;        
 	  var popupWin = window.open('', '_blank', 'width=300,height=300');
 	  popupWin.document.open();
-	  popupWin.document.write('<html><head></head><body onload="window.print()">' + printContents + '</html>');
+	  popupWin.document.write('<html><head><link href="../../static/css/fwk/bootstrap.css" media="all" rel="stylesheet" type="text/css"><link href="../../static/css/styles.css" media="all" rel="stylesheet" type="text/css"></head><body onload="window.print()">' + printContents + '</html>');
 	  popupWin.document.close();
 	};
 	
+		
 	$scope.numberToLetter = function(number) {
 		return NumeroALetras(number);
 	};
