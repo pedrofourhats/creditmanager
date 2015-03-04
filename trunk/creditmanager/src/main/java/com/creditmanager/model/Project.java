@@ -354,6 +354,10 @@ public class Project extends com.creditmanager.model.Entity {
 	}
 	
 	public Payment getLastPayment(){
+		if(payments.size() == 0){
+			return null;
+		}
+		
 		TreeSet<Payment> sortedPayments = new TreeSet<Payment>(payments);
 		return sortedPayments.last();
 	}

@@ -61,10 +61,92 @@
 							</div>
 						</div>
 						<div role="tabpanel" class="tab-pane" id="collectionsManagement">
-							Collections Management
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-4">
+										<label class="control-label"><strong>Cuotas pagadas</strong></label><br>
+										<p>{{paymentsCount}} | {{today}}</p>
+										<label class="control-label"><strong>Importe Cobrado al</strong></label><br>
+											$ {{amountCharged}} | {{today}}
+									</div>
+									<div class="col-md-4">
+										<label class="control-label"><strong>Cuotas</strong></label> {{today}}<br>
+										<p>Vencidas</p>
+										<p>Por Vencer</p>
+										<label class="control-label"><strong>Saldo Total Original:</strong></label><br>
+										$ {{saldo}} | {{today}}
+									</div>
+									<div class="col-md-4">
+										<label class="control-label"><strong>Saldo Negociado:</strong></label><br>
+										<label class="control-label"><strong>Gastos x Cobranzas:</strong></label> $130<br>
+										<label class="control-label"><strong>Saldo Vencido:</strong></label><br>
+										<label class="control-label"><strong>Saldo x Vencer:</strong></label><br>
+										<label class="control-label"><strong>Saldo + Punitorios:</strong></label><br>
+										<p>$ {{saldo}} | {{today}}</p>
+									</div>
+								</div>
+							</div>
 						</div>
     					<div role="tabpanel" class="tab-pane" id="simpleCollectionsAndPole">
-    						Simple Collections And Pole
+    						<table class="table table-hover table-condensed table-responsive table-report-expanded">
+								<thead>
+									<tr>
+									<th>Nº</th>
+									<th>Tasa de Interes</th>
+									<th>Vencimientos</th>
+									<th>Periodo</th>
+<!-- 									<th>Cuotas Pagadas</th> -->
+<!-- 									<th>Cuotas Vencidas</th> -->
+<!-- 									<th>Cuotas x Vencer</th> -->
+									<th>Monto Cuota (1)</th>
+									<th>Fecha de Real de Pago</th>
+									<th>Pago Real (2)</th>
+									<th>Días</th>
+									<th>Saldo Final de Capital</th>
+									<th>Saldo Inicial de Capital</th>
+									<th>Disminución x Pago de Cuotas</th>
+									<th></th>
+									<th>Nº</th>
+									<th>Capital</th>
+									<th>Tasa</th>
+									<th>Interés</th>
+									<th>IVA 21%</th>
+									<th>Monto Cuota</th>
+									<th>Punit./Adm.</th>
+									<th>Cuota + Punit.</th>
+									<th>Días Transc.</th>
+									<th>Saldo Mensual</th>
+									<th>Gastos Adm. X Gestión de Cobranza</th>
+									</tr>
+								</thead>
+								<tr ng-repeat="fee in fees">
+									<td>{{fee.number}}</td>
+									<td>{{fee.annualRate}}%</td>
+									<td>{{fee.expirationDate}}</td>
+									<td>{{fee.period}}</td>
+<!-- 									<td>Y</td> -->
+<!-- 									<td>Y</td> -->
+<!-- 									<td>Y</td> -->
+									<td>Y</td>
+									<td>Y</td>
+									<td>Y</td>
+									<td>Y</td>
+									<td>Y</td>
+									<td>{{fee.openingBalance}}</td>
+									<td>{{fee.decreaseByFeePayment}}</td>
+									<td>Y</td>
+									<td>Y</td>
+									<td>{{fee.decreaseByFeePayment}}</td>
+									<td>{{fee.annualRate}}%</td>
+									<td>Y</td>
+									<td>Y</td>
+									<td>Y</td>
+									<td>Y</td>
+									<td>Y</td>
+									<td>Y</td>
+									<td>Y</td>
+								</tr>									
+							</table>
     					</div>
 					</div>
 	      </div>

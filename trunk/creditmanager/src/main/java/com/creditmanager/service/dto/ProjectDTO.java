@@ -2,6 +2,7 @@ package com.creditmanager.service.dto;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 public class ProjectDTO {
 	
@@ -50,6 +51,8 @@ public class ProjectDTO {
 	private List<AdditionalFormDTO> additionalForms;
 	
 	private List<ContactDTO> contacts;
+	
+	private Set<PaymentDTO> payments;
 	
 	private String investmentDestination;
 	
@@ -253,5 +256,13 @@ public class ProjectDTO {
 
 	public void setAdditionalForms(List<AdditionalFormDTO> additionalForms) {
 		this.additionalForms = additionalForms;
+	}
+
+	public Set<PaymentDTO> getPayments() {
+		return payments;
+	}
+
+	public void setPayments(Set<PaymentDTO> payments) {
+		this.payments = payments;
 	}
 }
