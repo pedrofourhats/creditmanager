@@ -31,7 +31,7 @@ angular.module('paymentCalendarApp', [])
 	$scope.fees = [];
 	
 	var lastExpirationDate = deliveryDate;
-	var lastOpeningBalance = $scope.project.givenAmount;
+	var lastOpeningBalance = parseFloat($scope.project.givenAmount).toFixed(2);
 	for(var i=0; i < $scope.totalDeadline; i++){
 		var payment = $scope.project.payments[i];
 		var number = i+1;
@@ -57,7 +57,7 @@ function Fee(number, annualRate, expirationDate, openingBalance, payment, projec
 	self.period = self.isGracePeriod ? 'Gracia' : '';
 	
 	/* Disminución x Pago de Cuotas */
-	self.decreaseByFeePayment = self.isGracePeriod ? 0 : project.givenAmount / project.givenDeadline;
+	self.decreaseByFeePayment = self.isGracePeriod ? 0 : parseFloat(project.givenAmount / project.givenDeadline).toFixed(2);
 	self.openingBalance = openingBalance;
-	self.finalBalance = self.openingBalance - self.decreaseByFeePayment;
+	self.finalBalance =  parseFloat(self.openingBalance - self.decreaseByFeePayment).toFixed(2);
 }
