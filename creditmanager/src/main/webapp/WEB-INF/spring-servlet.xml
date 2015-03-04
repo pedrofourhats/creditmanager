@@ -102,6 +102,7 @@
 	    	<value>mappings/form-mapping.xml</value>
 	    	<value>mappings/contact-mapping.xml</value>
 	    	<value>mappings/additionalform-mapping.xml</value>
+	    	<value>mappings/payment-mapping.xml</value>
 	    </list>
 	  </property>
 	</bean>

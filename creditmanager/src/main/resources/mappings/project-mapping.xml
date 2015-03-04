@@ -108,5 +108,9 @@
         <a>defaultForms</a>
         <b>defaultForms</b>
       </field>
+      <field>
+      	<a>payments</a>
+      	<b>payments</b>
+      </field>
   </mapping>
 </mappings>

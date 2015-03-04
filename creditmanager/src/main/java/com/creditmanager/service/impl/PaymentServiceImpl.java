@@ -34,6 +34,11 @@ public class PaymentServiceImpl implements PaymentService {
 			throw new PaymentAlreadyCanceledException();
 		}
 		
-		return project.getLastPayment().getFeeNumber() + 1;
+		Payment lastPayment = project.getLastPayment();
+		if(lastPayment == null){
+			return 1;
+		}
+		
+		return lastPayment.getFeeNumber() + 1;
 	}
 }
