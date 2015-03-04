@@ -131,11 +131,11 @@
 									<td>Y</td>
 									<td>Y</td>
 									<td>Y</td>
-									<td>Y</td>
+									<td>{{fee.finalBalance}}</td>
 									<td>{{fee.openingBalance}}</td>
 									<td>{{fee.decreaseByFeePayment}}</td>
-									<td>Y</td>
-									<td>Y</td>
+									<td></td>
+									<td>{{fee.number}}</td>
 									<td>{{fee.decreaseByFeePayment}}</td>
 									<td>{{fee.annualRate}}%</td>
 									<td>Y</td>
