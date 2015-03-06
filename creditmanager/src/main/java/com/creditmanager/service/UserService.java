@@ -8,5 +8,4 @@ import com.creditmanager.model.User;
 public interface UserService {
 
 	public User getByUsername(String username);
-	
 }

@@ -12,14 +12,9 @@ import com.creditmanager.service.dto.PersonDTO;
 public interface PersonService {
 	
 	PersonDTO getById(Long id);
-	
 	Page<PersonDTO> getAllPerson(int pageIndex, int pageSize, String searchedKeyword);
-	
 	List<PersonDTO> autocomplete(String searchedKeyword);
-	
 	void addPerson(PersonDTO person);
-	
 	void editPerson(PersonDTO person);
-	
 	void deletePerson(long personId) throws PersonHasProjectsException;
 }
