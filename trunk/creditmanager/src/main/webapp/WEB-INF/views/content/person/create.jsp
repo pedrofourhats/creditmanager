@@ -7,13 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>INTI</title>
-	<!-- SCRIPTS -->
 	<%@ include file="../../include/scripts.jsp" %>
 	<script>
 		var editablePerson = <%= request.getAttribute("editablePerson") %>; 
 	</script>
 	
-	<!-- STYLESHEET -->
 	<%@ include file="../../include/styles.jsp" %>
 </head>
 <body>
@@ -201,7 +199,7 @@
 									  </ul>
 									</div>
 								</div>
-							</div>
+							</div> 
 							<div class="col-sm-4">
 								<div class="form-group">
 									<!-- VALIDACIO“N -->

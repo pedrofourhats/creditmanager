@@ -7,7 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>INTI</title>
-	<!-- SCRIPTS -->
 	<%@ include file="../../include/scripts.jsp" %>
 	<script>
 	    var personsPage = <%= request.getAttribute("personsPage") %>; 
@@ -38,7 +37,6 @@
 	    };
     </script>
 	
-	<!-- STYLESHEET -->
 	<%@ include file="../../include/styles.jsp" %>
 </head>
 <body>
@@ -79,12 +77,7 @@
 					<table class="table table-hover table-condensed table-responsive table-persons">
 					  <thead>
 						<tr>
-						  <th>
-						  	<!-- <a href="javascript:void(0);">
-						  		<!-- cambiar a fa-caret-up -->
-						  		Apellido<!-- <i class="fa fa-caret-down pull-right"></i> -->
-						  	<!-- </a> -->
-						  </th>
+						  <th>Apellido</th>
 						  <th>Nombre</th>
 						  <th>Documento</th>
 						  <th>Nacimiento</th>

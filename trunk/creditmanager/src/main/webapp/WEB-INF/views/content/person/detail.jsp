@@ -8,7 +8,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>INTI</title>
 	
-	<!-- SCRIPTS -->
 	<%@ include file="../../include/scripts.jsp" %>
 	<script>
 		var personDetail = <%= request.getAttribute("person") %>;
@@ -16,7 +15,6 @@
 		var holderProjects = <%= request.getAttribute("holderProjects") %>;
 	</script>
 	
-	<!-- STYLESHEET -->
 	<%@ include file="../../include/styles.jsp" %>
 </head>
 
