@@ -36,8 +36,9 @@ angular.module('paymentCalendarApp', [])
 		var payment = $scope.project.payments[i];
 		var number = i+1;
 		
+		var prevExpirationDate = new Date(lastExpirationDate.getTime());
 		lastExpirationDate.setDate(lastExpirationDate.getDate() + 30);
-		var fee = new Fee(number, $scope.annualRate, lastExpirationDate, lastOpeningBalance, payment, $scope.project);
+		var fee = new Fee(number, $scope.annualRate, prevExpirationDate, lastExpirationDate, lastOpeningBalance, payment, $scope.project);
 		lastOpeningBalance = fee.finalBalance;
 		$scope.fees.push(fee);
 	}
@@ -46,18 +47,35 @@ angular.module('paymentCalendarApp', [])
 		
 function pad(s) { return (s < 10) ? '0' + s : s; }
 
-function Fee(number, annualRate, expirationDate, openingBalance, payment, project){
+function Fee(number, annualRate, prevExpirationDate, expirationDate, openingBalance, payment, project){
 	var self = this;
 	
+	var pDate = payment != null ? new Date(payment.paymentDate) : null;
 	self.isGracePeriod = number <= project.requestedGracePeriod;
-	
+	self.dateDiff = function(d1, d2) {
+        var t2 = d2.getTime();
+        var t1 = d1.getTime();
+
+        return parseInt((t2-t1)/(24*3600*1000));
+    };
+    
 	self.number = number;
 	self.annualRate = annualRate;
+	self.dailyRate = self.annualRate / 365;
 	self.expirationDate = [pad(expirationDate.getDate()), pad(expirationDate.getMonth()+1), expirationDate.getFullYear()].join('/');
 	self.period = self.isGracePeriod ? 'Gracia' : '';
+	self.paymentDate = payment != null ? [pad(pDate.getDate()), pad(pDate.getMonth()+1), pDate.getFullYear()].join('/') : '';
+	self.feeAmountPaid = payment != null ? payment.feeAmountPaid : '';
 	
 	/* Disminución x Pago de Cuotas */
-	self.decreaseByFeePayment = self.isGracePeriod ? 0 : parseFloat(project.givenAmount / project.givenDeadline).toFixed(2);
+	var decreaseByFeePayment = self.isGracePeriod ? 0 : (project.givenAmount / project.givenDeadline);
+	self.decreaseByFeePayment = parseFloat(decreaseByFeePayment).toFixed(2);
 	self.openingBalance = openingBalance;
 	self.finalBalance =  parseFloat(self.openingBalance - self.decreaseByFeePayment).toFixed(2);
+	self.days = self.dateDiff(prevExpirationDate, expirationDate);
+	var interest = self.openingBalance * (self.dailyRate / 100) * self.days;
+	var iva = interest * 0.21;
+	self.interest = parseFloat(interest).toFixed(2);
+	self.iva = parseFloat(iva).toFixed(2);
+	self.amount = parseFloat(decreaseByFeePayment + interest + iva).toFixed(2);
 }
