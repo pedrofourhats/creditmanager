@@ -127,10 +127,10 @@
 <!-- 									<td>Y</td> -->
 <!-- 									<td>Y</td> -->
 <!-- 									<td>Y</td> -->
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
+									<td>{{fee.amount}}</td>
+									<td>{{fee.paymentDate}}</td>
+									<td>{{fee.feeAmountPaid}}</td>
+									<td>{{fee.days}}</td>
 									<td>{{fee.finalBalance}}</td>
 									<td>{{fee.openingBalance}}</td>
 									<td>{{fee.decreaseByFeePayment}}</td>
@@ -138,9 +138,9 @@
 									<td>{{fee.number}}</td>
 									<td>{{fee.decreaseByFeePayment}}</td>
 									<td>{{fee.annualRate}}%</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
+									<td>{{fee.interest}}</td>
+									<td>{{fee.iva}}</td>
+									<td>{{fee.amount}}</td>
 									<td>Y</td>
 									<td>Y</td>
 									<td>Y</td>
