@@ -28,6 +28,10 @@ angular.module('paymentCalendarApp', [])
 	
 	self.getAmountCharged();
 	
+	$scope.pastDues = 0;
+	$scope.duesForPayment = 0;
+	var balanceToOvercome = 0;
+	
 	/***** Simple Collections And Pole *****/
 	$scope.fees = [];
 	
@@ -40,23 +44,29 @@ angular.module('paymentCalendarApp', [])
 		
 		var prevExpirationDate = new Date(lastExpirationDate.getTime());
 		lastExpirationDate.setDate(lastExpirationDate.getDate() + 30);
+		
 		var fee = new Fee(number, $scope.annualRate, prevExpirationDate, lastExpirationDate, lastOpeningBalance, payment, $scope.project);
 		lastOpeningBalance = fee.finalBalance;
 		initialCredit += fee.feeAmount;
 		totalMonthlyBalance += fee.exactMonthlyBalance;
+		$scope.pastDues += fee.pastDue;
+		$scope.duesForPayment += fee.dueForPayment;
+		balanceToOvercome += fee.balanceToOvercome;
+		
 		$scope.fees.push(fee);
 	}
 	
 	$scope.initialCredit = parseFloat(initialCredit).toFixed(2);
 	$scope.totalBalance = parseFloat(initialCredit - $scope.amountCharged).toFixed(2);
 	$scope.totalMonthlyBalance = totalMonthlyBalance;
+	$scope.balanceToOvercome = parseFloat(balanceToOvercome).toFixed(2);
 });
 		
 function pad(s) { return (s < 10) ? '0' + s : s; }
 
 function Fee(number, annualRate, prevExpirationDate, expirationDate, openingBalance, payment, project){
 	var self = this;
-	
+	var today = new Date();
 	var pDate = payment != null ? new Date(payment.paymentDate) : null;
 	self.isGracePeriod = number <= project.requestedGracePeriod;
 	self.dateDiff = function(d1, d2) {
@@ -100,4 +110,9 @@ function Fee(number, annualRate, prevExpirationDate, expirationDate, openingBala
 	var amountPaid = payment != null ? payment.feeAmountPaid : 0;
 	self.exactMonthlyBalance = pastDays >= 0 && amountPaid >= 0 ? (amountPlusPunit - amountPaid) : 0;
 	self.monthlyBalance = parseFloat(self.exactMonthlyBalance).toFixed(2);
+	
+	self.pastDue = today > expirationDate && payment == null ? 1 : 0;
+	self.dueForPayment = today < expirationDate && payment == null ? 1 : 0;
+	
+	self.balanceToOvercome = pastDays < 0 && payment == null ? amountPlusPunit : 0;
 }

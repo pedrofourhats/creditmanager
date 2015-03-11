@@ -71,8 +71,8 @@
 									</div>
 									<div class="col-md-4">
 										<label class="control-label"><strong>Cuotas</strong></label> {{today}}<br>
-										<p>Vencidas</p>
-										<p>Por Vencer</p>
+										<p>Vencidas: {{pastDues}}</p>
+										<p>Por Vencer: {{duesForPayment}}</p>
 										<label class="control-label"><strong>Saldo Total Original:</strong></label><br>
 										$ {{totalBalance}} | {{today}}
 									</div>
@@ -80,7 +80,7 @@
 										<label class="control-label"><strong>Saldo Negociado:</strong></label><br>
 										<label class="control-label"><strong>Gastos x Cobranzas:</strong></label> $130<br>
 										<label class="control-label"><strong>Saldo Vencido: </strong>$ {{totalMonthlyBalance}}</label><br>
-										<label class="control-label"><strong>Saldo x Vencer:</strong></label><br>
+										<label class="control-label"><strong>Saldo x Vencer: </strong>$ {{balanceToOvercome}}</label><br>
 										<label class="control-label"><strong>Saldo + Punitorios:</strong></label><br>
 										<p>$ {{totalMonthlyBalance}} | {{today}}</p>
 									</div>
@@ -125,8 +125,8 @@
 									<td>{{fee.expirationDate}}</td>
 									<td>{{fee.period}}</td>
 <!-- 									<td>Y</td> -->
-<!-- 									<td>Y</td> -->
-<!-- 									<td>Y</td> -->
+<!-- 									<td>{{fee.pastDue}}</td> -->
+<!-- 									<td>{{fee.dueForPayment}}</td> -->
 									<td>{{fee.amount}}</td>
 									<td>{{fee.paymentDate}}</td>
 									<td>{{fee.feeAmountPaid}}</td>
