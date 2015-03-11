@@ -50,7 +50,7 @@
 										<label class="control-label"><strong>Amortización: </strong> {{project.givenDeadline}}</label></br>
 										<label class="control-label"><strong>Gracia: </strong> {{project.requestedGracePeriod}}</label></br>
 										<label class="control-label"><strong>Total de Plazo: </strong> {{totalDeadline}}</br>
-										<label class="control-label"><strong>Crédito Inicial: </strong> </br>
+										<label class="control-label"><strong>Crédito Inicial: {{initialCredit}}</strong> </br>
 									</div>
   									<div class="col-md-6">
   										<label class="control-label"><strong>Cuota Capital:  </strong>{{capitalQuote}}</label><br>
@@ -74,15 +74,15 @@
 										<p>Vencidas</p>
 										<p>Por Vencer</p>
 										<label class="control-label"><strong>Saldo Total Original:</strong></label><br>
-										$ {{saldo}} | {{today}}
+										$ {{totalBalance}} | {{today}}
 									</div>
 									<div class="col-md-4">
 										<label class="control-label"><strong>Saldo Negociado:</strong></label><br>
 										<label class="control-label"><strong>Gastos x Cobranzas:</strong></label> $130<br>
-										<label class="control-label"><strong>Saldo Vencido:</strong></label><br>
+										<label class="control-label"><strong>Saldo Vencido: </strong>$ {{totalMonthlyBalance}}</label><br>
 										<label class="control-label"><strong>Saldo x Vencer:</strong></label><br>
 										<label class="control-label"><strong>Saldo + Punitorios:</strong></label><br>
-										<p>$ {{saldo}} | {{today}}</p>
+										<p>$ {{totalMonthlyBalance}} | {{today}}</p>
 									</div>
 								</div>
 							</div>
@@ -141,10 +141,10 @@
 									<td>{{fee.interest}}</td>
 									<td>{{fee.iva}}</td>
 									<td>{{fee.amount}}</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
-									<td>Y</td>
+									<td>{{fee.punit}}</td>
+									<td>{{fee.punitPlusAmount}}</td>
+									<td>{{fee.pastDays}}</td>
+									<td>{{fee.monthlyBalance}}</td>
 								</tr>									
 							</table>
     					</div>
