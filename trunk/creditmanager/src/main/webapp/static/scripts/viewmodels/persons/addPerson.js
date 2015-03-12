@@ -24,7 +24,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 		editablePerson.cellPhone = parseInt(editablePerson.cellPhone);
 		editablePerson.phone = parseInt(editablePerson.phone);
 		editablePerson.workPhone = parseInt(editablePerson.workPhone);
-		editablePerson.identityNumber = parseInt(editablePerson.identityNumber);
+		editablePerson.identityNumber = editablePerson.identityNumber;
 		editablePerson.identityTypeName = getIdentityTypeName(editablePerson.identityType);
 		editablePerson.identityType = getIdentityType(editablePerson.identityTypeName);
 		editablePerson.genderName = getGenderName(editablePerson.gender);
