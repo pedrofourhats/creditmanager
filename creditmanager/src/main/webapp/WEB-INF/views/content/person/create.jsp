@@ -89,12 +89,11 @@
 									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.idNumber.$dirty && createPersonForm.idNumber.$invalid">
 									  <div class="tooltip-arrow"></div>
 									  <div class="tooltip-inner" ng-show="createPersonForm.idNumber.$error.required">Debe ingresar un documento</div>
-									  <div class="tooltip-inner" ng-show="createPersonForm.idNumber.$error.number">Debe ingresar números</div>
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="idNumber">Número de documento</label>
 									<small class="fr">Soló números sin puntos</small>
-									<input type="number" name="idNumber" class="form-control" maxlength="10" placeholder="Ingrese número de documento" tabindex="4" ng-model="newPerson.identityNumber">
+									<input type="text" name="idNumber" class="form-control" maxlength="10" placeholder="Ingrese número de documento" tabindex="4" ng-model="newPerson.identityNumber">
 									</div>
 							</div>
 							<div class="col-sm-4">
@@ -120,7 +119,7 @@
 									<!-- end VALIDACIO“N -->
 									<label>Genero</label>
 	
-									<div class="dropdown" tabindex="6" dropdown>
+									<div class="dropdown" tabindex="6" dropdown is-open="status.isopen">
 									  <a type="button" data-toggle="dropdown">
 									    <span ng-show="newPerson.genderName == ''">
 									    	Elegir genero
