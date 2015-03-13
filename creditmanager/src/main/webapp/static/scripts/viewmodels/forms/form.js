@@ -39,4 +39,10 @@ formApp.controller('formController', function ($scope, $http) {
 	$scope.goToProject = function() {
 		redirect('project/list#/project-detail/' + $scope.project.id);
 	};
+	
+	$scope.swapGuarantors = function(x, y) {
+		var b = $scope.project.guarantors[x];
+		$scope.project.guarantors[x] = $scope.project.guarantors[y];
+		$scope.project.guarantors[y] = b;
+	};
 });
