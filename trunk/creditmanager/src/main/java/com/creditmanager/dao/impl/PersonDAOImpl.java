@@ -6,6 +6,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -35,6 +36,7 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 	@Override
 	public Page<Person> getAllPerson(int pageIndex, int pageSize) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
+		criteria.addOrder(Order.asc("surname"));
 		return getPageByCriteria(criteria, pageIndex, pageSize);
 	}
 

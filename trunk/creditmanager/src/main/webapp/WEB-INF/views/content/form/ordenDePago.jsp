@@ -32,19 +32,19 @@
                <p class="mt10">
                </p>
                <p class="span-inline">
-                 <b>Nombre y apellido: </b>
+                 <b>Nombre y apellido: </b><span class="uppercase">{{project.holders[0].name}} {{project.holders[0].surname}}</span>
                  <br>
-                 <b>D.U.: </b>:
+                 <b>D.U.: </b>{{project.holders[0].identityNumber}}
                  <br>
-                 <b>Fecha de nacimiento: </b>
+                 <b>Fecha de nacimiento: </b>{{project.holders[0].formattedBirthDate}}
                  <br>
-                 <b>Nº de proyecto: </b>
+                 <b>Nº de proyecto: </b>{{project.number}} 
                  <br>
                  <b>Nº de cheque: </b>{{form.checkNumber}}
                  <br>  
-                 <b>Importe aprobado: </b>
+                 <b>Importe aprobado: </b>{{project.givenAmount}} ({{numberToLetter(project.givenAmount)}} PESOS)
                  <br>
-                 <b>Fecha de otorgamiento: </b>
+                 <b>Fecha de otorgamiento: </b> {{project.formattedDeliveryDate}}
                  <br>
                  <br>
                  <br>  

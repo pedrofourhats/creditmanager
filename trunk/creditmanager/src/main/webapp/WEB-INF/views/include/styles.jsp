@@ -5,3 +5,9 @@
 <link rel="stylesheet" type="text/css" href="<%=stylePageContext %>/static/css/styles.css" />
 
 <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
+
+<style>
+.uppercase{
+	text-transform: uppercase;
+}
+</style>

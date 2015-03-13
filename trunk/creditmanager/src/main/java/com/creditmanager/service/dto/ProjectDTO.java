@@ -1,5 +1,6 @@
 package com.creditmanager.service.dto;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -25,6 +26,8 @@ public class ProjectDTO {
 	private String requestedGracePeriod;
 	
 	private Date deliveryDate;
+	
+	private String formattedDeliveryDate;
 	
 	private Double givenAmount;
 	
@@ -216,6 +219,23 @@ public class ProjectDTO {
 
 	public void setDeliveryDate(Date deliveryDate) {
 		this.deliveryDate = deliveryDate;
+		this.setFormattedDeliveryDate(deliveryDate);
+	}
+	
+	public String getFormattedDeliveryDate() {
+		return formattedDeliveryDate;
+	}
+
+	public void setFormattedDeliveryDate(Date deliveryDate) {
+		this.formattedDeliveryDate = "";
+		if(deliveryDate != null) {
+			try {
+				SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+				this.formattedDeliveryDate = format.format(deliveryDate);			
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public Double getGivenAmount() {

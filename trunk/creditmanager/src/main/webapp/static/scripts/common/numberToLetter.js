@@ -152,3 +152,13 @@ function NumeroALetras(num){
   else
     return Millones(data.enteros);// + " " + data.letrasMonedaPlural + " " + data.letrasCentavos;
 }
+
+function soloCiudad(ciudadCompleto){
+	var onlyCity = ciudadCompleto.split(" - ");
+	return onlyCity[1];
+}
+function soloDepartamento(ciudadCompleto){
+	var onlyDepartment = ciudadCompleto.split(" - ");
+	return onlyDepartment[0];
+}
+

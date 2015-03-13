@@ -16,14 +16,14 @@
 <nav class="main-nav">
 	<div class="container">
 		<ul>
-			<li id="goToProjectsLink">
-				<a href="javascript:void(0)" onclick="redirect('project/list');">
-	        		<span>PROYECTOS</span>
-	        	</a>
-			</li>
 			<li id="goToPersonsLink">
 				<a href="javascript:void(0)" onclick="redirect('person/list');">
 	        		<span>PERSONAS</span>
+	        	</a>
+			</li>
+			<li id="goToProjectsLink">
+				<a href="javascript:void(0)" onclick="redirect('project/list');">
+	        		<span>PROYECTOS</span>
 	        	</a>
 			</li>
 			<!-- <li id="goToFormsLink">

@@ -35,6 +35,7 @@ public class ProjectRestController extends GenericController {
 	
 	@RequestMapping(value="/projects/{projectNumber}", method = RequestMethod.GET, consumes="*/*")
 	public @ResponseBody Page<ProjectDTO> getProjects(@PathVariable String projectNumber, int pageIndex, int pageSize){
+		projectNumber.replace('_', '/');
 		return projectService.getByNumber(pageIndex, pageSize, projectNumber);
 	}
 	
