@@ -25,7 +25,14 @@
     		<input placeholder="Número de cheque" type="text" id="checkNumber" ng-model="form.checkNumber" class="form-control"> 
 			<input placeholder="Día"  type="text" id="day" ng-model="form.day" class="form-control"> 
 			<input placeholder="Mes"  type="text" id="month" ng-model="form.month" class="form-control"> 
-			<input placeholder="Año"  type="text" id="year" ng-model="form.year" class="form-control"> 
+			<input placeholder="Año"  type="text" id="year" ng-model="form.year" class="form-control">
+			<button ng-show="project.guarantors.length > 1" ng-click="swapGuarantors(0, 1)">Cambiar Garantes 1 y 2</button>
+			<div ng-show="project.guarantors.length > 1">Garante 1: <span ng-bind="project.guarantors[0]"></span></div>
+			<div ng-show="project.guarantors.length > 1">Garante 2: <span ng-bind="project.guarantors[1]"></span></div>
+			
+			<button ng-show="project.guarantors.length > 2" ng-click="swapGuarantors(1, 2)">Cambiar Garantes 2 y 3</button>
+			<div ng-show="project.guarantors.length > 2">Garante 2: <span ng-bind="project.guarantors[1]"></span></div>
+			<div ng-show="project.guarantors.length > 2">Garante 3: <span ng-bind="project.guarantors[2]"></span></div>
 		</div>
 		<div class="panel-body" id="printableDiv">
                 <h3>
