@@ -674,7 +674,8 @@
 				<blockquote>
       				Nombre: {{selected.name + ' ' + selected.surname}}<br/>
       				DNI: {{selected.identityNumber}}<br/>
-      				Sexo: {{selected.gender}}
+      				Sexo: {{selected.gender == null ? '' : selected.gender == 'MALE' ? 'Masculino' : 'Femenino'}}
+
     			</blockquote>
 			</div>
         </div>

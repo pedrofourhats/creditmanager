@@ -48,6 +48,7 @@ angular.module('pager', [])
                 var filter = $scope.filter || '';
                 var parentId = $scope.parentId || null;
                 //var params = { type: type, filter: filter, page: pageNumber, maximumRows: $scope.itemsPerPage, parentId: parentId };
+                filter = filter.replace("/", "_");
                 var serviceName = filter != '' ? $scope.serviceName + "/" + filter: $scope.serviceName;
                 var params = { pageIndex: pageNumber, pageSize: $scope.itemsPerPage };
                 $http({ method: 'GET', url: serviceName, params: params }).success($scope.getPageSuccess).error($scope.errorHandler);

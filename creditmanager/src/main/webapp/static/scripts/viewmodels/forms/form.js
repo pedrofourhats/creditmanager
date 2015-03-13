@@ -36,6 +36,14 @@ formApp.controller('formController', function ($scope, $http) {
 		return NumeroALetras(number);
 	};
 	
+	$scope.cityOnly= function(cityComplete) {
+		return soloCiudad(cityComplete);
+	};
+	
+	$scope.departmentOnly= function(cityComplete) {
+		return soloDepartamento(cityComplete);
+	};
+	
 	$scope.goToProject = function() {
 		redirect('project/list#/project-detail/' + $scope.project.id);
 	};
