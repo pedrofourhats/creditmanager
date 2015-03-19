@@ -107,6 +107,7 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		
 		self.editProject = function(){
 			var projectToEdit = $scope.project;
+			delete projectToEdit.formattedDeliveryDate;
 			projectToEdit.guarantors = $.map(projectToEdit.guarantors, function(value){ delete value.formattedBirthDate; return value; });
 			projectToEdit.holders = $.map(projectToEdit.holders, function(value){ delete value.formattedBirthDate; return value; });
 			projectToEdit.defaultForms = self.getDefaultForms().toString();
