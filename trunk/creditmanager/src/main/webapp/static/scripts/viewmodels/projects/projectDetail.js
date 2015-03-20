@@ -12,7 +12,7 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		
 		$scope.servicers = [{name: "INTI"}, {name: "INTA"}];
 		
-		$scope.states = [{name: "EVALUACION INTI"}, {name: "EVALUACION INTA"}, {name: "INFORMACION CAFESG"}, {name: "RECHAZADO / DESISTIDO"}, {name: "SUJETO A REVISION"}, {name: "COMITE DE CREDITO"}, {name: "APROBADO"}, {name: "CREDITO OTORGADO"}, {name: "CREDITO VIGENTE"}, {name: "CREDITO EN MORA"}, {name: "CREDITO CANCELADO"}];
+		$scope.states = [{name: "EVALUACION INTI"}, {name: "EVALUACION INTA"}, {name: "INFORMACION CAFESG"}, {name: "RECHAZADO"}, {name: "DESISTIDO"}, {name: "SUJETO A REVISION"}, {name: "COMITE DE CREDITO"}, {name: "APROBADO"}, {name: "CREDITO OTORGADO"}, {name: "CREDITO VIGENTE"}, {name: "CREDITO EN MORA"}, {name: "CREDITO CANCELADO"}];
 		
 		$scope.evaluators = [{name: "ELIZABETH A."}, {name: "ADRIANA V."}, {name: "ROMINA M."}, {name: "WALTER H."}, {name: "MELINA SCH."}, {name: "MARTIN S."}, {name: "ELINA B."}, {name: "INTA"}];
 		

@@ -63,7 +63,7 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
 			var holderNames = '';
 			for(var i=0; i<project.holders.length; i++){
 				var person = project.holders[i];
-				holderNames += person.name + ' ' + person.surname + ', ';
+				holderNames += person.surname + ' ' + person.name + ', ';
 			}
 			return holderNames != '' ? holderNames.substring(0, holderNames.length - 2) : '';
 		};
