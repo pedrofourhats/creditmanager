@@ -108,8 +108,26 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		self.editProject = function(){
 			var projectToEdit = $scope.project;
 			delete projectToEdit.formattedDeliveryDate;
-			projectToEdit.guarantors = $.map(projectToEdit.guarantors, function(value){ delete value.formattedBirthDate; return value; });
-			projectToEdit.holders = $.map(projectToEdit.holders, function(value){ delete value.formattedBirthDate; return value; });
+			projectToEdit.guarantors = 
+				$.map(projectToEdit.guarantors, 
+					function(value) { 
+						delete value.formattedBirthDate;
+						if(!value.gender) delete value.gender;
+						if(!value.identityType) delete value.identityType;
+						
+						return value;
+					}
+				);
+			projectToEdit.holders = 
+				$.map(projectToEdit.holders, 
+					function(value) { 
+						delete value.formattedBirthDate;
+						if(!value.gender) delete value.gender;
+						if(!value.identityType) delete value.identityType;
+							
+						return value; 
+					}
+				);
 			projectToEdit.defaultForms = self.getDefaultForms().toString();
 			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify(projectToEdit))
 			.success(function () {
