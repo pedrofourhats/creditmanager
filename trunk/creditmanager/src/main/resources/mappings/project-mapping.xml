@@ -93,6 +93,10 @@
         <b>requestedGracePeriod</b>
       </field>
       <field>
+        <a>givenGracePeriod</a>
+        <b>givenGracePeriod</b>
+      </field>
+      <field>
         <a>deliveryDate</a>
         <b>deliveryDate</b>
       </field>

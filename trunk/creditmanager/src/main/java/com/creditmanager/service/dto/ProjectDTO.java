@@ -23,7 +23,9 @@ public class ProjectDTO {
 	
 	private String requestedDeadline;
 	
-	private String requestedGracePeriod;
+	private int requestedGracePeriod;
+	
+	private int givenGracePeriod;
 	
 	private Date deliveryDate;
 	
@@ -205,12 +207,20 @@ public class ProjectDTO {
 		this.requestedDeadline = requestedDeadline;
 	}
 
-	public String getRequestedGracePeriod() {
+	public int getRequestedGracePeriod() {
 		return requestedGracePeriod;
 	}
 
-	public void setRequestedGracePeriod(String requestedGracePeriod) {
+	public void setRequestedGracePeriod(int requestedGracePeriod) {
 		this.requestedGracePeriod = requestedGracePeriod;
+	}
+
+	public int getGivenGracePeriod() {
+		return givenGracePeriod;
+	}
+
+	public void setGivenGracePeriod(int givenGracePeriod) {
+		this.givenGracePeriod = givenGracePeriod;
 	}
 
 	public Date getDeliveryDate() {
