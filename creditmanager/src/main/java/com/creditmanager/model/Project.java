@@ -42,7 +42,10 @@ public class Project extends com.creditmanager.model.Entity {
 	private String requestedDeadline;
 	
 	@Column(name="requestedGracePeriod")
-	private String requestedGracePeriod;
+	private int requestedGracePeriod;
+	
+	@Column(name="givenGracePeriod")
+	private int givenGracePeriod;
 	
 	@Column(name="deliveryDate")
 	private Date deliveryDate;
@@ -123,8 +126,8 @@ public class Project extends com.creditmanager.model.Entity {
 	public Project(Date dateOfEntry, String number, String servicers, String situationState, String evaluator, String accesor, 
 			Set<Person> guarantors, Set<Person> holders, String investmentDestination, String title, String type,
 			String economicArea, String economicActivity, String category, Double requestedAmount, 
-			String requestedDeadline, String requestedGracePeriod, Date deliveryDate, Double givenAmount,
-			int givenDeadline) {
+			String requestedDeadline, int requestedGracePeriod, int givenGracePeriod, 
+			Date deliveryDate, Double givenAmount, int givenDeadline) {
 		this.dateOfEntry = dateOfEntry;
 		this.number = number;
 		this.servicers = servicers;
@@ -144,6 +147,7 @@ public class Project extends com.creditmanager.model.Entity {
 		this.requestedAmount = requestedAmount;
 		this.requestedDeadline = requestedDeadline;
 		this.requestedGracePeriod = requestedGracePeriod;
+		this.givenGracePeriod = givenGracePeriod;
 		this.deliveryDate = deliveryDate;
 		this.givenAmount = givenAmount;
 		this.givenDeadline = givenDeadline;
@@ -259,12 +263,20 @@ public class Project extends com.creditmanager.model.Entity {
 		this.requestedDeadline = requestedDeadline;
 	}
 
-	public String getRequestedGracePeriod() {
+	public int getRequestedGracePeriod() {
 		return requestedGracePeriod;
 	}
 
-	public void setRequestedGracePeriod(String requestedGracePeriod) {
+	public void setRequestedGracePeriod(int requestedGracePeriod) {
 		this.requestedGracePeriod = requestedGracePeriod;
+	}
+
+	public int getGivenGracePeriod() {
+		return givenGracePeriod;
+	}
+
+	public void setGivenGracePeriod(int givenGracePeriod) {
+		this.givenGracePeriod = givenGracePeriod;
 	}
 
 	public Date getDeliveryDate() {
@@ -325,7 +337,7 @@ public class Project extends com.creditmanager.model.Entity {
 
 	public void update(Date dateOfEntry, String number, String servicers, String situationState, Set<Person> guarantors, Set<Person> holders, 
 		String investmentDestination,String title, String type, String economicArea, String economicActivity, String category, Double requestedAmount, String requestedDeadline,
-		String requestedGracePeriod, Date deliveryDate, Double givenAmount, int givenDeadline, String defaultForms){
+		int requestedGracePeriod, int givenGracePeriod, Date deliveryDate, Double givenAmount, int givenDeadline, String defaultForms){
 		
 		this.title = title;
 		this.type = type;
@@ -335,6 +347,7 @@ public class Project extends com.creditmanager.model.Entity {
 		this.requestedAmount = requestedAmount;
 		this.requestedDeadline = requestedDeadline;
 		this.requestedGracePeriod = requestedGracePeriod;
+		this.givenGracePeriod = givenGracePeriod;
 		this.deliveryDate = deliveryDate;
 		this.givenAmount = givenAmount;
 		this.givenDeadline = givenDeadline;
