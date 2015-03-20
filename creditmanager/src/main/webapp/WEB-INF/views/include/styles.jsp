@@ -10,4 +10,21 @@
 .uppercase{
 	text-transform: uppercase;
 }
+
+.withCurrency .labelCurrency{
+width: 100%;
+}
+
+.withCurrency .adonPesos
+{
+  width: 34px;
+  height: 34px;
+  float: left;
+  line-height: 20px;
+}
+
+.withCurrency .mediumInput{
+width: 90%;
+}
+
 </style>
