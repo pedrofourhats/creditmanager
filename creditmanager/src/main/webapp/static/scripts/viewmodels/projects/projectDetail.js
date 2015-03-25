@@ -278,6 +278,10 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			redirect('project/paymentCalendar/' + $scope.projectId);
 		};
 		
+		$scope.goToScheduleCalendar = function(){
+			redirect('project/paymentSchedule/' + $scope.projectId);
+		};
+		
 		$scope.openPaymentModal = function(){
 			$http.get(getCompletePath("payment/project/" + $scope.projectId), {})
 			.success(function (feeNumber) {
