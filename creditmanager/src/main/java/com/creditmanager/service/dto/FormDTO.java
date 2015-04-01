@@ -48,6 +48,8 @@ public class FormDTO {
 			this.formattedName = "Pagare";
 		} else if(formattedName.equals("politicaCredilicia")) {
 			this.formattedName = "Politica Credilicia";
+		} else if(formattedName.equals("paymentSchedule")) {
+			this.formattedName = "Cronograma De Pagos";
 		} 
 	}
 	
