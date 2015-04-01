@@ -31,12 +31,33 @@
 				</button>
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane fade in active">
+						<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-6">
+										<label class="control-label"><strong>Deudor: </strong></label></br>
+										<label class="control-label"><strong>Proyecto Nº: </strong> {{project.number}}</br>
+										<label class="control-label"><strong>Capital Otorgado: </strong> {{project.givenAmount}}</br>
+										<label class="control-label"><strong>Fecha Otorgamiento: </strong> {{deliveryFormattedDate}}</br>
+										<label class="control-label"><strong>Fecha Actual: </strong> {{today}}</label></br>
+										<label class="control-label"><strong>Amortización: </strong> {{project.givenDeadline}}</label></br>
+										<label class="control-label"><strong>Gracia: </strong> {{project.requestedGracePeriod}}</label></br>
+										<label class="control-label"><strong>Total de Plazo: </strong> {{totalDeadline}}</br>
+										<label class="control-label"><strong>Crédito Inicial: {{initialCredit}}</strong> </br>
+									</div>
+  									<div class="col-md-6">
+  										<label class="control-label"><strong>Cuota Capital:  </strong>{{capitalQuote}}</label><br>
+  										<label class="control-lable"><strong>TASA ANUAL: </strong>{{annualRate}} %</label><br>
+  										<label class="control-lable"><strong>Tasa Diaria: </strong>{{dailyRate}} %</label>
+  									</div>
+								</div>
+						</div>
    						<table class="table table-hover table-condensed table-responsive table-report-expanded">
 							<thead>
 								<tr>
 								<th>Nº</th>
 								<th>Tasa de Interes</th>
 								<th>Vencimientos</th>
+								<th>Periodo</th>
 								<th>Monto Cuota</th>
 								<th>Fecha de Pago</th>
 								<th>Pago Real</th>
@@ -46,6 +67,7 @@
 								<td>{{fee.number}}</td>
 								<td>{{fee.annualRate}}%</td>
 								<td>{{fee.expirationDate}}</td>
+								<td>{{fee.period}}</td>
 								<td>{{fee.amount}}</td>
 								<td>{{fee.paymentDate}}</td>
 								<td>{{fee.feeAmountPaid}}</td>

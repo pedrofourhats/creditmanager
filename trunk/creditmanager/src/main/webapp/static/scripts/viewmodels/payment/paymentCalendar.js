@@ -43,7 +43,39 @@ angular.module('paymentCalendarApp', [])
 		var number = i+1;
 		
 		var prevExpirationDate = new Date(lastExpirationDate.getTime());
-		lastExpirationDate.setDate(lastExpirationDate.getDate() + 30);
+		var n;
+		if(i==0)
+		{
+			
+			lastExpirationDate.setDate(lastExpirationDate.getDate() + 45);
+			n = lastExpirationDate.getDate();
+			if (n <= 10)
+				{
+					lastExpirationDate.setDate(10);
+					day = 10;
+				}
+			else
+				{
+					if (n <= 15)
+					{
+						lastExpirationDate.setDate(15);
+						day = 15;
+					}
+					else
+					{
+						lastExpirationDate.setDate(10);
+						lastExpirationDate.setMonth(lastExpirationDate.getMonth() + 1);
+						day = 10;
+					}
+				}
+
+		}
+		else
+		{
+			lastExpirationDate.setDate(lastExpirationDate.getDate() + 30);
+			lastExpirationDate.setDate(day);
+		}
+		
 		
 		var fee = new Fee(number, $scope.annualRate, prevExpirationDate, lastExpirationDate, lastOpeningBalance, payment, $scope.project);
 		lastOpeningBalance = fee.finalBalance;
