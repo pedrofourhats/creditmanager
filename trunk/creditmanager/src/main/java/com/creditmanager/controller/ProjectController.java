@@ -44,14 +44,6 @@ public class ProjectController  {
 		return "content/project/simpleCollectionsAndPole";
 	}
 	
-	@RequestMapping(value="/project/paymentSchedule/{projectId}")
-	public String goToPaymentSchedule(@PathVariable long projectId, Model model){
-		ProjectDTO project = projectService.getById(projectId);
-		Gson serializer = new Gson();
-		model.addAttribute("project", serializer.toJson(project));
-		return "content/project/paymentSchedule";
-	}
-	
 //	@RequestMapping(value="/project/create")
 //    public String goToProjectCreation(Model model) {
 //		return "content/project/create";
