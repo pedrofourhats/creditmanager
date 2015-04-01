@@ -87,7 +87,7 @@
 								</div>
 							</div>
 						</div>
-    					<div role="tabpanel" class="tab-pane" id="simpleCollectionsAndPole">
+    					<div role="tabpanel" class="tab-pane" id="simpleCollectionsAndPole" style="overflow-x: auto;">
     						<table class="table table-hover table-condensed table-responsive table-report-expanded">
 								<thead>
 									<tr>

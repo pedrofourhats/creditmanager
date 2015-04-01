@@ -26,5 +26,8 @@ width: 100%;
 .withCurrency .mediumInput{
 width: 90%;
 }
-
+/*
+.tab-content > .active{
+  overflow-x: auto;
+  }*/
 </style>
