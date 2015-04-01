@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html ng-app="paymentCalendarApp">
+<html ng-app="formApp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <title>INTI</title>
@@ -11,9 +11,7 @@
   	<script>
 		var project = <%= request.getAttribute("project") %>;
 		
-		function goToProjectDetail(){
-			redirect('#/project-detail/' + project.id);
-		}
+		var formName = '<%= request.getAttribute("formName") %>';
 	</script>
   
   <!-- STYLESHEET -->
@@ -22,14 +20,12 @@
 <body>
   <%@ include file="../../include/header.jsp" %>
 
-  <div class="container forms-list" ng-controller="paymentCalendarCtrl">
+  <div class="container forms-list" ng-controller="formController">
 	    <div class="panel panel-default">
 			<div class="panel-body" role="tabpanel">
 				<h3>Cronograma de pagos</h3>
-				<button type="button" class="btn btn-primary" onclick="goToProjectDetail()">
-					<i class="fa fa-arrow-circle-left"></i> Volver
-				</button>
-				<div class="tab-content">
+				<button ng-click="goToProject()">Volver a proyecto</button>
+				<div class="tab-content" id="printableDiv">
 					<div role="tabpanel" class="tab-pane fade in active">
 						<div class="container-fluid">
 								<div class="row">
@@ -76,7 +72,20 @@
    					</div>
 				</div>
 	      </div>
+	      <div class="row">
+				<div class="col-sm-12">
+					<div class="pull-right">
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary" value="Cargar formulario" ng-show="!isEdition" ng-click="saveForm()" />
+							<input type="submit" class="btn btn-primary" value="Actualizar formulario" ng-show="isEdition" ng-click="saveForm()"/>
+							<input type="submit" class="btn btn-primary" value="Imprimir formulario" ng-click="printDiv()"/>
+						</div>
+					</div>
+				</div>
+			</div>
 	    </div>
 	</div>
+	<script src="<%=scriptPageContext %>/static/scripts/viewmodels/forms/form.js" type="text/javascript"></script>
+ 	<script src="<%=scriptPageContext %>/static/scripts/common/numberToLetter.js" type="text/javascript"></script>
 </body>
 </html>
