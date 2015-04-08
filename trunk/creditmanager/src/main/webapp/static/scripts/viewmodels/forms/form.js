@@ -53,4 +53,14 @@ formApp.controller('formController', function ($scope, $http) {
 		$scope.project.guarantors[x] = $scope.project.guarantors[y];
 		$scope.project.guarantors[y] = b;
 	};
+	
+	$scope.selectedHolder;
+	
+	if($scope.project.holders && $scope.project.holders.length > 0) {
+		$scope.selectedHolder = $scope.project.holders[0];
+	}
+	
+	$scope.selectHolder = function(holder) {
+		$scope.selectedHolder = holder;
+	};
 });
