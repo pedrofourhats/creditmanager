@@ -30,4 +30,8 @@ width: 90%;
 .tab-content > .active{
   overflow-x: auto;
   }*/
+  
+  .btn {
+    padding: 6px 6px!important;
+  }
 </style>

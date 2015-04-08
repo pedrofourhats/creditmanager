@@ -9,6 +9,10 @@ projectApp.config(function($routeProvider){
 		templateUrl : getCompletePath('templates/project-create.html'),
 		controller : 'ProjectDetailCtrl'
 	});
+	$routeProvider.when('/project-detail-readonly/:id', {
+		templateUrl : getCompletePath('templates/project-readonly.html'),
+		controller : 'ProjectDetailCtrl'
+	});
 	$routeProvider.when('/project-creation', {
 		templateUrl : getCompletePath('templates/project-create.html'),
 		controller : 'ProjectCreationCtrl'
@@ -46,6 +50,9 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
 		
 		$scope.goToDetail = function(projectId){
 			$location.path('/project-detail/' + projectId);
+		};
+		$scope.goToReadonly = function(projectId){
+			$location.path('/project-detail-readonly/' + projectId);
 		};
 		
 		$scope.remove = function(project){
