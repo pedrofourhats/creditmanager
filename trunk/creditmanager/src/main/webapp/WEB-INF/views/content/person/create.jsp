@@ -39,7 +39,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="surname">Apellido</label>
-									<input type="text" name="surname" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="1" ng-model="newPerson.surname">
+									<input type="text" name="surname" class="form-control" required maxlength="50" placeholder="Ingrese apellido" tabindex="1" ng-model="newPerson.surname">
 								</div>
 							</div>
 							<div class="col-sm-6">								
@@ -92,7 +92,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="idNumber">Número de documento</label>
-									<small class="fr">Soló números sin puntos</small>
+									<!-- <small class="fr">Soló números sin puntos</small> -->
 									<input type="text" name="idNumber" class="form-control" maxlength="10" placeholder="Ingrese número de documento" tabindex="4" ng-model="newPerson.identityNumber">
 									</div>
 							</div>
@@ -107,7 +107,7 @@
 									<!-- end VALIDACIO“N -->
 									<div class="control-group">
 										<label for="birthDate" class="control-label">Fecha de nacimiento</label>
-										<input type="date" name="birthDate" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" ng-model="newPerson.birthDate"/>	
+										<input type="date" name="birthDate" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" ng-model="newPerson.birthDate" />	
 									</div>
 								</div>
 								<div class="form-group">

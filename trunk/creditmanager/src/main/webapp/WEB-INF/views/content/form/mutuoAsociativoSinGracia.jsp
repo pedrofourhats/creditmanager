@@ -34,7 +34,7 @@
                  Contrato de mutuo entre EL POLO TECNOLÓGICO CONSTITUYENTES S.A., en su calidad de FIDUCIARIO del FIDEICOMISO SALTO GRANDE, celebrado el 10 de Junio de 2005,  y <span class="uppercase">{{project.holders[0].surname}} {{project.holders[0].name}}</span> y <span class="uppercase">{{project.holders[1].name}} {{project.holders[1].surname}}</span>                
                </h3>
                <p class="mt10">
-                 Entre el POLO TECNOLÓGICO CONSTITUYENTES S.A. en su calidad de administrador FIDUCIARIO del contrato de fideicomiso que hubiere celebrado en fecha 10 de junio de 2005 con la Comisión Administradora para el Fondo Especial de Salto Grande, representado por su apoderado para este acto CPN <span class="uppercase">Eliana Gabriela Buffa</span>, titular del DNI Nº 25.511.090 con domicilio en PARANÁ 145 Piso 4º, de la Ciudad Autónoma de Buenos Aires, en adelante el ACREEDOR, y por otra parte <span class="uppercase">{{project.holders[0].surname}} {{project.holders[0].name}}</span> con DNI Nº {{project.holders[0].identityNumber}} con domicilio en la calle <span class="uppercase">{{project.holders[0].address}}</span> , Departamento de {{departmentOnly(project.holders[0].locality)}}, Provincia de ENTRE RÌOS, en adelante el DEUDOR, se celebra el presente contrato de MUTUO, el que se sujetará a las siguientes cláusulas:
+                 Entre el POLO TECNOLÓGICO CONSTITUYENTES S.A. en su calidad de administrador FIDUCIARIO del contrato de fideicomiso que hubiere celebrado en fecha 10 de junio de 2005 con la Comisión Administradora para el Fondo Especial de Salto Grande, representado por su apoderado para este acto CPN <span class="uppercase">Elina Gabriela Buffa</span>, titular del DNI Nº 21.511.090 con domicilio en PARANÁ 145 Piso 4º, de la Ciudad Autónoma de Buenos Aires, en adelante el ACREEDOR, y por otra parte <span class="uppercase">{{project.holders[0].surname}} {{project.holders[0].name}}</span> con DNI Nº {{project.holders[0].identityNumber}} con domicilio en la calle <span class="uppercase">{{project.holders[0].address}}</span> , Departamento de {{departmentOnly(project.holders[0].locality)}}, Provincia de ENTRE RÌOS, en adelante el DEUDOR, se celebra el presente contrato de MUTUO, el que se sujetará a las siguientes cláusulas:
                </p>
                <p class="span-inline">
                  <b>PRIMERA: Monto del Préstamo</b>. El DEUDOR recibe en este acto del ACREEDOR la suma de $ {{project.givenAmount}} ({{numberToLetter(project.givenAmount)}} PESOS), mediante cheques del  Banco Credicoop Nº {{form.checkNumber}}, sirviendo el presente de eficaz recibo en legal forma, por lo cual el DEUDOR otorga a favor del ACREEDOR formal carta de adeudo.
@@ -95,9 +95,9 @@
                  <div class="col-sm-offset-3 col-sm-6 mt30">
                    Firma del representante del Fiduciario del FIDEICOMISO POLO TECNOLÓGICO CONSTITUYENTES S.A. 
                    <hr>
-                   Por poder <b>CPN <span class="uppercase">Eliana Gabriela Buffa</span></b>
+                   Por poder <b>CPN <span class="uppercase">Elina Gabriela Buffa</span></b>
                    <br>
-                   DNI Nº: 25.511.090
+                   DNI Nº: 21.511.090
                  </div>
                  <div class="clearfix"></div>
                </div>
