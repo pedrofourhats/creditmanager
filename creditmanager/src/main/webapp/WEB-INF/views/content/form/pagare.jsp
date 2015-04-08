@@ -25,6 +25,21 @@
 			<input placeholder="Día"  type="text" id="day" ng-model="form.day" class="form-control"> 
 			<input placeholder="Mes"  type="text" id="month" ng-model="form.month" class="form-control"> 
 			<input placeholder="Año"  type="text" id="year" ng-model="form.year" class="form-control"> 
+			
+			<br>
+			<label>Titular</label>
+			<div class="dropdown" tabindex="3" dropdown>
+			  <a type="button" data-toggle="dropdown">
+			    <span >
+				    {{selectedHolder.surname}} {{selectedHolder.name}}
+			    </span>
+			    <i class="fa fa-chevron-down"></i>
+			  </a>
+			  <ul class="dropdown-menu" role="menu">
+			    <li data-ng-repeat="holder in project.holders" ng-click="selectHolder(holder)"><a href="javascript:void(0);">{{holder.surname}} {{holder.name}} </a></li>
+			  </ul>
+			</div>
+		
 		</div>
 		<div class="panel-body" id="printableDiv">
 				<h3>
@@ -42,9 +57,9 @@
                 <p class="signature">
                   Firma : 
                   <br>
-                  Aclaración: <span class="uppercase">{{project.holders[0].surname}} {{project.holders[0].name}}</span>
+                  Aclaración: <span class="uppercase">{{selectedHolder.surname}} {{selectedHolder.name}}</span>
                   <br>
-                  D.N.I.  Nº : {{project.holders[0].identityNumber}}
+                  D.N.I.  Nº : {{selectedHolder.identityNumber}}
                 </p>
 	      </div>
 	      <div class="row">
