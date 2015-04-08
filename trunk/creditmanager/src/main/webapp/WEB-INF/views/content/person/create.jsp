@@ -107,7 +107,7 @@
 									<!-- end VALIDACIO“N -->
 									<div class="control-group">
 										<label for="birthDate" class="control-label">Fecha de nacimiento</label>
-										<input type="date" name="birthDate" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" ng-model="newPerson.birthDate" />	
+										<input type="date" name="birthDate" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" ng-model="newPerson.birthDate" max="1997-01-01" />	
 									</div>
 								</div>
 								<div class="form-group">
