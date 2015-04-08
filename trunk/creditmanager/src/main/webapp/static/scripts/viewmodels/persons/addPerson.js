@@ -45,17 +45,25 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 			
 			if(!$scope.isEdition) {
 				$http.post(getCompletePath("persons/createPerson"), JSON.stringify($scope.newPerson))
-				.success(function () {
-					alert('La persona ha sido agregada satisfactoriamente');
-					redirect('person/list');
+				.success(function (error) {
+					if(error.message) {
+						alert(error.message);
+					} else {
+						alert('La persona ha sido agregada satisfactoriamente');
+						redirect('person/list');
+					}
 			    }).error(function () {
 			    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
 			    });
 			} else {
 				$http.post(getCompletePath("persons/editPerson"), JSON.stringify($scope.newPerson))
-				.success(function () {
-					alert('La persona ha sido actualizada satisfactoriamente');
-					redirect('person/list');
+				.success(function (error) {
+					if(error.message) {
+						alert(error.message);
+					} else {
+						alert('La persona ha sido actualizada satisfactoriamente');
+						redirect('person/list');
+					}
 			    }).error(function () {
 			    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
 			    });

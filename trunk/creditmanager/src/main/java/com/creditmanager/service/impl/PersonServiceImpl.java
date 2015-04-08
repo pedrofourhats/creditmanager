@@ -27,12 +27,10 @@ public class PersonServiceImpl implements PersonService {
 	@Autowired
 	private PersonDAO personDAO;
 
-	@Override
 	public PersonDTO getById(Long id) {
 		return MapperUtil.map(mapper, personDAO.getById(id), PersonDTO.class);
 	}
 
-	@Override
 	public Page<PersonDTO> getAllPerson(int pageIndex, int pageSize, String searchedKeyword) {
 		Page<Person> personList;
 		
@@ -45,7 +43,6 @@ public class PersonServiceImpl implements PersonService {
 		return MapperUtil.map(mapper, personList, PersonDTO.class);
 	}
 
-	@Override
 	public void addPerson(PersonDTO person) {
 		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		try {
@@ -62,7 +59,6 @@ public class PersonServiceImpl implements PersonService {
 		personDAO.add(newPerson);
 	}
 
-	@Override
 	public void editPerson(PersonDTO person) {
 		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		try {
@@ -92,7 +88,6 @@ public class PersonServiceImpl implements PersonService {
 		personDAO.add(personToEdit);
 	}
 
-	@Override
 	public void deletePerson(long personId) throws PersonHasProjectsException {
 		Person person = this.personDAO.getById(personId);
 		if(person.getGuarantorProjects().size() > 0 || person.getHolderProjects().size() > 0){
@@ -102,8 +97,15 @@ public class PersonServiceImpl implements PersonService {
 		this.personDAO.delete(person);
 	}
 
-	@Override
 	public List<PersonDTO> autocomplete(String searchedKeyword) {
 		return MapperUtil.map(mapper, personDAO.findByName(searchedKeyword), PersonDTO.class);
+	}
+
+	public boolean existUserWithEmail(String email) {
+		return this.personDAO.existUserWithEmail(email);
+	}
+
+	public boolean existUserWithDni(String identityNumber) {
+		return this.personDAO.existUserWithDni(identityNumber);
 	}
 }

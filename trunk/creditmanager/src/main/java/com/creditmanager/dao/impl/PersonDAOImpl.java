@@ -23,7 +23,6 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<Person> findByName(String name) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
 		criteria.add(Restrictions.disjunction()
@@ -33,7 +32,6 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 		return (List<Person>) getHibernateTemplate().findByCriteria(criteria);
 	}
 
-	@Override
 	public Page<Person> getAllPerson(int pageIndex, int pageSize) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
 		criteria.addOrder(Order.asc("surname"));
@@ -41,7 +39,6 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public Page<Person> getFilteredPerson(int pageIndex, int pageSize, String searchedKeyword) {
 		Session session = hibernateTemplate.getSessionFactory().getCurrentSession();
 		DetachedCriteria detachedCriteria = DetachedCriteria.forEntityName(entityName);
@@ -63,11 +60,22 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<Person> getByIds(List<Long> ids) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
 		criteria.add(Restrictions.in("id", ids));
 		return (List<Person>) getHibernateTemplate().findByCriteria(criteria);
+	}
+
+	public boolean existUserWithEmail(String email) {
+		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
+		criteria.add(Restrictions.eq("email", email));
+		return !getHibernateTemplate().findByCriteria(criteria).isEmpty();
+	}
+
+	public boolean existUserWithDni(String identityNumber) {
+		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
+		criteria.add(Restrictions.eq("identityNumber", identityNumber));
+		return !getHibernateTemplate().findByCriteria(criteria).isEmpty();
 	}
 
 }

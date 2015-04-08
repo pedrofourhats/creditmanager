@@ -32,8 +32,18 @@ public class PersonRestController {
 	}
 	
 	@RequestMapping(value="/persons/createPerson", method = RequestMethod.POST)
-	public @ResponseBody void addPerson(@RequestBody PersonDTO person) {
+	public @ResponseBody Error addPerson(@RequestBody PersonDTO person) {
+		if(this.personService.existUserWithEmail(person.getEmail())) {
+			return new Error("Existe un usuario con el email " + person.getEmail());
+		}
+		
+		if(this.personService.existUserWithDni(person.getIdentityNumber())) {
+			return new Error("Existe un usuario con el dni " + person.getIdentityNumber());
+		}
+		
 		personService.addPerson(person);
+		
+		return new Error("");
 	}
 	
 	@RequestMapping(value="/persons/deletePerson", method = RequestMethod.POST)
@@ -42,8 +52,22 @@ public class PersonRestController {
 	}
 	
 	@RequestMapping(value="/persons/editPerson", method = RequestMethod.POST)
-	public @ResponseBody void editPerson(@RequestBody PersonDTO person) {
+	public @ResponseBody Error editPerson(@RequestBody PersonDTO person) {
+		if(this.personService.existUserWithEmail(person.getEmail())) {
+			if(this.personService.getById(person.getId()).getEmail() != person.getEmail()) {
+				return new Error("Existe un usuario con el email " + person.getEmail());
+			}
+		} 
+
+		if(this.personService.existUserWithDni(person.getIdentityNumber())) {
+			if(this.personService.getById(person.getId()).getIdentityNumber() != person.getIdentityNumber()) {
+				return new Error("Existe un usuario con el dni " + person.getIdentityNumber());
+			}
+		}
+		
 		personService.editPerson(person);
+		
+		return new Error("");
 	}
 	
 	@RequestMapping(value="/person/autocomplete/{searchedKeyword}", method=RequestMethod.GET, consumes="*/*")

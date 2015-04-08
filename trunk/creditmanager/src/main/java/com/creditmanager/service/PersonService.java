@@ -17,4 +17,6 @@ public interface PersonService {
 	void addPerson(PersonDTO person);
 	void editPerson(PersonDTO person);
 	void deletePerson(long personId) throws PersonHasProjectsException;
+	boolean existUserWithEmail(String email);
+	boolean existUserWithDni(String identityNumber);
 }
