@@ -28,7 +28,7 @@
 			
 			<br>
 			<label>Titular</label>
-			<div class="dropdown" tabindex="3" dropdown>
+			<div class="dropdown" tabindex="3" dropdown style="width: 270px; height: 30px;">
 			  <a type="button" data-toggle="dropdown">
 			    <span >
 				    {{selectedHolder.surname}} {{selectedHolder.name}}
