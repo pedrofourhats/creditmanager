@@ -105,7 +105,17 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			$scope.project.guarantors.splice(index, 1);
 		};
 		
-		self.editProject = function(){
+		self.editProject = function() {
+			if($scope.project.deliveryDate) {
+				if($scope.project.deliveryDate > new Date()) {
+					alert("La fecha de otorgamiento del cr\u00e9dito debe ser menor que la fecha actual");
+					return;
+				} else if($scope.project.deliveryDate < $scope.project.dateOfEntry) {
+					alert("La fecha de otorgamiento del cr\u00e9dito debe ser mayor que la de ingreso al INTI");
+					return;
+				}
+			}
+			
 			var projectToEdit = $scope.project;
 			delete projectToEdit.formattedDeliveryDate;
 			projectToEdit.guarantors = 
