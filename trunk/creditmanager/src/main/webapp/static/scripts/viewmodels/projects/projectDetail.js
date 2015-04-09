@@ -110,6 +110,9 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 				if($scope.project.deliveryDate > new Date()) {
 					alert("La fecha de otorgamiento del cr\u00e9dito debe ser menor que la fecha actual");
 					return;
+				} else if(!$scope.project.dateOfEntry) {
+					alert("Para ingresar la fecha de otorgamiento del cr\u00e9dito debe primero ingresar la fecha de ingreso al INTI");
+					return;
 				} else if($scope.project.deliveryDate < $scope.project.dateOfEntry) {
 					alert("La fecha de otorgamiento del cr\u00e9dito debe ser mayor que la de ingreso al INTI");
 					return;
