@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.creditmanager.dao.ReportDAO;
-import com.creditmanager.model.report.DefaultProjects;
+import com.creditmanager.model.report.DefaultingProject;
 import com.creditmanager.model.report.SocioeconomicIndicator;
 import com.creditmanager.service.ReportService;
 
@@ -18,7 +18,7 @@ public class ReportServiceImpl implements ReportService{
 	private ReportDAO reportDao;
 	
 	@Override
-	public List<DefaultProjects> getDefaultProjects() {
+	public List<DefaultingProject> getDefaultProjects() {
 		return reportDao.getDefaultProjects();
 	}
 
