@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.creditmanager.model.report.DefaultingProject;
 import com.creditmanager.model.report.SocioeconomicIndicator;
 import com.creditmanager.service.ReportService;
 
@@ -26,5 +27,10 @@ public class ReportRestController {
 		Date startDate = formatter.parse(dateFrom);
 		Date endDate = formatter.parse(dateTo);
 		return reportService.getSocioeconomicIndicator(startDate, endDate);
+	}
+	
+	@RequestMapping(value="/report/api/defaultingProjects", method=RequestMethod.GET, consumes="*/*")
+	public @ResponseBody List<DefaultingProject> getDefaultinProjectsReport(){
+		return reportService.getDefaultProjects();
 	}
 }

@@ -10,7 +10,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.creditmanager.dao.ReportDAO;
-import com.creditmanager.model.report.DefaultProjects;
+import com.creditmanager.model.report.DefaultingProject;
 import com.creditmanager.model.report.SocioeconomicIndicator;
 
 @Repository
@@ -20,10 +20,10 @@ public class ReportDAOImpl implements ReportDAO {
 	protected HibernateTemplate hibernateTemplate;
 	
 	@Override
-	public List<DefaultProjects> getDefaultProjects() {
+	public List<DefaultingProject> getDefaultProjects() {
 		Query query = getCurrentSession().createSQLQuery(
-				"CALL GetDefaultProjects()")
-				.addEntity(DefaultProjects.class);
+				"CALL rep_defaultingProjects()")
+				.addEntity(DefaultingProject.class);
 		List result = query.list();
 		
 		return result;
