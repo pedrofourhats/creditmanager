@@ -8,12 +8,30 @@
 	<!-- SCRIPTS -->
 	<%@ include file="../../include/scripts.jsp" %>
 	
+	<script type="text/javascript">
+		angular.module('repApp', [])
+		.controller('repController', function($scope, $http){
+			$scope.items = [];
+			
+			$scope.generateReport = function(){
+				$http.get(getCompletePath("report/api/defaultingProjectsDetail"), {})
+				.success(function (items) {
+					$scope.items = items;
+			    }).error(function () {
+			    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
+			    });
+			};
+			
+			$scope.generateReport();
+		});
+	</script>
+	
 	<!-- STYLESHEET -->
 	<%@ include file="../../include/styles.jsp" %>
 </head>
-<body>
+<body ng-app="repApp">
 	<%@ include file="../../include/header.jsp" %>
-	<div class="container">
+	<div class="container" ng-controller="repController">
 		<ol class="breadcrumb">
 		  <li><a href="#"><i class="fa fa-angel-right"></i> Listado de reportes</a></li>
 		  <li class="active"><i class="fa fa-angel-right"></i> Detalle de reporte</li>
@@ -21,25 +39,25 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3>Cartera en mora.</h3>
-				<div class="row mt20">
-					<div class="col-sm-12">
-						<div class="form-inline">
-							<div class="form-group">
-								<label>Fecha</label>
-								<div class="dropdown">
-								  <a id="" type="button" data-toggle="dropdown">
-								    Seleccionar fecha
-								    <i class="fa fa-chevron-down"></i>
-								  </a>
-								  <ul class="dropdown-menu">
-								    <li><a href="#">2/1/2015</a></li>
-							          <li><a href="#">2/1/2015</a></li>
-								  </ul>
-								</div>
-							</div>
-						</div>		
-					</div>
-				</div>
+<!-- 				<div class="row mt20"> -->
+<!-- 					<div class="col-sm-12"> -->
+<!-- 						<div class="form-inline"> -->
+<!-- 							<div class="form-group"> -->
+<!-- 								<label>Fecha</label> -->
+<!-- 								<div class="dropdown"> -->
+<!-- 								  <a id="" type="button" data-toggle="dropdown"> -->
+<!-- 								    Seleccionar fecha -->
+<!-- 								    <i class="fa fa-chevron-down"></i> -->
+<!-- 								  </a> -->
+<!-- 								  <ul class="dropdown-menu"> -->
+<!-- 								    <li><a href="#">2/1/2015</a></li> -->
+<!-- 							          <li><a href="#">2/1/2015</a></li> -->
+<!-- 								  </ul> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div>		 -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 				<div class="row">
 					<div class="col-sm-12">
 						<table class="table table-hover table-condensed table-responsive table-report-detail-expanded">
@@ -90,45 +108,31 @@
 							</tr>
 						  </thead>
 						  <tbody>
-							<tr>
-							  <td>YYY</td>	
+							<tr ng-repeat="item in items">
+							  <td>{{item.projectNumber}}</td>	
+							  <td>{{item.name}}</td>
+							  <td>{{item.givenAmount}}</td>
+							  <td>{{item.formattedDate}}</td>
 							  <td>YYY</td>
 							  <td>YYY</td>
+							  <td>{{item.givenDeadline}}</td>
+							  <td>{{item.paid}}</td>
 							  <td>YYY</td>
 							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							</tr>
-							<tr>
-							  <td>YYY</td>	
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
-							  <td>YYY</td>
+							  <td>{{item.unpaid}}</td>
 							  <td>YYY</td>
 							</tr>
 						  </tbody>
 						</table>
-						<nav>
-						  <ul class="pagination pull-right">
-							<li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-						  </ul>
-						</nav>
+<!-- 						<nav> -->
+<!-- 						  <ul class="pagination pull-right"> -->
+<!-- 							<li><a href="#"><i class="fa fa-chevron-left"></i></a></li> -->
+<!-- 							<li><a href="#">1</a></li> -->
+<!-- 							<li><a href="#">2</a></li> -->
+<!-- 							<li><a href="#">3</a></li> -->
+<!-- 							<li><a href="#"><i class="fa fa-chevron-right"></i></a></li> -->
+<!-- 						  </ul> -->
+<!-- 						</nav> -->
 					</div>
 				</div>
 				<hr>
