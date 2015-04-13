@@ -89,16 +89,17 @@
 					  </thead>
 					  <tbody>
 						<tr ng-repeat="person in personsPage.elements">
-						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.surname}}</td>
-						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.name}}</td>
-						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.identityNumber}}</td>
-						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.formattedBirthDate}}</td>
-						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.genderName}}</td>
-						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.phone}}</td>
-						  <td ng-click="goToDetail(person)" style="cursor: pointer">{{person.cellPhone}}</td>
-						  <td class="txtC">
+						  <td  style="cursor: pointer">{{person.surname}}</td>
+						  <td  style="cursor: pointer">{{person.name}}</td>
+						  <td  style="cursor: pointer">{{person.identityNumber}}</td>
+						  <td  style="cursor: pointer">{{person.formattedBirthDate}}</td>
+						  <td  style="cursor: pointer">{{person.genderName}}</td>
+						  <td  style="cursor: pointer">{{person.phone}}</td>
+						  <td  style="cursor: pointer">{{person.cellPhone}}</td>
+						  <td class="txtPerson">
 							<button type="button" class="btn btn-link" ng-click="goToEditPerson(person)"><i class="fa fa-pencil txtSuccess"></i></button>
 							<button type="button" class="btn btn-link" ng-click="deletePerson(person)"><i class="fa fa-trash txtDanger"></i></button>
+							<button type="button" class="btn btn-link" ng-click="goToDetail(person)"><i class="fa fa-eye txtSuccess"></i></button>	
 						  </td>
 						</tr>
 					  </tbody>

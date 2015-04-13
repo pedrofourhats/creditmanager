@@ -85,18 +85,35 @@
 						  </th>
 						  <th>ID Proyecto</th>
 						  <th>Cargo</th>
+						  <th>Acciones</th>
 						</tr>
 					  </thead>
 					  <tbody>
 						<tr ng-repeat="project in guarantorProjects">
-						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">{{project.title}}</a></td>
-						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">{{project.number}}</a></td>
-						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">Garante</a></td>
+						  <td>{{project.title}}</td>
+						  <td>{{project.number}}</td>
+						  <td>Garante</td>
+						  <td>
+								<button type="button" class="btn btn-link" ng-click="goToProject(project.id)">
+									<i class="fa fa-pencil txtSuccess"></i>
+								</button>
+								<button type="button" class="btn btn-link" ng-click="goToProjectReadOnly(project.id)">
+									<i class="fa fa-eye txtSuccess"></i>
+								</button>								
+							</td>
 						</tr>
 						<tr ng-repeat="project in holderProjects">
-						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">{{project.title}}</a></td>
-						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">{{project.number}}</a></td>
-						  <td><a href="javascript:void(0);" ng-click="goToProject(project.id)">Titular</a></td>
+						  <td>{{project.title}}</td>
+						  <td>{{project.number}}</td>
+						  <td>Titular</td>
+						  <td>
+								<button type="button" class="btn btn-link" ng-click="goToProject(project.id)">
+									<i class="fa fa-pencil txtSuccess"></i>
+								</button>
+								<button type="button" class="btn btn-link" ng-click="goToProjectReadOnly(project.id)">
+									<i class="fa fa-eye txtSuccess"></i>
+								</button>								
+							</td>
 						</tr>
 					  </tbody>
 					</table>

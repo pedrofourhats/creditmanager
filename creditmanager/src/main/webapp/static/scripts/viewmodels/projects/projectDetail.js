@@ -9,6 +9,7 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		$scope.project.guarantors = [];
 		$scope.loadProjectButtonName = 'Guardar proyecto';
 		$scope.loadProjectButtonEnable = true;
+
 		
 		$scope.servicers = [{name: "INTI"}, {name: "INTA"}];
 		
@@ -93,9 +94,13 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		    });
 		};
 		
-		$scope.goToForm = function(formName) {
-			redirect('forms/' + formName + '/' + $scope.projectId);
+		$scope.cancelEdit = function() {
+			if (confirm("¿Esta seguro que desea salir sin guardar los cambios?")) {
+				history.go(-1);
+			}
 		};
+		
+		
 		
 		$scope.deleteHolder = function(index){
 			$scope.project.holders.splice(index, 1);
@@ -106,6 +111,7 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		};
 		
 		self.editProject = function() {
+			$scope.project.number = $scope.project.numberId + '/' + $scope.project.numberYear;
 			if($scope.project.deliveryDate) {
 				if($scope.project.deliveryDate > new Date()) {
 					alert("La fecha de otorgamiento del cr\u00e9dito debe ser menor que la fecha actual");
@@ -177,7 +183,13 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		};
 		
 		$http.get(getCompletePath("projects/findById/" + $scope.projectId), {})
+		
 		.success(function(project){
+			if(project && project.number){
+				var res = project.number.split('/');
+				project.numberId = res[0];
+				project.numberYear = res[1];
+			}
 			project.dateOfEntry = new Date(project.dateOfEntry);
 			project.deliveryDate = new Date(project.deliveryDate);
 			$scope.project = project;

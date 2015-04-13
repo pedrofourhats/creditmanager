@@ -84,7 +84,7 @@
 									  </ul>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group idNumberInput">
 									<!-- VALIDACIO“N -->
 									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.idNumber.$dirty && createPersonForm.idNumber.$invalid">
 									  <div class="tooltip-arrow"></div>
@@ -93,7 +93,10 @@
 									<!-- end VALIDACIO“N -->
 									<label for="idNumber">Número de documento</label>
 									<!-- <small class="fr">Soló números sin puntos</small> -->
-									<input type="text" name="idNumber" class="form-control" maxlength="10" placeholder="Ingrese número de documento" tabindex="4" ng-model="newPerson.identityNumber">
+									<input type="text" name="idNumberGenere" class="form-control" maxlength="1" placeholder="M/F" tabindex="4" onkeypress='return event.charCode == 102 || event.charCode == 109' ng-model="newPerson.identityNumberGenere">
+									<input type="number" name="idNumberFirstPart" class="form-control" maxlength="2" placeholder="" tabindex="4" min="0" max="99" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberFirstPart"><span>.</span> 
+									<input type="number" name="idNumberSecondPart" class="form-control" maxlength="3" placeholder="" tabindex="4" min="0" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberSecondPart"><span>.</span> 
+									<input type="number" name="idNumberThirdPart" class="form-control" maxlength="3" placeholder="" tabindex="4" min="0" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberThirdPart">
 									</div>
 							</div>
 							<div class="col-sm-4">
@@ -137,7 +140,7 @@
 								</div>								
 							</div>
 							<div class="col-sm-4">
-								<div class="form-group">
+								<div class="form-group cellphoneInput">
 									<!-- VALIDACIO“N -->
 									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.cellPhone.$dirty && createPersonForm.cellPhone.$invalid">
 									  <div class="tooltip-arrow"></div>
@@ -146,7 +149,8 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="cellPhone">Celular</label>
-									<input type="number" name="cellPhone" class="form-control" maxlength="20" placeholder="Ingrese celular" tabindex="7" ng-model="newPerson.cellPhone">
+									<input type="text" name="cellPhoneAreaCode" class="form-control" maxlength="20" placeholder="COD AREA" tabindex="7" ng-model="newPerson.cellPhoneAreaCode">
+									<input type="text" name="cellPhoneNumber" class="form-control" maxlength="20" placeholder="NUMERO" tabindex="7" ng-model="newPerson.cellPhoneNumber">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
