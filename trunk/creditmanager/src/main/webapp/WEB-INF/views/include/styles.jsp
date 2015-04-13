@@ -34,4 +34,51 @@ width: 90%;
   .btn {
     padding: 6px 6px!important;
   }
+  
+  .idNumberInput input{
+  width: 50px;
+  float: left;
+  margin-left: 10px;
+  }
+  
+  .cellphoneInput{
+  display: inline-block;
+  }
+  
+  .cellphoneInput input{
+  width: 100px;
+  float: left;
+  margin-left: 10px;
+  }
+  
+    
+  .cellphoneInput label{
+  width: 100%;
+  }
+  
+  .idNumberInput label{
+  width: 100%;
+  }
+  
+    .idNumberInput span{
+  	float: left;
+    margin-left: 10px;
+      line-height: 40px;
+  }
+  .txtPerson{
+  display: inline-block;
+  width: 96px;
+  }
+  
+  .projectNumberInput input{
+    width: 100px;
+  float: left;
+  margin-left: 10px;
+  }
+  
+      .projectNumberInput span{
+  	float: left;
+    margin-left: 10px;
+      line-height: 40px;
+  }
 </style>

@@ -18,6 +18,9 @@ personDetailApp.controller('personDetailController', function ($scope, $http) {
 	$scope.goToProject = function(id) {
 		redirect('project/list#/project-detail/' + id);
 	};
+	$scope.goToProjectReadOnly = function(id) {
+		redirect('project/list#/project-detail-readonly/' + id);
+	};
 });
 
 function getIdentityTypeName(identityTypeName) {
