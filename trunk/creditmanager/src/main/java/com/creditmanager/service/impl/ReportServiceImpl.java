@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.creditmanager.dao.ReportDAO;
 import com.creditmanager.model.report.DefaultingProject;
+import com.creditmanager.model.report.DefaultingProjectDetail;
 import com.creditmanager.model.report.SocioeconomicIndicator;
 import com.creditmanager.service.ReportService;
 
@@ -25,6 +26,11 @@ public class ReportServiceImpl implements ReportService{
 	@Override
 	public List<SocioeconomicIndicator> getSocioeconomicIndicator(Date dateFrom, Date dateTo) {
 		return reportDao.getSocioeconomicIndicator(dateFrom, dateTo);
+	}
+
+	@Override
+	public List<DefaultingProjectDetail> getDefaultingProjectDetail() {
+		return reportDao.getDefaultingProjectDetail();
 	}
 
 }

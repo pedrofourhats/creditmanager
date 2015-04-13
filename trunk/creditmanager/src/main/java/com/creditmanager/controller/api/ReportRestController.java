@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.creditmanager.model.report.DefaultingProject;
+import com.creditmanager.model.report.DefaultingProjectDetail;
 import com.creditmanager.model.report.SocioeconomicIndicator;
 import com.creditmanager.service.ReportService;
 
@@ -32,5 +33,10 @@ public class ReportRestController {
 	@RequestMapping(value="/report/api/defaultingProjects", method=RequestMethod.GET, consumes="*/*")
 	public @ResponseBody List<DefaultingProject> getDefaultinProjectsReport(){
 		return reportService.getDefaultProjects();
+	}
+	
+	@RequestMapping(value="/report/api/defaultingProjectsDetail", method=RequestMethod.GET, consumes="*/*")
+	public @ResponseBody List<DefaultingProjectDetail> getDefaultinProjectsDetailReport(){
+		return reportService.getDefaultingProjectDetail();
 	}
 }
