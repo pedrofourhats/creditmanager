@@ -57,6 +57,15 @@ public class Person extends com.creditmanager.model.Entity implements Comparable
 	@Column(name="address")
 	private String address;
 	
+	@Column(name="addressNumber")
+	private String addressNumber;
+
+	@Column(name="addressFloor")
+	private String addressFloor;
+
+	@Column(name="addressAppartment")
+	private String addressAppartment;
+	
 	@Column(name="postCode")
 	private String postCode;
 	
@@ -70,7 +79,7 @@ public class Person extends com.creditmanager.model.Entity implements Comparable
 	}
 	
 	public Person(String name, String surname, IdentityType identityType, String identityNumber, Date birthDate, Gender gender, String phone, String workPhone, String cellPhone, String email, String province,
-			String locality, String address, String postCode){
+			String locality, String address, String addressNumber, String addressFloor, String addressAppartment, String postCode){
 		this.name = name;
 		this.surname = surname;
 		this.identityType = identityType;
@@ -84,6 +93,9 @@ public class Person extends com.creditmanager.model.Entity implements Comparable
 		this.province = province;
 		this.locality = locality;
 		this.address = address;
+		this.addressNumber = addressNumber;
+		this.addressFloor = addressFloor;
+		this.addressAppartment = addressAppartment;
 		this.postCode = postCode;
 	}
 	
@@ -215,6 +227,30 @@ public class Person extends com.creditmanager.model.Entity implements Comparable
 
 	public void setHolderProjects(Set<Project> holderProjects) {
 		this.holderProjects = holderProjects;
+	}
+
+	public String getAddressNumber() {
+		return addressNumber;
+	}
+
+	public void setAddressNumber(String addressNumber) {
+		this.addressNumber = addressNumber;
+	}
+
+	public String getAddressFloor() {
+		return addressFloor;
+	}
+
+	public void setAddressFloor(String addressFloor) {
+		this.addressFloor = addressFloor;
+	}
+
+	public String getAddressAppartment() {
+		return addressAppartment;
+	}
+
+	public void setAddressAppartment(String addressAppartment) {
+		this.addressAppartment = addressAppartment;
 	}
 
 	@Override

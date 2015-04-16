@@ -213,6 +213,12 @@
 									<!-- end VALIDACIO“N -->
 									<label for="address">Dirección</label>
 									<input type="text" name="address" class="form-control" maxlength="100" placeholder="Ingrese dirección" tabindex="11" ng-model="newPerson.address">
+									<label for="addressNumber">Numero</label>
+									<input type="text" name="addressNumber" class="form-control" maxlength="45" placeholder="Ingrese número" tabindex="12" ng-model="newPerson.addressNumber">
+									<label for="addressFloor">Piso</label>
+									<input type="text" name="addressFloor" class="form-control" maxlength="45" placeholder="Ingrese piso" tabindex="13" ng-model="newPerson.addressFloor">
+									<label for="addressAppartment">Departamento</label>
+									<input type="text" name="addressAppartment" class="form-control" maxlength="45" placeholder="Ingrese departamento" tabindex="14" ng-model="newPerson.addressAppartment">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
@@ -222,7 +228,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="postCode">Código postal</label>
-									<input type="text" name="postCode" class="form-control" maxlength="10" placeholder="Ingrese código postal" tabindex="12" ng-model="newPerson.postCode">
+									<input type="text" name="postCode" class="form-control" maxlength="10" placeholder="Ingrese código postal" tabindex="15" ng-model="newPerson.postCode">
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -235,7 +241,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="phone">Teléfono</label>
-									<input type="number" name="phone" class="form-control" maxlength="20" placeholder="Ingrese teléfono" tabindex="13" ng-model="newPerson.phone">
+									<input type="number" name="phone" class="form-control" maxlength="20" placeholder="Ingrese teléfono" tabindex="16" ng-model="newPerson.phone">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
@@ -246,7 +252,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="workphone">Teléfono laboral</label>
-									<input type="number" name="workphone" class="form-control" maxlength="20" placeholder="Ingrese teléfono laboral" tabindex="14" ng-model="newPerson.workPhone">
+									<input type="number" name="workphone" class="form-control" maxlength="20" placeholder="Ingrese teléfono laboral" tabindex="17" ng-model="newPerson.workPhone">
 								</div>
 							</div>							
 						</div>
@@ -255,8 +261,8 @@
 							<div class="col-sm-12">
 								<div class="pull-right">
 									<div class="form-group">
-										<input type="submit" class="btn btn-primary" tabindex="15" value="Guardar persona" ng-show="!isEdition" ng-disabled="createPersonForm.$invalid" />
-										<input type="submit" class="btn btn-primary" tabindex="15" value="Actualizar persona" ng-show="isEdition" ng-disabled="createPersonForm.$invalid" />
+										<input type="submit" class="btn btn-primary" tabindex="18" value="Guardar persona" ng-show="!isEdition" ng-disabled="createPersonForm.$invalid" />
+										<input type="submit" class="btn btn-primary" tabindex="18" value="Actualizar persona" ng-show="isEdition" ng-disabled="createPersonForm.$invalid" />
 									</div>
 								</div>
 							</div>

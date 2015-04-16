@@ -55,7 +55,7 @@ public class PersonServiceImpl implements PersonService {
 		}
 		
 		Person newPerson = new Person(person.getName(), person.getSurname(), person.getIdentityType(), person.getIdentityNumber(), person.getBirthDate(), person.getGender(), person.getPhone(), person.getWorkPhone(),
-				person.getCellPhone(), person.getEmail(), person.getProvince(), person.getLocality(), person.getAddress(), person.getPostCode());
+				person.getCellPhone(), person.getEmail(), person.getProvince(), person.getLocality(), person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getPostCode());
 		personDAO.add(newPerson);
 	}
 
@@ -72,6 +72,9 @@ public class PersonServiceImpl implements PersonService {
 		
 		Person personToEdit = personDAO.getById(person.getId());
 		personToEdit.setAddress(person.getAddress());
+		personToEdit.setAddressAppartment(person.getAddressAppartment());
+		personToEdit.setAddressNumber(person.getAddressNumber());
+		personToEdit.setAddressFloor(person.getAddressFloor());
 		personToEdit.setBirthDate(person.getBirthDate());
 		personToEdit.setCellPhone(person.getCellPhone());
 		personToEdit.setEmail(person.getEmail());
@@ -113,8 +116,7 @@ public class PersonServiceImpl implements PersonService {
 		return this.personDAO.existPersonWithName(name, surname);
 	}
 
-	@Override
-	public boolean existPersonWithAddress(String address, String locality, String province) {
-		return this.personDAO.existPersonWithAddress(address, locality, province);
+	public boolean existPersonWithAddress(String address, String addressNumber, String addressFloor, String addressAppartment, String locality, String province) {
+		return this.personDAO.existPersonWithAddress(address, addressNumber, addressFloor, addressAppartment, locality, province);
 	}
 }

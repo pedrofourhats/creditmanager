@@ -65,6 +65,18 @@
         <b>address</b>
       </field>
       <field>
+        <a>addressNumber</a>
+        <b>addressNumber</b>
+      </field>
+      <field>
+        <a>addressFloor</a>
+        <b>addressFloor</b>
+      </field>
+      <field>
+        <a>addressAppartment</a>
+        <b>addressAppartment</b>
+      </field>
+      <field>
         <a>postCode</a>
         <b>postCode</b>
       </field>

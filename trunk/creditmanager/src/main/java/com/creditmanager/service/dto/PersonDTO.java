@@ -35,8 +35,14 @@ public class PersonDTO {
 	private String email;
 	
 	private String province;
-	
+
 	private String address;
+	
+	private String addressNumber;
+	
+	private String addressFloor;
+	
+	private String addressAppartment;
 	
 	private String locality;
 	
@@ -170,6 +176,30 @@ public class PersonDTO {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public String getAddressNumber() {
+		return addressNumber;
+	}
+
+	public void setAddressNumber(String addressNumber) {
+		this.addressNumber = addressNumber;
+	}
+
+	public String getAddressFloor() {
+		return addressFloor;
+	}
+
+	public void setAddressFloor(String addressFloor) {
+		this.addressFloor = addressFloor;
+	}
+
+	public String getAddressAppartment() {
+		return addressAppartment;
+	}
+
+	public void setAddressAppartment(String addressAppartment) {
+		this.addressAppartment = addressAppartment;
 	}
 
 	public String getLocality() {

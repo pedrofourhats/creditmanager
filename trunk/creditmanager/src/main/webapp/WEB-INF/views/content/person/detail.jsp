@@ -63,7 +63,7 @@
 							Localidad: <span class="txtBlue">{{person.locality}}</span>
 						</div>
 						<div class="col-sm-4">
-							Dirección: <span class="txtBlue">{{person.address}}</span>
+							Dirección: <span class="txtBlue">{{person.address}} {{person.addressNumber}} {{person.addressFloor}} {{person.addressAppartment}}</span>
 							<br>
 							Código postal: <span class="txtBlue">{{person.postCode}}</span>
 						</div>
