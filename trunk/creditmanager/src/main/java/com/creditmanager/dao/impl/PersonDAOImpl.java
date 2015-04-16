@@ -74,7 +74,7 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 
 	public boolean existUserWithDni(String identityNumber) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
-		criteria.add(Restrictions.eq("identityNumber", identityNumber));
+		criteria.add(Restrictions.like("identityNumber", "%" + identityNumber));
 		return !getHibernateTemplate().findByCriteria(criteria).isEmpty();
 	}
 

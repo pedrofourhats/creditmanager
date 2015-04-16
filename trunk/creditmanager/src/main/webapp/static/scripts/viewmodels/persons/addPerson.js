@@ -72,7 +72,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 				$http.post(getCompletePath("persons/createPerson"), JSON.stringify($scope.newPerson))
 				.success(function (error) {
 					if(error.error && error.type == "Error") {
-						alert(error.message);
+						alert(error.error);
 					} else if (error.error&& error.type == "Warning") {
 						if(confirm(error.error)) {
 							$http.post(getCompletePath("persons/createPersonWithoutValidation"), JSON.stringify($scope.newPerson))
@@ -94,7 +94,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 				$http.post(getCompletePath("persons/editPerson"), JSON.stringify($scope.newPerson))
 				.success(function (error) {
 					if(error.error && error.type == "Error") {
-						alert(error.message);
+						alert(error.error);
 					} else if (error.error&& error.type == "Warning") {
 						if(confirm(error.error)) {
 							$http.post(getCompletePath("persons/editPersonWithoutValidation"), JSON.stringify($scope.newPerson))
