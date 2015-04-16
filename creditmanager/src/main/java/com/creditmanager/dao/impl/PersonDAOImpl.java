@@ -78,4 +78,18 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 		return !getHibernateTemplate().findByCriteria(criteria).isEmpty();
 	}
 
+	public boolean existPersonWithName(String name, String surname) {
+		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
+		criteria.add(Restrictions.eq("name", name));
+		criteria.add(Restrictions.eq("surname", surname));
+		return !getHibernateTemplate().findByCriteria(criteria).isEmpty();
+	}
+
+	public boolean existPersonWithAddress(String address, String locality, String province) {
+		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
+		criteria.add(Restrictions.eq("address", address));
+		criteria.add(Restrictions.eq("locality", locality));
+		criteria.add(Restrictions.eq("province", province));
+		return !getHibernateTemplate().findByCriteria(criteria).isEmpty();
+	}
 }

@@ -19,4 +19,6 @@ public interface PersonService {
 	void deletePerson(long personId) throws PersonHasProjectsException;
 	boolean existUserWithEmail(String email);
 	boolean existUserWithDni(String identityNumber);
+	boolean existPersonWithName(String name, String surname);
+	boolean existPersonWithAddress(String address, String locality, String province);
 }

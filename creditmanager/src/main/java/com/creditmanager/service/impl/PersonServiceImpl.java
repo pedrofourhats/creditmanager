@@ -108,4 +108,13 @@ public class PersonServiceImpl implements PersonService {
 	public boolean existUserWithDni(String identityNumber) {
 		return this.personDAO.existUserWithDni(identityNumber);
 	}
+
+	public boolean existPersonWithName(String name, String surname) {
+		return this.personDAO.existPersonWithName(name, surname);
+	}
+
+	@Override
+	public boolean existPersonWithAddress(String address, String locality, String province) {
+		return this.personDAO.existPersonWithAddress(address, locality, province);
+	}
 }
