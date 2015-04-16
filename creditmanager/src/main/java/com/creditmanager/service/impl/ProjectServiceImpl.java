@@ -82,7 +82,8 @@ public class ProjectServiceImpl implements ProjectService {
 		Project project = new Project(projectDto.getDateOfEntry(), projectDto.getNumber(), projectDto.getServicers(), projectDto.getSituationState(), 
 			projectDto.getEvaluator(), projectDto.getAccesor(), guarantors, holders, projectDto.getInvestmentDestination(), projectDto.getTitle(), projectDto.getType(),
 			projectDto.getEconomicArea(), projectDto.getEconomicActivity(), projectDto.getCategory(), projectDto.getRequestedAmount(), projectDto.getRequestedDeadline(),
-			projectDto.getRequestedGracePeriod(), projectDto.getGivenGracePeriod(), projectDto.getDeliveryDate(), projectDto.getGivenAmount(), projectDto.getGivenDeadline());
+			projectDto.getRequestedGracePeriod(), projectDto.getGivenGracePeriod(), projectDto.getDeliveryDate(), projectDto.getGivenAmount(), projectDto.getGivenDeadline(),
+			projectDto.getOriginalRate(), projectDto.getEffectiveRate());
 		projectDao.add(project);
 		
 		return mapper.map(project, ProjectDTO.class);
@@ -107,7 +108,7 @@ public class ProjectServiceImpl implements ProjectService {
 		projectToEdit.update(project.getDateOfEntry(), project.getNumber(), project.getServicers(), project.getSituationState(), guarantors, holders, 
 			project.getInvestmentDestination(), project.getTitle(), project.getType(), project.getEconomicArea(), project.getEconomicActivity(), project.getCategory(), 
 			project.getRequestedAmount(), project.getRequestedDeadline(), project.getRequestedGracePeriod(), project.getGivenGracePeriod(),
-			project.getDeliveryDate(), project.getGivenAmount(), project.getGivenDeadline(), project.getDefaultForms());
+			project.getDeliveryDate(), project.getGivenAmount(), project.getGivenDeadline(), project.getDefaultForms(), project.getOriginalRate(), project.getEffectiveRate());
 		projectDao.add(projectToEdit);
 	}
 	
