@@ -75,6 +75,12 @@ public class Project extends com.creditmanager.model.Entity {
 	@Column(name="accesor")
 	private String accesor;
 	
+	@Column(name="originalRate")
+	private String originalRate;
+	
+	@Column(name="effectiveRate")
+	private String effectiveRate;
+	
 	@ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinTable(name="projectGuarantor", 
 		joinColumns = { @JoinColumn(name="projectId", nullable=false, updatable=false) },
@@ -127,7 +133,7 @@ public class Project extends com.creditmanager.model.Entity {
 			Set<Person> guarantors, Set<Person> holders, String investmentDestination, String title, String type,
 			String economicArea, String economicActivity, String category, Double requestedAmount, 
 			String requestedDeadline, int requestedGracePeriod, int givenGracePeriod, 
-			Date deliveryDate, Double givenAmount, int givenDeadline) {
+			Date deliveryDate, Double givenAmount, int givenDeadline, String originalRate, String effectiveRate) {
 		this.dateOfEntry = dateOfEntry;
 		this.number = number;
 		this.servicers = servicers;
@@ -152,6 +158,8 @@ public class Project extends com.creditmanager.model.Entity {
 		this.givenAmount = givenAmount;
 		this.givenDeadline = givenDeadline;
 		
+		this.originalRate = originalRate;
+		this.effectiveRate = effectiveRate;
 	}
 
 	public String getNumber() {
@@ -335,9 +343,25 @@ public class Project extends com.creditmanager.model.Entity {
 		this.payments = payments;
 	}
 
+	public String getOriginalRate() {
+		return originalRate;
+	}
+
+	public void setOriginalRate(String originalRate) {
+		this.originalRate = originalRate;
+	}
+
+	public String getEffectiveRate() {
+		return effectiveRate;
+	}
+
+	public void setEffectiveRate(String effectiveRate) {
+		this.effectiveRate = effectiveRate;
+	}
+
 	public void update(Date dateOfEntry, String number, String servicers, String situationState, Set<Person> guarantors, Set<Person> holders, 
 		String investmentDestination,String title, String type, String economicArea, String economicActivity, String category, Double requestedAmount, String requestedDeadline,
-		int requestedGracePeriod, int givenGracePeriod, Date deliveryDate, Double givenAmount, int givenDeadline, String defaultForms){
+		int requestedGracePeriod, int givenGracePeriod, Date deliveryDate, Double givenAmount, int givenDeadline, String defaultForms, String originalRate, String effectiveRate){
 		
 		this.title = title;
 		this.type = type;
@@ -360,6 +384,9 @@ public class Project extends com.creditmanager.model.Entity {
 		this.holders = holders;
 		this.investmentDestination = investmentDestination;
 		this.defaultForms = defaultForms;
+		
+		this.originalRate = originalRate;
+		this.effectiveRate = effectiveRate;
 	}
 	
 	public boolean isInDebt(){

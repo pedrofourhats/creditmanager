@@ -63,6 +63,10 @@ public class ProjectDTO {
 	
 	private String defaultForms;
 	
+	private String originalRate;
+	
+	private String effectiveRate;
+	
 	public Long getId() {
 		return id;
 	}
@@ -294,5 +298,21 @@ public class ProjectDTO {
 
 	public void setPayments(Set<PaymentDTO> payments) {
 		this.payments = payments;
+	}
+
+	public String getOriginalRate() {
+		return originalRate;
+	}
+
+	public void setOriginalRate(String originalRate) {
+		this.originalRate = originalRate;
+	}
+
+	public String getEffectiveRate() {
+		return effectiveRate;
+	}
+
+	public void setEffectiveRate(String effectiveRate) {
+		this.effectiveRate = effectiveRate;
 	}
 }

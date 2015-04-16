@@ -116,5 +116,13 @@
       	<a>payments</a>
       	<b>payments</b>
       </field>
+      <field>
+      	<a>originalRate</a>
+      	<b>originalRate</b>
+      </field>
+      <field>
+      	<a>effectiveRate</a>
+      	<b>effectiveRate</b>
+      </field>
   </mapping>
 </mappings>
