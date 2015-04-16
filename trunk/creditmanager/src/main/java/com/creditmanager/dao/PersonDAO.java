@@ -12,4 +12,6 @@ public interface PersonDAO extends GenericDAO<Person, Long> {
 	List<Person> getByIds(List<Long> ids);
 	boolean existUserWithEmail(String email);
 	boolean existUserWithDni(String identityNumber);
+	boolean existPersonWithName(String name, String surname);
+	boolean existPersonWithAddress(String address, String locality, String province);
 }

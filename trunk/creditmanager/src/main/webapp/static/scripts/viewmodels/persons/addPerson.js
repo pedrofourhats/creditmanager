@@ -24,7 +24,6 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 	$scope.isEdition = false;
 	if(editablePerson) {
 		$scope.isEdition = true;
-		/*editablePerson.cellPhone = editablePerson.cellPhone;*/
 		var cellPhone = editablePerson.cellPhone.substring(1);
 		cellPhone = cellPhone.split(')');
 		editablePerson.cellPhoneAreaCode = cellPhone[0];
@@ -53,7 +52,6 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 	}
 	
 	$scope.addPerson = function() {
-		
 		if($scope.newPerson.identityNumberFirstPart != undefined){
 			$scope.newPerson.identityNumber = $scope.newPerson.identityNumberGenere + $scope.newPerson.identityNumberFirstPart + "." + $scope.newPerson.identityNumberSecondPart + "." + $scope.newPerson.identityNumberThirdPart;
 		}
@@ -70,8 +68,18 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 			if(!$scope.isEdition) {
 				$http.post(getCompletePath("persons/createPerson"), JSON.stringify($scope.newPerson))
 				.success(function (error) {
-					if(error.message) {
+					if(error.error && error.type == "Error") {
 						alert(error.message);
+					} else if (error.error&& error.type == "Warning") {
+						if(confirm(error.error)) {
+							$http.post(getCompletePath("persons/createPersonWithoutValidation"), JSON.stringify($scope.newPerson))
+							.success(function () {
+								alert('La persona ha sido agregada satisfactoriamente');
+								redirect('person/list');
+							}).error(function () {
+						    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
+						    });
+						}
 					} else {
 						alert('La persona ha sido agregada satisfactoriamente');
 						redirect('person/list');
@@ -82,8 +90,18 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 			} else {
 				$http.post(getCompletePath("persons/editPerson"), JSON.stringify($scope.newPerson))
 				.success(function (error) {
-					if(error.message) {
+					if(error.error && error.type == "Error") {
 						alert(error.message);
+					} else if (error.error&& error.type == "Warning") {
+						if(confirm(error.error)) {
+							$http.post(getCompletePath("persons/editPersonWithoutValidation"), JSON.stringify($scope.newPerson))
+							.success(function () {
+								alert('La persona ha sido actualizada satisfactoriamente');
+								redirect('person/list');
+							}).error(function () {
+						    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
+						    });
+						}
 					} else {
 						alert('La persona ha sido actualizada satisfactoriamente');
 						redirect('person/list');
