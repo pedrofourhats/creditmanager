@@ -35,9 +35,11 @@ public class PersonRestController {
 	@RequestMapping(value="/persons/createPerson", method = RequestMethod.POST)
 	public @ResponseBody CreditManagerError addPerson(@RequestBody PersonDTO person) {
 		String identityNumber = person.getIdentityNumber();
-		char c = Character.toLowerCase(identityNumber.charAt(0));
-		if(c >= 'a' && c <= 'z') {
-			identityNumber = identityNumber.substring(1);
+		if(identityNumber != null) {
+			char c = Character.toLowerCase(identityNumber.charAt(0));
+			if(c >= 'a' && c <= 'z') {
+				identityNumber = identityNumber.substring(1);
+			}
 		}
 		
 		if(this.personService.existUserWithDni(identityNumber)) {
@@ -54,8 +56,8 @@ public class PersonRestController {
 			warnings += "Existe un usuario con el nombre " + person.getName() + " " + person.getSurname() + ". ";
 		}
 		
-		if(this.personService.existPersonWithAddress(person.getAddress(), person.getLocality(), person.getProvince())) {
-			warnings += "Existe un usuario con la dirección " + person.getAddress() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
+		if(this.personService.existPersonWithAddress(person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getLocality(), person.getProvince())) {
+			warnings += "Existe un usuario con la dirección " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
 		}
 		
 		if(warnings != "") {
@@ -75,9 +77,11 @@ public class PersonRestController {
 	@RequestMapping(value="/persons/editPerson", method = RequestMethod.POST)
 	public @ResponseBody CreditManagerError editPerson(@RequestBody PersonDTO person) {
 		String identityNumber = person.getIdentityNumber();
-		char c = Character.toLowerCase(identityNumber.charAt(0));
-		if(c >= 'a' && c <= 'z') {
-			identityNumber = identityNumber.substring(1);
+		if(identityNumber != null) {
+			char c = Character.toLowerCase(identityNumber.charAt(0));
+			if(c >= 'a' && c <= 'z') {
+				identityNumber = identityNumber.substring(1);
+			}
 		}
 		
 		if(this.personService.existUserWithDni(identityNumber)) {
@@ -101,9 +105,9 @@ public class PersonRestController {
 			}
 		}
 		
-		if(this.personService.existPersonWithAddress(person.getAddress(), person.getLocality(), person.getProvince())) {
-			if(existingPerson.getAddress() + existingPerson.getLocality() + existingPerson.getProvince() != person.getAddress() + person.getLocality() + person.getProvince()) {
-				warnings += "Existe un usuario con la dirección " + person.getAddress() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
+		if(this.personService.existPersonWithAddress(person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getLocality(), person.getProvince())) {
+			if(existingPerson.getAddress() + existingPerson.getAddressNumber() + existingPerson.getAddressFloor() + existingPerson.getAddressAppartment() + existingPerson.getLocality() + existingPerson.getProvince() != person.getAddress() + person.getAddressNumber() + person.getAddressFloor() + person.getAddressAppartment() + person.getLocality() + person.getProvince()) {
+				warnings += "Existe un usuario con la dirección " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
 			}
 		}
 		

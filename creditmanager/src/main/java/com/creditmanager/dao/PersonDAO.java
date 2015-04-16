@@ -13,5 +13,5 @@ public interface PersonDAO extends GenericDAO<Person, Long> {
 	boolean existUserWithEmail(String email);
 	boolean existUserWithDni(String identityNumber);
 	boolean existPersonWithName(String name, String surname);
-	boolean existPersonWithAddress(String address, String locality, String province);
+	boolean existPersonWithAddress(String address, String addressNumber, String addressFloor, String addressAppartment, String locality, String province);
 }
