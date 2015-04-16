@@ -81,4 +81,7 @@ width: 90%;
     margin-left: 10px;
       line-height: 40px;
   }
+  .txtBlue{
+  	text-transform: uppercase;
+  }
 </style>

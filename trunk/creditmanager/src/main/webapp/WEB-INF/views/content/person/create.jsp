@@ -94,9 +94,9 @@
 									<label for="idNumber">Número de documento</label>
 									<!-- <small class="fr">Soló números sin puntos</small> -->
 									<input type="text" name="idNumberGenere" class="form-control" maxlength="1" placeholder="M/F" tabindex="4" onkeypress='return event.charCode == 102 || event.charCode == 109' ng-model="newPerson.identityNumberGenere">
-									<input type="number" name="idNumberFirstPart" class="form-control" maxlength="2" placeholder="" tabindex="4" min="0" max="99" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberFirstPart"><span>.</span> 
-									<input type="number" name="idNumberSecondPart" class="form-control" maxlength="3" placeholder="" tabindex="4" min="0" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberSecondPart"><span>.</span> 
-									<input type="number" name="idNumberThirdPart" class="form-control" maxlength="3" placeholder="" tabindex="4" min="0" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberThirdPart">
+									<input type="text" name="idNumberFirstPart" class="form-control" maxlength="2" placeholder="" tabindex="4" min="0" max="99" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberFirstPart"><span>.</span> 
+									<input type="text" name="idNumberSecondPart" class="form-control" maxlength="3" placeholder="" tabindex="4" min="0" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberSecondPart"><span>.</span> 
+									<input type="text" name="idNumberThirdPart" class="form-control" maxlength="3" placeholder="" tabindex="4" min="0" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberThirdPart">
 									</div>
 							</div>
 							<div class="col-sm-4">

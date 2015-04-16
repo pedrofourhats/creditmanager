@@ -100,6 +100,9 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			}
 		};
 		
+		$scope.goToForm = function(formName) {
+			   redirect('forms/' + formName + '/' + $scope.projectId);
+			  };
 		
 		
 		$scope.deleteHolder = function(index){

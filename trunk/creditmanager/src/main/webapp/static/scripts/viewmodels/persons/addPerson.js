@@ -24,21 +24,24 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 	$scope.isEdition = false;
 	if(editablePerson) {
 		$scope.isEdition = true;
-		var cellPhone = editablePerson.cellPhone.substring(1);
-		cellPhone = cellPhone.split(')');
-		editablePerson.cellPhoneAreaCode = cellPhone[0];
-		editablePerson.cellPhoneNumber = cellPhone[1];
+		if(editablePerson.cellPhone != undefined){
+			var cellPhone = editablePerson.cellPhone.substring(1);
+			cellPhone = cellPhone.split(')');
+			editablePerson.cellPhoneAreaCode = cellPhone[0];
+			editablePerson.cellPhoneNumber = cellPhone[1];
+		}
 		editablePerson.phone = parseInt(editablePerson.phone);
 		editablePerson.workPhone = parseInt(editablePerson.workPhone);
-		editablePerson.identityNumber = editablePerson.identityNumber;
-		if ((editablePerson.identityNumber.charAt(0) == 'm') || (editablePerson.identityNumber.charAt(0) == 'f') || (editablePerson.identityNumber.charAt(0) == 'F') || (editablePerson.identityNumber.charAt(0) == 'F')) {
-			editablePerson.identityNumberGenere = editablePerson.identityNumber.charAt(0);
-			editablePerson.identityNumber = editablePerson.identityNumber.substring(1);
+		if(editablePerson.identityNumber != undefined){
+			if ((editablePerson.identityNumber.charAt(0) == 'm') || (editablePerson.identityNumber.charAt(0) == 'f') || (editablePerson.identityNumber.charAt(0) == 'F') || (editablePerson.identityNumber.charAt(0) == 'F')) {
+				editablePerson.identityNumberGenere = editablePerson.identityNumber.charAt(0);
+				editablePerson.identityNumber = editablePerson.identityNumber.substring(1);
+			}
+			var res = editablePerson.identityNumber.split(".");
+			editablePerson.identityNumberFirstPart = parseInt(res[0]);
+			editablePerson.identityNumberSecondPart = parseInt(res[1]);
+			editablePerson.identityNumberThirdPart = parseInt(res[2]);
 		}
-		var res = editablePerson.identityNumber.split(".");
-		editablePerson.identityNumberFirstPart = parseInt(res[0]);
-		editablePerson.identityNumberSecondPart = parseInt(res[1]);
-		editablePerson.identityNumberThirdPart = parseInt(res[2]);
 		editablePerson.identityTypeName = getIdentityTypeName(editablePerson.identityType);
 		editablePerson.identityType = getIdentityType(editablePerson.identityTypeName);
 		editablePerson.genderName = getGenderName(editablePerson.gender);
