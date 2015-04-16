@@ -34,8 +34,14 @@ public class PersonRestController {
 	
 	@RequestMapping(value="/persons/createPerson", method = RequestMethod.POST)
 	public @ResponseBody CreditManagerError addPerson(@RequestBody PersonDTO person) {
-		if(this.personService.existUserWithDni(person.getIdentityNumber())) {
-			return new CreditManagerError("Existe un usuario con el dni " + person.getIdentityNumber(), "Error");
+		String identityNumber = person.getIdentityNumber();
+		char c = Character.toLowerCase(identityNumber.charAt(0));
+		if(c >= 'a' && c <= 'z') {
+			identityNumber = identityNumber.substring(1);
+		}
+		
+		if(this.personService.existUserWithDni(identityNumber)) {
+			return new CreditManagerError("Existe un usuario con el dni " + identityNumber, "Error");
 		}
 		
 		String warnings = "";
@@ -68,17 +74,23 @@ public class PersonRestController {
 	
 	@RequestMapping(value="/persons/editPerson", method = RequestMethod.POST)
 	public @ResponseBody CreditManagerError editPerson(@RequestBody PersonDTO person) {
-		if(this.personService.existUserWithEmail(person.getEmail())) {
-			if(this.personService.getById(person.getId()).getEmail() != person.getEmail()) {
-				return new CreditManagerError("Existe un usuario con el email " + person.getEmail(), "Error");
+		String identityNumber = person.getIdentityNumber();
+		char c = Character.toLowerCase(identityNumber.charAt(0));
+		if(c >= 'a' && c <= 'z') {
+			identityNumber = identityNumber.substring(1);
+		}
+		
+		if(this.personService.existUserWithDni(identityNumber)) {
+			if(this.personService.getById(person.getId()).getIdentityNumber() != person.getIdentityNumber()) {
+				return new CreditManagerError("Existe un usuario con el dni " + identityNumber, "Error");
 			}
 		}
 
 		String warnings = "";
 		PersonDTO existingPerson = this.personService.getById(person.getId());
 		
-		if(this.personService.existUserWithDni(person.getIdentityNumber())) {
-			if(existingPerson.getIdentityNumber() != person.getIdentityNumber()) {
+		if(this.personService.existUserWithEmail(person.getEmail())) {
+			if(existingPerson.getEmail() != person.getEmail()) {
 				warnings += "Existe un usuario con el email " + person.getEmail() + ". ";
 			}
 		}
