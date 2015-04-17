@@ -109,7 +109,9 @@ function Fee(number, annualRate, prevExpirationDate, expirationDate, openingBala
     };
     
 	self.number = number;
-	self.annualRate = annualRate;
+	//self.annualRate = annualRate;
+	self.annualRate = payment != null ? parseFloat(payment.rate) : project.effectiveRate ? parseFloat(project.effectiveRate): annualRate;
+	
 	self.dailyRate = self.annualRate / 365;
 	self.expirationDate = [pad(expirationDate.getDate()), pad(expirationDate.getMonth()+1), expirationDate.getFullYear()].join('/');
 	self.period = self.isGracePeriod ? 'Gracia' : '';

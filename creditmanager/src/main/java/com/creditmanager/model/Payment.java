@@ -21,6 +21,7 @@ public class Payment extends com.creditmanager.model.Entity implements Comparabl
 		this.paymentDate = paymentDate;
 		this.feeNumber = feeNumber;
 		this.project = project;
+		this.rate = project.getEffectiveRate();
 	}
 	
 	@Column(name="feeNumber")
@@ -31,6 +32,9 @@ public class Payment extends com.creditmanager.model.Entity implements Comparabl
 	
 	@Column(name="paymentDate")
 	private Date paymentDate;
+	
+	@Column(name="rate")
+	private String rate;
 	
 	@ManyToOne
 	@JoinColumn(name="projectId")
@@ -66,6 +70,14 @@ public class Payment extends com.creditmanager.model.Entity implements Comparabl
 
 	public void setFeeNumber(int feeNumber) {
 		this.feeNumber = feeNumber;
+	}
+
+	public String getRate() {
+		return rate;
+	}
+
+	public void setRate(String rate) {
+		this.rate = rate;
 	}
 
 	@Override

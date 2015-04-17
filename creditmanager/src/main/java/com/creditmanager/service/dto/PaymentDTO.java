@@ -13,6 +13,8 @@ public class PaymentDTO {
 	
 	private Date paymentDate;
 	
+	private String rate;
+	
 //	private ProjectDTO project;
 
 	public Long getId() {
@@ -45,6 +47,14 @@ public class PaymentDTO {
 
 	public void setPaymentDate(Date paymentDate) {
 		this.paymentDate = paymentDate;
+	}
+
+	public String getRate() {
+		return rate;
+	}
+
+	public void setRate(String rate) {
+		this.rate = rate;
 	}
 
 //	public ProjectDTO getProject() {
