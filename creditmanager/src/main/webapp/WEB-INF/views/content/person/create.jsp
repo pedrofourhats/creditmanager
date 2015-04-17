@@ -149,7 +149,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="cellPhone">Celular</label>
-									<input type="text" name="cellPhoneAreaCode" class="form-control" maxlength="20" placeholder="COD AREA" tabindex="7" ng-model="newPerson.cellPhoneAreaCode">
+									<input type="text" name="cellPhoneAreaCode" class="form-control" maxlength="20" placeholder="COD AREA" tabindex="7" ng-model="newPerson.cellPhoneAreaCode"><span>15</span>
 									<input type="text" name="cellPhoneNumber" class="form-control" maxlength="20" placeholder="NUMERO" tabindex="7" ng-model="newPerson.cellPhoneNumber">
 								</div>
 								<div class="form-group">

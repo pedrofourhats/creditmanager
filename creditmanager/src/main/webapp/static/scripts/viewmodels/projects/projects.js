@@ -191,7 +191,9 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		};
 		
 		self.createProject = function(){
-			$scope.project.number = $scope.project.numberId + '/' + $scope.project.numberYear;
+			if($scope.project.number != undefined){
+				$scope.project.number = $scope.project.numberId + '/' + $scope.project.numberYear;
+			}
 			$http.post(getCompletePath("projects"), JSON.stringify($scope.project))
 			.success(function (project) {
 				//$scope.projectId = project.id;
@@ -204,8 +206,9 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		};
 		
 		self.editProject = function(){
-			$scope.project.number = $scope.project.numberId + '/' + $scope.project.numberYear;
-
+			if($scope.project.number != undefined){
+				$scope.project.number = $scope.project.numberId + '/' + $scope.project.numberYear;
+			}
 			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify($scope.project))
 			.success(function () {
 				//$scope.step++;

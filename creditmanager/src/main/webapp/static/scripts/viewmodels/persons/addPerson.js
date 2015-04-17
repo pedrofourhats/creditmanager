@@ -23,14 +23,14 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 		$scope.isEdition = true;
 		if(editablePerson.cellPhone != undefined){
 			var cellPhone = editablePerson.cellPhone.substring(1);
-			cellPhone = cellPhone.split(')');
+			cellPhone = cellPhone.split(') 15');
 			editablePerson.cellPhoneAreaCode = cellPhone[0];
 			editablePerson.cellPhoneNumber = cellPhone[1];
 		}
 		editablePerson.phone = parseInt(editablePerson.phone);
 		editablePerson.workPhone = parseInt(editablePerson.workPhone);
 		if(editablePerson.identityNumber != undefined){
-			if ((editablePerson.identityNumber.charAt(0) == 'm') || (editablePerson.identityNumber.charAt(0) == 'f') || (editablePerson.identityNumber.charAt(0) == 'F') || (editablePerson.identityNumber.charAt(0) == 'F')) {
+			if ((editablePerson.identityNumber.charAt(0) == 'm') || (editablePerson.identityNumber.charAt(0) == 'f') || (editablePerson.identityNumber.charAt(0) == 'M') || (editablePerson.identityNumber.charAt(0) == 'F')) {
 				editablePerson.identityNumberGenere = editablePerson.identityNumber.charAt(0);
 				editablePerson.identityNumber = editablePerson.identityNumber.substring(1);
 			}
@@ -53,11 +53,17 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 	
 	$scope.addPerson = function() {
 		if($scope.newPerson.identityNumberFirstPart != undefined){
-			$scope.newPerson.identityNumber = $scope.newPerson.identityNumberGenere + $scope.newPerson.identityNumberFirstPart + "." + $scope.newPerson.identityNumberSecondPart + "." + $scope.newPerson.identityNumberThirdPart;
+			if($scope.newPerson.identityNumberGenere != undefined){
+				$scope.newPerson.identityNumber = $scope.newPerson.identityNumberGenere + $scope.newPerson.identityNumberFirstPart + "." + $scope.newPerson.identityNumberSecondPart + "." + $scope.newPerson.identityNumberThirdPart;
+			}
+			else
+			{
+				$scope.newPerson.identityNumber = $scope.newPerson.identityNumberFirstPart + "." + $scope.newPerson.identityNumberSecondPart + "." + $scope.newPerson.identityNumberThirdPart;
+			}
 		}
 		
 		if($scope.newPerson.cellPhoneNumber != undefined){
-			$scope.newPerson.cellPhone = '(' + $scope.newPerson.cellPhoneAreaCode + ') ' + $scope.newPerson.cellPhoneNumber;
+			$scope.newPerson.cellPhone = '(' + $scope.newPerson.cellPhoneAreaCode + ') 15' + $scope.newPerson.cellPhoneNumber;
 		}
 		
 		if ($scope.createPersonForm.$valid) {
