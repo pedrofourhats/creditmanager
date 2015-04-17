@@ -56,6 +56,12 @@ width: 90%;
   width: 100%;
   }
   
+    .cellphoneInput span{
+  	float: left;
+    margin-left: 8px;
+      line-height: 40px;
+  }
+  
   .idNumberInput label{
   width: 100%;
   }

@@ -27,8 +27,7 @@
 			<input placeholder="Año"  type="text" id="year" ng-model="form.year" class="form-control"> 
 			
 			<br>
-			<!-- 
-			<label>Titular</label>
+			<!-- <label>Titular</label>
 			<div class="dropdown" tabindex="3" dropdown style="width: 270px; height: 30px;">
 			  <a type="button" data-toggle="dropdown">
 			    <span >
@@ -39,8 +38,8 @@
 			  <ul class="dropdown-menu" role="menu">
 			    <li data-ng-repeat="holder in project.holders" ng-click="selectHolder(holder)"><a href="javascript:void(0);">{{holder.surname}} {{holder.name}} </a></li>
 			  </ul>
-			</div>
-		 	-->
+			</div>-->
+		
 		</div>
 		<div class="panel-body" id="printableDiv">
 				<h3>
@@ -58,9 +57,16 @@
                 <p class="signature">
                   Firma : 
                   <br>
-                  Aclaración: <span class="uppercase">{{selectedHolder.surname}} {{selectedHolder.name}}</span>
+                  Aclaración: <span class="uppercase">{{project.holders[0].surname}} {{project.holders[0].name}}</span>
                   <br>
-                  D.N.I.  Nº : {{selectedHolder.identityNumber}}
+                  D.N.I.  Nº : {{project.holders[0].identityNumber}}
+                </p>
+                <p class="signature">
+                  Firma : 
+                  <br>
+                  Aclaración: <span class="uppercase">{{project.holders[1].surname}} {{project.holders[1].name}}</span>
+                  <br>
+                  D.N.I.  Nº : {{project.holders[1].identityNumber}}
                 </p>
 	      </div>
 	      <div class="row">
