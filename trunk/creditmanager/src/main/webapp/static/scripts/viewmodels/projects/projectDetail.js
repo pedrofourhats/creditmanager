@@ -201,6 +201,9 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 				defaultForms = project.defaultForms.split(",");
 			}
 			
+			$scope.project.originalRate = parseInt($scope.project.originalRate);
+			$scope.project.effectiveRate = parseInt($scope.project.effectiveRate);
+			
 			$scope.defaultForm1 = defaultForms.indexOf("1") > -1;
 			$scope.defaultForm2 = defaultForms.indexOf("2") > -1;
 			$scope.defaultForm3 = defaultForms.indexOf("3") > -1;
