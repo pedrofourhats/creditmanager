@@ -54,6 +54,26 @@
 									<input type="text" name="name" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="2" autofocus ng-model="newPerson.name">
 								</div>								
 							</div>
+							<div class="form-group">
+								<label>Tipo</label>
+
+								<div class="dropdown" tabindex="3" dropdown>
+								  <a type="button" data-toggle="dropdown">
+								    <span ng-show="newPerson.type == undefined">
+								    	Elegir tipo
+								    </span>
+								    <span>
+									    {{newPerson.type}} 
+								    </span>
+								    <i class="fa fa-chevron-down"></i>
+								  </a>
+								  <ul class="dropdown-menu" role="menu">
+								    <li ng-click="selectType('INTI')"><a href="javascript:void(0);">INTI</a></li>
+							        <li ng-click="selectType('CAFESG')"><a href="javascript:void(0);">CAFESF</a></li>
+							        <li ng-click="selectType('COMÚN')"><a href="javascript:void(0);">COMÚN</a></li>
+								  </ul>
+								</div>
+							</div>
 						</div>
 						<hr>
 						<div class="row">

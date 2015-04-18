@@ -80,5 +80,9 @@
         <a>postCode</a>
         <b>postCode</b>
       </field>
+      <field>
+        <a>type</a>
+        <b>type</b>
+      </field>
   </mapping>
 </mappings>

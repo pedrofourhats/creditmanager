@@ -47,6 +47,8 @@ public class PersonDTO {
 	private String locality;
 	
 	private String postCode;
+	
+	private String type;
 
 	public Long getId() {
 		return id;
@@ -216,5 +218,13 @@ public class PersonDTO {
 
 	public void setPostCode(String postCode) {
 		this.postCode = postCode;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }
