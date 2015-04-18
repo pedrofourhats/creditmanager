@@ -18,6 +18,10 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 		$scope.newPerson.postCode = location.cpName;
 	};
 	
+	$scope.selectType = function(type) {
+		$scope.newPerson.type = type;
+	};
+	
 	$scope.isEdition = false;
 	if(editablePerson) {
 		$scope.isEdition = true;

@@ -35,7 +35,10 @@
 					<div class="row txtBlue">
 						<div class="col-sm-12">
 							<h4>Nombre: <span>{{person.name}}</span> <span>{{person.surname}}</span></h4>
-						</div>								
+						</div>
+						<div class="col-sm-12">
+							<h4>Tipo: <span>{{person.type}}</span></h4>
+						</div>							
 					</div>
 					<hr>
 					<div class="row txtGrayd">

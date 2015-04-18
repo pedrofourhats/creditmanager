@@ -69,6 +69,9 @@ public class Person extends com.creditmanager.model.Entity implements Comparable
 	@Column(name="postCode")
 	private String postCode;
 	
+	@Column(name="type")
+	private String type;
+	
 	@ManyToMany(fetch=FetchType.LAZY, mappedBy="guarantors")
 	private Set<Project> guarantorProjects;
 	
@@ -79,7 +82,7 @@ public class Person extends com.creditmanager.model.Entity implements Comparable
 	}
 	
 	public Person(String name, String surname, IdentityType identityType, String identityNumber, Date birthDate, Gender gender, String phone, String workPhone, String cellPhone, String email, String province,
-			String locality, String address, String addressNumber, String addressFloor, String addressAppartment, String postCode){
+			String locality, String address, String addressNumber, String addressFloor, String addressAppartment, String postCode, String type){
 		this.name = name;
 		this.surname = surname;
 		this.identityType = identityType;
@@ -97,6 +100,7 @@ public class Person extends com.creditmanager.model.Entity implements Comparable
 		this.addressFloor = addressFloor;
 		this.addressAppartment = addressAppartment;
 		this.postCode = postCode;
+		this.type = type;
 	}
 	
 	public String getName() {
@@ -251,6 +255,14 @@ public class Person extends com.creditmanager.model.Entity implements Comparable
 
 	public void setAddressAppartment(String addressAppartment) {
 		this.addressAppartment = addressAppartment;
+	}
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	@Override
