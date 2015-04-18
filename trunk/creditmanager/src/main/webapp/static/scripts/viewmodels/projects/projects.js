@@ -22,7 +22,6 @@ projectApp.config(function($routeProvider){
 	});
 });
 
-
 var projectControllers = angular.module('project.controllers', []);
 
 projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
@@ -151,9 +150,6 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		};
 	
 		$scope.nextSetp = function() {
-//			if(!$scope.institutionalForm.$valid) {
-//				return;
-//			}
 			if(($scope.step == 1 || $scope.step == 2) && !$scope.projectId) {
 				self.createProject();
 			} else {
@@ -196,8 +192,6 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			}
 			$http.post(getCompletePath("projects"), JSON.stringify($scope.project))
 			.success(function (project) {
-				//$scope.projectId = project.id;
-				//$scope.step++;
 				$location.path('/project-detail/' + project.id);
 				alert("El proyecto se ha creado con exito");
 		    }).error(function (err) {
@@ -211,7 +205,6 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			}
 			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify($scope.project))
 			.success(function () {
-				//$scope.step++;
 				alert("El proyecto se ha actualizado con exito");
 		    }).error(function (err) {
 		    	alert("Ha ocurrido un problema. Por favor intente nuevamente");

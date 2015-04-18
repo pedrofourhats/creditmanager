@@ -16,7 +16,7 @@ formApp.controller('formController', function ($scope, $http) {
 		$scope.form.emitionDate = null;
 		$http.put(getCompletePath("projects/form/" + $scope.project.id), JSON.stringify($scope.form))
 		.success(function () {
-			redirect("project/list#/project-detail/" + $scope.project.id);
+			redirect("project/list#/project-detail/" + $scope.project.id + "?page=documentosLegales");
 	    }).error(function (err) {
 	    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
 	    });
@@ -36,11 +36,11 @@ formApp.controller('formController', function ($scope, $http) {
 		return NumeroALetras(number);
 	};
 	
-	$scope.cityOnly= function(cityComplete) {
+	$scope.cityOnly = function(cityComplete) {
 		return soloCiudad(cityComplete);
 	};
 	
-	$scope.departmentOnly= function(cityComplete) {
+	$scope.departmentOnly = function(cityComplete) {
 		return soloDepartamento(cityComplete);
 	};
 	
