@@ -339,4 +339,8 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 				}
 			});
 		};
+		
+		if(window.location.href.split("?")[1].split("=")[1] == "documentosLegales") {
+			$scope.changeStep(3);
+		}
 }]);
