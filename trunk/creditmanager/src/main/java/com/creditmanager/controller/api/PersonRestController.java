@@ -94,19 +94,19 @@ public class PersonRestController {
 		PersonDTO existingPerson = this.personService.getById(person.getId());
 		
 		if(this.personService.existUserWithEmail(person.getEmail())) {
-			if(existingPerson.getEmail() != person.getEmail()) {
+			if(!existingPerson.getEmail().equals(person.getEmail())) {
 				warnings += "Existe un usuario con el email " + person.getEmail() + ". ";
 			}
 		}
 		
 		if(this.personService.existPersonWithName(person.getName(), person.getSurname())) {
-			if(existingPerson.getName() + existingPerson.getSurname() != person.getName() + person.getSurname()) {
+			if(!(existingPerson.getName() + existingPerson.getSurname()).equals(person.getName() + person.getSurname())) {
 				warnings += "Existe un usuario con el nombre " + person.getName() + " " + person.getSurname() + ". ";
 			}
 		}
 		
 		if(this.personService.existPersonWithAddress(person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getLocality(), person.getProvince())) {
-			if(existingPerson.getAddress() + existingPerson.getAddressNumber() + existingPerson.getAddressFloor() + existingPerson.getAddressAppartment() + existingPerson.getLocality() + existingPerson.getProvince() != person.getAddress() + person.getAddressNumber() + person.getAddressFloor() + person.getAddressAppartment() + person.getLocality() + person.getProvince()) {
+			if(!(existingPerson.getAddress() + existingPerson.getAddressNumber() + existingPerson.getAddressFloor() + existingPerson.getAddressAppartment() + existingPerson.getLocality() + existingPerson.getProvince()).equals(person.getAddress() + person.getAddressNumber() + person.getAddressFloor() + person.getAddressAppartment() + person.getLocality() + person.getProvince())) {
 				warnings += "Existe un usuario con la dirección " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
 			}
 		}
