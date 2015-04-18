@@ -341,7 +341,11 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			});
 		};
 		
-		if(window.location.href.split("?")[1].split("=")[1] == "documentosLegales") {
-			$scope.changeStep(3);
+		var splittedUrl = window.location.href.split("?");
+		if(splittedUrl.length > 1) {
+			splittedUrl = splittedUrl[1].split("=");
+			if(splittedUrl.length > 1 && splittedUrl[1] == "documentosLegales") {
+				$scope.changeStep(3);
+			}
 		}
 }]);
