@@ -116,10 +116,11 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		self.editProject = function() {
 			$scope.project.number = $scope.project.numberId + '/' + $scope.project.numberYear;
 			if($scope.project.deliveryDate) {
-				if($scope.project.deliveryDate > new Date()) {
+				/*if($scope.project.deliveryDate > new Date()) {
 					alert("La fecha de otorgamiento del cr\u00e9dito debe ser menor que la fecha actual");
 					return;
-				} else if(!$scope.project.dateOfEntry) {
+				} else */
+				if(!$scope.project.dateOfEntry) {
 					alert("Para ingresar la fecha de otorgamiento del cr\u00e9dito debe primero ingresar la fecha de ingreso al INTI");
 					return;
 				} else if($scope.project.deliveryDate < $scope.project.dateOfEntry) {
