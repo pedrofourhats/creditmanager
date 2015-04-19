@@ -49,7 +49,7 @@
                   En la Ciudad  Autónoma de Buenos Aires, a los {{form.day}} días del mes de {{form.month}} de {{form.year}}.-
                 </p>
                 <p class="mt20">
-                  A LA VISTA pagaré sin protesto (Art. 50 Dec. Ley Nº 5965/63) al  Administrador Fiduciario  Polo  Tecnológico  Constituyentes  S.A., o  a  su  orden,  la  cantidad  de $ {{project.givenAmount}} ({{numberToLetter(project.givenAmount)}} PESOS) por igual valor recibido en efectivo a mi entera satisfacción. De conformidad con lo dispuesto en el artículo 36 de Decreto Ley 5965/63, se amplía el plazo de presentación a cinco (5) años a contar de la fecha de libramiento del presente.
+                  A LA VISTA pagaré sin protesto (Art. 50 Dec. Ley Nº 5965/63) al  Administrador Fiduciario  Polo  Tecnológico  Constituyentes  S.A., o  a  su  orden,  la  cantidad  de $ {{addPoints(project.givenAmount)}} (PESOS {{numberToLetter(project.givenAmount)}}) por igual valor recibido en efectivo a mi entera satisfacción. De conformidad con lo dispuesto en el artículo 36 de Decreto Ley 5965/63, se amplía el plazo de presentación a cinco (5) años a contar de la fecha de libramiento del presente.
                 </p>
                 <p class="mt20">
                   Pagadero en: Paraná 145 4º Capital Federal.
@@ -57,14 +57,14 @@
                 <p class="signature">
                   Firma : 
                   <br>
-                  Aclaración: <span class="uppercase">{{project.holders[0].surname}} {{project.holders[0].name}}</span>
+                  Aclaración: <span class="uppercase">{{project.holders[0].surname}}, {{project.holders[0].name}}</span>
                   <br>
                   D.N.I.  Nº : {{project.holders[0].identityNumber}}
                 </p>
                 <p class="signature">
                   Firma : 
                   <br>
-                  Aclaración: <span class="uppercase">{{project.holders[1].surname}} {{project.holders[1].name}}</span>
+                  Aclaración: <span class="uppercase">{{project.holders[1].surname}}, {{project.holders[1].name}}</span>
                   <br>
                   D.N.I.  Nº : {{project.holders[1].identityNumber}}
                 </p>

@@ -36,6 +36,64 @@ formApp.controller('formController', function ($scope, $http) {
 		return NumeroALetras(number);
 	};
 	
+	$scope.addPoints = function(nStr)
+    {
+        nStr += '';
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + '.' + '$2'); // changed comma to dot here
+        }
+        return x1 + x2;
+    };
+    
+	$scope.dateToLetters = function(date)
+    {
+		splitedDate = date.split('-');
+		var month = "";
+		switch (splitedDate[1]) {
+	    case "01":
+	        month = "Enero";
+	        break;
+	    case "02":
+	        month = "Febrero";
+	        break;
+	    case "03":
+	        month = "Marzo";
+	        break;
+	    case "04":
+	        month = "Abril";
+	        break;
+	    case "05":
+	        month = "Mayo";
+	        break;
+	    case "06":
+	        month = "Junio";
+	        break;
+	    case "07":
+	        month = "Julio";
+	        break;
+	    case "08":
+	        month = "Agosto";
+	        break;
+	    case "09":
+	        month = "Septiembre";
+	        break;
+	    case "10":
+	        month = "Octubre";
+	        break;
+	    case "11":
+	        month = "Noviembre";
+	        break;
+	    case "12":
+	        month = "Diciembre";
+	        break;
+		}
+		return splitedDate[0] + " de " + month + " de " + splitedDate[2]; 
+    };
+	
 	$scope.cityOnly = function(cityComplete) {
 		return soloCiudad(cityComplete);
 	};
