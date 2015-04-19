@@ -32,7 +32,7 @@
 									<div class="col-md-6">
 										<label class="control-label"><strong>Deudor: </strong></label></br>
 										<label class="control-label"><strong>Proyecto Nº: </strong> {{project.number}}</br>
-										<label class="control-label"><strong>Capital Otorgado: </strong> {{project.givenAmount}}</br>
+										<label class="control-label"><strong>Capital Otorgado: </strong> {{addPoints(project.givenAmount)}}</br>
 										<label class="control-label"><strong>Fecha Otorgamiento: </strong> {{deliveryFormattedDate}}</br>
 										<label class="control-label"><strong>Fecha Actual: </strong> {{today}}</label></br>
 										<label class="control-label"><strong>Amortización: </strong> {{project.givenDeadline}}</label></br>

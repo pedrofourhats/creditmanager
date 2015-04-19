@@ -90,4 +90,8 @@ width: 90%;
   .txtBlue{
   	text-transform: uppercase;
   }
+  
+  .formParagraph{
+        color: blue;
+    }
 </style>
