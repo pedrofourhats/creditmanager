@@ -93,9 +93,9 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		
 		$scope.states = [{name: "EVALUACION INTI"}, {name: "EVALUACION INTA"}, {name: "INFORMACION CAFESG"}, {name: "RECHAZADO / DESISTIDO"}, {name: "SUJETO A REVISION"}, {name: "COMITE DE CREDITO"}, {name: "APROBADO"}, {name: "CREDITO OTORGADO"}, {name: "CREDITO VIGENTE"}, {name: "CREDITO EN MORA"}, {name: "CREDITO CANCELADO"}];
 		
-		$scope.evaluators = [{name: "ELIZABETH A."}, {name: "ADRIANA V."}, {name: "ROMINA M."}, {name: "WALTER H."}, {name: "MELINA SCH."}, {name: "MARTIN S."}, {name: "ELINA B."}, {name: "INTA"}];
+		//$scope.evaluators = [{name: "ELIZABETH A."}, {name: "ADRIANA V."}, {name: "ROMINA M."}, {name: "WALTER H."}, {name: "MELINA SCH."}, {name: "MARTIN S."}, {name: "ELINA B."}, {name: "INTA"}];
 		
-		$scope.accesors = [{name: "NOELIA A."}, {name: "JAVIER B."}, {name: "EMANUEL R."}, {name: "ROSA F."}, {name: "ROSANA G."}, {name: "NOELIA D."}, {name: "DIEGO"}, {name: "CECILIA B."}, {name: "MARTIN L."}];
+		//$scope.accesors = [{name: "NOELIA A."}, {name: "JAVIER B."}, {name: "EMANUEL R."}, {name: "ROSA F."}, {name: "ROSANA G."}, {name: "NOELIA D."}, {name: "DIEGO"}, {name: "CECILIA B."}, {name: "MARTIN L."}];
 
 		$scope.types = [{name: "NUEVO"}, {name: "EN MARCHA"}];
 
@@ -108,6 +108,10 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		$scope.department = [{name: "CONCORDIA"}, {name: "COLON"}, {name: "FEDERAL"}, {name: "VILLAGUAY"}, {name: "SAN SALVADOR"}, {name: "FEDERACION"}, {name: "CONCEPCION DEL URUGUAY"}, {name: "FELICIANO"}];
 
 		$scope.locality = [{name: "BENITO LEGEREN"}, {name: "CALABACILLA"}, {name: "CASEROS"}, {name: "CHAJARI"}, {name: "COLONIA ALEMANA"}, {name: "COLONIA ENSANCHE SAUCE"}, {name: "COLONIA HUGUES"}, {name: "COLONIA LA ARGENTINA"}, {name: "COLONIA PE�A"}, {name: "COLONIA SANTA MARIA"}, {name: "CONCEPCION DEL URUGUAY"}, {name: "CONCORDIA"}, {name: "CONSCRIPTO BERNARDI"}, {name: "EL CIMARRON"}, {name: "EL COLORADO"}, {name: "EL REDOMON"}, {name: "ESTACION RAICES"}, {name: "ESTACION YERUA"}, {name: "FEDERACION"}, {name: "FEDERAL"}, {name: "GENERAL CAMPOS"}, {name: "HOCKER"}, {name: "INGENIERO MIGUEL SAJAROFF"}, {name: "JUBILEO"}, {name: "LA CLARITA"}, {name: "LA CRIOLLA"}, {name: "LAS TEJAS"}, {name: "MOJONES NORTE"}, {name: "NUEVA ESCOCIA"}, {name: "NUEVA VIZCAYA"}, {name: "OSVALDO MAGNASCO"}, {name: "PASO DE LA LAGUNA"}, {name: "PEDERNAL"}, {name: "PRONUNCIAMIENTO"}, {name: "PUEBLO CAZES"}, {name: "PUEBLO LIEBIG'S"}, {name: "PUERTO YERUA"}, {name: "SAN JOSE"}, {name: "SAN PEDRO"}, {name: "SAN SALVADOR"}, {name: "SANTA ANITA"}, {name: "SAUCE DE LUNA"}, {name: "UBAJAY"}, {name: "VILLA CLARA"}, {name: "VILLA DEL ROSARIO"}, {name: "VILLA DOMINGUEZ"}, {name: "VILLA ELISA"}, {name: "VILLA MANTERO"}, {name: "VILLA SAN JUSTO"}, {name: "VILLA ZORRAQUIN"}, {name: "SAN JOSE DE FELICIANO"}, {name: "CASEROS"}, {name: "VILLAGUAY"}];
+		
+		$scope.evaluators = [];
+		
+		$scope.accesors = [];
 		
 		$scope.selectServicer = function(servicerName) {
 			$scope.project.servicers = servicerName;
@@ -204,6 +208,9 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 				}
 			}
 			
+			delete $scope.project.evaluator.formattedBirthDate;
+			delete $scope.project.accesor.formattedBirthDate;
+			
 			$http.post(getCompletePath("projects"), JSON.stringify($scope.project))
 			.success(function (project) {
 				$location.path('/project-detail/' + project.id);
@@ -217,6 +224,10 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			if($scope.project.number != undefined){
 				$scope.project.number = $scope.project.numberId + '/' + $scope.project.numberYear;
 			}
+			
+			delete $scope.project.evaluator.formattedBirthDate;
+			delete $scope.project.accesor.formattedBirthDate;
+			
 			$http.put(getCompletePath("projects/" + $scope.projectId), JSON.stringify($scope.project))
 			.success(function () {
 				alert("El proyecto se ha actualizado con exito");
@@ -237,6 +248,16 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			    }
 			});
 		};
+		
+		$http.get(getCompletePath("person/intiEvaluators"), {})
+		.success(function(evaluators){
+			$scope.evaluators = evaluators;
+		});
+		
+		$http.get(getCompletePath("person/intiAccesor"), {})
+		.success(function(accesors){
+			$scope.accesors = accesors;
+		});
 }]);
 
 projectControllers.controller('ModalAddPersonCtrl', 

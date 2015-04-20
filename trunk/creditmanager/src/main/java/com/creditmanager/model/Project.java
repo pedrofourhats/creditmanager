@@ -11,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -69,11 +70,11 @@ public class Project extends com.creditmanager.model.Entity {
 	@Column(name="situationState")
 	private String situationState;
 	
-	@Column(name="evaluator")
-	private String evaluator;
+//	@Column(name="evaluator")
+//	private String evaluator;
 	
-	@Column(name="accesor")
-	private String accesor;
+//	@Column(name="accesor")
+//	private String accesor;
 	
 	@Column(name="originalRate")
 	private String originalRate;
@@ -113,10 +114,26 @@ public class Project extends com.creditmanager.model.Entity {
 	@OneToMany(mappedBy="project")
 	private Set<Payment> payments;
 	
+	@ManyToOne
+	@JoinColumn(name="evaluatorId")
+	private Person evaluator;
+	
+	@ManyToOne
+	@JoinColumn(name="accesorId")
+	private Person accesor;
+	
+	public Person getAccesor() {
+		return accesor;
+	}
+
+	public void setAccesor(Person accesor) {
+		this.accesor = accesor;
+	}
+
 	public Project(){
 	}
 	
-	public Project(Date dateOfEntry, String number, String servicers, String situationState, String evaluator, String accesor, 
+	public Project(Date dateOfEntry, String number, String servicers, String situationState, Person evaluator, Person accesor, 
 			Set<Person> guarantors, Set<Person> holders, String investmentDestination) {
 		this.dateOfEntry = dateOfEntry;
 		this.number = number;
@@ -129,9 +146,9 @@ public class Project extends com.creditmanager.model.Entity {
 		this.investmentDestination = investmentDestination;
 	}
 	
-	public Project(Date dateOfEntry, String number, String servicers, String situationState, String evaluator, String accesor, 
+	public Project(Date dateOfEntry, String number, String servicers, String situationState, Person evaluator, Person accesor, 
 			Set<Person> guarantors, Set<Person> holders, String investmentDestination, String title, String type,
-			String economicArea, String economicActivity, String category, Double requestedAmount, 
+			String economicArea, String economicActivity, String category, Double requestedAmount,
 			String requestedDeadline, int requestedGracePeriod, int givenGracePeriod, 
 			Date deliveryDate, Double givenAmount, int givenDeadline, String originalRate, String effectiveRate) {
 		this.dateOfEntry = dateOfEntry;
@@ -216,18 +233,18 @@ public class Project extends com.creditmanager.model.Entity {
 	public void setSituationState(String situationState) {
 		this.situationState = situationState;
 	}
-	public String getEvaluator() {
-		return evaluator;
-	}
-	public void setEvaluator(String evaluator) {
-		this.evaluator = evaluator;
-	}
-	public String getAccesor() {
-		return accesor;
-	}
-	public void setAccesor(String accesor) {
-		this.accesor = accesor;
-	}
+//	public String getEvaluator() {
+//		return evaluator;
+//	}
+//	public void setEvaluator(String evaluator) {
+//		this.evaluator = evaluator;
+//	}
+//	public String getAccesor() {
+//		return accesor;
+//	}
+//	public void setAccesor(String accesor) {
+//		this.accesor = accesor;
+//	}
 	public Set<Person> getGuarantors() {
 		return guarantors;
 	}
@@ -360,8 +377,9 @@ public class Project extends com.creditmanager.model.Entity {
 	}
 
 	public void update(Date dateOfEntry, String number, String servicers, String situationState, Set<Person> guarantors, Set<Person> holders, 
-		String investmentDestination,String title, String type, String economicArea, String economicActivity, String category, Double requestedAmount, String requestedDeadline,
-		int requestedGracePeriod, int givenGracePeriod, Date deliveryDate, Double givenAmount, int givenDeadline, String defaultForms, String originalRate, String effectiveRate){
+		String investmentDestination,String title, String type, String economicArea, String economicActivity, String category, Double requestedAmount, 
+		String requestedDeadline, int requestedGracePeriod, int givenGracePeriod, Date deliveryDate, Double givenAmount, int givenDeadline, 
+		String defaultForms, String originalRate, String effectiveRate, Person evaluator, Person accesor){
 		
 		this.title = title;
 		this.type = type;
@@ -387,6 +405,9 @@ public class Project extends com.creditmanager.model.Entity {
 		
 		this.originalRate = originalRate;
 		this.effectiveRate = effectiveRate;
+		
+		this.evaluator = evaluator;
+		this.accesor = accesor;
 	}
 	
 	public boolean isInDebt(){
@@ -400,5 +421,13 @@ public class Project extends com.creditmanager.model.Entity {
 		
 		TreeSet<Payment> sortedPayments = new TreeSet<Payment>(payments);
 		return sortedPayments.last();
+	}
+
+	public Person getEvaluator() {
+		return evaluator;
+	}
+
+	public void setEvaluator(Person evaluator) {
+		this.evaluator = evaluator;
 	}
 }

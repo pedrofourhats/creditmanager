@@ -1,6 +1,7 @@
 package com.creditmanager.model;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.creditmanager.model.enums.Gender;
@@ -78,6 +80,28 @@ public class Person extends com.creditmanager.model.Entity implements Comparable
 	@ManyToMany(fetch=FetchType.LAZY, mappedBy="holders")
 	private Set<Project> holderProjects;
 	
+	@OneToMany(mappedBy="evaluator")
+	private Set<Project> evaluatorProjects = new HashSet<Project>();
+	
+	@OneToMany(mappedBy="accesor")
+	private Set<Project> accesorProjects = new HashSet<Project>();
+
+	public Set<Project> getEvaluatorProjects() {
+		return evaluatorProjects;
+	}
+
+	public void setEvaluatorProjects(Set<Project> evaluatorProjects) {
+		this.evaluatorProjects = evaluatorProjects;
+	}
+
+	public Set<Project> getAccesorProjects() {
+		return accesorProjects;
+	}
+
+	public void setAccesorProjects(Set<Project> accesorProjects) {
+		this.accesorProjects = accesorProjects;
+	}
+
 	public Person(){
 	}
 	

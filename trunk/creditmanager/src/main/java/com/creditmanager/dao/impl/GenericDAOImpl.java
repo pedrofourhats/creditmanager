@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Projections;
@@ -46,6 +47,21 @@ public abstract class GenericDAOImpl<T, PK extends Serializable> implements Gene
 		
 		List<T> elements = (List<T>) hibernateTemplate.findByCriteria(detachedCriteria);
 		
+		return new Page<T>(elements, pageIndex, pageSize, totalItems);
+	}
+	
+	
+	public Page<T> getAllPaginated(int pageIndex, int pageSize){
+		String countQueryString = "Select count(*) from " + entityName;
+		Session session = hibernateTemplate.getSessionFactory().getCurrentSession();
+		Query countQuery = session.createQuery(countQueryString);
+		Long totalItems = (Long) countQuery.uniqueResult();
+		
+		Query selectQuery = session.createQuery("From " + entityName);
+		selectQuery.setFirstResult((pageIndex - 1) * pageSize)
+			.setMaxResults(pageSize);
+		
+		List<T> elements = (List<T>) selectQuery.list();
 		return new Page<T>(elements, pageIndex, pageSize, totalItems);
 	}
 	

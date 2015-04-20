@@ -104,12 +104,14 @@
 										    	Elegir evaluador
 										    </span>
 										    <span ng-show="project.evaluator != undefined">
-											    {{ project.evaluator }} 
+											    {{ project.evaluator.surname + ' ' + project.evaluator.name }} 
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
 										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="evaluator in evaluators" ng-click="selectEvaluator(evaluator.name)"><a href="javascript:void(0);">{{evaluator.name}}</a></li>
+										    <li ng-repeat="evaluator in evaluators" ng-click="selectEvaluator(evaluator)">
+										    	<a href="javascript:void(0);">{{evaluator.surname + ' ' + evaluator.name}}</a>
+										    </li>
 										  </ul>
 										</div>
 									</div>
@@ -121,12 +123,14 @@
 										    	Elegir asesor
 										    </span>
 										    <span ng-show="project.accesor != undefined">
-											    {{ project.accesor}} 
+											    {{ project.accesor.surname + ' ' + project.accesor.name}} 
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
 										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="accesor in accesors" ng-click="selectAccesor(accesor.name)"><a href="javascript:void(0);">{{accesor.name}}</a></li>
+										    <li ng-repeat="accesor in accesors" ng-click="selectAccesor(accesor)">
+										    	<a href="javascript:void(0);">{{accesor.surname + ' ' + accesor.name}}</a>
+										    </li>
 										  </ul>
 										</div>
 									</div>

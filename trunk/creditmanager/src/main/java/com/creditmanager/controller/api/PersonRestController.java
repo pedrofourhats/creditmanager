@@ -57,11 +57,11 @@ public class PersonRestController {
 		}
 		
 		if(this.personService.existPersonWithAddress(person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getLocality(), person.getProvince())) {
-			warnings += "Existe un usuario con la dirección " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
+			warnings += "Existe un usuario con la direcciï¿½n " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
 		}
 		
 		if(warnings != "") {
-			warnings += "¿Desea continuar?";
+			warnings += "ï¿½Desea continuar?";
 		} else {
 			personService.addPerson(person);
 		}
@@ -107,12 +107,12 @@ public class PersonRestController {
 		
 		if(this.personService.existPersonWithAddress(person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getLocality(), person.getProvince())) {
 			if(!(existingPerson.getAddress() + existingPerson.getAddressNumber() + existingPerson.getAddressFloor() + existingPerson.getAddressAppartment() + existingPerson.getLocality() + existingPerson.getProvince()).equals(person.getAddress() + person.getAddressNumber() + person.getAddressFloor() + person.getAddressAppartment() + person.getLocality() + person.getProvince())) {
-				warnings += "Existe un usuario con la dirección " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
+				warnings += "Existe un usuario con la direcciï¿½n " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
 			}
 		}
 		
 		if(warnings != "") {
-			warnings += "¿Desea continuar?";
+			warnings += "ï¿½Desea continuar?";
 		} else {
 			personService.editPerson(person);
 		}
@@ -133,5 +133,15 @@ public class PersonRestController {
 	@RequestMapping(value="/person/autocomplete/{searchedKeyword}", method=RequestMethod.GET, consumes="*/*")
 	public @ResponseBody List<PersonDTO> autocomplete(@PathVariable String searchedKeyword){
 		return personService.autocomplete(searchedKeyword);
+	}
+	
+	@RequestMapping(value="/person/intiEvaluators", method=RequestMethod.GET, consumes="*/*")
+	public @ResponseBody List<PersonDTO> getIntiEvaluators(){
+		return personService.getPersonByType("INTI");
+	}
+
+	@RequestMapping(value="/person/intiAccesor", method=RequestMethod.GET, consumes="*/*")
+	public @ResponseBody List<PersonDTO> getIntiAccesor(){
+		return personService.getPersonByType("CAFESG");
 	}
 }

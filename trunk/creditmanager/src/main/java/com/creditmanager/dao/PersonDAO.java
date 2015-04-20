@@ -10,6 +10,7 @@ public interface PersonDAO extends GenericDAO<Person, Long> {
 	List<Person> findByName(String name);
 	Page<Person> getFilteredPerson(int pageIndex, int pageSize, String searchedKeyword);
 	List<Person> getByIds(List<Long> ids);
+	List<Person> getByType(String type);
 	boolean existUserWithEmail(String email);
 	boolean existUserWithDni(String identityNumber);
 	boolean existPersonWithName(String name, String surname);
