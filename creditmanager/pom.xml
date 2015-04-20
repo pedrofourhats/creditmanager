@@ -214,6 +214,13 @@
 		<version>2.4</version>
 	</dependency>
 	
+	<!-- javamail -->
+	<dependency>
+		<groupId>javax.mail</groupId>
+		<artifactId>mail</artifactId>
+		<version>1.5.0-b01</version>
+	</dependency>
+	
 	<!-- Gson -->
     <dependency>
 		<groupId>com.google.code.gson</groupId>
