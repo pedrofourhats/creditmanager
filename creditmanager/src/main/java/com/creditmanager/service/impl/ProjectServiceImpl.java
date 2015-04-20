@@ -79,8 +79,11 @@ public class ProjectServiceImpl implements ProjectService {
 			holders = new HashSet<Person>(personDao.getByIds(holderIds));
 		}
 		
+		Person evaluator = personDao.getById(projectDto.getEvaluator().getId());
+		Person accesor = personDao.getById(projectDto.getAccesor().getId());
+		
 		Project project = new Project(projectDto.getDateOfEntry(), projectDto.getNumber(), projectDto.getServicers(), projectDto.getSituationState(), 
-			projectDto.getEvaluator(), projectDto.getAccesor(), guarantors, holders, projectDto.getInvestmentDestination(), projectDto.getTitle(), projectDto.getType(),
+			evaluator, accesor, guarantors, holders, projectDto.getInvestmentDestination(), projectDto.getTitle(), projectDto.getType(),
 			projectDto.getEconomicArea(), projectDto.getEconomicActivity(), projectDto.getCategory(), projectDto.getRequestedAmount(), projectDto.getRequestedDeadline(),
 			projectDto.getRequestedGracePeriod(), projectDto.getGivenGracePeriod(), projectDto.getDeliveryDate(), projectDto.getGivenAmount(), projectDto.getGivenDeadline(),
 			projectDto.getOriginalRate(), projectDto.getEffectiveRate());
@@ -104,11 +107,15 @@ public class ProjectServiceImpl implements ProjectService {
 			holders = new HashSet<Person>(personDao.getByIds(holderIds));
 		}
 		
+		Person evaluator = personDao.getById(project.getEvaluator().getId());
+		Person accesor = personDao.getById(project.getAccesor().getId());
+		
 		Project projectToEdit = projectDao.getById(project.getId());
 		projectToEdit.update(project.getDateOfEntry(), project.getNumber(), project.getServicers(), project.getSituationState(), guarantors, holders, 
-			project.getInvestmentDestination(), project.getTitle(), project.getType(), project.getEconomicArea(), project.getEconomicActivity(), project.getCategory(), 
-			project.getRequestedAmount(), project.getRequestedDeadline(), project.getRequestedGracePeriod(), project.getGivenGracePeriod(),
-			project.getDeliveryDate(), project.getGivenAmount(), project.getGivenDeadline(), project.getDefaultForms(), project.getOriginalRate(), project.getEffectiveRate());
+			project.getInvestmentDestination(), project.getTitle(), project.getType(), project.getEconomicArea(), project.getEconomicActivity(), 
+			project.getCategory(), project.getRequestedAmount(), project.getRequestedDeadline(), project.getRequestedGracePeriod(), project.getGivenGracePeriod(),
+			project.getDeliveryDate(), project.getGivenAmount(), project.getGivenDeadline(), project.getDefaultForms(), project.getOriginalRate(), 
+			project.getEffectiveRate(), evaluator, accesor);
 		projectDao.add(projectToEdit);
 	}
 	

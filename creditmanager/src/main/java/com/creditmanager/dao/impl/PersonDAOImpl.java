@@ -95,4 +95,12 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 		criteria.add(Restrictions.eq("province", province));
 		return !getHibernateTemplate().findByCriteria(criteria).isEmpty();
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Person> getByType(String type) {
+		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
+		criteria.add(Restrictions.eq("type", type));
+		return (List<Person>) getHibernateTemplate().findByCriteria(criteria);
+	}
 }

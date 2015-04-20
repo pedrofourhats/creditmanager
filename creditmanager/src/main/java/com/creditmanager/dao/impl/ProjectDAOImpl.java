@@ -18,8 +18,10 @@ public class ProjectDAOImpl extends GenericDAOImpl<Project, Long> implements Pro
 
 	@Override
 	public Page<Project> getAllProjects(int pageIndex, int pageSize) {
-		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
-		return getPageByCriteria(criteria, pageIndex, pageSize);
+//		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
+//		return getPageByCriteria(criteria, pageIndex, pageSize);
+		
+		return getAllPaginated(pageIndex, pageSize);
 	}
 
 	@Override

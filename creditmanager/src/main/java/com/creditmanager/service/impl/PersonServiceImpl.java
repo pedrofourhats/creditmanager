@@ -120,4 +120,10 @@ public class PersonServiceImpl implements PersonService {
 	public boolean existPersonWithAddress(String address, String addressNumber, String addressFloor, String addressAppartment, String locality, String province) {
 		return this.personDAO.existPersonWithAddress(address, addressNumber, addressFloor, addressAppartment, locality, province);
 	}
+
+	@Override
+	public List<PersonDTO> getPersonByType(String type) {
+		List<Person> persons = personDAO.getByType(type);
+		return MapperUtil.map(mapper, persons, PersonDTO.class);
+	}
 }

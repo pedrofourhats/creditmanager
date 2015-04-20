@@ -14,6 +14,7 @@ public interface PersonService {
 	PersonDTO getById(Long id);
 	Page<PersonDTO> getAllPerson(int pageIndex, int pageSize, String searchedKeyword);
 	List<PersonDTO> autocomplete(String searchedKeyword);
+	List<PersonDTO> getPersonByType(String type);
 	void addPerson(PersonDTO person);
 	void editPerson(PersonDTO person);
 	void deletePerson(long personId) throws PersonHasProjectsException;
