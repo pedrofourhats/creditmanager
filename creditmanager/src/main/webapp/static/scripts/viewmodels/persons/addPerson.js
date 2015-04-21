@@ -53,6 +53,8 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 		$scope.newPerson = editablePerson;
 	} else {
 		$scope.newPerson = {identityTypeName: "", genderName: "", province: "Entre Ríos"};
+		//se selecciona por default sexo masculino
+		$scope.selectGender({value: 0, name: 'MASCULINO'});
 	}
 	
 	$scope.addPerson = function() {
