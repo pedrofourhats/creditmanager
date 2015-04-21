@@ -61,7 +61,7 @@ public class PersonRestController {
 		}
 		
 		if(warnings != "") {
-			warnings += "ï¿½Desea continuar?";
+			warnings += "¿Desea continuar?";
 		} else {
 			personService.addPerson(person);
 		}
@@ -85,7 +85,7 @@ public class PersonRestController {
 		}
 		
 		if(this.personService.existUserWithDni(identityNumber)) {
-			if(this.personService.getById(person.getId()).getIdentityNumber() != person.getIdentityNumber()) {
+			if(!person.getIdentityNumber().equals(this.personService.getById(person.getId()).getIdentityNumber())) {
 				return new CreditManagerError("Existe un usuario con el dni " + identityNumber, "Error");
 			}
 		}
@@ -94,7 +94,7 @@ public class PersonRestController {
 		PersonDTO existingPerson = this.personService.getById(person.getId());
 		
 		if(this.personService.existUserWithEmail(person.getEmail())) {
-			if(!existingPerson.getEmail().equals(person.getEmail())) {
+			if(!person.getEmail().equals(existingPerson.getEmail())) {
 				warnings += "Existe un usuario con el email " + person.getEmail() + ". ";
 			}
 		}
@@ -107,12 +107,12 @@ public class PersonRestController {
 		
 		if(this.personService.existPersonWithAddress(person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getLocality(), person.getProvince())) {
 			if(!(existingPerson.getAddress() + existingPerson.getAddressNumber() + existingPerson.getAddressFloor() + existingPerson.getAddressAppartment() + existingPerson.getLocality() + existingPerson.getProvince()).equals(person.getAddress() + person.getAddressNumber() + person.getAddressFloor() + person.getAddressAppartment() + person.getLocality() + person.getProvince())) {
-				warnings += "Existe un usuario con la direcciï¿½n " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
+				warnings += "Existe un usuario con la dirección " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
 			}
 		}
 		
 		if(warnings != "") {
-			warnings += "ï¿½Desea continuar?";
+			warnings += "¿Desea continuar?";
 		} else {
 			personService.editPerson(person);
 		}
