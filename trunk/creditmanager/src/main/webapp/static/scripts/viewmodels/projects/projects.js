@@ -208,8 +208,14 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 				}
 			}
 			
-			delete $scope.project.evaluator.formattedBirthDate;
-			delete $scope.project.accesor.formattedBirthDate;
+			//TODO: REVISAR TEO!!!!!
+			if($scope.project.evaluator) {//SE AGREGA PARA QUE NO ROMPA EL IF
+				delete $scope.project.evaluator.formattedBirthDate;
+			}
+			
+			if($scope.project.accesor) {//SE AGREGA PARA QUE NO ROMPA EL IF
+				delete $scope.project.accesor.formattedBirthDate;
+			}
 			
 			$http.post(getCompletePath("projects"), JSON.stringify($scope.project))
 			.success(function (project) {
