@@ -30,37 +30,14 @@
 						<h4>Complete el formulario</h4>
 						<hr>
 						<div class="row">
-							<div class="col-sm-6">
-								<div class="form-group">
-									<!-- VALIDACIO“N -->
-									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.surname.$dirty && createPersonForm.surname.$invalid">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner" ng-show="createPersonForm.surname.$error.required">Debe ingresar un apellido</div>
-									</div>
-									<!-- end VALIDACIO“N -->
-									<label for="surname">Apellido</label>
-									<input type="text" name="surname" class="form-control" required maxlength="50" placeholder="Ingrese apellido" tabindex="1" ng-model="newPerson.surname">
-								</div>
-							</div>
-							<div class="col-sm-6">								
-								<div class="form-group">
-									<!-- VALIDACIO“N -->
-									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.name.$dirty && createPersonForm.name.$invalid">
-									  <div class="tooltip-arrow"></div>
-									  <div class="tooltip-inner" ng-show="createPersonForm.name.$error.required">Debe ingresar un nombre</div>
-									</div>
-									<!-- end VALIDACIO“N -->
-									<label for="name">Nombre</label>
-									<input type="text" name="name" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="2" autofocus ng-model="newPerson.name">
-								</div>								
-							</div>
+							<div class="col-sm-4">
 							<div class="form-group">
-								<label>Tipo</label>
+								<label>Categoría</label>
 
 								<div class="dropdown" tabindex="3" dropdown>
 								  <a type="button" data-toggle="dropdown">
 								    <span ng-show="newPerson.type == undefined">
-								    	Elegir tipo
+								    	Elegir categoría
 								    </span>
 								    <span>
 									    {{newPerson.type}} 
@@ -74,6 +51,32 @@
 								  </ul>
 								</div>
 							</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<!-- VALIDACIO“N -->
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.surname.$dirty && createPersonForm.surname.$invalid">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.surname.$error.required">Debe ingresar un apellido</div>
+									</div>
+									<!-- end VALIDACIO“N -->
+									<label for="surname">Apellido</label>
+									<input type="text" name="surname" class="form-control" required maxlength="50" placeholder="Ingrese apellido" tabindex="1" ng-model="newPerson.surname">
+								</div>
+							</div>
+							<div class="col-sm-4">								
+								<div class="form-group">
+									<!-- VALIDACIO“N -->
+									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.name.$dirty && createPersonForm.name.$invalid">
+									  <div class="tooltip-arrow"></div>
+									  <div class="tooltip-inner" ng-show="createPersonForm.name.$error.required">Debe ingresar un nombre</div>
+									</div>
+									<!-- end VALIDACIO“N -->
+									<label for="name">Nombre</label>
+									<input type="text" name="name" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="2" autofocus ng-model="newPerson.name">
+								</div>								
+							</div>
+
 						</div>
 						<hr>
 						<div class="row">
@@ -169,8 +172,8 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="cellPhone">Celular</label>
-									<input type="text" name="cellPhoneAreaCode" class="form-control" maxlength="20" placeholder="COD AREA" tabindex="7" ng-model="newPerson.cellPhoneAreaCode"><span>15</span>
-									<input type="text" name="cellPhoneNumber" class="form-control" maxlength="20" placeholder="NUMERO" tabindex="7" ng-model="newPerson.cellPhoneNumber">
+									<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="cellPhoneAreaCode" class="form-control" maxlength="20" placeholder="COD AREA" tabindex="7" ng-model="newPerson.cellPhoneAreaCode"><span>15</span>
+									<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="cellPhoneNumber" class="form-control" maxlength="20" placeholder="NUMERO" tabindex="7" ng-model="newPerson.cellPhoneNumber">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
@@ -261,7 +264,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="phone">Teléfono</label>
-									<input type="number" name="phone" class="form-control" maxlength="20" placeholder="Ingrese teléfono" tabindex="16" ng-model="newPerson.phone">
+									<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="phone" class="form-control" maxlength="20" placeholder="Ingrese teléfono" tabindex="16" ng-model="newPerson.phone">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
@@ -272,7 +275,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="workphone">Teléfono laboral</label>
-									<input type="number" name="workphone" class="form-control" maxlength="20" placeholder="Ingrese teléfono laboral" tabindex="17" ng-model="newPerson.workPhone">
+									<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="workphone" class="form-control" maxlength="20" placeholder="Ingrese teléfono laboral" tabindex="17" ng-model="newPerson.workPhone">
 								</div>
 							</div>							
 						</div>

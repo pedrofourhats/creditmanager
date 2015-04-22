@@ -59,7 +59,7 @@
 					La acción emergente de la presente fianza no caducará por falta de protesto o su notificación, tanto de la obligación principal como del presente instrumento.
                 </p>
                 <p class="mt10">
-					Para todos los efectos judiciales o extrajudiciales a que diere lugar la presente fianza, nos sometemos a la jurisdicción y competencia de los Tribunales Ordinarios de la Ciudad Autónoma de Buenos Aires, con exclusión de cualquier otro fuero o jurisdicción, constituyendo domicilio en  la calle <span class="uppercase">{{project.guarantors[0].address}}</span> de la ciudad de {{cityOnly(project.guarantors[0].locality)}}, provincia de ENTRE RÌOS, donde serán tenidas por válidas todas las comunicaciones que nos fueren remitidas.
+					Para todos los efectos judiciales o extrajudiciales a que diere lugar la presente fianza, nos sometemos a la jurisdicción y competencia de los Tribunales Ordinarios de la Ciudad Autónoma de Buenos Aires, con exclusión de cualquier otro fuero o jurisdicción, constituyendo domicilio en  la calle <span class="uppercase">{{project.guarantors[0].address}} {{project.guarantors[0].addressNumber}} <span ng-show="project.guarantors[0].addressFloor">Piso</span> {{project.guarantors[0].addressFloor}} <span ng-show="project.guarantors[0].addressAppartment">Departamento</span> {{project.guarantors[0].addressAppartment}}</span> de la ciudad de {{cityOnly(project.guarantors[0].locality)}}, provincia de ENTRE RÌOS, donde serán tenidas por válidas todas las comunicaciones que nos fueren remitidas.
 				</p>
                 
                 <div class="row txtC signature">

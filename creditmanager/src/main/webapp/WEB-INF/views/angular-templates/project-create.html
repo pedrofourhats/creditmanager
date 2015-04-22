@@ -54,9 +54,9 @@
 	
 									<div class="form-group projectNumberInput">
 										<label>Número de proyecto (formato: nnnnnn/aaaa)</label>
-										<input type="text" maxlength="6"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberId">
+										<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="6"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberId">
 										<span> / </span>
-										<input type="text" maxlength="4"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberYear">
+										<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="4"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberYear">
 									</div>
 								</div>
 								<div class="col-sm-4">
@@ -328,15 +328,15 @@
 									<div class="form-group">
 										<label class="labelCurrency">Importe solicitado</label> 
 										 <span class="input-group-addon adonPesos">$</span>
-										<input type="number"  class="form-control mediumInput" placeholder="Ingrese importe solicitado" tabindex="6" ng-model="project.requestedAmount"  >
+										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control mediumInput" placeholder="Ingrese importe solicitado" tabindex="6" ng-model="project.requestedAmount"  >
 									</div>
 									<div class="form-group">
 										<label>Periodo de gracia solicitado</label> 
-										<input type="number"  class="form-control" placeholder="Ingrese periodo de gracia solicitado" tabindex="8" ng-model="project.requestedGracePeriod"  >
+										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese periodo de gracia solicitado" tabindex="8" ng-model="project.requestedGracePeriod"  >
 									</div>
 									<div class="form-group">
 										<label>Plazo solicitado</label> 
-										<input type="number"  class="form-control" placeholder="Ingrese plazo solicitado" tabindex="7" ng-model="project.requestedDeadline"  >
+										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese plazo solicitado" tabindex="7" ng-model="project.requestedDeadline"  >
 									</div>
 								</div>
 								<div class="col-sm-4" style="border-right: 1px solid #bebebe;">
@@ -344,15 +344,15 @@
 										<label class="labelCurrency">Importe otorgado</label> 
 										<!-- pattern="(d{3})([.])(d{2})" ATENCION!!! CON ESTA VALIDACION NO FUNCIONA AL EDITAR EL PROYECTO -->
 										 <span class="input-group-addon adonPesos">$</span>
-										<input type="number"  class="form-control mediumInput" placeholder="Ingrese importe otorgado" tabindex="10" ng-model="project.givenAmount"  >
+										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control mediumInput" placeholder="Ingrese importe otorgado" tabindex="10" ng-model="project.givenAmount"  >
 									</div>
 									<div class="form-group">
 										<label>Periodo de gracia otorgado</label> 
-										<input type="number"  class="form-control" placeholder="Ingrese periodo de gracia otorgado" tabindex="8" ng-model="project.givenGracePeriod"  >
+										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese periodo de gracia otorgado" tabindex="8" ng-model="project.givenGracePeriod"  >
 									</div>
 									 <div class="form-group">
 										<label>Plazo otorgado</label> 
-										<input type="number"  class="form-control" placeholder="Ingrese plazo otorgado" tabindex="11" ng-model="project.givenDeadline"  >
+										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese plazo otorgado" tabindex="11" ng-model="project.givenDeadline"  >
 									</div>
 								</div>
 								<div class="col-sm-4">
@@ -370,11 +370,11 @@
 									</div>
 									 <div class="form-group">
 										<label>Tasa original</label> 
-										<input type="number"  class="form-control" placeholder="0" tabindex="11" ng-model="project.originalRate"  >
+										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="0" tabindex="11" ng-model="project.originalRate"  >
 									</div>
 									 <div class="form-group">
 										<label>Tasa vigente</label> 
-										<input type="number"  class="form-control" placeholder="0" tabindex="11" ng-model="project.effectiveRate"  >
+										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="0" tabindex="11" ng-model="project.effectiveRate"  >
 									</div>
 								</div>
 							</div>
