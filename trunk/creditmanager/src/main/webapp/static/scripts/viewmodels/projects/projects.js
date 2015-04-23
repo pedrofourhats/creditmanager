@@ -93,10 +93,6 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		
 		$scope.states = [{name: "EVALUACION INTI"}, {name: "EVALUACION INTA"}, {name: "INFORMACION CAFESG"}, {name: "RECHAZADO / DESISTIDO"}, {name: "SUJETO A REVISION"}, {name: "COMITE DE CREDITO"}, {name: "APROBADO"}, {name: "CREDITO OTORGADO"}, {name: "CREDITO VIGENTE"}, {name: "CREDITO EN MORA"}, {name: "CREDITO CANCELADO"}];
 		
-		//$scope.evaluators = [{name: "ELIZABETH A."}, {name: "ADRIANA V."}, {name: "ROMINA M."}, {name: "WALTER H."}, {name: "MELINA SCH."}, {name: "MARTIN S."}, {name: "ELINA B."}, {name: "INTA"}];
-		
-		//$scope.accesors = [{name: "NOELIA A."}, {name: "JAVIER B."}, {name: "EMANUEL R."}, {name: "ROSA F."}, {name: "ROSANA G."}, {name: "NOELIA D."}, {name: "DIEGO"}, {name: "CECILIA B."}, {name: "MARTIN L."}];
-
 		$scope.types = [{name: "NUEVO"}, {name: "EN MARCHA"}];
 
 		$scope.economicSectors = [{name: "INDUSTRIA"}, {name: "AGROPECUARIO"}, {name: "SERVICIOS INDUSTRIALES"}, {name: "SERVICIOS NO INDUSTRIALES"}, {name: "OTROS"}];
@@ -191,6 +187,16 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 		};
 		
 		self.createProject = function(){
+			if($scope.evaluators.length == 0 || $scope.accesors.length == 0){
+				alert('No existen evaluadores y/o asesores en el sistema. \nAsegurese de cargarlos previamente.');
+				return;
+			}
+			
+			if(!$scope.project.evaluator || !$scope.project.accesor){
+				alert('Debe completar los campos de evaluador y asesor');
+				return;
+			}
+			
 			if($scope.project.number != undefined){
 				$scope.project.number = $scope.project.numberId + '/' + $scope.project.numberYear;
 			}
