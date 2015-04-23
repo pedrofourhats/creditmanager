@@ -94,7 +94,8 @@ public class PersonServiceImpl implements PersonService {
 
 	public void deletePerson(long personId) throws PersonHasProjectsException {
 		Person person = this.personDAO.getById(personId);
-		if(person.getGuarantorProjects().size() > 0 || person.getHolderProjects().size() > 0){
+		if(person.getGuarantorProjects().size() > 0 || person.getHolderProjects().size() > 0 
+				|| person.getAccesorProjects().size() > 0 || person.getEvaluatorProjects().size() > 0){
 			throw new PersonHasProjectsException();
 		}
 		
