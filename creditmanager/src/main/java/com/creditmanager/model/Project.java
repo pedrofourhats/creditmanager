@@ -70,12 +70,6 @@ public class Project extends com.creditmanager.model.Entity {
 	@Column(name="situationState")
 	private String situationState;
 	
-//	@Column(name="evaluator")
-//	private String evaluator;
-	
-//	@Column(name="accesor")
-//	private String accesor;
-	
 	@Column(name="originalRate")
 	private String originalRate;
 	
