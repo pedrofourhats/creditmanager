@@ -172,7 +172,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="cellPhone">Celular</label>
-									<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="cellPhoneAreaCode" class="form-control" maxlength="20" placeholder="COD AREA" tabindex="7" ng-model="newPerson.cellPhoneAreaCode"><span>15</span>
+									<span>(</span><input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="cellPhoneAreaCode" class="form-control" maxlength="20" placeholder="COD AREA" tabindex="7" ng-model="newPerson.cellPhoneAreaCode"><span>) 15</span>
 									<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="cellPhoneNumber" class="form-control" maxlength="20" placeholder="NUMERO" tabindex="7" ng-model="newPerson.cellPhoneNumber">
 								</div>
 								<div class="form-group">
@@ -255,7 +255,7 @@
 								</div>
 							</div>
 							<div class="col-sm-4">
-								<div class="form-group">
+								<div class="form-group cellphoneInput">
 									<!-- VALIDACIO“N -->
 									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.phone.$dirty && createPersonForm.phone.$invalid">
 									  <div class="tooltip-arrow"></div>
@@ -264,9 +264,10 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="phone">Teléfono</label>
-									<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="phone" class="form-control" maxlength="20" placeholder="Ingrese teléfono" tabindex="16" ng-model="newPerson.phone">
+									<span>(</span><input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="phoneCode" class="form-control" maxlength="20" placeholder="" tabindex="16" ng-model="newPerson.phoneCode"><span>)</span> 
+									<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="phoneNumber" class="form-control" maxlength="20" placeholder="" tabindex="16" ng-model="newPerson.phoneNumber">
 								</div>
-								<div class="form-group">
+								<div class="form-group cellphoneInput">
 									<!-- VALIDACIO“N -->
 									<div class="top tooltip active" role="tooltip" ng-show="createPersonForm.workphone.$dirty && createPersonForm.workphone.$invalid">
 									  <div class="tooltip-arrow"></div>
@@ -275,7 +276,8 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="workphone">Teléfono laboral</label>
-									<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="workphone" class="form-control" maxlength="20" placeholder="Ingrese teléfono laboral" tabindex="17" ng-model="newPerson.workPhone">
+									<span>(</span><input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="workphoneNumber" class="form-control" maxlength="20" placeholder="" tabindex="17" ng-model="newPerson.workPhoneCode"><span>)</span> 
+									<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="workphoneCode" class="form-control" maxlength="20" placeholder="" tabindex="17" ng-model="newPerson.workPhoneNumber">
 								</div>
 							</div>							
 						</div>
