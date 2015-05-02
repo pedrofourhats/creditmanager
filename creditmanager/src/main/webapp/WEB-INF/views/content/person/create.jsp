@@ -34,7 +34,7 @@
 							<div class="form-group">
 								<label>Categoría</label>
 
-								<div class="dropdown" tabindex="3" dropdown>
+								<div class="dropdown" dropdown>
 								  <a type="button" data-toggle="dropdown">
 								    <span ng-show="newPerson.type == undefined">
 								    	Elegir categoría
@@ -45,9 +45,9 @@
 								    <i class="fa fa-chevron-down"></i>
 								  </a>
 								  <ul class="dropdown-menu" role="menu">
-								    <li ng-click="selectType('INTI')"><a href="javascript:void(0);">INTI</a></li>
-							        <li ng-click="selectType('CAFESG')"><a href="javascript:void(0);">CAFESF</a></li>
-							        <li ng-click="selectType('COMÚN')"><a href="javascript:void(0);">COMÚN</a></li>
+								    <li ng-click="selectType('EVALUADORES INTI')"><a href="javascript:void(0);">EVALUADORES INTI</a></li>
+							        <li ng-click="selectType('ASESORES CAFESG')"><a href="javascript:void(0);">ASESORES CAFESG</a></li>
+							        <li ng-click="selectType('TITULAR/CODEUDOR')"><a href="javascript:void(0);">TITULAR/CODEUDOR</a></li>
 								  </ul>
 								</div>
 							</div>
