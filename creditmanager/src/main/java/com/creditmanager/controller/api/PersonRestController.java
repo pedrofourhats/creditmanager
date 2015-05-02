@@ -22,14 +22,22 @@ public class PersonRestController {
 	@Autowired
 	private PersonService personService;
 	
-	@RequestMapping(value="/persons/{pageIndex}/{pageSize}", method = RequestMethod.GET, consumes="*/*")
-	public @ResponseBody Page<PersonDTO> getAll(@PathVariable int pageIndex, @PathVariable int pageSize){
-		return personService.getAllPerson(pageIndex, pageSize, null);
+	@RequestMapping(value="/persons/{pageIndex}/{pageSize}/{personCategory}", method = RequestMethod.GET, consumes="*/*")
+	public @ResponseBody Page<PersonDTO> getAll(@PathVariable int pageIndex, @PathVariable int pageSize, @PathVariable String personCategory) {
+		if(personCategory.equals("ALL")) {
+			return personService.getAllPerson(pageIndex, pageSize, null);	
+		} else {
+			return personService.getPersonByType(pageIndex, pageSize, personCategory, null);
+		}
 	}
 	
-	@RequestMapping(value="/persons/{pageIndex}/{pageSize}/{searchedKeyword}", method = RequestMethod.GET, consumes="*/*")
-	public @ResponseBody Page<PersonDTO> getFiltered(@PathVariable int pageIndex, @PathVariable int pageSize, @PathVariable String searchedKeyword){
-		return personService.getAllPerson(pageIndex, pageSize, searchedKeyword);
+	@RequestMapping(value="/persons/{pageIndex}/{pageSize}/{personCategory}/{searchedKeyword}", method = RequestMethod.GET, consumes="*/*")
+	public @ResponseBody Page<PersonDTO> getFiltered(@PathVariable int pageIndex, @PathVariable int pageSize, @PathVariable String personCategory, @PathVariable String searchedKeyword) {
+		if(personCategory.equals("ALL")) {
+			return personService.getAllPerson(pageIndex, pageSize, searchedKeyword);	
+		} else {
+			return personService.getPersonByType(pageIndex, pageSize, personCategory, searchedKeyword);
+		}
 	}
 	
 	@RequestMapping(value="/persons/createPerson", method = RequestMethod.POST)

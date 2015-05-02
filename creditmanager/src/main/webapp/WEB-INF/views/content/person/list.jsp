@@ -56,6 +56,25 @@
 				</div>
 			</div>
 			<div class="pull-right form-inline">
+				<div class="dropdown" dropdown>
+					  <a type="button" data-toggle="dropdown">
+					  	<span data-ng-show="searchedPersonCategory == 'ALL'">
+						    Todos
+					    </span>
+					    <span data-ng-hide="searchedPersonCategory == 'ALL'">
+						    {{searchedPersonCategory}} 
+					    </span>
+					    <i class="fa fa-chevron-down"></i>
+					  </a>
+					  <ul class="dropdown-menu" role="menu">
+					  	<li ng-click="selectCategory('ALL')"><a href="javascript:void(0);">TODOS</a></li>
+					    <li ng-click="selectCategory('EVALUADORES INTI')"><a href="javascript:void(0);">EVALUADORES INTI</a></li>
+				        <li ng-click="selectCategory('ASESORES CAFESG')"><a href="javascript:void(0);">ASESORES CAFESG</a></li>
+				        <li ng-click="selectCategory('TITULAR/CODEUDOR')"><a href="javascript:void(0);">TITULAR/CODEUDOR</a></li>
+					  </ul>
+				  </div>
+			</div>
+			<div class="pull-right form-inline">
 				<div class="form-group">
 					<label>Buscar persona</label>
 					<input class="form-control" ng-model="searchedKeyword">

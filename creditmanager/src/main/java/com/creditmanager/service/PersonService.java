@@ -13,6 +13,7 @@ public interface PersonService {
 	
 	PersonDTO getById(Long id);
 	Page<PersonDTO> getAllPerson(int pageIndex, int pageSize, String searchedKeyword);
+	Page<PersonDTO> getPersonByType(int pageIndex, int pageSize, String personCategory, String searchedKeyword);
 	List<PersonDTO> autocomplete(String searchedKeyword);
 	List<PersonDTO> getPersonByType(String type);
 	void addPerson(PersonDTO person);
