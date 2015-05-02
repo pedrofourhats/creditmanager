@@ -42,6 +42,18 @@ public class PersonServiceImpl implements PersonService {
 		
 		return MapperUtil.map(mapper, personList, PersonDTO.class);
 	}
+	
+	public Page<PersonDTO> getPersonByType(int pageIndex, int pageSize, String personCategory, String searchedKeyword) {
+		Page<Person> personList;
+		
+		if(searchedKeyword != null) {
+			personList = personDAO.getFilteredByType(pageIndex, pageSize, personCategory, searchedKeyword);
+		} else {
+			personList = personDAO.getAllByType(pageIndex, pageSize, personCategory);		
+		}
+		
+		return MapperUtil.map(mapper, personList, PersonDTO.class);
+	}
 
 	public void addPerson(PersonDTO person) {
 		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");

@@ -103,4 +103,47 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 		criteria.add(Restrictions.eq("type", type));
 		return (List<Person>) getHibernateTemplate().findByCriteria(criteria);
 	}
+
+	@SuppressWarnings("unchecked")
+	public Page<Person> getFilteredByType(int pageIndex, int pageSize, String personCategory, String searchedKeyword) {
+		Session session = hibernateTemplate.getSessionFactory().getCurrentSession();
+		DetachedCriteria detachedCriteria = DetachedCriteria.forEntityName(entityName);
+		Criteria criteria = detachedCriteria.getExecutableCriteria(session);
+		
+		criteria.addOrder(Order.asc("surname"));
+		criteria.add(Restrictions.eq("type", personCategory));
+		criteria.add(Restrictions.or(Restrictions.or(
+				Restrictions.ilike("surname", searchedKeyword, MatchMode.ANYWHERE),
+				Restrictions.ilike("name", searchedKeyword, MatchMode.ANYWHERE)),
+				Restrictions.ilike("identityNumber", searchedKeyword, MatchMode.ANYWHERE)));
+		criteria.setProjection(Projections.rowCount());
+		Long totalItems = (Long) criteria.uniqueResult();
+		
+		criteria.setProjection(null)
+			.setFirstResult((pageIndex - 1) * pageSize)
+				.setMaxResults(pageSize);
+		
+		List<Person> persons = (List<Person>) hibernateTemplate.findByCriteria(detachedCriteria);
+		return new Page<Person>(persons, pageIndex, pageSize, totalItems);
+	}
+
+	@SuppressWarnings("unchecked")
+	public Page<Person> getAllByType(int pageIndex, int pageSize, String personCategory) {
+		Session session = hibernateTemplate.getSessionFactory().getCurrentSession();
+		DetachedCriteria detachedCriteria = DetachedCriteria.forEntityName(entityName);
+		Criteria criteria = detachedCriteria.getExecutableCriteria(session);
+		
+		criteria.add(Restrictions.eq("type", personCategory));
+		criteria.addOrder(Order.asc("surname"));
+		
+		criteria.setProjection(Projections.rowCount());
+		Long totalItems = (Long) criteria.uniqueResult();
+		
+		criteria.setProjection(null)
+			.setFirstResult((pageIndex - 1) * pageSize)
+				.setMaxResults(pageSize);
+		
+		List<Person> persons = (List<Person>) hibernateTemplate.findByCriteria(detachedCriteria);
+		return new Page<Person>(persons, pageIndex, pageSize, totalItems);
+	}
 }

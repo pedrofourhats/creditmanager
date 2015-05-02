@@ -15,4 +15,6 @@ public interface PersonDAO extends GenericDAO<Person, Long> {
 	boolean existUserWithDni(String identityNumber);
 	boolean existPersonWithName(String name, String surname);
 	boolean existPersonWithAddress(String address, String addressNumber, String addressFloor, String addressAppartment, String locality, String province);
+	Page<Person> getFilteredByType(int pageIndex, int pageSize, String personCategory, String searchedKeyword);
+	Page<Person> getAllByType(int pageIndex, int pageSize, String personCategory);
 }

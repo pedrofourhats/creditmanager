@@ -3,6 +3,7 @@ var personsListApp = angular.module('personApp', []);
 personsListApp.controller('personsListController', function ($scope, $http) {
     $scope.personsPage = personsPage;
     $scope.isSearching = false;
+    $scope.searchedPersonCategory = "ALL";
 	
     $scope.deletePerson = function(person) {
     	var confirmDeletion = confirm("¿Está seguro que desea eliminar esta persona?");
@@ -17,6 +18,12 @@ personsListApp.controller('personsListController', function ($scope, $http) {
     	}
     };
     
+    $scope.selectCategory = function(category) {
+		$scope.searchedPersonCategory = category;
+		$scope.personsPage.pageIndex = 1;
+		$scope.goToPage(0);
+	};
+    
     $scope.goToEditPerson = function(person) {
     	redirect('person/edit/' + person.id);
     };
@@ -27,7 +34,7 @@ personsListApp.controller('personsListController', function ($scope, $http) {
     
 	$scope.goToPage = function(pageNumber) {
 		if($scope.personsPage.pageIndex != pageNumber) {
-			var path = "persons/" + pageNumber + "/10" + ($scope.searchedKeyword ? "/" + $scope.searchedKeyword : "");
+			var path = "persons/" + pageNumber + "/10/" + $scope.searchedPersonCategory + ($scope.searchedKeyword ? "/" + $scope.searchedKeyword : "") ;
 			$http.get(getCompletePath(path))
 			.success(function (newPersonsPage) {
 				newPersonsPage.pagesToShow = function () {
@@ -72,7 +79,7 @@ personsListApp.controller('personsListController', function ($scope, $http) {
 		if($scope.searchedKeyword) {
 			$scope.isSearching = true;
 			
-			$http.get(getCompletePath("persons/1/10/" + $scope.searchedKeyword))
+			$http.get(getCompletePath("persons/1/10/" + $scope.searchedPersonCategory + "/" + $scope.searchedKeyword))
 			.success(function (newPersonsPage) {
 				newPersonsPage.pagesToShow = function () {
 			        var pages = [];
