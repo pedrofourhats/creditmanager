@@ -69,7 +69,7 @@
 							Localidad: <span class="txtBlue">{{person.locality}}</span>
 						</div>
 						<div class="col-sm-4">
-							Dirección: <span class="txtBlue">{{person.address}} {{person.addressNumber}} <span ng-show="person.addressFloor">Piso</span> {{person.addressFloor}} <span ng-show="person.addressAppartment">Departamento</span> {{person.addressAppartment}}</span>							<br>
+							Dirección: <span class="txtBlue">{{person.address}} {{person.addressNumber}} <span ng-show="person.addressFloor">Piso</span> {{person.addressFloor}} <span ng-show="person.addressAppartment">Departamento/Localidad</span> {{person.addressAppartment}}</span>							<br>
 							Código postal: <span class="txtBlue">{{person.postCode}}</span>
 						</div>
 						<div class="col-sm-4">

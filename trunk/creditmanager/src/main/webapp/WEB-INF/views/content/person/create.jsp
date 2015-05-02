@@ -240,8 +240,8 @@
 									<input type="text" name="addressNumber" class="form-control" maxlength="45" placeholder="Ingrese número" tabindex="12" ng-model="newPerson.addressNumber">
 									<label for="addressFloor">Piso</label>
 									<input type="text" name="addressFloor" class="form-control" maxlength="45" placeholder="Ingrese piso" tabindex="13" ng-model="newPerson.addressFloor">
-									<label for="addressAppartment">Departamento</label>
-									<input type="text" name="addressAppartment" class="form-control" maxlength="45" placeholder="Ingrese departamento" tabindex="14" ng-model="newPerson.addressAppartment">
+									<label for="addressAppartment">Departamento/Localidad</label>
+									<input type="text" name="addressAppartment" class="form-control" maxlength="45" placeholder="Ingrese departamento/localidad" tabindex="14" ng-model="newPerson.addressAppartment">
 								</div>
 								<div class="form-group">
 									<!-- VALIDACIO“N -->
