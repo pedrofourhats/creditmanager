@@ -65,7 +65,7 @@
 									  <div class="tooltip-inner" ng-show="createPersonForm.surname.$error.required">Debe ingresar un apellido</div>
 									</div>
 									<!-- end VALIDACIO“N -->
-									<label for="surname">Apellido</label>
+									<label for="surname">Apellido (*)</label>
 									<input type="text" name="surname" class="form-control" required maxlength="50" placeholder="Ingrese apellido" tabindex="1" ng-model="newPerson.surname">
 								</div>
 							</div>
@@ -77,7 +77,7 @@
 									  <div class="tooltip-inner" ng-show="createPersonForm.name.$error.required">Debe ingresar un nombre</div>
 									</div>
 									<!-- end VALIDACIO“N -->
-									<label for="name">Nombre</label>
+									<label for="name">Nombre (*)</label>
 									<input type="text" name="name" class="form-control" required maxlength="50" placeholder="Ingrese nombre" tabindex="2" autofocus ng-model="newPerson.name">
 								</div>								
 							</div>
@@ -93,7 +93,7 @@
 									  <div class="tooltip-inner" ng-show="createPersonForm.identityTypeName.$error.required">Debe ingresar el tipo de documento</div>
 									</div>
 									<!-- end VALIDACIO“N -->
-									<label>Tipo de documento</label>
+									<label>Tipo de documento (*)</label>
 	
 									<div class="dropdown" tabindex="3" dropdown>
 									  <a type="button" data-toggle="dropdown">
@@ -119,7 +119,7 @@
 									  <div class="tooltip-inner" ng-show="createPersonForm.idNumber.$error.required">Debe ingresar un documento</div>
 									</div>
 									<!-- end VALIDACIO“N -->
-									<label for="idNumber">Número de documento</label>
+									<label for="idNumber">Número de documento (*)</label>
 									<!-- <small class="fr">Soló números sin puntos</small> -->
 									<input type="text" name="idNumberGenere" class="form-control" maxlength="1" placeholder="M/F" tabindex="4" onkeypress='return event.charCode == 102 || event.charCode == 109' ng-model="newPerson.identityNumberGenere">
 									<input type="text" name="idNumberFirstPart" class="form-control" maxlength="2" placeholder="" tabindex="4" min="0" max="99" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberFirstPart"><span>.</span> 
@@ -137,7 +137,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<div class="control-group">
-										<label for="birthDate" class="control-label">Fecha de nacimiento</label><span id="result"></span>
+										<label for="birthDate" class="control-label">Fecha de nacimiento (*)</label><span id="result"></span>
 										<input id="birthDate" type="date" name="birthDate" onchange="calcularEdad()" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" required ng-model="newPerson.birthDate" max="1997-01-01"/>	
 									</div>
 								</div>
@@ -148,12 +148,12 @@
 									  <div class="tooltip-inner" ng-show="createPersonForm.genderName.$error.required">Debe ingresar el genero</div>
 									</div>
 									<!-- end VALIDACIO“N -->
-									<label>Genero</label>
+									<label>Genero (*)</label>
 	
 									<div class="dropdown" tabindex="6" dropdown is-open="status.isopen">
 									  <a type="button" data-toggle="dropdown">
 									    <span ng-show="newPerson.genderName == ''">
-									    	Elegir genero
+									    	Elegir genero (*)
 									    </span>
 									    <span ng-show="newPerson.genderName != ''">
 										    {{newPerson.genderName}} 
@@ -203,7 +203,7 @@
 									  <div class="tooltip-inner" ng-show="createPersonForm.province.$error.required">Debe ingresar la provincia</div>
 									</div>
 									<!-- end VALIDACIO“N -->
-									<label for="province">Provincia</label>
+									<label for="province">Provincia (*)</label>
 									<input type="text" name="province" class="form-control" required maxlength="45" placeholder="Ingrese una provincia" tabindex="9" ng-model="newPerson.province">
 	
 								</div>
@@ -214,7 +214,7 @@
 									  <div class="tooltip-inner" ng-show="createPersonForm.locality.$error.required">Debe ingresar la localidad</div>
 									</div>
 									<!-- end VALIDACIO“N -->
-									<label for="locality">Departamento / Localidad</label>
+									<label for="locality">Departamento - Localidad (*)</label>
 									<div class="dropdown" tabindex="10" dropdown>
 									  <a type="button" data-toggle="dropdown">
 									    <span ng-show="newPerson.locality == undefined">
@@ -239,7 +239,7 @@
 									  <div class="tooltip-inner" ng-show="createPersonForm.address.$error.required">Debe ingresar la dirección</div>
 									</div>
 									<!-- end VALIDACIO“N -->
-									<label for="address">Dirección</label>
+									<label for="address">Dirección (*)</label>
 									<input type="text" name="address" class="form-control" maxlength="100" placeholder="Ingrese dirección" required tabindex="11" ng-model="newPerson.address">
 									<label for="addressNumber">Numero</label>
 									<input type="text" name="addressNumber" class="form-control" maxlength="45" placeholder="Ingrese número" tabindex="12" ng-model="newPerson.addressNumber">
@@ -255,7 +255,7 @@
 									  <div class="tooltip-inner" ng-show="createPersonForm.postCode.$error.required">Debe ingresar el código postal</div>
 									</div>
 									<!-- end VALIDACIO“N -->
-									<label for="postCode">Código postal</label>
+									<label for="postCode">Código postal (*)</label>
 									<input type="text" name="postCode" class="form-control" maxlength="10" placeholder="Ingrese código postal" tabindex="15" required ng-model="newPerson.postCode">
 								</div>
 							</div>
