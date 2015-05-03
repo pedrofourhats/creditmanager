@@ -13,6 +13,11 @@
 	</script>
 	
 	<%@ include file="../../include/styles.jsp" %>
+	<script type="text/javascript">
+    window.onbeforeunload = function() {
+        return "¿Esta seguro que desea salir de esta página? Todos sus cambios no guardados se perderán";
+    }
+</script>
 </head>
 <body>
 	<%@ include file="../../include/header.jsp" %>
@@ -132,8 +137,8 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<div class="control-group">
-										<label for="birthDate" class="control-label">Fecha de nacimiento</label>
-										<input type="date" name="birthDate" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" required ng-model="newPerson.birthDate" max="1997-01-01" />	
+										<label for="birthDate" class="control-label">Fecha de nacimiento</label><span id="result"></span>
+										<input id="birthDate" type="date" name="birthDate" onchange="calcularEdad()" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" required ng-model="newPerson.birthDate" max="1997-01-01"/>	
 									</div>
 								</div>
 								<div class="form-group">
@@ -209,7 +214,7 @@
 									  <div class="tooltip-inner" ng-show="createPersonForm.locality.$error.required">Debe ingresar la localidad</div>
 									</div>
 									<!-- end VALIDACIO“N -->
-									<label for="locality">Localidad</label>
+									<label for="locality">Departamento / Localidad</label>
 									<div class="dropdown" tabindex="10" dropdown>
 									  <a type="button" data-toggle="dropdown">
 									    <span ng-show="newPerson.locality == undefined">
@@ -282,10 +287,12 @@
 							</div>							
 						</div>
 						<hr>
+						
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="pull-right">
 									<div class="form-group">
+										<button type="button" class="btn btn-primary" ng-click="cancelEdit()">Cancelar</button>
 										<input type="submit" class="btn btn-primary" tabindex="18" value="Guardar persona" ng-show="!isEdition" ng-disabled="createPersonForm.$invalid || newPerson.genderName == '' || newPerson.identityTypeName == '' || newPerson.locality == '' || newPerson.type == ''" />
 										<input type="submit" class="btn btn-primary" tabindex="18" value="Actualizar persona" ng-show="isEdition" ng-disabled="createPersonForm.$invalid || newPerson.genderName == '' || newPerson.identityTypeName == '' || newPerson.locality == '' || newPerson.type == ''" />
 									</div>
@@ -304,6 +311,81 @@
 	<script src="<%=scriptPageContext %>/static/scripts/viewmodels/persons/addPerson.js" type="text/javascript"></script>
 	<script>
 		$("#goToPersonsLink").addClass("active");
+
+		function isValidDate(day,month,year)
+		{
+		    var dteDate;
+		    month=month-1;
+		    dteDate=new Date(year,month,day);
+		    return ((day==dteDate.getDate()) && (month==dteDate.getMonth()) && (year==dteDate.getFullYear()));
+		}
+
+		function validate_fecha(fecha)
+		{
+		    var patron=new RegExp("^(19|20)+([0-9]{2})([-])([0-9]{1,2})([-])([0-9]{1,2})$");
+		 
+		    if(fecha.search(patron)==0)
+		    {
+		        var values=fecha.split("-");
+		        if(isValidDate(values[2],values[1],values[0]))
+		        {
+		            return true;
+		        }
+		    }
+		    return false;
+		}
+
+		function calcularEdad()
+		{
+		    var fecha=document.getElementById("birthDate").value;
+		    if(validate_fecha(fecha)==true)
+		    {
+		        var values=fecha.split("-");
+		        var dia = values[2];
+		        var mes = values[1];
+		        var ano = values[0];
+		 
+		        var fecha_hoy = new Date();
+		        var ahora_ano = fecha_hoy.getYear();
+		        var ahora_mes = fecha_hoy.getMonth()+1;
+		        var ahora_dia = fecha_hoy.getDate();
+		 
+		        var edad = (ahora_ano + 1900) - ano;
+		        if ( ahora_mes < mes )
+		        {
+		            edad--;
+		        }
+		        if ((mes == ahora_mes) && (ahora_dia < dia))
+		        {
+		            edad--;
+		        }
+		        if (edad > 1900)
+		        {
+		            edad -= 1900;
+		        }
+		 
+		        var meses=0;
+		        if(ahora_mes>mes)
+		            meses=ahora_mes-mes;
+		        if(ahora_mes<mes)
+		            meses=12-(mes-ahora_mes);
+		        if(ahora_mes==mes && dia>ahora_dia)
+		            meses=11;
+		 
+		        var dias=0;
+		        if(ahora_dia>dia)
+		            dias=ahora_dia-dia;
+		        if(ahora_dia<dia)
+		        {
+		            ultimoDiaMes=new Date(ahora_ano, ahora_mes, 0);
+		            dias=ultimoDiaMes.getDate()-(dia-ahora_dia);
+		        }
+		 
+		        document.getElementById("result").innerHTML= "  (" + edad + " años)";
+		    }else{
+		        document.getElementById("result").innerHTML="La fecha "+fecha+" es incorrecta";
+		    }
+		}
 	</script>
 </body>
 </html>

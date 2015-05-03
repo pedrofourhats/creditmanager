@@ -1,4 +1,9 @@
 <meta charset="utf-8">
+	<script type="text/javascript">
+    window.onbeforeunload = function() {
+        return "¿Esta seguro que desea salir de esta página? Todos sus cambios no guardados se perderán";
+    }
+</script>
 <div class="container">
 		<ol class="breadcrumb">
 		  <li><a href="#/project-list"><i class="fa fa-angel-right"></i> Proyectos</a></li>
@@ -52,9 +57,12 @@
 										</div>
 									</div>
 	
-									<div class="form-group">
-										<label>Número de proyecto (formato: nnnnnn/aaaa)</label>
-										<input readonly type="text" class="form-control" placeholder="Ingrese número de proyecto" tabindex="2" ng-model="project.number">
+									<div class="form-group projectNumberInput">
+										<label style="width: 100%;">Número de proyecto (formato: nnnnnn/aaaa)</label>
+										<span> C.O. </span>
+										<input readonly type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="6"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberId">
+										<span> / </span>
+										<input readonly type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="4"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberYear">
 									</div>
 								</div>
 								<div class="col-sm-4">
@@ -70,9 +78,6 @@
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
-										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="servicer in servicers" ng-click="selectServicer(servicer.name)"><a href="javascript:void(0);">{{servicer.name}}</a></li>
-										  </ul>
 										</div>
 									</div>
 									<div class="form-group">
@@ -87,9 +92,6 @@
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
-										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="state in states" ng-click="selectState(state.name)"><a href="javascript:void(0);">{{state.name}}</a></li>
-										  </ul>
 										</div>
 									</div>
 								</div>
@@ -102,13 +104,10 @@
 										    	Elegir evaluador
 										    </span>
 										    <span ng-show="project.evaluator != undefined">
-											    {{ project.evaluator }} 
+											    {{ project.evaluator.surname + ' ' + project.evaluator.name }} 
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
-										  <ul readonly class="dropdown-menu" role="menu">
-										    <li ng-repeat="evaluator in evaluators" ng-click="selectEvaluator(evaluator.name)"><a href="javascript:void(0);">{{evaluator.name}}</a></li>
-										  </ul>
 										</div>
 									</div>
 									<div class="form-group">
@@ -119,13 +118,10 @@
 										    	Elegir asesor
 										    </span>
 										    <span ng-show="project.accesor != undefined">
-											    {{ project.accesor}} 
+											    {{ project.accesor.surname + ' ' + project.accesor.name}} 
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
-										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="accesor in accesors" ng-click="selectAccesor(accesor.name)"><a href="javascript:void(0);">{{accesor.name}}</a></li>
-										  </ul>
 										</div>
 									</div>
 								</div>
@@ -135,7 +131,7 @@
 								<div class="col-sm-12">
 									<div class="form-group">
 										<label>Destino de la inversión</label>
-										<textarea readonly class="form-control" tabindex="7" placeholder="Ingrese el destino de la inversión" ng-model="project.investmentDestination"></textarea>
+										<textarea readonly   class="form-control" tabindex="7" placeholder="Ingrese el destino de la inversión" ng-model="project.investmentDestination"></textarea>
 									</div>
 								</div> 
 							</div>
@@ -146,6 +142,8 @@
 										<div class="col-sm-6">
 											<h4>Titulares</h4>
 										</div>
+										<div class="col-sm-6 txtR">
+										</div>	
 									</div>
 									<table class="table table-hover table-condensed table-responsive table-small">
 									  <thead>
@@ -160,12 +158,15 @@
 										  		Nombre
 										  	</a>
 										  </th>
+										  <th class="txtC">Acciones</th>
 										</tr>
 									  </thead>
 									  <tbody>
 										<tr ng-repeat="holder in project.holders">
 										  <td>{{holder.id}}</td>
 										  <td>{{holder.surname + ' ' + holder.name}}</td>
+										  <td class="txtC">
+										  </td>
 										</tr>
 									  </tbody>
 									</table>
@@ -176,8 +177,10 @@
 								<div class="col-sm-12">
 									<div class="row head-small">
 										<div class="col-sm-6">
-											<h4>Co-Deudores</h4>
+											<h4>Codeudores</h4>
 										</div>
+										<div class="col-sm-6 txtR">
+										</div>	
 									</div>
 									<table class="table table-hover table-condensed table-responsive table-small">
 									  <thead>
@@ -192,12 +195,15 @@
 										  		Nombre
 										  	</a>
 										  </th>
+										  <th class="txtC">Acciones</th>
 										</tr>
 									  </thead>
 									  <tbody>
 										<tr ng-repeat="holder in project.guarantors">
 										  <td>{{holder.id}}</td>
 										  <td>{{holder.surname + ' ' + holder.name}}</td>
+										  <td class="txtC">
+										  </td>
 										</tr>
 									  </tbody>
 									</table>
@@ -230,9 +236,6 @@
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
-										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="type in types" ng-click="selectType(type.name)"><a href="javascript:void(0);">{{type.name}}</a></li>
-										  </ul>
 										</div>
 									</div>
 								</div>
@@ -249,9 +252,6 @@
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
-										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="economicSector in economicSectors" ng-click="selectEconomicArea(economicSector.name)"><a href="javascript:void(0);">{{economicSector.name}}</a></li>
-										  </ul>
 										</div>
 									</div>
 									<div class="form-group">
@@ -266,9 +266,6 @@
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
-										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="economicActivity in economicActivities" ng-click="selectEconomicActivity(economicActivity.name)"><a href="javascript:void(0);">{{economicActivity.name}}</a></li>
-										  </ul>
 										</div>
 									</div>
 								</div>
@@ -285,9 +282,6 @@
 										    </span>
 										    <i class="fa fa-chevron-down"></i>
 										  </a>
-										  <ul class="dropdown-menu" role="menu">
-										    <li ng-repeat="category in categories" ng-click="selectCategory(category.name)"><a href="javascript:void(0);">{{category.name}}</a></li>
-										  </ul>
 										</div>
 									</div>
 								</div>
@@ -299,28 +293,38 @@
 								</div>
 							</div>
 							<div class="row mt20 withCurrency">
-								<div class="col-sm-4">
+								<div class="col-sm-4" style="border-right: 1px solid #bebebe;">
 									<div class="form-group">
 										<label class="labelCurrency">Importe solicitado</label> 
 										 <span class="input-group-addon adonPesos">$</span>
-										<input readonly type="number" class="form-control mediumInput" placeholder="Ingrese importe solicitado" tabindex="6" ng-model="project.requestedAmount">
+										<input readonly type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control mediumInput" placeholder="Ingrese importe solicitado" tabindex="6" ng-model="project.requestedAmount"  >
+									</div>
+									<div class="form-group">
+										<label>Periodo de gracia solicitado</label> 
+										<input readonly type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese periodo de gracia solicitado" tabindex="8" ng-model="project.requestedGracePeriod"  >
 									</div>
 									<div class="form-group">
 										<label>Plazo solicitado</label> 
-										<input readonly type="text" class="form-control" placeholder="Ingrese plazo solicitado" tabindex="7" ng-model="project.requestedDeadline">
+										<input readonly type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese plazo solicitado" tabindex="7" ng-model="project.requestedDeadline"  >
+									</div>
+								</div>
+								<div class="col-sm-4" style="border-right: 1px solid #bebebe;">
+									<div class="form-group">
+										<label class="labelCurrency">Importe otorgado</label> 
+										<!-- pattern="(d{3})([.])(d{2})" ATENCION!!! CON ESTA VALIDACION NO FUNCIONA AL EDITAR EL PROYECTO -->
+										 <span class="input-group-addon adonPesos">$</span>
+										<input readonly type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control mediumInput" placeholder="Ingrese importe otorgado" tabindex="10" ng-model="project.givenAmount"  >
+									</div>
+									<div class="form-group">
+										<label>Periodo de gracia otorgado</label> 
+										<input readonly type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese periodo de gracia otorgado" tabindex="8" ng-model="project.givenGracePeriod"  >
+									</div>
+									 <div class="form-group">
+										<label>Plazo otorgado</label> 
+										<input readonly type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese plazo otorgado" tabindex="11" ng-model="project.givenDeadline"  >
 									</div>
 								</div>
 								<div class="col-sm-4">
-									<div class="form-group">
-										<label>Periodo de gracia solicitado</label> 
-										<input readonly type="text" class="form-control" placeholder="Ingrese periodo de gracia solicitado" tabindex="8" ng-model="project.requestedGracePeriod">
-									</div>
-									
-									<div class="form-group">
-										<label>Periodo de gracia otorgado</label> 
-										<input readonly type="text" class="form-control" placeholder="Ingrese periodo de gracia otorgado" tabindex="8" ng-model="project.givenGracePeriod">
-									</div>
-									
 									<div class="form-group">
 										<div class="control-group">
 											<label for="date-picker-2" class="control-label">Fecha de otorgamiento del crédito</label>
@@ -333,17 +337,13 @@
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="col-sm-4">
-									<div class="form-group">
-										<label class="labelCurrency">Importe otorgado</label> 
-										<!-- pattern="(d{3})([.])(d{2})" ATENCION!!! CON ESTA VALIDACION NO FUNCIONA AL EDITAR EL PROYECTO -->
-										 <span class="input-group-addon adonPesos">$</span>
-										<input readonly type="number" class="form-control mediumInput" placeholder="Ingrese importe otorgado" tabindex="10" ng-model="project.givenAmount">
+									 <div class="form-group">
+										<label>Tasa original</label> 
+										<input readonly type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="0" tabindex="11" ng-model="project.originalRate"  >
 									</div>
-									<div class="form-group">
-										<label>Plazo otorgado</label> 
-										<input readonly type="text" class="form-control" placeholder="Ingrese plazo otorgado" tabindex="11" ng-model="project.givenDeadline">
+									 <div class="form-group">
+										<label>Tasa vigente</label> 
+										<input readonly type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="0" tabindex="11" ng-model="project.effectiveRate"  >
 									</div>
 								</div>
 							</div>
@@ -380,17 +380,7 @@
 								</div>
 								<div class="form-group pos-rel">
 									<label class="checkbox">
-									  <input readonly type="checkbox" tabindex="9" ng-model="defaultForm9"> Axesor y/o Veraz de titular y codeudores actualizado
-									</label>
-								</div>
-								<div class="form-group pos-rel">
-									<label class="checkbox">
 									  <input readonly type="checkbox" tabindex="5" ng-model="defaultForm5"> Visita CAFESG
-									</label>
-								</div>
-								<div class="form-group pos-rel">
-									<label class="checkbox">
-									  <input readonly type="checkbox" tabindex="2" ng-model="defaultForm2"> Pedido de más información
 									</label>
 								</div>
 								<div class="form-group pos-rel">
@@ -424,6 +414,21 @@
 								<div class="form-group pos-rel">
 									<label class="checkbox">
 									  <input readonly type="checkbox" tabindex="10" ng-model="defaultForm10"> Planilla de Co-Deudores
+									</label>
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input readonly type="checkbox" tabindex="9" ng-model="defaultForm9"> Axesor y/o Veraz de titular y codeudores actualizado
+									</label>
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input readonly type="checkbox" tabindex="2" ng-model="defaultForm2"> Pedido de más información
+									</label>
+								</div>
+								<div class="form-group pos-rel">
+									<label class="checkbox">
+									  <input readonly type="checkbox" tabindex="19" ng-model="defaultForm19"> Comprobantes de Sueldo de coodeudores actualizado
 									</label>
 								</div>
 							</div>
@@ -461,11 +466,18 @@
 						<hr>
 				    	<div class="row">
 				    		<div class="col-sm-12">
-				    			<h4>Documentos legales y archivo</h4>
+				    			<h4>Documentos legales</h4>
 				    		</div>
 				    	</div>
 						<div class="row">
 							<div class="col-sm-12">
+								<div class="row mt20" style="margin-bottom: 10px">
+									<div class="col-sm-12 txtR">
+										<button type="button" class="btn btn-primary" ng-click="loadForm()" ng-disabled="projectId == undefined">
+											<i class="fa fa-file-text-o"></i> Generación de Documentación de Crédito
+										</button>
+									</div>	
+								</div>
 								<table class="table table-hover table-condensed table-responsive table-tiny">
 								  <thead>
 									<tr>
@@ -488,7 +500,17 @@
 									</tr>
 								  </tbody>
 								</table>
-								
+							<hr>
+							<h4>Archivo</h4>
+								<div style="margin-bottom: 10px;" class="row mt20">
+									<div class="col-sm-12 txtR">
+										<button type="button" class="btn btn-primary" ng-click="toggleAdditionalForm()">
+											<i class="fa fa-file-text"></i> 
+											<span ng-show="!additionalFormsVisible">Cargar formulario extra</span>
+											<span ng-show="additionalFormsVisible">Finalizar Cargar de formulario extra</span>
+										</button>
+									</div>	
+								</div>
 								<table class="table table-hover table-condensed table-responsive table-tiny">
 									<thead>
 										<tr>
@@ -499,6 +521,12 @@
 									<tbody>
 										<tr ng-repeat="addform in project.additionalForms">
 											<td>{{addform.fileName}}</td>
+											<td>
+												<a href="{{pdfUrl(addform.fileName)}}" target="_blank">Vista Previa</a>
+												<button type="button" class="btn btn-link" ng-click="">
+													<i class="fa fa-trash txtDanger"></i>
+												</button>
+											</td>
 										</tr>
 									</tbody>
 								</table>
@@ -507,10 +535,7 @@
 									<input readonly type="file" name="file" file-uploader on-success="onPdfUploadSuccess(fileName)" url="pdfUploadUrl()">
 								</div>
 								
-								<div class="row mt20">
-									<div class="col-sm-12 txtR">
-									</div>	
-								</div>
+
 							</div>						
 						</div>
 				    </div>
@@ -522,6 +547,9 @@
 										<h4>Contactos</h4>
 									</div>
 									<div class="col-sm-6 txtR">
+										<button type="button" class="btn btn-primary" ng-click="addContact()">
+											<i class="fa fa-plus-circle"></i> Cargar contacto
+										</button>
 									</div>	
 								</div>
 								<table class="table table-hover table-condensed table-responsive table-small">
@@ -562,6 +590,9 @@
 											<h4>Últimos pagos</h4>
 										</div>
 										<div class="col-sm-6 txtR">
+											<button type="button" class="btn btn-primary" ng-click="openPaymentModal()">
+												<i class="fa fa-plus-circle"></i> Cargar pago
+											</button>
 											<button type="button" class="btn btn-primary" ng-click="goToPaymentCalendar()">
 												<i class="fa fa-calendar-o"></i> Ver calendario de pagos
 											</button>
@@ -619,6 +650,7 @@
 					<div class="col-sm-12">
 						<div class="pull-right">
 							<div class="form-group">
+								<button type="button" class="btn btn-primary" ng-click="cancelEdit()">Volver</button>
 								<span ng-show="!loadProjectButtonEnable && step  != 1 && step != 2">Debe primero guardar el proyecto desde la pestaña Control de Gestión o Aspectos</span>
 							</div>
 						</div>
@@ -629,97 +661,3 @@
 		</div>
 	</div>
 	
-	<script type="text/ng-template" id="addPersonModalContent.html">
-		<div class="modal-header">
-        	<h3 class="modal-title">Agregar {{type}}</h3>
-        </div>
-        <div class="modal-body">
-        	<label for="exampleInputEmail1">Buscar {{type}}</label> 
-			<input readonly type="text" class="form-control" placeholder="{{type}}" ng-model="selected" 
-				typeahead="person as (person.name + ' ' + person.surname) for person in persons($viewValue)">
-				
-			<b>{{type}} Seleccionado</b>
-    		<div class="list-group">
-				<blockquote>
-      				Nombre: {{selected.name + ' ' + selected.surname}}<br/>
-      				DNI: {{selected.identityNumber}}<br/>
-      				Sexo: {{selected.gender == null ? '' : selected.gender == 'MALE' ? 'Masculino' : 'Femenino'}}
-
-    			</blockquote>
-			</div>
-        </div>
-        <div class="modal-footer">
-        	<button class="btn btn-primary" ng-click="ok()" ng-disabled="!selected">OK</button>
-        	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
-    
-    <script type="text/ng-template" id="loadFormModalContent.html">
-		<div class="modal-header">
-        	<h3 class="modal-title">Cargar formulario</h3>
-        </div>
-        <div class="modal-body">
-    		<div class="list-group">
-				<blockquote>
-					<a href="javascript: void(0);" ng-click="goToForm('fianza')">Fianza</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('ordenDePago')">Orden de pago</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('pagare')">Pagare</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('politicaCredilicia')">Politica credilicia</a><br>
-      				<a href="javascript: void(0);" ng-click="goToForm('mutuoIndividualConGracia')">Mutuo Individual Con Gracia</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('mutuoAsociativoConGracia')">Mutuo Asociativo Con Gracia</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('mutuoIndividualSinGracia')">Mutuo Individual Sin Gracia</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('mutuoAsociativoSinGracia')">Mutuo Asociativo Sin Gracia</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('paymentSchedule')">Cronograma de pagos</a><br>
-    			</blockquote>
-			</div>
-        </div>
-        <div class="modal-footer">
-        	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
-    
-    <script type="text/ng-template" id="addContactModalContent.html">
-		<div class="modal-header">
-        	<h3 class="modal-title">{{title}}</h3>
-        </div>
-        <div class="modal-body">
-			<form name="contactForm">
-    			<div class="input-group">
-					<label for="contactDate">Fecha</label> 
-					<input readonly type="date" class="form-control" ng-model="contactDate" min="1900-01-01" max="3000-12-31" required>
-				</div>
-				<div class="list-group">
-					<label for="contactComment">Observacion</label> 
-					<input readonly type="text" class="form-control" ng-model="contactComment" required>
-				</div>
-			</form>
-        </div>
-        <div class="modal-footer">
-        	<button class="btn btn-primary" ng-click="addContact()" ng-disabled="contactForm.$invalid">OK</button>
-        	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
-    <script type="text/ng-template" id="paymentModalContent.html">
-		<div class="modal-header">
-        	<h3 class="modal-title">Cargar Pago</h3>
-        </div>
-        <div class="modal-body">
-			<form name="paymentForm">
-				<div class="input-group">
-					<label for="feeNumber">Cuota</label> {{feeNumberToPay}}
-				</div>
-    			<div class="input-group">
-					<label for="contactDate">Fecha</label> 
-					<input readonly type="date" class="form-control" ng-model="paymentDate" min="1900-01-01" max="3000-12-31" required>
-				</div>
-				<div class="input-group">
-					<label for="contactComment">Monto</label> 
-					<input readonly type="text" class="form-control" ng-model="fee" required>
-				</div>
-			</form>
-        </div>
-        <div class="modal-footer">
-        	<button class="btn btn-primary" ng-click="pay()" ng-disabled="paymentForm.$invalid">OK</button>
-        	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>

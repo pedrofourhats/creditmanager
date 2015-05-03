@@ -197,7 +197,7 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 				return;
 			}
 			
-			if($scope.project.number != undefined){
+			if($scope.project.numberId != undefined){
 				$scope.project.number = $scope.project.numberId + '/' + $scope.project.numberYear;
 			}
 			
@@ -256,6 +256,12 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			    resolve: {
 			    	projectId: function () {
 			    		return $scope.projectId;
+			        },
+			    	graceQuantity: function () {
+			    		return $scope.project.givenGracePeriod;
+			        },
+			    	holderQuantity: function () {
+			    		return $scope.project.holders != undefined ? $scope.project.holders.length : 0;
 			        }
 			    }
 			});
@@ -293,7 +299,10 @@ projectControllers.controller('ModalAddPersonCtrl',
 });
 
 projectControllers.controller('ModalLoadFormCtrl', 
-function ($scope, $modalInstance, $http, projectId) {
+function ($scope, $modalInstance, $http, projectId, graceQuantity, holderQuantity) {
+	$scope.hasGrace = graceQuantity > 0;
+	$scope.hasHolder = holderQuantity > 1;
+	
 	$scope.goToForm = function(formName) {
 		redirect('forms/' + formName + "/" + projectId);
 	};

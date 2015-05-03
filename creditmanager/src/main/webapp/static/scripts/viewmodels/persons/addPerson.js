@@ -67,6 +67,10 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 		$scope.selectGender({value: 0, name: 'MASCULINO'});
 	}
 	
+	$scope.cancelEdit = function() {
+			history.go(-1);
+	};
+	
 	$scope.addPerson = function() {
 		if($scope.newPerson.identityNumberFirstPart != undefined){
 			if($scope.newPerson.identityNumberGenere != undefined){
