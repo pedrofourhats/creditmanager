@@ -244,6 +244,12 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 			    resolve: {
 			    	projectId: function () {
 			    		return $scope.projectId;
+			        },
+			    	graceQuantity: function () {
+			    		return $scope.project.givenGracePeriod;
+			        },
+			    	holderQuantity: function () {
+			    		return $scope.project.holders != undefined ? $scope.project.holders.length : 0;
 			        }
 			    }
 			});

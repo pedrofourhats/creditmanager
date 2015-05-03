@@ -53,7 +53,8 @@
 									</div>
 	
 									<div class="form-group projectNumberInput">
-										<label>Número de proyecto (formato: nnnnnn/aaaa)</label>
+										<label style="width: 100%;">Número de proyecto (formato: nnnnnn/aaaa)</label>
+										<span> C.O. </span>
 										<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="6"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberId">
 										<span> / </span>
 										<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="4"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberYear">
@@ -716,7 +717,7 @@
         </div>
         <div class="modal-footer">
         	<button class="btn btn-primary" ng-click="ok()" ng-disabled="!selected">OK</button>
-        	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        	<button class="btn btn-warning" ng-click="cancel()">Cancelar</button>
         </div>
     </script>
     
@@ -731,16 +732,16 @@
 					<a href="javascript: void(0);" ng-click="goToForm('ordenDePago')">Orden de pago</a><br>
 					<a href="javascript: void(0);" ng-click="goToForm('pagare')">Pagare</a><br>
 					<a href="javascript: void(0);" ng-click="goToForm('politicaCredilicia')">Politica credilicia</a><br>
-      				<a href="javascript: void(0);" ng-click="goToForm('mutuoIndividualConGracia')">Mutuo Individual Con Gracia</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('mutuoAsociativoConGracia')">Mutuo Asociativo Con Gracia</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('mutuoIndividualSinGracia')">Mutuo Individual Sin Gracia</a><br>
-					<a href="javascript: void(0);" ng-click="goToForm('mutuoAsociativoSinGracia')">Mutuo Asociativo Sin Gracia</a><br>
+      				<a href="javascript: void(0);" ng-show="hasGrace && !hasHolder" ng-click="goToForm('mutuoIndividualConGracia')">Mutuo Individual Con Gracia</a>
+					<a href="javascript: void(0);" ng-show="hasGrace && hasHolder" ng-click="goToForm('mutuoAsociativoConGracia')">Mutuo Asociativo Con Gracia</a>
+					<a href="javascript: void(0);" ng-show="!hasGrace && !hasHolder" ng-click="goToForm('mutuoIndividualSinGracia')">Mutuo Individual Sin Gracia</a>
+					<a href="javascript: void(0);" ng-show="!hasGrace && hasHolder" ng-click="goToForm('mutuoAsociativoSinGracia')">Mutuo Asociativo Sin Gracia</a><br>
 					<a href="javascript: void(0);" ng-click="goToForm('paymentSchedule')">Cronograma de pagos</a><br>
     			</blockquote>
 			</div>
         </div>
         <div class="modal-footer">
-        	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        	<button class="btn btn-warning" ng-click="cancel()">Cancelar</button>
         </div>
     </script>
     

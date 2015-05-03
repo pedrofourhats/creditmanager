@@ -29,7 +29,7 @@
       		</div>
 			<div class="panel-body" id="printableDiv">	
                 <h4>
-                  Ciudad Autónoma de Buenos Aires
+                  Ciudad Autonoma de Buenos Aires, ...... de ............................ de .......
                 </h4>
                 <p class="mt10">
                   Por la presente, <span class="uppercase">{{project.guarantors[0].surname}}, {{project.guarantors[0].name}} </span> con DNI Nº {{project.guarantors[0].identityNumber}}, se constituye en fiador solidario, liso, llano y principal pagador a favor del Polo Tecnológico Constituyentes S.A. en su carácter de Fiduciario del FIDEICOMISO SALTO GRANDE, de todas las obligaciones contraídas por <span class="uppercase">{{project.holders[0].surname}}, {{project.holders[0].name}} </span>en virtud del Contrato celebrado con Polo Tecnológico Constituyentes S.A. con fecha ______________, por la suma de $ {{addPoints(project.givenAmount)}} (PESOS {{numberToLetter(project.givenAmount)}}). La deuda quedará instrumentada causalmente por el Contrato formalizado entre el Polo Tecnológico Constituyentes S. A . y el deudor principal que afianzamos.

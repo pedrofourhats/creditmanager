@@ -88,6 +88,11 @@
                   <b>Plazo de gracia</b> hasta 6 meses de acuerdo al proyecto (este plazo surge de la evaluación del mismo)
                   <br>
                   <b>Forma de pago</b> Mensual, Posibilidad de pre-cancelación parcial o total sin gastos.
+                 <div class="col-sm-offset-3 col-sm-6 mt30">
+                    <span class="uppercase">Elina Gabriela Buffa</span></b>
+	                  <br>
+                   	DNI Nº: 21.511.090
+                 </div>
               </div>
               <div class="row">
 				<div class="col-sm-12">
