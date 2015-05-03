@@ -195,7 +195,7 @@
 										</div>
 										<div class="col-sm-6 txtR">
 											<button type="button" class="btn btn-primary" tabindex="9" ng-click="openAddPerson('Garante')">
-												<i class="fa fa-plus-circle"></i> Agregar Codeeudor
+												<i class="fa fa-plus-circle"></i> Agregar Codeudor
 											</button>
 										</div>	
 									</div>
@@ -707,9 +707,9 @@
 			<b>{{type}} Seleccionado</b>
     		<div class="list-group">
 				<blockquote>
-      				Nombre: {{selected.name + ' ' + selected.surname}}<br/>
-      				DNI: {{selected.identityNumber}}<br/>
-      				Sexo: {{selected.gender == null ? '' : selected.gender == 'MALE' ? 'Masculino' : 'Femenino'}}
+      				<span>Nombre:</span> {{selected.name + ' ' + selected.surname}}<br/>
+      				<span>DNI:</span> {{selected.identityNumber}}<br/>
+      				<span>Sexo:</span> {{selected.gender == null ? '' : selected.gender == 'MALE' ? 'Masculino' : 'Femenino'}}
 
     			</blockquote>
 			</div>
