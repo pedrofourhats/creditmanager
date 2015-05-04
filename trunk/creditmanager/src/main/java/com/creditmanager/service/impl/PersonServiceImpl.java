@@ -66,8 +66,10 @@ public class PersonServiceImpl implements PersonService {
 			e.printStackTrace();
 		}
 		
-		Person newPerson = new Person(person.getName(), person.getSurname(), person.getIdentityType(), person.getIdentityNumber(), person.getBirthDate(), person.getGender(), person.getPhone(), person.getWorkPhone(),
-				person.getCellPhone(), person.getEmail(), person.getProvince(), person.getLocality(), person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getPostCode(), person.getType());
+		Person newPerson = new Person(person.getName(), person.getSurname(), person.getIdentityType(), person.getIdentityNumber(), person.getBirthDate(), 
+				person.getGender(), person.getPhone(), person.getWorkPhone(), person.getCellPhone(), person.getEmail(), person.getProvince(), 
+				person.getLocality(), person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), 
+				person.getPostCode(), person.getType(), person.getActive());
 		personDAO.add(newPerson);
 	}
 
@@ -101,6 +103,7 @@ public class PersonServiceImpl implements PersonService {
 		personToEdit.setSurname(person.getSurname());
 		personToEdit.setWorkPhone(person.getWorkPhone());
 		personToEdit.setType(person.getType());
+		personToEdit.setActive(person.getActive());
 		personDAO.add(personToEdit);
 	}
 

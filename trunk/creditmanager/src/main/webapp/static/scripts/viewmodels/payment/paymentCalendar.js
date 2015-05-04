@@ -14,6 +14,7 @@ angular.module('paymentCalendarApp', [])
 	$scope.capitalQuote = $scope.project.givenAmount / $scope.project.givenDeadline;
 	$scope.annualRate = 12;
 	$scope.dailyRate = $scope.annualRate / 365;
+	$scope.dailyRateFormatted = parseFloat($scope.dailyRate).toFixed(2);
 	var initialCredit = 0;
 	
 	/***** Collections Managment *****/
@@ -90,7 +91,7 @@ angular.module('paymentCalendarApp', [])
 	
 	$scope.initialCredit = parseFloat(initialCredit).toFixed(2);
 	$scope.totalBalance = parseFloat(initialCredit - $scope.amountCharged).toFixed(2);
-	$scope.totalMonthlyBalance = totalMonthlyBalance;
+	$scope.totalMonthlyBalanceFormatted = totalMonthlyBalance;
 	$scope.balanceToOvercome = parseFloat(balanceToOvercome).toFixed(2);
 });
 		

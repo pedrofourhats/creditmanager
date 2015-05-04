@@ -49,6 +49,8 @@ public class PersonDTO {
 	private String postCode;
 	
 	private String type;
+	
+	private boolean active;
 
 	public Long getId() {
 		return id;
@@ -226,5 +228,13 @@ public class PersonDTO {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public boolean getActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 }

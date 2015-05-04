@@ -44,18 +44,18 @@
 									<div class="col-md-6">
 										<label class="control-label"><strong>Deudor: </strong></label></br>
 										<label class="control-label"><strong>Proyecto Nº: </strong> {{project.number}}</br>
-										<label class="control-label"><strong>Capital Otorgado: </strong> {{project.givenAmount}}</br>
+										<label class="control-label"><strong>Capital Otorgado: </strong>$ {{project.givenAmount}} Pesos</br>
 										<label class="control-label"><strong>Fecha Otorgamiento: </strong> {{deliveryFormattedDate}}</br>
 										<label class="control-label"><strong>Fecha Actual: </strong> {{today}}</label></br>
 										<label class="control-label"><strong>Amortización: </strong> {{project.givenDeadline}}</label></br>
 										<label class="control-label"><strong>Gracia: </strong> {{project.requestedGracePeriod}}</label></br>
 										<label class="control-label"><strong>Total de Plazo: </strong> {{totalDeadline}}</br>
-										<label class="control-label"><strong>Crédito Inicial: {{initialCredit}}</strong> </br>
+										<label class="control-label"><strong>Crédito Inicial: $ {{initialCredit}} Pesos</strong> </br>
 									</div>
   									<div class="col-md-6">
-  										<label class="control-label"><strong>Cuota Capital:  </strong>{{capitalQuote}}</label><br>
+  										<label class="control-label"><strong>Cuota Capital:  </strong>$ {{capitalQuote}} Pesos</label><br>
   										<label class="control-lable"><strong>TASA ANUAL: </strong>{{annualRate}} %</label><br>
-  										<label class="control-lable"><strong>Tasa Diaria: </strong>{{dailyRate}} %</label>
+  										<label class="control-lable"><strong>Tasa Diaria: </strong>{{dailyRateFormatted}} %</label>
   									</div>
 								</div>
 							</div>
@@ -65,24 +65,24 @@
 								<div class="row">
 									<div class="col-md-4">
 										<label class="control-label"><strong>Cuotas pagadas</strong></label><br>
-										<p>{{paymentsCount}} | {{today}}</p>
+										<p>{{paymentsCount}}</p>
 										<label class="control-label"><strong>Importe Cobrado al</strong></label><br>
-											$ {{amountCharged}} | {{today}}
+											$ {{amountCharged}} Pesos
 									</div>
 									<div class="col-md-4">
-										<label class="control-label"><strong>Cuotas</strong></label> {{today}}<br>
+										<label class="control-label"><strong>Cuotas</strong></label> <br>
 										<p>Vencidas: {{pastDues}}</p>
 										<p>Por Vencer: {{duesForPayment}}</p>
 										<label class="control-label"><strong>Saldo Total Original:</strong></label><br>
-										$ {{totalBalance}} | {{today}}
+										$ {{totalBalance}} Pesos
 									</div>
 									<div class="col-md-4">
 										<label class="control-label"><strong>Saldo Negociado:</strong></label><br>
-										<label class="control-label"><strong>Gastos x Cobranzas:</strong></label> $130<br>
-										<label class="control-label"><strong>Saldo Vencido: </strong>$ {{totalMonthlyBalance}}</label><br>
-										<label class="control-label"><strong>Saldo x Vencer: </strong>$ {{balanceToOvercome}}</label><br>
+										<label class="control-label"><strong>Gastos x Cobranzas:</strong></label> $130 Pesos<br>
+										<label class="control-label"><strong>Saldo Vencido: </strong>$ {{totalMonthlyBalanceFormatted}} Pesos</label><br>
+										<label class="control-label"><strong>Saldo x Vencer: </strong>$ {{balanceToOvercome}} Pesos</label><br>
 										<label class="control-label"><strong>Saldo + Punitorios:</strong></label><br>
-										<p>$ {{totalMonthlyBalance}} | {{today}}</p>
+										<p>$ {{totalMonthlyBalanceFormatted}} Pesos</p>
 									</div>
 								</div>
 							</div>
