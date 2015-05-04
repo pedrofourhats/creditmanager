@@ -84,5 +84,9 @@
         <a>type</a>
         <b>type</b>
       </field>
+      <field>
+        <a>active</a>
+        <b>active</b>
+      </field>
   </mapping>
 </mappings>

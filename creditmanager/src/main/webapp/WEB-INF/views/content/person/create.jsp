@@ -55,6 +55,7 @@
 							        <li ng-click="selectType('TITULAR/CODEUDOR')"><a href="javascript:void(0);">TITULAR/CODEUDOR</a></li>
 								  </ul>
 								</div>
+								<label><input type="checkbox" ng-model="newPerson.active"> Activo</label>
 							</div>
 							</div>
 							<div class="col-sm-4">

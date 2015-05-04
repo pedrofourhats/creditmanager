@@ -101,6 +101,7 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 	public List<Person> getByType(String type) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
 		criteria.add(Restrictions.eq("type", type));
+		criteria.add(Restrictions.eq("active", true));
 		return (List<Person>) getHibernateTemplate().findByCriteria(criteria);
 	}
 

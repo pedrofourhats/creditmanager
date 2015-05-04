@@ -10,6 +10,7 @@
 	<%@ include file="../../include/scripts.jsp" %>
 	<script type="text/javascript" src="<%=scriptPageContext %>/static/scripts/common/fileUpload.js"></script>
 	<script type="text/javascript" src="<%=scriptPageContext %>/static/scripts/viewmodels/projects/projects.js"></script>
+	<script type="text/javascript" src="<%=scriptPageContext %>/static/scripts/viewmodels/projects/projectCreation.js"></script>
 	<script type="text/javascript" src="<%=scriptPageContext %>/static/scripts/viewmodels/projects/projectDetail.js"></script>
 	<script type="text/javascript" src="<%=scriptPageContext %>/static/scripts/common/pager.js"></script>
 	<script type="text/javascript" src="<%=scriptPageContext %>/static/js/jquery.iframe-transport.js"></script>

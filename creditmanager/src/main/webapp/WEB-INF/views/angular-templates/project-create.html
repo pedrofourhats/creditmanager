@@ -6,6 +6,8 @@
 		</ol>
 		<div class="panel panel-default">
 			<div class="panel-body">
+				<ng-form name="projectForm">
+				
 				<h3>{{title}}</h3>
 				<h4>Complete los siguientes pasos</h4>
 
@@ -44,7 +46,7 @@
 											<label for="date-picker-2" class="control-label">Fecha de ingreso al INTI</label>
 											<div class="controls">
 												<div class="input-group">
-													<input id="date-picker-2" name="dateOfEntry" type="date" class="date-picker form-control" tabindex="1" required ng-model="project.dateOfEntry" />
+													<input id="date-picker-2" type="date" class="date-picker form-control" tabindex="1" ng-model="project.dateOfEntry" />
 													<label for="date-picker-2" class="input-group-addon btn">
 													</label>
 												</div>
@@ -53,11 +55,20 @@
 									</div>
 	
 									<div class="form-group projectNumberInput">
+										<!-- VALIDACION -->
+										<div class="top tooltip active" role="tooltip" ng-show="institutionalForm.$submitted || institutionalForm.firstProjectNumber.$touched || 
+													institutionalForm.secondProjectNumber.$touched">
+										  <div ng-show="institutionalForm.firstProjectNumber.$error.required || institutionalForm.secondProjectNumber.$error.required">
+										  	<div class="tooltip-arrow"></div>
+										  	<div class="tooltip-inner">Debe ingresar el numero de proyecto</div>
+										  </div>
+										</div>
+										<!-- end VALIDACION -->
 										<label style="width: 100%;">Número de proyecto (formato: nnnnnn/aaaa)</label>
 										<span> C.O. </span>
-										<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="6"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberId">
+										<input type="text" name="firstProjectNumber" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="6"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberId" required>
 										<span> / </span>
-										<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="4"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberYear">
+										<input type="text" name="secondProjectNumber" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="4"  class="form-control" placeholder="" tabindex="2" ng-model="project.numberYear" required>
 									</div>
 								</div>
 								<div class="col-sm-4">
@@ -98,7 +109,7 @@
 								</div>
 								<div class="col-sm-4">
 									<div class="form-group">
-										<label>Evaluador segun services</label>
+										<label>Evaluador INTI segun services</label>
 										<div class="dropdown" dropdown tabindex="5">
 										  <a type="button" data-toggle="dropdown">
 										    <span ng-show="project.evaluator == undefined">
@@ -141,8 +152,16 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="form-group">
+										<!-- VALIDACION -->
+										<div class="top tooltip active" role="tooltip" ng-show="institutionalForm.$submitted || institutionalForm.destination.$touched">
+										  <div ng-show="institutionalForm.destination.$error.required">
+										  	<div class="tooltip-arrow"></div>
+										  	<div class="tooltip-inner">Debe ingresar el destino de la inversion.</div>
+										  </div>
+										</div>
+										<!-- end VALIDACION -->
 										<label>Destino de la inversión</label>
-										<textarea class="form-control" tabindex="7" placeholder="Ingrese el destino de la inversión" ng-model="project.investmentDestination"></textarea>
+										<textarea class="form-control" name="destination" tabindex="7" placeholder="Ingrese el destino de la inversión" ng-model="project.investmentDestination" required></textarea>
 									</div>
 								</div> 
 							</div>
@@ -232,7 +251,7 @@
 						</form>
 					</div>
 				    <div role="tabpanel" class="tab-pane fade" id="aspects" ng-class="{'in active': step == 2 }">
-						<form name="aspectsForm">
+						<form name="aspectsForm" ng-submit="submit()">
 							<div class="row">
 								<div class="col-sm-12">
 									<h4>Aspectos económicos</h4>
@@ -327,17 +346,41 @@
 							<div class="row mt20 withCurrency">
 								<div class="col-sm-4" style="border-right: 1px solid #bebebe;">
 									<div class="form-group">
+										<!-- VALIDACION -->
+										<div class="top tooltip active" role="tooltip" ng-show="aspectsForm.$submitted || aspectsForm.requestedAmount.$touched">
+										  <div ng-show="aspectsForm.requestedAmount.$error.required">
+										  	<div class="tooltip-arrow"></div>
+										  	<div class="tooltip-inner">Debe ingresar el Importe solicitado</div>
+										  </div>
+										</div>
+										<!-- end VALIDACION -->
 										<label class="labelCurrency">Importe solicitado</label> 
 										 <span class="input-group-addon adonPesos">$</span>
-										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control mediumInput" placeholder="Ingrese importe solicitado" tabindex="6" ng-model="project.requestedAmount"  >
+										<input type="number" name="requestedAmount" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control mediumInput" placeholder="Ingrese importe solicitado" tabindex="6" ng-model="project.requestedAmount" required>
 									</div>
 									<div class="form-group">
+										<!-- VALIDACION -->
+										<div class="top tooltip active" role="tooltip" ng-show="aspectsForm.$submitted || aspectsForm.requestedGracePeriod.$touched">
+										  <div ng-show="aspectsForm.requestedGracePeriod.$error.required">
+										  	<div class="tooltip-arrow"></div>
+										  	<div class="tooltip-inner">Debe ingresar el periodo de gracia solicitado</div>
+										  </div>
+										</div>
+										<!-- end VALIDACION -->
 										<label>Periodo de gracia solicitado</label> 
-										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese periodo de gracia solicitado" tabindex="8" ng-model="project.requestedGracePeriod"  >
+										<input type="number" name="requestedGracePeriod" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese periodo de gracia solicitado" tabindex="8" ng-model="project.requestedGracePeriod" required>
 									</div>
 									<div class="form-group">
+										<!-- VALIDACION -->
+										<div class="top tooltip active" role="tooltip" ng-show="aspectsForm.$submitted || aspectsForm.requestedDeadline.$touched">
+										  <div ng-show="aspectsForm.requestedDeadline.$error.required">
+										  	<div class="tooltip-arrow"></div>
+										  	<div class="tooltip-inner">Debe ingresar el plazo solicitado</div>
+										  </div>
+										</div>
+										<!-- end VALIDACION -->
 										<label>Plazo solicitado</label> 
-										<input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese plazo solicitado" tabindex="7" ng-model="project.requestedDeadline"  >
+										<input type="number" name="requestedDeadline" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  class="form-control" placeholder="Ingrese plazo solicitado" tabindex="7" ng-model="project.requestedDeadline" required>
 									</div>
 								</div>
 								<div class="col-sm-4" style="border-right: 1px solid #bebebe;">
@@ -691,6 +734,8 @@
 						</div>
 					</div>
 				</div>
+
+				</ng-form>
 
 			</div>
 		</div>
