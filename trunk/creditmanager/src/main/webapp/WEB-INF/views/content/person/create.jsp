@@ -14,8 +14,11 @@
 	
 	<%@ include file="../../include/styles.jsp" %>
 	<script type="text/javascript">
-    window.onbeforeunload = function() {
-        return "¿Esta seguro que desea salir de esta página? Todos sus cambios no guardados se perderán";
+    var shouldAsk = true;
+	window.onbeforeunload = function() {
+    	if(shouldAsk){
+    		return "¿Esta seguro que desea salir de esta página? Todos sus cambios no guardados se perderán";
+    	}
     }
 </script>
 </head>
