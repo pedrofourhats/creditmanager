@@ -62,7 +62,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 		
 		$scope.newPerson = editablePerson;
 	} else {
-		$scope.newPerson = {identityTypeName: "", genderName: "", province: "Entre Ríos"};
+		$scope.newPerson = {identityTypeName: "", genderName: "", province: "Entre Rï¿½os"};
 		//se selecciona por default sexo masculino
 		$scope.selectGender({value: 0, name: 'MASCULINO'});
 	}
@@ -107,6 +107,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 							$http.post(getCompletePath("persons/createPersonWithoutValidation"), JSON.stringify($scope.newPerson))
 							.success(function () {
 								alert('La persona ha sido agregada satisfactoriamente');
+								shouldAsk = false;
 								redirect('person/list');
 							}).error(function () {
 						    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
@@ -114,6 +115,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 						}
 					} else {
 						alert('La persona ha sido agregada satisfactoriamente');
+						shouldAsk = false;
 						redirect('person/list');
 					}
 			    }).error(function () {
@@ -129,6 +131,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 							$http.post(getCompletePath("persons/editPersonWithoutValidation"), JSON.stringify($scope.newPerson))
 							.success(function () {
 								alert('La persona ha sido actualizada satisfactoriamente');
+								shouldAsk = false;
 								redirect('person/list');
 							}).error(function () {
 						    	alert("Ha ocurrido un problema. Por favor intente nuevamente");
@@ -136,6 +139,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 						}
 					} else {
 						alert('La persona ha sido actualizada satisfactoriamente');
+						shouldAsk = false;
 						redirect('person/list');
 					}
 			    }).error(function () {
