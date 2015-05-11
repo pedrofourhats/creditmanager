@@ -132,7 +132,7 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 				return false;
 			}
 			
-			if($scope.step == 2){
+//			if($scope.step == 2){
 				if($scope.aspectsForm.$invalid){
 					$scope.aspectsForm.$submitted = true;
 					self.submit();
@@ -144,7 +144,7 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 					alert('Debe completar los campos Importe otorgado, \nPeriodo de gracia otorgado y Plazo otorgado.');
 					return false;
 				}
-			}
+//			}
 			
 			return true;
 		};

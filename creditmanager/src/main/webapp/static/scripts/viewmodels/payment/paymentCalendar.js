@@ -6,7 +6,7 @@ angular.module('paymentCalendarApp', [])
 	/***** Quote Detail *****/
 	var d = new Date();
 	$scope.today = [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
-	$scope.totalDeadline = parseInt($scope.project.givenDeadline) + parseInt($scope.project.requestedGracePeriod);
+	$scope.totalDeadline = parseInt($scope.project.givenDeadline) + parseInt($scope.project.givenGracePeriod);
 	
 	var deliveryDate = new Date($scope.project.deliveryDate);
 	$scope.deliveryFormattedDate = [pad(deliveryDate.getDate()), pad(deliveryDate.getMonth()+1), deliveryDate.getFullYear()].join('/');
@@ -101,7 +101,7 @@ function Fee(number, annualRate, prevExpirationDate, expirationDate, openingBala
 	var self = this;
 	var today = new Date();
 	var pDate = payment != null ? new Date(payment.paymentDate) : null;
-	self.isGracePeriod = number <= project.requestedGracePeriod;
+	self.isGracePeriod = number <= project.givenGracePeriod;
 	self.dateDiff = function(d1, d2) {
         var t2 = d2.getTime();
         var t1 = d1.getTime();
