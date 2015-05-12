@@ -190,6 +190,7 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 			
 			$http.post(getCompletePath("projects"), JSON.stringify($scope.project))
 			.success(function (project) {
+				$rootScope.allowNavigation();
 				$location.path('/project-detail/' + project.id);
 				alert("El proyecto se ha creado con exito");
 		    }).error(function (err) {
