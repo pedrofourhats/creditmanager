@@ -132,6 +132,26 @@ projectControllers.controller('ProjectCreationCtrl', ['$scope','$http', '$modal'
 				return false;
 			}
 			
+			if(!$scope.project.type){
+				alert('Debe elegir un tipo');
+				return false;
+			}
+			
+			if(!$scope.project.economicArea){
+				alert('Debe elegir un sector economico');
+				return false;
+			}
+			
+			if(!$scope.project.economicActivity){
+				alert('Debe elegir una actividad económica');
+				return false;
+			}
+			
+			if(!$scope.project.category){
+				alert('Debe elegir un rubro.');
+				return false;
+			}
+			
 //			if($scope.step == 2){
 				if($scope.aspectsForm.$invalid){
 					$scope.aspectsForm.$submitted = true;
