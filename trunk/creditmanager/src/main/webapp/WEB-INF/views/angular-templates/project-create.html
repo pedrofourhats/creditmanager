@@ -11,6 +11,9 @@
 				<h3>{{title}}</h3>
 				<h4>Complete los siguientes pasos</h4>
 
+				<div ng-show="(institutionalForm.$invalid || aspectsForm.$invalid) && (institutionalForm.$submitted ||aspectsForm.$submitted)">
+				  <alert type="danger">Debe completar los campos obligatorios.</alert>
+				</div>
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">
 				    <li role="presentation" ng-class="{'active': step == 1 }">
