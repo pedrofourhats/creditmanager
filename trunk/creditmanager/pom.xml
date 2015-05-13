@@ -241,13 +241,13 @@
 		        <!-- <outputDirectory>${project.build.directory}/${project.build.finalName}/static/css</outputDirectory> -->
 		        <compress>false</compress>
 		    </configuration>
-		    <executions>
+		    <!-- <executions> -->
 <!-- 		        <execution> -->
 <!-- 		            <goals> -->
 <!-- 		                <goal>compile</goal> -->
 <!-- 		            </goals> -->
 <!-- 		        </execution> -->
-		    </executions>
+		    <!-- </executions>-->
     	</plugin>
     </plugins>
   </build>
