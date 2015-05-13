@@ -62,7 +62,7 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 		
 		$scope.newPerson = editablePerson;
 	} else {
-		$scope.newPerson = {identityTypeName: "", genderName: "", province: "Entre Rï¿½os"};
+		$scope.newPerson = {identityTypeName: "", genderName: "", province: "Entre Ríos"};
 		//se selecciona por default sexo masculino
 		$scope.selectGender({value: 0, name: 'MASCULINO'});
 	}
@@ -72,6 +72,42 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 	};
 	
 	$scope.addPerson = function() {
+		if(!$scope.newPerson.type) {
+			alert("La categor\u00eda es obligatorio. Asegurese de cargarlo");
+			return;
+		} else if(!$scope.newPerson.surname) {
+			alert("El apellido es obligatorio. Asegurese de cargarlo");
+			return;
+		} else if(!$scope.newPerson.name) {
+			alert("El nombre es obligatorio. Asegurese de cargarlo");
+			return;
+		} else if(!$scope.newPerson.identityTypeName) {
+			alert("El tipo de documento es obligatorio. Asegurese de cargarlo");
+			return;
+		} else if(!$scope.newPerson.birthDate) {
+			alert("La fecha de nacimiento es obligatorio. Asegurese de cargarlo");
+			return;
+		} else if(!$scope.newPerson.genderName) {
+			alert("El genero es obligatorio. Asegurese de cargarlo");
+			return;
+		} else if(!$scope.newPerson.province) {
+			alert("La provincia es obligatorio. Asegurese de cargarlo");
+			return;
+		} else if(!$scope.newPerson.address) {
+			alert("La direcci\u00f3n es obligatorio. Asegurese de cargarlo");
+			return;
+		} else if(!$scope.newPerson.postCode) {
+			alert("El c\u00f3digo postal es obligatorio. Asegurese de cargarlo");
+			return;
+		} else if(!$scope.newPerson.locality) {
+			alert("La localidad es obligatorio. Asegurese de cargarlo");
+			return;
+		} else if(!$scope.newPerson.postCode) {
+			alert("El c\u00f3digo postal es obligatorio. Asegurese de cargarlo");
+			return;
+		}
+		
+		
 		if($scope.newPerson.identityNumberFirstPart != undefined){
 			if($scope.newPerson.identityNumberGenere != undefined){
 				$scope.newPerson.identityNumber = $scope.newPerson.identityNumberGenere + $scope.newPerson.identityNumberFirstPart + "." + $scope.newPerson.identityNumberSecondPart + "." + $scope.newPerson.identityNumberThirdPart;
