@@ -1,9 +1,4 @@
 <meta charset="utf-8">
-	<script type="text/javascript">
-    window.onbeforeunload = function() {
-        return "¿Esta seguro que desea salir de esta página? Todos sus cambios no guardados se perderán";
-    }
-</script>
 <div class="container">
 		<ol class="breadcrumb">
 		  <li><a href="#/project-list"><i class="fa fa-angel-right"></i> Proyectos</a></li>
@@ -650,7 +645,7 @@
 					<div class="col-sm-12">
 						<div class="pull-right">
 							<div class="form-group">
-								<button type="button" class="btn btn-primary" ng-click="cancelEdit()">Volver</button>
+								<button type="button" class="btn btn-primary" onclick="history.go(-1);">Volver</button>
 								<span ng-show="!loadProjectButtonEnable && step  != 1 && step != 2">Debe primero guardar el proyecto desde la pestaña Control de Gestión o Aspectos</span>
 							</div>
 						</div>

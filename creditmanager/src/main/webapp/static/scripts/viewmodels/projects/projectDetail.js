@@ -99,7 +99,7 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		};
 		
 		$scope.cancelEdit = function() {
-			if (confirm("ï¿½Esta seguro que desea salir sin guardar los cambios?")) {
+			if (confirm("¿Esta seguro que desea salir sin guardar los cambios?")) {
 				history.go(-1);
 			}
 		};
@@ -189,13 +189,16 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 				return;
 			}
 			
-			$scope.project.number = $scope.project.numberId + '/' + $scope.project.numberYear;
 			if($scope.project.deliveryDate) {
-				/*if($scope.project.deliveryDate > new Date()) {
+/*				if($scope.project.deliveryDate > new Date()) {
 					alert("La fecha de otorgamiento del cr\u00e9dito debe ser menor que la fecha actual");
 					return;
-				} else */
-				if(!$scope.project.dateOfEntry) {
+				} 
+				else*/ if($scope.project.dateOfEntry > new Date()) {
+					alert("La fecha de ingreso debe ser menor o igual a la fecha de hoy");
+					return; 
+				}
+				else if(!$scope.project.dateOfEntry) {
 					alert("Para ingresar la fecha de otorgamiento del cr\u00e9dito debe primero ingresar la fecha de ingreso al INTI");
 					return;
 				} else if($scope.project.deliveryDate < $scope.project.dateOfEntry) {

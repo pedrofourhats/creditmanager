@@ -314,6 +314,12 @@
 
 	<script src="<%=scriptPageContext %>/static/scripts/viewmodels/persons/addPerson.js" type="text/javascript"></script>
 	<script>
+	$( document ).ready(function() {
+		calcularEdad();
+	});
+	
+	
+	
 		$("#goToPersonsLink").addClass("active");
 
 		function isValidDate(day,month,year)
