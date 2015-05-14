@@ -55,8 +55,23 @@
 					</button>
 				</div>
 			</div>
+			
 			<div class="pull-right form-inline">
-				<div class="dropdown" dropdown>
+				<div class="form-group">
+					<label>Buscar persona</label>
+					<input class="form-control" ng-model="searchedKeyword">
+				</div>
+				<div class="form-group">
+					<button type="button" class="btn btn-primary" ng-click="search()" ng-disabled="!searchedKeyword">
+						<i class="fa fa-search"></i> Buscar
+					</button>
+					<button type="button" class="btn btn-primary" ng-click="deleteSearch()" ng-show="isSearching">
+						<i class="fa fa-close"></i> Eliminar filtro
+					</button>
+				</div>
+
+				<div class="form-group">
+					<div class="dropdown" dropdown>
 					  <a type="button" data-toggle="dropdown">
 					  	<span data-ng-show="searchedPersonCategory == 'ALL'">
 						    Todos
@@ -72,21 +87,9 @@
 				        <li ng-click="selectCategory('ASESORES CAFESG')"><a href="javascript:void(0);">ASESORES CAFESG</a></li>
 				        <li ng-click="selectCategory('TITULAR/CODEUDOR')"><a href="javascript:void(0);">TITULAR/CODEUDOR</a></li>
 					  </ul>
-				  </div>
-			</div>
-			<div class="pull-right form-inline">
-				<div class="form-group">
-					<label>Buscar persona</label>
-					<input class="form-control" ng-model="searchedKeyword">
-				</div>
-				<div class="form-group">
-					<button type="button" class="btn btn-primary" ng-click="search()" ng-disabled="!searchedKeyword">
-						<i class="fa fa-search"></i> Buscar
-					</button>
-					<button type="button" class="btn btn-primary" ng-click="deleteSearch()" ng-show="isSearching">
-						<i class="fa fa-close"></i> Eliminar filtro
-					</button>
-				</div>
+				    </div>
+			    </div>
+
 			</div>
 		</div>
 		
