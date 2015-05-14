@@ -82,31 +82,58 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 			alert("El nombre es obligatorio. Asegurese de cargarlo");
 			return;
 		} else if(!$scope.newPerson.identityTypeName) {
-			alert("El tipo de documento es obligatorio. Asegurese de cargarlo");
-			return;
+			if($scope.newPerson.type == 'TITULAR/CODEUDOR') {
+				$scope.newPerson.identityTypeName = " ";
+			} else {
+				alert("El tipo de documento es obligatorio. Asegurese de cargarlo");
+				return;
+			}
+		} else if(!$scope.newPerson.identityNumber) {
+			if($scope.newPerson.type == 'TITULAR/CODEUDOR') {
+				$scope.newPerson.identityNumber = " ";
+			} else {
+				alert("El documento es obligatorio. Asegurese de cargarlo");
+				return;
+			}
 		} else if(!$scope.newPerson.birthDate) {
-			alert("La fecha de nacimiento es obligatorio. Asegurese de cargarlo");
-			return;
+			if($scope.newPerson.type == 'TITULAR/CODEUDOR') {
+				$scope.newPerson.birthDate = " ";
+			} else {
+				alert("La fecha de nacimiento es obligatorio. Asegurese de cargarlo");
+				return;
+			}
 		} else if(!$scope.newPerson.genderName) {
-			alert("El genero es obligatorio. Asegurese de cargarlo");
-			return;
+			if($scope.newPerson.type == 'TITULAR/CODEUDOR') {
+				$scope.newPerson.genderName = " ";
+			} else {
+				alert("El genero es obligatorio. Asegurese de cargarlo");
+				return;
+			}
 		} else if(!$scope.newPerson.province) {
 			alert("La provincia es obligatorio. Asegurese de cargarlo");
 			return;
 		} else if(!$scope.newPerson.address) {
-			alert("La direcci\u00f3n es obligatorio. Asegurese de cargarlo");
-			return;
-		} else if(!$scope.newPerson.postCode) {
-			alert("El c\u00f3digo postal es obligatorio. Asegurese de cargarlo");
-			return;
+			if($scope.newPerson.type == 'TITULAR/CODEUDOR') {
+				$scope.newPerson.address = " ";
+			} else {
+				alert("La direcci\u00f3n es obligatorio. Asegurese de cargarlo");
+				return;
+			}
 		} else if(!$scope.newPerson.locality) {
-			alert("La localidad es obligatorio. Asegurese de cargarlo");
-			return;
+			if($scope.newPerson.type == 'TITULAR/CODEUDOR') {
+				$scope.newPerson.locality = " ";
+			} else {
+				alert("La localidad es obligatorio. Asegurese de cargarlo");
+				return;
+			}
 		} else if(!$scope.newPerson.postCode) {
-			alert("El c\u00f3digo postal es obligatorio. Asegurese de cargarlo");
-			return;
+			if($scope.newPerson.type == 'TITULAR/CODEUDOR') {
+				$scope.newPerson.postCode = " ";
+			} else {
+				alert("El c\u00f3digo postal es obligatorio. Asegurese de cargarlo");
+				return;
+			}
 		}
-		
 		
 		if($scope.newPerson.identityNumberFirstPart != undefined){
 			if($scope.newPerson.identityNumberGenere != undefined){

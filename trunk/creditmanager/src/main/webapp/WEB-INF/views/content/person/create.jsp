@@ -126,9 +126,9 @@
 									<label for="idNumber">Número de documento (*)</label>
 									<!-- <small class="fr">Soló números sin puntos</small> -->
 									<input type="text" name="idNumberGenere" class="form-control" maxlength="1" placeholder="M/F" tabindex="4" onkeypress='return event.charCode == 102 || event.charCode == 109' ng-model="newPerson.identityNumberGenere">
-									<input type="text" name="idNumberFirstPart" class="form-control" maxlength="2" required placeholder="" tabindex="4" min="0" max="99" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberFirstPart"><span>.</span> 
-									<input type="text" name="idNumberSecondPart" class="form-control" maxlength="3" required placeholder="" tabindex="4" min="0" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberSecondPart"><span>.</span> 
-									<input type="text" name="idNumberThirdPart" class="form-control" maxlength="3" required placeholder="" tabindex="4" min="0" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberThirdPart">
+									<input type="text" name="idNumberFirstPart" class="form-control" maxlength="2" placeholder="" tabindex="4" min="0" max="99" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberFirstPart"><span>.</span> 
+									<input type="text" name="idNumberSecondPart" class="form-control" maxlength="3" placeholder="" tabindex="4" min="0" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberSecondPart"><span>.</span> 
+									<input type="text" name="idNumberThirdPart" class="form-control" maxlength="3" placeholder="" tabindex="4" min="0" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="newPerson.identityNumberThirdPart">
 									</div>
 							</div>
 							<div class="col-sm-4">
@@ -142,7 +142,7 @@
 									<!-- end VALIDACIO“N -->
 									<div class="control-group">
 										<label for="birthDate" class="control-label">Fecha de nacimiento (*)</label><span id="result"></span>
-										<input id="birthDate" type="date" name="birthDate" onchange="calcularEdad()" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" required ng-model="newPerson.birthDate" max="1997-01-01"/>	
+										<input id="birthDate" type="date" name="birthDate" onchange="calcularEdad()" placeholder="dd/MM/yyyy" class="form-control" tabindex="5" ng-model="newPerson.birthDate" max="1997-01-01"/>	
 									</div>
 								</div>
 								<div class="form-group">
@@ -208,7 +208,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="province">Provincia (*)</label>
-									<input type="text" name="province" class="form-control" required maxlength="45" placeholder="Ingrese una provincia" tabindex="9" ng-model="newPerson.province">
+									<input type="text" name="province" class="form-control" maxlength="45" placeholder="Ingrese una provincia" tabindex="9" ng-model="newPerson.province">
 	
 								</div>
 								<div class="form-group">
@@ -244,7 +244,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="address">Dirección (*)</label>
-									<input type="text" name="address" class="form-control" maxlength="100" placeholder="Ingrese dirección" required tabindex="11" ng-model="newPerson.address">
+									<input type="text" name="address" class="form-control" maxlength="100" placeholder="Ingrese dirección" tabindex="11" ng-model="newPerson.address">
 									<label for="addressNumber">Numero</label>
 									<input type="text" name="addressNumber" class="form-control" maxlength="45" placeholder="Ingrese número" tabindex="12" ng-model="newPerson.addressNumber">
 									<label for="addressFloor">Piso</label>
@@ -260,7 +260,7 @@
 									</div>
 									<!-- end VALIDACIO“N -->
 									<label for="postCode">Código postal (*)</label>
-									<input type="text" name="postCode" class="form-control" maxlength="10" placeholder="Ingrese código postal" tabindex="15" required ng-model="newPerson.postCode">
+									<input type="text" name="postCode" class="form-control" maxlength="10" placeholder="Ingrese código postal" tabindex="15" ng-model="newPerson.postCode">
 								</div>
 							</div>
 							<div class="col-sm-4">
