@@ -135,19 +135,14 @@
 		calcularEdad();
 	});
 	
-	
-	
-
-		function isValidDate(day,month,year)
-		{
+		function isValidDate(day,month,year) {
 		    var dteDate;
 		    month=month-1;
 		    dteDate=new Date(year,month,day);
 		    return ((day==dteDate.getDate()) && (month==dteDate.getMonth()) && (year==dteDate.getFullYear()));
 		}
 
-		function validate_fecha(fecha)
-		{
+		function validate_fecha(fecha) {
 		    var patron=new RegExp("^(19|20)+([0-9]{2})([-])([0-9]{1,2})([-])([0-9]{1,2})$");
 		 
 		    if(fecha.search(patron)==0)
@@ -163,7 +158,12 @@
 
 		function calcularEdad()
 		{
-		    var fecha= personDetail.formattedBirthDate;
+			var fecha = personDetail.formattedBirthDate;
+		    var fechas = personDetail.formattedBirthDate.split("-");
+		    if(fechas.length > 1) {
+		    	fecha = fechas[2] + "-" + fechas[1] + "-" + fechas[0];
+		    }
+		    
 		    if(validate_fecha(fecha)==true)
 		    {
 		        var values=fecha.split("-");
