@@ -49,9 +49,9 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 				editablePerson.identityNumber = editablePerson.identityNumber.substring(1);
 			}
 			var res = editablePerson.identityNumber.split(".");
-			editablePerson.identityNumberFirstPart = parseInt(res[0]);
-			editablePerson.identityNumberSecondPart = parseInt(res[1]);
-			editablePerson.identityNumberThirdPart = parseInt(res[2]);
+			editablePerson.identityNumberFirstPart = res[0];
+			editablePerson.identityNumberSecondPart = res[1];
+			editablePerson.identityNumberThirdPart = res[2];
 		}
 		editablePerson.identityTypeName = getIdentityTypeName(editablePerson.identityType);
 		editablePerson.identityType = getIdentityType(editablePerson.identityTypeName);
