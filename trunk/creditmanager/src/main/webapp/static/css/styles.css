@@ -518,7 +518,7 @@ table.table-tiny thead th:last-child {
 }
 .dropdown {
   position: relative;
-  border: 1px solid #808181;
+  border: 2px solid #808181;
   border-radius: 2px;
   width: 100%;
   background-color: #808181;
@@ -547,6 +547,9 @@ table.table-tiny thead th:last-child {
 }
 .dropdown .dropdown-menu a:hover {
   background: #eaeaea;
+}
+.dropdown-menu > li > a {
+  text-transform: uppercase;
 }
 .form-inline .form-group {
   margin-bottom: 15px;
