@@ -99,7 +99,7 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		};
 		
 		$scope.cancelEdit = function() {
-			if (confirm("¿Esta seguro que desea salir sin guardar los cambios?")) {
+			if (confirm("ï¿½Esta seguro que desea salir sin guardar los cambios?")) {
 				history.go(-1);
 			}
 		};
@@ -277,7 +277,7 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 				project.numberYear = res[1];
 			}
 			project.dateOfEntry = new Date(project.dateOfEntry);
-			project.deliveryDate = new Date(project.deliveryDate);
+			project.deliveryDate = project.deliveryDate != null ? new Date(project.deliveryDate) : null;
 			$scope.project = project;
 			var defaultForms = [];
 			if(project.defaultForms) {
