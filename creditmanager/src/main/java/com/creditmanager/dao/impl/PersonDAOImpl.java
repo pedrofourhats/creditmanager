@@ -23,12 +23,13 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Person> findByName(String name) {
+	public List<Person> findByName(String name, String type) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
 		criteria.add(Restrictions.disjunction()
 			.add(Restrictions.ilike("name", name, MatchMode.ANYWHERE))
 			.add(Restrictions.ilike("surname", name, MatchMode.ANYWHERE))
 		);
+		criteria.add(Restrictions.eq("type", type));
 		return (List<Person>) getHibernateTemplate().findByCriteria(criteria);
 	}
 

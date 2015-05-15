@@ -21,6 +21,8 @@ import com.creditmanager.service.util.MapperUtil;
 @Transactional
 public class PersonServiceImpl implements PersonService {
 
+	private final String HOLDER_GUARANTOR = "TITULAR/CODEUDOR";
+	
 	@Autowired
 	private Mapper mapper;
 	
@@ -118,7 +120,7 @@ public class PersonServiceImpl implements PersonService {
 	}
 
 	public List<PersonDTO> autocomplete(String searchedKeyword) {
-		return MapperUtil.map(mapper, personDAO.findByName(searchedKeyword), PersonDTO.class);
+		return MapperUtil.map(mapper, personDAO.findByName(searchedKeyword, HOLDER_GUARANTOR), PersonDTO.class);
 	}
 
 	public boolean existUserWithEmail(String email) {
