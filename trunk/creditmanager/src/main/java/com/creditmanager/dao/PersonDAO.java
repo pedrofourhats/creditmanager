@@ -7,7 +7,7 @@ import com.creditmanager.model.Person;
 
 public interface PersonDAO extends GenericDAO<Person, Long> {
 	Page<Person> getAllPerson(int pageIndex, int pageSize);
-	List<Person> findByName(String name);
+	List<Person> findByName(String name, String type);
 	Page<Person> getFilteredPerson(int pageIndex, int pageSize, String searchedKeyword);
 	List<Person> getByIds(List<Long> ids);
 	List<Person> getByType(String type);
