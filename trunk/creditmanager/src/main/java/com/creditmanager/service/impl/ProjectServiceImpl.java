@@ -160,7 +160,8 @@ public class ProjectServiceImpl implements ProjectService {
 	
 	@Override
 	public Page<ProjectDTO> getByNumber(int pageIndex, int pageSize, String number) {
-		return MapperUtil.map(mapper, projectDao.findByProjectNumber(pageIndex, pageSize, number), ProjectDTO.class);
+		Page<Project> projects = projectDao.findByProjectNumber(pageIndex, pageSize, number);
+		return MapperUtil.map(mapper, projects, ProjectDTO.class);
 	}
 	
 	@SuppressWarnings("unchecked")

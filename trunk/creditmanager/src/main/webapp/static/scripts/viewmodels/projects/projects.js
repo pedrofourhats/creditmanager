@@ -114,7 +114,12 @@ projectControllers.controller('ProjectListCtrl', ['$scope','$location','$http',
 		};
 		
 		$scope.getHolderDocumentNumbers = function(project){
-			return project.holders.length == 1 ? project.holders[0].identityNumber : '- - -';
+			var holderDocuments = '';
+			for(var i=0; i<project.holders.length; i++){
+				holderDocuments += project.holders[i].identityNumber + ', ';
+			}
+			return holderDocuments != '' ? holderDocuments.substring(0, holderDocuments.length - 2) : '';
+			//return project.holders.length == 1 ? project.holders[0].identityNumber : '- - -';
 		};
 }]);
 
