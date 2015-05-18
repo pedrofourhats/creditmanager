@@ -83,14 +83,12 @@ addPersonApp.controller('addPersonController', function ($scope, $http, $filter)
 			return;
 		} else if(!$scope.newPerson.identityTypeName) {
 			if($scope.newPerson.type != 'TITULAR/CODEUDOR') {
-				$scope.newPerson.identityTypeName = "";
 			} else {
 				alert("El tipo de documento es obligatorio. Asegurese de cargarlo");
 				return;
 			}
 		} else if(!$scope.newPerson.identityNumberThirdPart) {
 			if($scope.newPerson.type != 'TITULAR/CODEUDOR') {
-				$scope.newPerson.identityNumber = "";
 			} else {
 				alert("El documento es obligatorio. Asegurese de cargarlo");
 				return;
