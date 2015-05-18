@@ -164,6 +164,14 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 				return false;
 			}
 			
+			if(($scope.project.dateOfEntry.getFullYear() != new Date().getFullYear()) || ($scope.project.dateOfEntry.getDay() != new Date().getDay()) || ($scope.project.dateOfEntry.getMonth() != new Date().getMonth())) {
+				if($scope.project.dateOfEntry > new Date()) {
+					alert("La fecha de ingreso debe ser igual o inferior a la fecha de hoy");
+					return; 
+				}
+			}
+			
+			
 //			if($scope.step == 2){
 				if($scope.aspectsForm.$invalid){
 					$scope.aspectsForm.$submitted = true;
@@ -185,8 +193,17 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 		};
 		
 		self.editProject = function() {
+			
+			
 			if(!self.isValid()){
 				return;
+			}
+			
+			if(($scope.project.dateOfEntry.getFullYear() != new Date().getFullYear()) || ($scope.project.dateOfEntry.getDay() != new Date().getDay()) || ($scope.project.dateOfEntry.getMonth() != new Date().getMonth())) {
+				if($scope.project.dateOfEntry > new Date()) {
+					alert("La fecha de ingreso debe ser igual o inferior a la fecha de hoy");
+					return; 
+				}
 			}
 			
 			if($scope.project.deliveryDate) {
@@ -194,9 +211,11 @@ projectControllers.controller('ProjectDetailCtrl', ['$scope','$http', '$routePar
 					alert("La fecha de otorgamiento del cr\u00e9dito debe ser menor que la fecha actual");
 					return;
 				} 
-				else*/ if($scope.project.dateOfEntry > new Date()) {
-					alert("La fecha de ingreso debe ser menor o igual a la fecha de hoy");
-					return; 
+				else*/ if(($scope.project.dateOfEntry.getFullYear() != new Date().getFullYear()) || ($scope.project.dateOfEntry.getDay() != new Date().getDay()) || ($scope.project.dateOfEntry.getMonth() != new Date().getMonth())) {
+					if($scope.project.dateOfEntry > new Date()) {
+						alert("La fecha de ingreso debe ser igual o inferior a la fecha de hoy");
+						return; 
+					}
 				}
 				else if(!$scope.project.dateOfEntry) {
 					alert("Para ingresar la fecha de otorgamiento del cr\u00e9dito debe primero ingresar la fecha de ingreso al INTI");
