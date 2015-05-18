@@ -42,12 +42,12 @@ public class PersonRestController {
 	
 	@RequestMapping(value="/persons/createPerson", method = RequestMethod.POST)
 	public @ResponseBody CreditManagerError addPerson(@RequestBody PersonDTO person) {
-		person.setAddress(person.getAddress().toLowerCase());
-		person.setAddressAppartment(person.getAddressAppartment().toLowerCase());
-		person.setAddressFloor(person.getAddressFloor().toLowerCase());
-		person.setAddressNumber(person.getAddressNumber().toLowerCase());
-		person.setProvince(person.getProvince().toLowerCase());
-		person.setLocality(person.getLocality().toLowerCase());
+		if(person.getAddress() != null)  person.setAddress(person.getAddress().toUpperCase());
+		if(person.getAddressAppartment() != null) person.setAddressAppartment(person.getAddressAppartment().toUpperCase());
+		if(person.getAddressFloor() != null) person.setAddressFloor(person.getAddressFloor().toUpperCase());
+		if(person.getAddressNumber() != null) person.setAddressNumber(person.getAddressNumber().toUpperCase());
+		if(person.getProvince() != null) person.setProvince(person.getProvince().toUpperCase());
+		if(person.getLocality() != null) person.setLocality(person.getLocality().toUpperCase());
 		
 		String identityNumber = person.getIdentityNumber();
 		if(identityNumber != null) {
@@ -91,12 +91,12 @@ public class PersonRestController {
 	
 	@RequestMapping(value="/persons/editPerson", method = RequestMethod.POST)
 	public @ResponseBody CreditManagerError editPerson(@RequestBody PersonDTO person) {
-		person.setAddress(person.getAddress().toLowerCase());
-		person.setAddressAppartment(person.getAddressAppartment().toLowerCase());
-		person.setAddressFloor(person.getAddressFloor().toLowerCase());
-		person.setAddressNumber(person.getAddressNumber().toLowerCase());
-		person.setProvince(person.getProvince().toLowerCase());
-		person.setLocality(person.getLocality().toLowerCase());
+		if(person.getAddress() != null)  person.setAddress(person.getAddress().toUpperCase());
+		if(person.getAddressAppartment() != null) person.setAddressAppartment(person.getAddressAppartment().toUpperCase());
+		if(person.getAddressFloor() != null) person.setAddressFloor(person.getAddressFloor().toUpperCase());
+		if(person.getAddressNumber() != null) person.setAddressNumber(person.getAddressNumber().toUpperCase());
+		if(person.getProvince() != null) person.setProvince(person.getProvince().toUpperCase());
+		if(person.getLocality() != null) person.setLocality(person.getLocality().toUpperCase());
 		
 		String identityNumber = person.getIdentityNumber();
 		if(identityNumber != null) {
