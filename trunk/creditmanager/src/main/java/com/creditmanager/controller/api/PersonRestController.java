@@ -42,6 +42,13 @@ public class PersonRestController {
 	
 	@RequestMapping(value="/persons/createPerson", method = RequestMethod.POST)
 	public @ResponseBody CreditManagerError addPerson(@RequestBody PersonDTO person) {
+		person.setAddress(person.getAddress().toLowerCase());
+		person.setAddressAppartment(person.getAddressAppartment().toLowerCase());
+		person.setAddressFloor(person.getAddressFloor().toLowerCase());
+		person.setAddressNumber(person.getAddressNumber().toLowerCase());
+		person.setProvince(person.getProvince().toLowerCase());
+		person.setLocality(person.getLocality().toLowerCase());
+		
 		String identityNumber = person.getIdentityNumber();
 		if(identityNumber != null) {
 			char c = Character.toLowerCase(identityNumber.charAt(0));
@@ -65,11 +72,11 @@ public class PersonRestController {
 		}
 		
 		if(this.personService.existPersonWithAddress(person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getLocality(), person.getProvince())) {
-			warnings += "Existe un usuario con la direcciï¿½n " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
+			warnings += "Existe un usuario con la dirección " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
 		}
 		
 		if(warnings != "") {
-			warnings += "ï¿½Desea continuar?";
+			warnings += "¿Desea continuar?";
 		} else {
 			personService.addPerson(person);
 		}
@@ -84,6 +91,13 @@ public class PersonRestController {
 	
 	@RequestMapping(value="/persons/editPerson", method = RequestMethod.POST)
 	public @ResponseBody CreditManagerError editPerson(@RequestBody PersonDTO person) {
+		person.setAddress(person.getAddress().toLowerCase());
+		person.setAddressAppartment(person.getAddressAppartment().toLowerCase());
+		person.setAddressFloor(person.getAddressFloor().toLowerCase());
+		person.setAddressNumber(person.getAddressNumber().toLowerCase());
+		person.setProvince(person.getProvince().toLowerCase());
+		person.setLocality(person.getLocality().toLowerCase());
+		
 		String identityNumber = person.getIdentityNumber();
 		if(identityNumber != null) {
 			char c = Character.toLowerCase(identityNumber.charAt(0));
