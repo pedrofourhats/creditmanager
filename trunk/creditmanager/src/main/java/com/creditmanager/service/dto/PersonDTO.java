@@ -26,6 +26,8 @@ public class PersonDTO {
 	
 	private String genderName;
 	
+	private boolean isMale;
+	
 	private String phone;
 	
 	private String workPhone;
@@ -124,6 +126,7 @@ public class PersonDTO {
 	public void setGender(Gender gender) {
 		this.gender = gender;
 		this.setGenderName(this.gender.equals(Gender.MALE) ? "MASCULINO" : "FEMENINO");
+		this.setMale(this.gender.equals(Gender.MALE));
 	}
 
 	public String getGenderName() {
@@ -134,6 +137,14 @@ public class PersonDTO {
 		this.genderName = genderName;
 	}
 	
+	public boolean isMale() {
+		return isMale;
+	}
+
+	public void setMale(boolean isMale) {
+		this.isMale = isMale;
+	}
+
 	public String getPhone() {
 		return phone;
 	}
