@@ -88,12 +88,25 @@ public class PersonDAOImpl extends GenericDAOImpl<Person, Long> implements Perso
 
 	public boolean existPersonWithAddress(String address, String addressNumber, String addressFloor, String addressAppartment, String locality, String province) {
 		DetachedCriteria criteria = DetachedCriteria.forEntityName(entityName);
-		criteria.add(Restrictions.eq("address", address));
-		criteria.add(Restrictions.eq("addressNumber", addressNumber));
-		criteria.add(Restrictions.eq("addressFloor", addressFloor));
-		criteria.add(Restrictions.eq("addressAppartment", addressAppartment));
-		criteria.add(Restrictions.eq("locality", locality));
-		criteria.add(Restrictions.eq("province", province));
+		if(address != null) {
+			criteria.add(Restrictions.eq("address", address));	
+		}
+		if(addressNumber != null) {
+			criteria.add(Restrictions.eq("addressNumber", addressNumber));
+		}
+		if(addressFloor != null) {
+			criteria.add(Restrictions.eq("addressFloor", addressFloor));
+		}
+		if(addressAppartment != null) {
+			criteria.add(Restrictions.eq("addressAppartment", addressAppartment));
+		}
+		if(locality != null) {
+			criteria.add(Restrictions.eq("locality", locality));
+		}
+		if(province != null) {
+			criteria.add(Restrictions.eq("province", province));
+		}
+		
 		return !getHibernateTemplate().findByCriteria(criteria).isEmpty();
 	}
 

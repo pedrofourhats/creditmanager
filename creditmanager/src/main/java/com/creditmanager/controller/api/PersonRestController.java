@@ -72,7 +72,14 @@ public class PersonRestController {
 		}
 		
 		if(this.personService.existPersonWithAddress(person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getLocality(), person.getProvince())) {
-			warnings += "Existe un usuario con la dirección " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
+			warnings += "Existe un usuario con la dirección ";
+			warnings += person.getAddress() != null ? person.getAddress() : "";
+			warnings += person.getAddressNumber() != null ? (", " + person.getAddressNumber()) : ""; 
+			warnings += person.getAddressFloor() != null ? (", " + person.getAddressFloor()) : "";
+			warnings += person.getAddressAppartment() != null ? (", " + person.getAddressAppartment()) : "";
+			warnings += person.getLocality() != null ? (", " + person.getLocality()) : "";
+			warnings += person.getProvince() != null ? (", " + person.getProvince()) : "";
+			warnings += ". ";
 		}
 		
 		if(warnings != "") {
@@ -129,7 +136,14 @@ public class PersonRestController {
 		
 		if(this.personService.existPersonWithAddress(person.getAddress(), person.getAddressNumber(), person.getAddressFloor(), person.getAddressAppartment(), person.getLocality(), person.getProvince())) {
 			if(!(existingPerson.getAddress() + existingPerson.getAddressNumber() + existingPerson.getAddressFloor() + existingPerson.getAddressAppartment() + existingPerson.getLocality() + existingPerson.getProvince()).equals(person.getAddress() + person.getAddressNumber() + person.getAddressFloor() + person.getAddressAppartment() + person.getLocality() + person.getProvince())) {
-				warnings += "Existe un usuario con la direcciï¿½n " + person.getAddress() + ", " + person.getAddressNumber() + ", " + person.getAddressFloor() + ", " + person.getAddressAppartment() + ", " + person.getLocality() + ", " + person.getProvince() + ". ";
+				warnings += "Existe un usuario con la dirección ";
+				warnings += person.getAddress() != null ? person.getAddress() : "";
+				warnings += person.getAddressNumber() != null ? (", " + person.getAddressNumber()) : ""; 
+				warnings += person.getAddressFloor() != null ? (", " + person.getAddressFloor()) : "";
+				warnings += person.getAddressAppartment() != null ? (", " + person.getAddressAppartment()) : "";
+				warnings += person.getLocality() != null ? (", " + person.getLocality()) : "";
+				warnings += person.getProvince() != null ? (", " + person.getProvince()) : "";
+				warnings += ". ";
 			}
 		}
 		
